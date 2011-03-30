@@ -1,0 +1,56 @@
+%% Script to create GMP.pdf
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}(1.75,0)(13.25,10.5)
+\LargeState
+
+% labels
+\rput(2.5,10){(a) $\FutureEM$}
+\rput(2.5,7.5){(b) $\PastEM$}
+\rput(2.5,4.75){(c) $\BiEM$}
+
+% M+
+\State[A]{(5,9)}{A}
+\State[B]{(9,9)}{B}
+\ReverseArrow
+\CLoopW[.5]{A}{p|1}
+\StraightArrow
+\ArcL[.5]{A}{B}{1-p|0}
+\ArcL[.5]{B}{A}{1|1}
+
+% M-
+\State[C]{(5,6.5)}{C}
+\State[D]{(9,6.5)}{D}
+\ReverseArrow
+\CLoopW[.5]{C}{p|1}
+\StraightArrow
+\ArcL[.5]{C}{D}{1-p|0}
+\ArcL[.5]{D}{C}{1|1}
+
+% M +-
+\State[AC]{(5,2.75)}{AC}
+\State[AD]{(11,4.75)}{AD}
+\State[BC]{(11,.75)}{BC}
+\CLoopW[.5]{AC}{\StackTwoLabels{+|p|1}{-|p|1}}
+\ArcL[.5]{AC}{AD}{+|1-p|1}
+\EdgeL[.5]{AD}{AC}{-|p|1}
+\ArcR[.5]{AC}{BC}{-|1-p|1}
+\EdgeR[.5]{BC}{AC}{+|p|1}
+\EdgeL[.5]{BC}{AD}{\StackTwoLabels{+|1-p|1}{-|1|0}}
+\ArcL[.5]{AD}{BC}{\StackTwoLabels{+|1|0}{-|1-p|1}}
+\end{VCPicture}
+\end{preview}
+\end{document}

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.5)
+The top-level auxiliary file: iacp.aux
+The style file: unsrt.bst
+Database file #1: ref.bib
+Database file #2: chaos.bib
+Warning--empty journal in Feld98b
+Warning--empty journal in Maho09b
+You've used 19 entries,
+            1791 wiz_defined-function locations,
+            602 strings with 6440 characters,
+and the built_in function-call counts, 4389 in all, are:
+= -- 426
+> -- 159
+< -- 4
++ -- 60
+- -- 41
+* -- 260
+:= -- 681
+add.period$ -- 62
+call.type$ -- 19
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 215
+empty$ -- 417
+format.name$ -- 41
+if$ -- 1001
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 20
+newline$ -- 101
+num.names$ -- 22
+pop$ -- 45
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 116
+stack$ -- 0
+substring$ -- 294
+swap$ -- 60
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 40
+width$ -- 21
+write$ -- 219
+(There were 2 warnings)

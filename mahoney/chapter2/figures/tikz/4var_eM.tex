@@ -1,0 +1,70 @@
+
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+venn/.style={line width=6pt, draw=black!60, thick, fill opacity=0.2},
+vlabel/.style={minimum size=0, inner sep=0}]
+
+% Scale factor to use to help labels to fit properly
+\def\F{1.0}
+\begin{scope}
+\clip[] (-0.0,-3.5) -- (-0.0,3.5) -- (-7.5,3.5) -- (-7.5,-3.5) -- cycle;
+\filldraw[venn, fill=red] (-\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\end{scope}
+\begin{scope}
+\clip[] (-0.0,-3.5) -- (-0.0,3.5) -- (7.5,3.5) -- (7.5,-3.5) -- cycle;
+\clip (-\F*1.0,0) ellipse (\F*2.4cm and \F*2.6cm);
+\filldraw[venn, fill=red] (-\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\end{scope}
+\begin{scope}
+\clip (-\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\filldraw[venn, fill=yellow] (-\F*1.0,0) ellipse (\F*2.4cm and \F*2.6cm);
+\end{scope}
+
+\begin{scope}
+\clip[] (0.0,-3.5) -- (0.0,3.5) -- (7.5,3.5) -- (7.5,-3.5) -- cycle;
+\filldraw[venn, fill=blue] (\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\end{scope}
+\begin{scope}
+\clip[] (0.0,-3.5) -- (0.0,3.5) -- (-7.5,3.5) -- (-7.5,-3.5) -- cycle;
+\clip (\F*1.0,0) ellipse (\F*2.4cm and \F*2.6cm);
+\filldraw[venn, fill=blue] (\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\end{scope}
+\begin{scope}
+\clip (\F*2.5,0) ellipse (\F*4cm and \F*3cm);
+\filldraw[venn, fill=green] (\F*1.0,0) ellipse (\F*2.4cm and \F*2.6cm);
+\end{scope}
+
+
+\node[vlabel] at (-\F*5.5, -\F*2) [pin={below left:$H[\Past]$}] {};
+\node[vlabel] at (\F*5.5, \F*2) [pin={above right:$H[\Future]$}] {};
+\node[vlabel] at (-\F*1, \F*2.6) [pin={above:$H[\FutureCausalState]$}] {};
+\node[vlabel] at (\F*1, -\F*2.6) [pin={below:$H[\PastCausalState]$}] {};
+
+\node[vlabel] at (-\F*5,0) {$H[\Past | \FutureCausalState]$};
+\node[vlabel] at (\F*5,0) {$H[\Future | \PastCausalState]$};
+
+\node[vlabel] at (-\F*2.5,0) {$H[\FutureCausalState | \Future]$};
+\node[vlabel] at (\F*2.5,0) {$H[\PastCausalState | \Past]$};
+
+\node[vlabel] at (0,0) {$I[\Past ; \Future]$};
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

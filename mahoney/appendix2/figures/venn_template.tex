@@ -1,0 +1,26 @@
+% Sample graphics of Venn diagram
+% To insert in the document, you can copy and paste or put file in figures directory and
+% insert in the chapter,
+%
+%    \input{../chapter2/figures/tikz_example}
+%
+
+\begin{wrap}\begin{tikzpicture}
+\tikzset{venn/.style={circle, draw=black!60, draw opacity=1.0, fill=black!60, fill opacity=0.25, semithick}}
+
+\node (hxy) {$H[X|Y]$};
+\node (ixy) [right=of hxy] {$I[X;Y]$};
+\node (hyx) [right=of ixy] {$H[Y|X]$};
+
+\begin{pgfonlayer}{background layer}
+\begin{scope}[every pin/.style={text=black, text opacity=1.0, pin distance=3ex, pin edge={black!60, semithick}}]
+\node[venn] (hx) [fit=(hxy) (ixy), pin={above left:$H[X]$}] {};
+\node[venn] (hy) [fit=(ixy) (hyx), pin={above right:$H[Y]$}] {};
+\end{scope}
+\end{pgfonlayer}
+
+\node (xy) [above=2.5cm of ixy] {$H[X,Y]$};
+\draw[black!60, semithick] (xy.south) -- (hx.75);
+\draw[black!60, semithick] (xy.south) -- (hy.105);
+
+\end{tikzpicture}\end{wrap}

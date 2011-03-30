@@ -1,0 +1,141 @@
+# Make a nice illustration of some of the quantities of the Golden
+# Mean Process over the range of the parameter p = Pr(0,A|A)
+
+import numpy as np
+
+from matplotlib import rc
+import matplotlib.pyplot as plt
+
+green = np.array([64, 150, 47]) / 255.
+lgreen = np.array([214, 255, 178]) / 255.
+
+lblue = np.array([178, 179, 253]) / 255.
+blue = np.array([33, 35, 235]) / 255.
+
+lred = np.array([253, 177, 175]) / 255.
+red = np.array([234, 52, 73]) / 255.
+
+fig_width_pt = 246.0  # \showthe\columnwidth
+inches_per_pt = 1.0/72.27
+aesthetic = (np.sqrt(5)-1.0)/2.0   # golden mean ratio
+fig_width = fig_width_pt * inches_per_pt
+fig_height = .9 * fig_width
+fig_size = (fig_width, fig_height)
+
+# Set the font
+rc('font',**{'family':'serif','serif':'Computer Modern Roman', \
+             'sans-serif':'Computer Modern Sans Serif', \
+             'monospace':'Computer Modern Typewriter'})
+rc('font', size=10)
+rc('axes', labelsize=10)
+rc('legend', fontsize=10)
+rc('xtick', labelsize=8)
+rc('ytick', labelsize=8)
+rc('text', usetex=True)
+rc('figure', figsize=fig_size)
+
+#plt.rcParams['backend'] = 'WXAgg'
+
+# C_\mu^+ = C_\mu^- since GM is reversible
+# it is straighforward to show
+
+def H(probs):
+    """calc entropy of this distribution"""
+    
+    total = 0
+    for p in probs:
+        if p != 0:
+            total -= p * np.log2(p)
+    return total
+
+
+def C(p):
+    """calc C_\mu^+ = C_\mu^- as a function of p for Golden Mean"""
+    
+    return H([1./(2-p), (1.-p)/(2-p)])
+
+def CC(p):
+    """calc C_\mu^{+-}. we can derive this analytically"""
+    
+    return H([p/(2-p), (1.-p)/(2-p), (1.-p)/(2-p)])
+
+def E(p):
+    """calculate excess entropy"""
+    
+    return 2*C(p) - CC(p)
+
+def Chi(p):
+    """calc \chi
+    for GM, chi + = chi -"""
+
+    return C(p) - E(p)
+
+ps = np.linspace(0.001,0.999,100)
+Es = []
+Cs = []
+CCs = []
+Chis = []
+
+
+for p in ps:
+    Es.append(E(p))
+    Cs.append(C(p))
+    CCs.append(CC(p))
+    Chis.append(Chi(p))
+
+plt.axes([0.125,.125,.75,.80])
+
+
+
+#f1 = plt.fill_between(ps, Cs, CCs, color = (0,0,1), alpha=.3)
+#f2 = plt.fill_between(ps, Chis, Cs, color = (0,1,0), alpha=.3)
+#f3 = plt.fill_between(ps, 0, Chis, color=(1,0,0), alpha=.3)
+
+#a, = plt.plot(ps,CCs,'b', linewidth=2, label=r'$C_\mu^{\pm}$',alpha=.8)
+#b, = plt.plot(ps,Cs,'g', linewidth=2, label=r'$C_\mu^+$', alpha=.8)
+#c, = plt.plot(ps,Chis,'r', linewidth=2, label=r'$\chi^+$', alpha=.8)
+
+f1 = plt.fill_between(ps, Cs, CCs, color = lblue, alpha=1.0)
+f2 = plt.fill_between(ps, Chis, Cs, color = lgreen, alpha=1.0)
+f3 = plt.fill_between(ps, 0, Chis, color=lred, alpha=1.0)
+
+a, = plt.plot(ps,CCs, color=blue, linewidth=2, label=r'$C_\mu^{\pm}$', alpha=1.0)
+b, = plt.plot(ps,Cs, color=green, linewidth=2, label=r'$C_\mu^+$', alpha=1.0)
+c, = plt.plot(ps,Chis, color=red, linewidth=2, label=r'$\chi^+$', alpha=1.0)
+
+#plt.title('GMP Information Processing', fontsize=10)
+plt.xlabel(r"Probability $p$")
+plt.ylabel('Bits', rotation='vertical')
+l = plt.legend(loc='best', fancybox=True)
+
+plt.ylim(0,plt.ylim()[1])
+
+plt.text(0.55,0.3, r'$\chi^+$', fontsize=16)
+plt.text(0.2,0.7, r'$\mathbf{E}$', fontsize=16)
+plt.text(0.45,1.2, r'$\chi^-$', fontsize=16)
+
+plt.savefig('gmpip.pdf')
+plt.savefig('gmpip.eps')
+
+# black and white
+bw = False
+if bw:
+    a.set_linestyle('-')
+    a.set_color('k')
+    f1.set_color('.5')
+
+    b.set_linestyle('--')
+    b.set_color('k')
+    f2.set_color('.9')
+
+    c.set_linestyle(':')
+    c.set_color('k')
+    f3.set_color('.1')
+
+    del l
+    l = plt.legend(loc='best', fancybox=True)
+
+    plt.savefig('gmpip_bw.pdf')
+
+#plt.show()
+

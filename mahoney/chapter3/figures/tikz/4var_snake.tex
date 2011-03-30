@@ -1,0 +1,48 @@
+
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+venn/.style={line width=6pt, draw=black!60, thick, minimum size=\F*5cm},
+vlabel/.style={minimum size=0, inner sep=0}]
+
+% Scale factor to use to help labels to fit properly
+\def\F{0.8}
+% three circles
+\node[venn, circle] at (180:\F*1.5cm) [pin={left:$H[\MeasSymbol_{-1}]$}] {};
+\node[venn, circle] at (60:\F*1.5cm) [pin={60:$H[\MeasSymbol_{0}^{L-1}]$}] {};
+\node[venn, circle] at (300:\F*1.5cm) [pin={300:$H[\CausalState_{L-1}]$}] {};
+
+% snake body
+\draw[venn] ($(300:\F*1.5cm) + (\F*3.2cm, 0)$) arc (0:180:\F*3.2cm);
+\draw[venn] ($(300:\F*1.5cm) + (\F*1.8cm, 0)$) arc (0:180:\F*1.8cm);
+% snake ends
+\draw[venn] ($(300:\F*1.5cm) + (\F*1.8cm, 0)$) arc (180:360:\F*0.7cm);
+\draw[venn] ($(300:\F*1.5cm) + (-\F*3.2cm, 0)$) arc (180:360:\F*0.7cm);
+
+\node[vlabel] at (\F*3.68,0) [pin={right:$H[\MeasSymbol_{L-1},\CausalState_L]$}] {};
+
+\node[vlabel] at (-\F*2.7,\F*0.9) {$\alpha$};
+\node[vlabel] at (-\F*2,-\F*0.6) {$\beta$};
+\node[vlabel] at (-\F*0.6,-\F*1.5) {$\gamma$};
+\node[vlabel] at (-\F*0.6,\F*1.2) {$\delta$};
+\node[vlabel] at (\F*2,\F*1.2) {$\epsilon$};
+\node[vlabel] at (\F*3.5,-\F*0.6) {$\zeta$};
+\end{tikzpicture}
+\end{preview}
+\end{document}

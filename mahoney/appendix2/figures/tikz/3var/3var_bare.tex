@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+% define a new style 'venn'
+venn/.style={circle, draw=black!60, semithick, minimum size = 5cm}]
+
+% create circle and give it external (pin) label
+\node[venn] (X) at (150:1.6) [pin={150:$H[X]$}] {};
+\node[venn] (Y) at (30:1.6) [pin={30:$H[Y]$}] {};
+\node[venn] (Z) at (270:1.6) [pin={270:$H[Z]$}] {};
+
+% place labels of the atoms by hand
+\node at (150:2.5) {$H[X|YZ]$};
+\node at (30:2.5) {$H[Y|XZ]$};
+\node at (270:2.5) {$H[Z|XY]$};
+
+\node at (90:1.7) {$I[X;Y|Z]$};
+\node at (210:1.7) {$I[X;Z|Y]$};
+\node at (330:1.7) {$I[Y;Z|X]$};
+
+\node at (0,0) {$I[X;Y;Z]$};
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

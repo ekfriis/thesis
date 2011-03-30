@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+% define a new style 'venn'
+venn/.style={circle, draw=black!60, semithick, minimum size = 5cm}]
+
+% excess entropy
+\begin{pgfonlayer}{background}
+\clip (180:1.6) circle (2.5cm);
+\fill[green!30] (0:1.6) circle (2.5cm);
+\end{pgfonlayer}
+
+% create circle and give it external (pin) label
+\node[venn] (Past) at (180:1.6) [pin={150:$H[\Past]$}] {};
+\node[venn] (Future) at (0:1.6) [pin={30:$H[\Future]$}] {};
+
+% series of circles representing foliation of past
+\begin{pgfonlayer}{background}
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+
+\foreach \up in {3,2,1,0}{
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.1] (-4,-4+\up) .. controls (-2,-2+\up) and (-1,0+\up) ..  (2,-1+\up) -- (3,0) -- (3,-5) -- (-3,-5) --   cycle;
+}
+\end{scope}
+\end{pgfonlayer}
+\foreach \N in {1,2,3,4}{
+\node[venn, minimum size = 0, inner sep = 0] at (-1.4, -2.4 + \N) [pin={180:$H[X_{-\N}^\N]$}] {};
+}
+
+\node at (0, 0.6) {$\EE$};
+
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

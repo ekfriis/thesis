@@ -1,0 +1,184 @@
+\begin{thebibliography}{10}
+
+\bibitem{Crut88a}
+J.~P. Crutchfield and K.~Young.
+\newblock Inferring statistical complexity.
+\newblock {\em Phys. Rev. Let.}, 63:105--108, 1989.
+
+\bibitem{Crut98d}
+J.~P. Crutchfield and C.~R. Shalizi.
+\newblock Thermodynamic depth of causal states: {O}bjective complexity via
+  minimal representations.
+\newblock {\em Phys. Rev. E}, 59(1):275--283, 1999.
+
+\bibitem{Fras90b}
+A.~Fraser.
+\newblock Chaotic data and model building.
+\newblock In H.~Atmanspacher and H.~Scheingraber, editors, {\em Information
+  Dynamics}, volume Series B: Physics Vol. 256 of {\em NATO ASI Series}, page
+  125, New York, 1991. Plenum.
+
+\bibitem{Casd91a}
+M.~Casdagli and S.~Eubank, editors.
+\newblock {\em Nonlinear Modeling}, SFI Studies in the Sciences of Complexity,
+  Reading, Massachusetts, 1992. Addison-Wesley.
+
+\bibitem{Spro03a}
+J.~C. Sprott.
+\newblock {\em Chaos and Time-Series Analysis}.
+\newblock Oxford University Press, Oxford, UK, second edition, 2003.
+
+\bibitem{Kant06a}
+H.~Kantz and T.~Schreiber.
+\newblock {\em Nonlinear Time Series Analysis}.
+\newblock Cambridge University Press, Cambridge, UK, second edition, 2006.
+
+\bibitem{Arno96}
+D.~Arnold.
+\newblock Information-theoretic analysis of phase transitions.
+\newblock {\em Complex Systems}, 10:143--155, 1996.
+
+\bibitem{Crut97a}
+J.~P. Crutchfield and D.~P. Feldman.
+\newblock Statistical complexity of simple one-dimensional spin systems.
+\newblock {\em Phys. Rev. E}, 55(2):1239R--1243R, 1997.
+
+\bibitem{Feld98b}
+D.~P. Feldman and J.~P. Crutchfield.
+\newblock Discovering non-critical organization: {S}tatistical mechanical,
+  information theoretic, and computational views of patterns in simple
+  one-dimensional spin systems.
+\newblock 1998.
+\newblock {Santa} Fe Institute Working Paper 98-04-026.
+
+\bibitem{Tono94a}
+G.~Tononi, O.~Sporns, and G.~M. Edelman.
+\newblock A measure for brain complexity: {Relating} functional segregation and
+  integration in the nervous system.
+\newblock {\em Proc. Nat. Acad. Sci. USA}, 91:5033--5037, 1994.
+
+\bibitem{Bial00a}
+W.~Bialek, I.~Nemenman, and N.~Tishby.
+\newblock Predictability, complexity, and learning.
+\newblock {\em Neural Computation}, 13:2409--2463, 2001.
+
+\bibitem{Ebel94c}
+W.~Ebeling and T.~Poschel.
+\newblock Entropy and long-range correlations in literary english.
+\newblock {\em Europhys. Lett.}, 26:241--246, 1994.
+
+\bibitem{Debo08a}
+L.~Debowski.
+\newblock On the vocabulary of grammar-based codes and the logical consistency
+  of texts.
+\newblock {\em IEEE Trans. Info. Th.}, 2008.
+
+\bibitem{Crut08a}
+J.~P. Crutchfield, C.~J. Ellison, and J.~R. Mahoney.
+\newblock Time's barbed arrow: {Irreversibility}, crypticity, and stored
+  information.
+\newblock {\em submitted}, 2009.
+\newblock arxiv.org:0902.1209 [cond-mat].
+
+\bibitem{Crut08c}
+J.~P. Crutchfield, C.~J. Ellison, and J.~R. Mahoney.
+\newblock $\epsilon$-{Machine} information measures.
+\newblock {\em in preparation}, 2009.
+
+\bibitem{Crut08d}
+J.~R. Mahoney, C.~J. Ellison, and J.~P. Crutchfield.
+\newblock Information accessibility and cryptic processes.
+\newblock {\em submitted}, 2009.
+\newblock arxiv.org:0905.4787 [cond-mat].
+
+\bibitem{Crut01a}
+J.~P. Crutchfield and D.~P. Feldman.
+\newblock Regularities unseen, randomness observed: Levels of entropy
+  convergence.
+\newblock {\em CHAOS}, 13(1):25--54, 2003.
+
+\bibitem{Crut92c}
+J.~P. Crutchfield.
+\newblock The calculi of emergence: Computation, dynamics, and induction.
+\newblock {\em Physica D}, 75:11--54, 1994.
+
+\bibitem{Shal98a}
+C.~R. Shalizi and J.~P. Crutchfield.
+\newblock Computational mechanics: Pattern and prediction, structure and
+  simplicity.
+\newblock {\em J. Stat. Phys.}, 104:817--879, 2001.
+
+\bibitem{Shan62}
+C.~E. Shannon and W.~Weaver.
+\newblock {\em The Mathematical Theory of Communication}.
+\newblock University of Illinois Press, Champaign-Urbana, 1962.
+
+\bibitem{Kolm58}
+A.~N. Kolmogorov.
+\newblock A new metric invariant of transient dynamical systems and
+  automorphisms in {Lebesgue} spaces.
+\newblock {\em Dokl. Akad. Nauk. SSSR}, 119:861, 1958.
+\newblock (Russian) Math. Rev. vol. 21, no. 2035a.
+
+\bibitem{Crut91b}
+J.~P. Crutchfield.
+\newblock Semantics and thermodynamics.
+\newblock In M.~Casdagli and S.~Eubank, editors, {\em Nonlinear Modeling and
+  Forecasting}, volume XII of {\em Santa Fe Institute Studies in the Sciences
+  of Complexity}, pages 317 -- 359, Reading, Massachusetts, 1992.
+  Addison-Wesley.
+
+\bibitem{Cove06a}
+T.~M. Cover and J.~A. Thomas.
+\newblock {\em Elements of Information Theory}.
+\newblock Wiley-Interscience, New York, second edition, 2006.
+
+\bibitem{Yeun91a}
+R.~W. Yeung.
+\newblock A new outlook on {Shannon}'s information measures.
+\newblock {\em IEEE Trans. Info. Th.}, 37(3):466--474, 1991.
+
+\bibitem{Shan49a}
+C.~E. Shannon.
+\newblock Communication theory of secrecy systems.
+\newblock {\em Bell Sys. Tech. J.}, 28:656--715, 1949.
+
+\bibitem{Pack80}
+N.~H. Packard, J.~P. Crutchfield, J.~D. Farmer, and R.~S. Shaw.
+\newblock Geometry from a time series.
+\newblock {\em Phys. Rev. Let.}, 45:712, 1980.
+
+\bibitem{Crut87f}
+J.~P. Crutchfield.
+\newblock Information and its metric.
+\newblock In L.~Lam and H.~C. Morris, editors, {\em Nonlinear Structures in
+  Physical Systems - Pattern Formation, Chaos and Waves}, page 119, New York,
+  1990. Springer-Verlag.
+
+\bibitem{Uppe97a}
+D.~R. Upper.
+\newblock {\em Theory and Algorithms for Hidden {M}arkov Models and Generalized
+  Hidden {M}arkov Models}.
+\newblock PhD thesis, University of California, Berkeley, 1997.
+\newblock {P}ublished by University Microfilms Intl, Ann Arbor, Michigan.
+
+\bibitem{Weis73}
+B.~Weiss.
+\newblock Subshifts of finite type and sofic systems.
+\newblock {\em Monastsh. Math.}, 77:462, 1973.
+
+\bibitem{Ay05a}
+N.~Ay and J.~P. Crutchfield.
+\newblock {\em J. Stat. Phys.}, 210(3-4):659--684, 2005.
+
+\bibitem{Hopc79}
+J.~E. Hopcroft and J.~D. Ullman.
+\newblock {\em Introduction to Automata Theory, Languages, and Computation}.
+\newblock Addison-Wesley, Reading, 1979.
+
+\bibitem{Ephr02a}
+Y.~Ephraim and N.~Merhav.
+\newblock Hidden markov processes.
+\newblock {\em IEEE Trans. Info. Theory}, 48:1518--1569, 2002.
+
+\end{thebibliography}

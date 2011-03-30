@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+% define a new style 'venn'
+venn/.style={circle, draw=black!60, semithick, minimum size = 5cm}]
+
+% excess entropy
+\begin{pgfonlayer}{background}
+\clip (180:1.6) circle (2.5cm);
+\fill[green!30] (0:1.6) circle (2.5cm);
+\end{pgfonlayer}
+
+% crypticity
+\begin{pgfonlayer}{background}
+\begin{scope}[even odd rule]
+\fill[fill=orange!30, semithick] (-0.85,0) ellipse (50pt and 62pt) (0:1.6) circle (2.5cm);
+\end{scope}
+\end{pgfonlayer}
+
+% create circle and give it external (pin) label
+\node[venn] (Past) at (180:1.6) [pin={150:$H[\Past]$}] {};
+\node[venn] (Future) at (0:1.6) [pin={30:$H[\Future]$}] {};
+
+% series of circles representing foliation of past
+\begin{pgfonlayer}{background}
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.85,0) ellipse (70pt and 82pt);
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.85,0) ellipse (60pt and 72pt);
+
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.85,0) ellipse (50pt and 62pt);
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.79,-0.17) ellipse (45pt and 57pt);
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.70,-0.32) ellipse (40pt and 52pt);
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.59,-0.46) ellipse (35pt and 47pt);
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.08] (-0.5,-0.6) ellipse (30pt and 42pt);
+
+\end{scope}
+\end{pgfonlayer}
+
+% draw an ellipse for causal state - clip because of inexact alignment
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+\draw[draw=black!60, semithick] (-0.84,0) ellipse (50pt and 62pt);
+\end{scope}
+
+\node[venn, minimum size = 0, inner sep = 0] at (0.14,1.4) [pin={0:$H[X_{-3}^3]$}] {};
+
+
+% H[S] - use fake node to make pin label
+\node[venn, minimum size = 0, inner sep = 0] (State) at (-0.85, 2.17) [pin={90:$\Cmu=H[\CausalState]$}] {};
+
+\node at (0, 0.6) {$\EE$};
+\node at (-1.6, 0.6) {$\chi$};
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

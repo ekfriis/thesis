@@ -1,0 +1,199 @@
+% [ USER VARIABLES ]
+
+\def\PHDTITLE {Extensions of the Theory of Computational Mechanics}
+\def\PHDAUTHOR{John Ries Mahoney, III}
+\def\PHDSCHOOL{University of California, Davis}
+
+\def\PHDMONTH {June}
+\def\PHDYEAR  {2010}
+\def\PHDDEPT {Physics}
+
+\def\BSSCHOOL {University of California at Chico}
+\def\BSYEAR   {2001}
+
+\def\PHDCOMMITTEEA{Professor James P. Crutchfield}
+\def\PHDCOMMITTEEB{Professor Raissa D'Souza}
+\def\PHDCOMMITTEEC{Professor Gergely Zimanyi}
+
+% [ GLOBAL SETUP ]
+
+\documentclass[letterpaper,oneside,11pt]{report}
+
+\usepackage{calc}
+\usepackage{breakcites}
+\usepackage[newcommands]{ragged2e}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning} % [right=of ...]
+\usetikzlibrary{fit} % [fit= ...]
+
+\pgfdeclarelayer{background layer}
+\pgfdeclarelayer{foreground layer}
+\pgfsetlayers{background layer,main,foreground layer}
+
+\newenvironment{wrap}{\noindent\begin{minipage}[t]{\linewidth}\vspace{-0.5\normalbaselineskip}\centering}{\vspace{0.5\normalbaselineskip}\end{minipage}}
+
+%% [Venn diagram environment]
+%\newenvironment{venn2}
+%{\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+%% define a new style 'venn'
+%venn/.style={circle, draw=black!60, semithick, minimum size = 4cm}]
+%
+%% create circle and give it external (pin) label
+%\node[venn] (X) at (-1,0) [pin={150:$H[X]$}] {};
+%\node[venn] (Y) at (1,0) [pin={30:$H[Y]$}] {};
+%
+%% place labels of the atoms by hand
+%\node at (-1.9,0) {$H[X|Y]$};
+%\node at (1.9,0) {$H[Y|X]$};
+%\node at (0,0) {$I[X;Y]$};}
+%{\end{tikzpicture}}
+
+\newcommand{\wrapmath}[1]{\begin{wrap}\begin{tikzpicture}[every node/.style={inner ysep=0ex, inner xsep=0em}]\node[] {$\displaystyle\begin{aligned} #1\end{aligned}$};\end{tikzpicture}\end{wrap}}
+
+\renewenvironment{abstract}{\chapter*{Abstract}}{}
+\renewcommand{\bibname}{Bibliography}
+\renewcommand{\contentsname}{Table of Contents}
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{\textsc{#1}}
+\makeatother
+
+% [ FONT SETTINGS ]
+
+\usepackage[tbtags, intlimits, namelimits]{amsmath}
+\usepackage[adobe-utopia]{mathdesign}
+
+\DeclareSymbolFont{pazomath}{OMS}{zplm}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{pazomath}
+\SetMathAlphabet\mathcal{bold}{OMS}{zplm}{b}{n}
+
+\SetSymbolFont{largesymbols}{normal}{OMX}{zplm}{m}{n}
+\SetSymbolFont{largesymbols}{bold}{OMX}{zplm}{m}{n}
+\SetSymbolFont{symbols}{normal}{OMS}{zplm}{m}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{zplm}{b}{n}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{fvm}
+
+\widowpenalty 8000
+\clubpenalty  8000
+
+% [ PAGE LAYOUT ]
+\usepackage{geometry}
+\geometry{lmargin = 1.5in}
+\geometry{rmargin = 1.0in}
+\geometry{tmargin = 1.0in}
+\geometry{bmargin = 1.0in}
+
+% [ PDF SETTINGS ]
+
+\usepackage[final]{hyperref}
+\hypersetup{breaklinks  = true}
+\hypersetup{colorlinks  = true}
+\hypersetup{linktocpage = false}
+\hypersetup{linkcolor   = blue}
+\hypersetup{citecolor   = green}
+\hypersetup{urlcolor    = black}
+\hypersetup{plainpages  = false}
+\hypersetup{pageanchor  = true}
+\hypersetup{pdfauthor   = {\PHDAUTHOR}}
+\hypersetup{pdftitle    = {\PHDTITLE}}
+\hypersetup{pdfsubject  = {Dissertation, \PHDSCHOOL}}
+\urlstyle{same}
+
+% [ LETTER SPACING ]
+
+\usepackage[final]{microtype}
+\microtypesetup{protrusion=compatibility}
+\microtypesetup{expansion=false}
+
+\newcommand{\upper}[1]{\MakeUppercase{#1}}
+\let\lsscshape\scshape
+
+\ifcase\pdfoutput\else\microtypesetup{letterspace=15}
+\renewcommand{\scshape}{\lsscshape\lsstyle}
+\renewcommand{\upper}[1]{\textls[50]{\MakeUppercase{#1}}}\fi
+
+% [ LINE SPACING ]
+
+\usepackage[doublespacing]{setspace}
+\renewcommand{\displayskipstretch}{0.0}
+
+\setlength{\parskip   }{0em}
+\setlength{\parindent }{2em}
+
+% [ TABLE FORMATTING ]
+
+\usepackage{booktabs}
+\setlength{\heavyrulewidth}{1.5\arrayrulewidth}
+\setlength{\lightrulewidth}{1.0\arrayrulewidth}
+\setlength{\doublerulesep }{2.0\arrayrulewidth}
+
+% [ SECTION FORMATTING ]
+
+\usepackage[largestsep,nobottomtitles*]{titlesec}
+\renewcommand{\bottomtitlespace}{0.75in}
+
+\titleformat{\chapter}[display]{\bfseries\huge\singlespacing}{\filleft\textsc{\LARGE \chaptertitlename\ \thechapter}}{-0.2ex}{\titlerule[3pt]\vspace{0.2ex}}[]
+
+\titleformat{\section}{\LARGE}{\S\thesection\hspace{0.5em}}{0ex}{}
+\titleformat{\subsection}{\Large}{\S\thesubsection\hspace{0.5em}}{0ex}{}
+\titleformat{\subsubsection}{\large}{\thesubsubsection\hspace{0.5em}}{0ex}{}
+
+\titlespacing*{\chapter}{0em}{6ex}{4ex plus 2ex minus 0ex}
+\titlespacing*{\section}{0em}{2ex plus 3ex minus 1ex}{0.5ex plus 0.5ex minus 0.5ex}
+\titlespacing*{\subsection}{0ex}{2ex plus 3ex minus 1ex}{0ex}
+\titlespacing*{\subsubsection}{0ex}{2ex plus 0ex minus 1ex}{0ex}
+
+% [ HEADER SETTINGS ]
+
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{\normalbaselineskip}
+\setlength{\footskip  }{0.5in}
+\setlength{\headsep   }{0.5in-\headheight}
+
+\fancyheadoffset[R]{0.5in}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\pagebox}{\parbox[r][\headheight][t]{0.5in}{\hspace\fill\thepage}}
+
+\newcommand{\prelimheaders}{\ifx\prelim\undefined\renewcommand{\thepage}{\textit{\roman{page}}}\fancypagestyle{plain}{\fancyhf{}\fancyfoot[L]{\makebox[\textwidth-0.5in]{\thepage}}}\pagestyle{plain}\def\prelim{}\fi}
+
+\newcommand{\normalheaders}{\renewcommand{\thepage}{\arabic{page}}\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\pagebox}}\pagestyle{plain}}
+
+\normalheaders{}
+
+% [ CUSTOM COMMANDS ]
+
+\newcommand{\signaturebox}[1]{\multicolumn{1}{p{4in}}{\vspace{3ex}}\\\midrule #1\\}
+
+\input{../includes/cmechabbrev}
+
+% [some math stuff - maybe stick in sep file]
+\usepackage{amsthm}
+\usepackage{amscd}
+\theoremstyle{plain}    \newtheorem{Lem}{Lemma}
+\theoremstyle{plain}    \newtheorem*{ProLem}{Proof}
+\theoremstyle{plain} 	\newtheorem{Cor}{Corollary}
+\theoremstyle{plain} 	\newtheorem*{ProCor}{Proof}
+\theoremstyle{plain} 	\newtheorem{The}{Theorem}
+\theoremstyle{plain} 	\newtheorem*{ProThe}{Proof}
+\theoremstyle{plain} 	\newtheorem{Prop}{Proposition}
+\theoremstyle{plain} 	\newtheorem*{ProProp}{Proof}
+\theoremstyle{plain} 	\newtheorem*{Conj}{Conjecture}
+\theoremstyle{plain}	\newtheorem*{Rem}{Remark}
+\theoremstyle{plain}	\newtheorem*{Def}{Definition} 
+\theoremstyle{plain}	\newtheorem*{Not}{Notation}
+
+% [uniform figure scaling - maybe this is not a good idea]
+\def\figscale{.7}
+\def\lscale{1.0}
+
+% [FIX ME! - red makes it easier to spot]
+\newcommand{\FIX}[1]{\textbf{\textcolor{red}{#1}}}

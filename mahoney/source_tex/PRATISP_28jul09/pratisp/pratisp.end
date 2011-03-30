@@ -1,0 +1,7 @@
+\@doendnote{endnote33}{Throughout, we follow the notation and definitions of Refs.\protect \nobreakspace  {}\cite {Cove06a,Crut98d}. In addition, when we say $\protect \Future $, for example, this should be interpreted as a shorthand for using $\protect \Future ^L$ and then taking an appropriate limit, such as $\protect \qopname  \relax m{lim}_{L \rightarrow \infty }$ or $\protect \qopname  \relax m{lim}_{L \rightarrow \infty } 1/L$.}
+\@doendnote{endnote34}{See Ref.\protect \nobreakspace  {}\cite {Ay05a} for a measure-theoretic discussion.}
+\@doendnote{endnote35}{A process's causal states consist of both transient and recurrent states. To simplify the presentation, we henceforth refer \protect \emph  {only} to recurrent causal states that are discrete.}
+\@doendnote{endnote36}{Following terminology in computation theory this is referred to as \protect \emph  {determinism}\protect \nobreakspace  {}\cite {Hopc79}. However, to reduce confusion, here we adopt the practice in information theory to call it the \protect \emph  {unifilarity} of a process's representation\protect \nobreakspace  {}\cite {Ephr02a}.}
+\@doendnote{endnote37}{Specifically, each transition matrix $T^{(x)}$ has, at most, one nonzero component in each row.}
+\@doendnote{endnote38}{Interpret the symbol $\pm $ as ``plus \protect \emph  {and} minus''.}
+\@doendnote{endnote39}{This calculation gives the probability of transitioning from a transient causal state to a recurrent causal state on seeing $1$.}

@@ -1,0 +1,32 @@
+\ifx\master\undefined\input{../settings/autocompile}\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Commentary on information measures}
+\label{app:commentary}
+
+\section{Entropy rate for bicyclists}
+
+We imagine the following scenario\footnote{This is not intended as an affront to bicyclists or their intelligences. Nor is it implying that the following is particularly non-pedestrian.}---one not so far-fetched for a place such as Davis, CA:
+
+A graduate student, G, new to Davis, is bicycling around town in an effort to get to know the place. G was never accused of overly developed spatial skills, but is, however, a diligent note-taker. Upon reaching each intersection, G stops and takes note of whether she decides to continue on straight (S), turn left (L), or turn right (R). If she were to begin again at the same place, she could reproduce her exact path through town by going from intersection to intersection and following the next instruction---S, R, S, S, L, etc.
+
+At first, exploration is quite unpatterned. G has a very poor sense for city planning, so chooses from the possibilities \{S, A, R\} equally. The probability distribution over the choices at each intersection is uniform: \{$\frac{1}{3}, \frac{1}{3}, \frac{1}{3}$\}.
+
+A typical bike ride that crosses 30 intersections would look like:
+\begin{verbatim}
+L,S,S,R,S,S,S,L,L,S,L,R,R,R,R,L,R,L,R,L,S,L,L,S,R,R,L,L,S,S
+\end{verbatim}
+
+Now imagine that G begins to learn her way around town and, desiring to go someplace in particular, will do so in a more or less direct manner. This will have some obvious manifestations in her notes. For instance, we are very unlikely to see L,L,L,L and much more likely to see long strings of Ss.
+
+To make the case easier to analyze, let's suppose that she now knows the city grid well enough to never make even two consecutive lefts or rights.
+
+Maybe one of her rides looks like:
+\begin{verbatim}
+S,R,S,S,L,S,S,S,S,S,S,S,S,S,L,S,S,S,S,S,S,S,L,S,S,S,S,S,S,S
+\end{verbatim}
+
+\section{Statistical Complexity for ...}
+
+\ifx\master\undefined\input{../settings/autocompile}\fi

@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+% define a new style 'venn'
+venn/.style={circle, draw=black!60, semithick, minimum size = 5cm}]
+
+% excess entropy
+\begin{pgfonlayer}{background}
+\clip (180:1.6) circle (2.5cm);
+\fill[green!30] (0:1.6) circle (2.5cm);
+\end{pgfonlayer}
+
+% crypticity
+\begin{pgfonlayer}{background}
+\begin{scope}[even odd rule]
+\fill[fill=orange!30, semithick] (-0.85,0) ellipse (50pt and 62pt) (0:1.6) circle (2.5cm);
+\end{scope}
+\end{pgfonlayer}
+
+% create circle and give it external (pin) label
+\node[venn] (Past) at (180:1.6) [pin={150:$H[\Past]$}] {};
+\node[venn] (Future) at (0:1.6) [pin={30:$H[\Future]$}] {};
+
+% series of circles representing foliation of past
+\begin{pgfonlayer}{background}
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.1] (-3.8,-1.3 ) ..controls (-4.0,1.5) and (-2.1, 2.5)  .. (-1.6,2.5) arc (90:45:2.5cm) -- (2,0) -- (2,-5) -- (-5,-5) -- cycle;
+
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.1] (-3.6,-1.5 ) ..controls (-3,2.8) and (-0.8,2.6) .. (0,1.92) .. controls (0.5,1.5) and (-0.5,0.5) .. (0.85,0.5) -- (2,0) -- (2,-5) -- (-5,-5) -- cycle;
+
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.1] (-3.2,-2) ..controls (-3,2.8) and (-0.8,2.5) .. (0,1.92)  .. controls (0.5,1.5) and (-1.4,0.1) .. (0.85,-0.5) -- (3,0) -- (3,-5) -- (-3,-5) --   cycle;
+
+\foreach \up in {0}{
+\filldraw[draw=black!60, semithick, fill=blue, fill opacity=0.1] (-4,-4+\up) .. controls (-2,-2+\up) and (-1,0+\up) ..  (2,-1+\up) -- (3,0) -- (3,-5) -- (-3,-5) --   cycle;
+}
+\end{scope}
+\end{pgfonlayer}
+
+% draw an ellipse for causal state - clip because of inexact alignment
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+\draw[draw=black!60, semithick] (-0.84,0) ellipse (50pt and 62pt);
+\end{scope}
+
+\node[venn, minimum size = 0, inner sep = 0] at (-3.04, -0.4) [pin={0:$H[X_{-2}^2]$}] {};
+
+\node[venn, minimum size = 0, inner sep = 0] at (-0.2, 0.1) [pin={0:$H[X_{-2}^2]$}] {};
+
+\foreach \N in {1}{
+\node[venn, minimum size = 0, inner sep = 0] at (-1.4, -2.4 + \N) [pin={180:$H[X_{-\N}^\N]$}] {};
+}
+
+\node[venn, minimum size = 0, inner sep = 0] at (-3.5,-0.9) [pin={180:$H[X_{-3}^3]$}] {};
+\node[venn, minimum size = 0, inner sep = 0] at (0.14,1.4) [pin={0:$H[X_{-3}^3]$}] {};
+\node[venn, minimum size = 0, inner sep = 0] at (-3.7,0.1) [pin={180:$H[X_{-4}^4]$}] {};
+
+
+% use fake node to make pin label
+\node[venn, minimum size = 0, inner sep = 0] (State) at (-0.85, 2.17) [pin={90:$\Cmu=H[\CausalState]$}] {};
+
+\node at (0, 0.6) {$\EE$};;
+\node at (-1.6, 0.6) {$\chi$};
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

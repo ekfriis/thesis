@@ -1,0 +1,71 @@
+%% Script to create RIP.pdf
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}(2,-4.5)(13.5,11)
+\LargeState
+
+% labels
+\rput(3,10){(a) $\FutureEM$}
+\rput(7.5,10){(b) $\PastEM$}
+\rput(3,4.5){(c) $\BiEM$}
+
+% M+
+\State[A]{(4.5,10)}{A}
+\State[B]{(3,6.5)}{B}
+\State[C]{(6,6.5)}{C}
+\ArcR[.5]{A}{B}{1/2|0}
+\ArcL[.5]{A}{C}{1/2|1}
+\ArcR[.5]{B}{C}{\StackTwoLabels{1/2|0}{1/2|1}}
+\ArcL[.5]{C}{A}{1|1}
+%%% general
+%\ArcR[.5]{A}{B}{p|0}
+%\ArcL[.5]{A}{C}{1-p|1}
+%\ArcR[.5]{B}{C}{\StackTwoLabels{q|0}{1-q|1}}
+%\ArcL[.5]{C}{A}{1|1}
+
+% M-
+\State[D]{(9,10)}{A}
+\State[E]{(12,10)}{B}
+\State[F]{(9,6.5)}{C}
+\State[G]{(12,6.5)}{D}
+\ArcL[.5]{A}{B}{3/4|1}
+\ArcL[.5]{B}{A}{2/3|1}
+\ArcR[.5]{A}{C}{1/4|0}
+\ArcR[.5]{C}{D}{1|0}
+\ArcL[.5]{B}{D}{1/3|0}
+\EdgeL[.5]{D}{A}{1|1}
+
+% M +-
+\State[BF]{(9,-3.5)}{BF}
+\State[BE]{(9,4.5)}{BE}
+\State[CD]{(6,0.5)}{CD}
+\State[AG]{(12,0.5)}{AG}
+\State[AE]{(3,0.5)}{AE}
+\ArcL[.5]{CD}{AE}{\StackTwoLabels{+|1/2|1}{-|1/2|1}}
+\ArcL[.5]{AE}{CD}{\StackTwoLabels{+|1|1}{-|1|1}}
+\EdgeL[.5]{BF}{AG}{-|1|0}
+\ArcL[.5]{AG}{BF}{+|1/2|0}
+\ArcL[.5]{BF}{CD}{+|1|0}
+\EdgeL[.5]{CD}{BF}{-|1/4|0}
+\ArcL[.5]{AG}{CD}{-|1|1}
+\ArcL[.5]{BE}{AG}{-|1|0}
+\EdgeL[.5]{AG}{BE}{+|1/2|0}
+\ArcL[.5]{CD}{AG}{+|1/2|1}
+\EdgeL[.5]{BE}{CD}{+|1|1}
+\ArcL[.5]{CD}{BE}{-|1/4|1}
+\end{VCPicture}
+\end{preview}
+\end{document}

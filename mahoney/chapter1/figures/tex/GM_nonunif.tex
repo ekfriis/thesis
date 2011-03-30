@@ -1,0 +1,29 @@
+%% Script to create GMP.pdf
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[pstricks1-10]{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgStateFillStatus{none}
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}{(2.75,8)(9.6,10)}
+\LargeState
+% M+
+\State[A]{(5,9)}{A}
+\State[B]{(9,9)}{B}
+\ReverseArrow
+\CLoopW[.5]{A}{p|1}
+\StraightArrow
+\ArcL[.5]{A}{B}{1-p|1}
+\ArcL[.5]{B}{A}{1|0}
+
+\end{VCPicture}
+\end{preview}
+\end{document}

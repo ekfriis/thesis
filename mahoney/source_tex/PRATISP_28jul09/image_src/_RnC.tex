@@ -1,0 +1,60 @@
+%% Script to create EvenProcess.pdf
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}(0,0)(10.5,11.5)
+% labels
+%\rput(.5,10){(a)}
+%\rput(.5,7.5){(b)}
+%\rput(.5,4.5){(c)}
+\rput(.9,10.5){(a) $\FutureEM$}
+\rput(.9,6.5){(b) $\widetilde{M}^+$}
+\rput(.9,2.5){(c) $\PastEM$}
+\LargeState
+
+% M+
+\State[A]{(5,10)}{A}
+\State[B]{(1,9)}{B}
+\State[C]{(9,9)}{C}
+\ArcL[.5]{A}{B}{p|0}
+\ArcR[.5]{A}{C}{1-p|1}
+\ArcL[.5]{B}{A}{1|0}
+\ArcR[.5]{C}{A}{\StackTwoLabels{q|0}{1-q|1}}
+
+% tilde M+
+\State[A]{(5,6)}{A}
+\State[B]{(1,5)}{B}
+\State[C]{(9,5)}{C}
+\ReverseArrow
+\ArcL[.5]{A}{B}{1|0}
+\ArcR[.5]{A}{C}{1|1}
+\ArcL[.5]{B}{A}{p|0}
+\ArcR[.5]{C}{A}{\StackTwoLabels{q(1-p)|0}{(1-q)(1-p)|1}}
+\StraightArrow
+
+% MSP tilde M+
+\StateVar[D]{(5,2)}{D}
+\StateVar[E]{(1,1)}{E}
+\StateVar[F]{(9,1)}{F}
+\ArcL[.5]{D}{E}{(1-p)(1-q)|1}
+\ArcR[.5]{D}{F}{p+q(1-p)|0}
+\ArcL[.5]{E}{D}{1|1}
+\ArcR[.5]{F}{D}{\StackTwoLabels
+                {\frac{p}{p+q(1-p)}|0}
+                {\frac{q(1-p)}{p+q(1-p)}|1}               
+               }
+\end{VCPicture}
+\end{preview}
+\end{document}

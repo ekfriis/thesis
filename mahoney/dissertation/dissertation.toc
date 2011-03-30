@@ -1,0 +1,66 @@
+\contentsline {chapter}{\numberline {1}Computational Mechanics}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Philosophy}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}\unhbox \voidb@x \hbox {$\epsilon $-machine}\ Prelude}{2}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Our Domain: Processes}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}\unhbox \voidb@x \hbox {$\epsilon $-machines}}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}First Examples}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}IID}{8}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Entropy and Entropy Rate}{8}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Statistical Complexity}{13}{section.1.5}
+\contentsline {section}{\numberline {1.6}Excess Entropy}{15}{section.1.6}
+\contentsline {section}{\numberline {1.7}Estimation of Excess Entropy}{19}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Example of Sharp Convergence : Order-3 Markov}{19}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Example of Slow Convergence : Even Process}{20}{subsection.1.7.2}
+\contentsline {section}{\numberline {1.8}Crypticity and Cryptic Order}{24}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Crypticity}{24}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Cryptic Order}{25}{subsection.1.8.2}
+\contentsline {chapter}{\numberline {2}Prediction, Retrodiction and the Amount of Information Stored in the Present}{29}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{29}{section.2.1}
+\contentsline {section}{\numberline {2.2}Retrodiction}{30}{section.2.2}
+\contentsline {section}{\numberline {2.3}Excess Entropy from Causal States}{32}{section.2.3}
+\contentsline {section}{\numberline {2.4}The Bidirectional Machine}{37}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Upper Bounds}{39}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Causal Irreversibility}{39}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Process Crypticity}{41}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Alternative Presentations}{42}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Time-Reversed Presentation}{43}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Mixed-State Presentation}{44}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Calculating Excess Entropy}{45}{section.2.6}
+\contentsline {section}{\numberline {2.7}Calculational Example}{47}{section.2.7}
+\contentsline {section}{\numberline {2.8}Examples}{51}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Even Process}{51}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Golden Mean Process}{54}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Random Insertion Process}{58}{subsection.2.8.3}
+\contentsline {section}{\numberline {2.9}Conclusions}{60}{section.2.9}
+\contentsline {chapter}{\numberline {3}Information Accessibility and Cryptic Processes}{64}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{64}{section.3.1}
+\contentsline {section}{\numberline {3.2}k-Crypticity}{66}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The $k$-Cryptic Expansion}{67}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Convergence}{69}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Excess Entropy for $k$-Cryptic Processes}{72}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Crypticity of Spin Chains}{74}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Examples}{75}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Even Process: $0$-Cryptic}{76}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Golden Mean Process: $1$-Cryptic}{77}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Butterfly Process: $2$-Cryptic}{78}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Restricted Golden Mean: $k$-Cryptic}{80}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Stretched Golden Mean}{81}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Nemo Process: $\infty $-Cryptic}{82}{subsection.3.3.6}
+\contentsline {section}{\numberline {3.4}Conclusion}{87}{section.3.4}
+\contentsline {chapter}{\numberline {4}Information Accessibility and Cryptic Processes: Linear Combinations of Causal States}{89}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{89}{section.4.1}
+\contentsline {section}{\numberline {4.2}Butterfly Process}{90}{section.4.2}
+\contentsline {section}{\numberline {4.3}Restricted Golden Mean Process}{92}{section.4.3}
+\contentsline {section}{\numberline {4.4}Nemo Process}{96}{section.4.4}
+\contentsline {section}{\numberline {4.5}Conclusion}{99}{section.4.5}
+\contentsline {chapter}{\numberline {A}Commentary on information measures}{102}{appendix.A}
+\contentsline {section}{\numberline {A.1}Entropy rate for bicyclists}{102}{section.A.1}
+\contentsline {section}{\numberline {A.2}Statistical Complexity for ...}{103}{section.A.2}
+\contentsline {chapter}{\numberline {B}Venn Diagrams and Information Theory}{104}{appendix.B}
+\contentsline {section}{\numberline {B.1}Venn Diagrams and Information Theory}{104}{section.B.1}
+\contentsline {section}{\numberline {B.2}How to read an I-diagram}{105}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Stratification of a Composite Variable}{106}{subsection.B.2.1}
+\contentsline {chapter}{\numberline {C}Proofs}{110}{appendix.C}
+\contentsline {section}{\numberline {C.1}Entropic Independence $\Rightarrow $ Probabilistic Independence}{110}{section.C.1}
+\contentsline {chapter}{\numberline {D}Mixed-State Presentation is Sufficient to Calculate the Switching Maps}{112}{appendix.D}
+\contentsline {chapter}{Bibliography}{114}{section*.8}

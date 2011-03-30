@@ -1,0 +1,436 @@
+# Make a nice illustration of some of the quantities of the RIP
+# over the 2D parameter space with p = Pr(0|A) and q = Pr(0|B)
+
+import numpy as np
+from matplotlib import rc
+import matplotlib.pyplot as plt
+
+green = np.array([64, 150, 47]) / 255.
+lgreen = np.array([214, 255, 178]) / 255.
+
+lblue = np.array([178, 179, 253]) / 255.
+blue = np.array([33, 35, 235]) / 255.
+
+lred = np.array([255, 162, 189]) / 255.
+red = np.array([234, 52, 73]) / 255.
+
+fig_width_pt = 246.0  # \showthe\columnwidth
+fig_width_pt = 510.0  # \showthe\textwidth
+inches_per_pt = 1.0/72.27
+aesthetic = (np.sqrt(5)-1.0)/2.0   # golden mean ratio
+fig_width = fig_width_pt * inches_per_pt
+fig_height = .9 * fig_width
+fig_size = (fig_width, fig_height)
+
+# Set the font
+rc('font',**{'family':'serif','serif':'Computer Modern Roman', \
+             'sans-serif':'Computer Modern Sans Serif', \
+             'monospace':'Computer Modern Typewriter'})
+rc('font', size=10)
+rc('axes', labelsize=10)
+rc('legend', fontsize=10)
+rc('xtick', labelsize=8)
+rc('ytick', labelsize=8)
+rc('text', usetex=True)
+rc('legend', fontsize=8)
+rc('figure', figsize=fig_size)
+
+def H(probs):
+    """calc entropy of this distribution"""
+    total = 0
+    for p in probs:
+        if p != 0:
+            total -= p * np.log2(p)
+    return total
+
+
+def __Cmu_p(p,q):
+    # C_\mu^{+}
+    p,q = float(p), float(q)
+    return H([1./(p+2), p/(p+2), 1./(p+2)])
+
+def __Cmu_m(p,q):
+    # C_\mu^{-}
+    p,q = float(p), float(q)    
+    return H([1./(p+2), (1-p*q)/(p+2), p*q/(p+2), p/(p+2)])
+
+def __Cmu_pm(p,q):
+    # C_\mu^{\pm}
+    p,q = float(p), float(q)
+    return H([(1-p)/(p+2), p/(p+2), p*(1-q)/(p+2), p*q/(p+2), 1.0/(p+2)])
+
+def __E(p,q):
+    # \EE
+    p,q = float(p), float(q)
+    #    ee = np.log2(p+2) - p*np.log2(p)/(p+2)
+    #    ee -= (1-p*q)/(p+2) * H([(1-p)/(1-p*q), 1-(1-p)/(1-p*q)])
+    #    return ee
+    return __Cmu_p(p,q) + __Cmu_m(p,q) - __Cmu_pm(p,q)
+
+def __Chi_p(p,q):
+    # \chi^{+}
+    return __Cmu_p(p,q) - __E(p,q)
+
+def __Chi_m(p,q):
+    # \chi^{-}
+    #    return __Cmu_pm(p,q) - __E(p,q) - __Chi_p(p,q)
+    return __Cmu_m(p,q) - __E(p,q)
+
+def ipplot(prob, fixed='q', axes=None, **kwargs):
+    """Generates information processing diagram for the RIP.
+    
+    Arguments
+    ---------
+    prob : float
+        The fixed probability.
+    fixed : 'q' or 'p'
+        Declaration of which probability parameter is fixed.
+    axes : None
+        The axes receiving the plot. If None, the current axes is used.
+
+    Other Arugments
+    ---------------
+    title : bool
+        If True, then the title is displayed. Default value is True.
+    lines : bool
+        If True, we plot the border lines. Default value is True.
+    rotate : bool
+        If True, we rotate the axes. Default value is False.
+
+    """
+    if axes is None:
+        axes = plt.gca()
+
+    title = kwargs.get('title', True)
+    lines = kwargs.get('lines', True)
+    rotate = kwargs.get('rotate', False)
+
+    hack = kwargs.get('hack', False)
+   
+    # lists
+    probs = np.linspace(0.001,0.999,100)
+    E = np.zeros(len(probs))
+    Cmu_p = np.zeros(len(probs))
+    Cmu_pm = np.zeros(len(probs))
+    Chi_p = np.zeros(len(probs))
+    Chi_m = np.zeros(len(probs))
+
+    
+
+    for i,_prob in enumerate(probs):
+        if prob >= 0:
+            if fixed == 'q':
+                p,q = _prob, prob
+            else:
+                p,q = prob, _prob
+        elif prob == -1:
+            # special key for p=q
+            p,q = _prob, _prob
+        elif prob == -2:
+            p,q = _prob, 1-_prob
+        else:
+            raise Exception('bad prob value')
+        E[i] = __E(p,q)
+        Cmu_p[i] = __Cmu_p(p,q)
+        Cmu_pm[i] = __Cmu_pm(p,q)
+        Chi_p[i] = __Chi_p(p,q)
+        Chi_m[i] = __Chi_m(p,q)
+
+    alpha = .3
+    edgecolor='None'
+    if not rotate:
+#        f1 = axes.fill_between(probs, E/2.0+Chi_m, E/2.0, color=(0,0,1), alpha=alpha, edgecolor=edgecolor)
+#        f2 = axes.fill_between(probs, E/2.0, -E/2.0, color=(0,1,0), alpha=alpha, edgecolor=edgecolor)
+#        f3 = axes.fill_between(probs, -E/2.0, -E/2.0 - Chi_p, color=(1,0,0), alpha=alpha, edgecolor=edgecolor)
+        alpha = 1
+        f1 = axes.fill_between(probs, E/2.0+Chi_m, E/2.0, color=lblue, alpha=alpha, edgecolor=edgecolor)
+        f2 = axes.fill_between(probs, E/2.0, -E/2.0, color=lgreen, alpha=alpha, edgecolor=edgecolor)
+        f3 = axes.fill_between(probs, -E/2.0, -E/2.0 - Chi_p, color=lred, alpha=alpha, edgecolor=edgecolor)
+
+    else:
+        f1 = axes.fill_betweenx(probs, E/2.0 + Chi_m, E/2.0, color=(0,0,1), alpha=alpha, edgecolor=edgecolor)
+        f2 = axes.fill_betweenx(probs, E/2.0, -E/2.0, color=(0,1,0), alpha=alpha, edgecolor=edgecolor)
+        f3 = axes.fill_betweenx(probs, -E/2.0, -E/2.0 - Chi_p, color=(1,0,0), alpha=alpha, edgecolor=edgecolor)
+
+    if lines:
+        if not rotate:
+            a, = axes.plot(probs, E/2.0+Chi_m, 'b', linewidth=2, label=r'$C_\mu^{\pm}$',alpha=.8)
+            b, = axes.plot(probs, E/2.0, 'g', linewidth=2, label=r'$C_\mu^+$', alpha=.8)
+            b, = axes.plot(probs, -E/2.0, 'g', linewidth=2, label=r'$C_\mu^+$', alpha=.8)
+            c, = axes.plot(probs, -E/2.0 - Chi_p, 'r', linewidth=2, label=r'$\chi^+$', alpha=.8)
+        else:
+            a, = axes.plot(E/2.0 + Chi_m, probs, 'b', linewidth=2, label=r'$C_\mu^{\pm}$',alpha=.8)
+            b, = axes.plot(E/2.0, probs, 'g', linewidth=2, label=r'$C_\mu^+$', alpha=.8)
+            b, = axes.plot(-E/2.0, probs, 'g', linewidth=2, label=r'$C_\mu^+$', alpha=.8)
+            c, = axes.plot(-E/2.0 - Chi_p, probs, 'r', linewidth=2, label=r'$\chi^+$', alpha=.8)
+
+    if title:
+        plt.title('RIP Information Processing', fontsize=10)
+
+    if prob >= 0:
+        if fixed == 'q':
+            label = 'p'
+        else:
+            label = 'q'
+    elif prob == -1:
+        label = 'p=q'
+    elif prob == -2:
+        label = 'p = 1-q'
+    else:
+        raise Exception('bad prob value')
+    if rotate:
+        plt.ylabel(r"$%s$" % label, rotation='horizontal')
+    else:
+        plt.xlabel(r"$%s$" % label)
+
+    if rotate:
+        axes.set_xticklabels([])
+    else:
+        axes.set_yticklabels([])
+    
+    if fixed == 'q':
+        const = r'$q = %s$' % prob
+    else:
+        const = r'$p = %s$' % prob
+
+    if prob >= 0:
+        plt.text(.04,.9, const, fontsize=8, transform=axes.transAxes)
+
+    if hack:
+        y = (E[50]/2.0 + Chi_m[50]/2.0)
+        plt.text(.5, y, r'$\chi^-$', horizontalalignment='left',
+                                     verticalalignment='center')
+
+        y = 0
+        plt.text(.5,y, r'$\mathbf{E}$',  horizontalalignment='left',
+                                     verticalalignment='center')
+        y = (-E[50]/2.0 - Chi_p[50]/2.0)
+        plt.text(.5,y, r'$\chi^+$', horizontalalignment='left',
+                                     verticalalignment='center')
+        
+        idx = hack
+        x = [probs[idx]]*2
+        y = [-E[idx]/2.0 - Chi_p[idx], -E[idx]/2.0]
+#        axes.plot(x,y, 'r', alpha=.8, linewidth=2)
+        axes.plot(x,y, color=red, alpha=1, linewidth=2)
+        x = [probs[idx]]*2
+        y = [-E[idx]/2.0, E[idx]/2.0]
+#        axes.plot(x,y, 'g', alpha=.8, linewidth=2)
+        axes.plot(x,y, color=green, alpha=1, linewidth=2)
+
+        x = [probs[idx]]*2
+        y = [E[idx]/2.0, E[idx]/2.0 + Chi_m[idx]]
+#        axes.plot(x,y, 'b', alpha=.8, linewidth=2)
+        axes.plot(x,y, color=blue, alpha=1, linewidth=2)
+
+
+    """
+    # black and white
+    if lines:
+        a.set_linestyle('-')
+        a.set_color('k')
+        b.set_linestyle('--')
+        b.set_color('k')
+        c.set_linestyle(':')
+        c.set_color('k')
+
+    f1.set_color('.5')
+    f2.set_color('.9')
+    f3.set_color('.1')
+
+    f.savefig('ripip_bw.pdf')
+    """
+
+def plots1():
+
+    axes = []
+
+    axes.append(plt.subplot(331))
+    ipplot(-1, axes=axes[-1], lines=False, title=False)
+
+    axes.append(plt.subplot(332))
+    ipplot(.99, axes=axes[-1], fixed='q', lines=False, title=False)
+
+    axes.append(plt.subplot(333))
+    ipplot(.5, axes=axes[-1], fixed='q', lines=False, title=False)
+
+    axes.append(plt.subplot(339))
+    ipplot(-2, axes=axes[-1], lines=False, title=False)
+
+    axes.append(plt.subplot(338))
+    ipplot(.01, axes=axes[-1], fixed='q', lines=False, title=False, hack=47)
+
+    ymin, ymax = axes[0].get_ylim()
+    for ax in axes[1:]:
+        ymn, ymx = ax.get_ylim()
+        if ymn < ymin:
+            ymin = ymn
+        if ymx > ymax:
+            ymax = ymx
+
+    rotated = False
+
+    axes.append(plt.subplot(334))
+    ipplot(.01, axes=axes[-1], fixed='p', lines=False, title=False, rotate=rotated)
+
+    axes.append(plt.subplot(336))
+    ipplot(.99, axes=axes[-1], fixed='p', lines=False, title=False, rotate=rotated)
+    axes[-1].set_yticklabels([])
+
+    #xmin, xmax = axes[2].get_xlim()
+    for ax in axes[2:]:
+        if rotated:
+            ymn, ymx = ax.get_xlim()
+        else:
+            ymn, ymx = ax.get_ylim()
+        if ymn < ymin:
+            ymin = ymn
+        if ymx > ymax:
+            ymax = ymx
+
+    for ax in axes[:2]:
+        ax.set_ylim(ymin, ymax)
+    for ax in axes[2:]:
+        if rotated:
+            ax.set_xlim(ymin, ymax)
+        else:
+            ax.set_ylim(ymin, ymax)
+
+    match = True
+    # lines identify portion of parameter space
+    if match and not rotated:
+        ax = plt.subplot(331)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle=':', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(332)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='--', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(333)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle=':', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)       
+
+        ax = plt.subplot(334)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='-', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(336)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='--', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(339)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle=':', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)       
+
+        ax = plt.subplot(338)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='-.', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+    elif match and rotated:
+        ax = plt.subplot(332)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='--', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(334)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot([xlim[0]+.03]*2, ylim, linewidth=2, linestyle='-', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(336)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot([xlim[1]-.04]*2, ylim, linewidth=2, linestyle='--', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+        ax = plt.subplot(338)
+        xlim = ax.get_xlim()
+        ylim = ax.get_ylim()
+        ax.plot(xlim, [ylim[0]+.03]*2, linewidth=2, linestyle='-.', color='k')
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
+
+
+    ax = plt.subplot(335)
+    ax.plot([.01,.01],[0,1], linewidth=2, linestyle='-', color='k', label='non-cryptic, reversible')
+    ax.plot([.99,.99],[0,1], linewidth=2, linestyle='--', color='k', label='semi-cryptic, irreversible')
+    ax.plot([0,1],[.01,.01], linewidth=2, linestyle='-.', color='k', label='cryptic, reversible')
+    ax.plot([0,1],[.5,.5], linewidth=2, linestyle=':', color='k', label='cryptic, irreversible')
+    ax.plot([0,1],[.99,.99], linewidth=2, linestyle='--', color='k', label=None)
+    ax.plot([0,1],[0,1], linewidth=2, linestyle=':', color='k', label=None)
+    ax.plot([0,1],[1,0], linewidth=2, linestyle=':', color='k', label=None)
+    ax.set_clip_on(False)
+    l = ax.legend(loc=(-1.22,-.75), fancybox=True, markerscale=.1)
+    l.set_clip_on(False)
+    ax.set_xlim(0,1)
+    ax.set_ylim(0,1)
+    ax.set_xlabel('$p$')
+    ax.set_ylabel('$q$', rotation='horizontal')
+    #ax.set_xticklabels([])
+    #ax.set_yticklabels([])
+
+
+    ax = plt.subplot(338)
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+    ax = plt.subplot(337)
+    ax.set_axis_off()
+    p, = ax.plot([1.19,1.19],[.5,-.5], 'k')
+    p.set_clip_on(False)
+    p, = ax.plot([1.22,1.2],[.5,.5], 'k')
+    p.set_clip_on(False)
+    p, = ax.plot([1.22,1.2],[-.5,-.5], 'k')
+    p.set_clip_on(False)
+    ax.text(1.15,0, r'$1$ bit', rotation='horizontal', verticalalignment='center', horizontalalignment='right')
+#    ax.set_xlim(xlim)
+#    ax.set_ylim(ylim)
+
+    if rotated:
+        ax.plot([.2,.6],[1.4,1.4], 'k')
+        ax.plot([.2,.2],[1.4,1.42], 'k')
+        ax.plot([.6,.6],[1.4,1.42], 'k')
+        ax.text(.4,1.15, r'$1$ bit', rotation='horizontal', horizontalalignment='center')
+
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
+
+    f = plt.gcf()
+    f.subplots_adjust(wspace=.25, hspace=.25, left=.06, right=.94, bottom=.06, top=.94)
+#    f.text(.5, .95, 'RIP Something Something Title', horizontalalignment='center')
+    f.savefig('ripip.pdf')
+    f.savefig('ripip.eps')
+
+def plots2():
+    ipplot(.5, axes=None, fixed='q', lines=False, title=False, hack=47)
+    f = plt.gcf()
+    f.savefig('ripip.pdf')
+    f.savefig('ripip.eps')
+
+if __name__ == '__main__':
+    plots1()

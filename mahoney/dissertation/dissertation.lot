@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces The above table illustrates that for the Even Process, for any length $N$, there exists a word (all ones) such that prediction based on that word alone is different than prediction based on that word knowing that the previous symbol is 0. Notice that the optimal probabilities, those predicted after the block of ones is begun by a zero, are the same as those predicted by the appropriate induced causal state.}}{22}{table.1.1}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Hidden Process Lattice: The $ {X} $ variables denote the observed process; the $ \mathcal {S} $ variables, the hidden states. If one scans the observed variables in the positive direction---seeing $ {X} _{-3}$, $ {X} _{-2}$, and $ {X} _{-1}$---then that history takes one to causal state $ { \mathcal {S} }^{+} _0$. Analogously, if one scans in the reverse direction, then the succession of variables $ {X} _{2}$, $ {X} _{1}$, and $ {X} _{0}$ leads to $ { \mathcal {S} }^{-} _0$. }}{31}{table.2.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Calculating the time-reversed Butterfly Process's \unhbox \voidb@x \hbox {$\epsilon $-machine}\ via the forward \unhbox \voidb@x \hbox {$\epsilon $-machine}'s mixed states. The $5$-vector denotes the mixed-state distribution $\mu (w)$ reached after having seen the corresponding allowed word $w$. If the word leads to a unique state with probability one, we give instead the state's name. }}{100}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Calculating the reversed RGMP using mixed states over the \unhbox \voidb@x \hbox {$\epsilon $-machine}\ states. }}{101}{table.4.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

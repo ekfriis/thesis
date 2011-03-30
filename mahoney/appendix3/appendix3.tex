@@ -1,0 +1,59 @@
+\ifx\master\undefined\input{../settings/autocompile}\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Proofs}
+\label{app:proofs}
+
+\section{Entropic Independence $\Rightarrow$ Probabilistic Independence}
+
+Show that $H[\CausalState_R | \MeasSymbol_0^R] = 0 \iff$ the process is order-R Markov.
+\begin{align*}
+\Pr(\MeasSymbol_0 \MeasSymbol_1 \MeasSymbol_2 \ldots | \ldots \MeasSymbol_{-3} \MeasSymbol_{-2} \MeasSymbol_{-1}) = 
+\Pr(\MeasSymbol_0 \MeasSymbol_1 \MeasSymbol_2 \ldots | \MeasSymbol_{-R} \ldots \MeasSymbol_{-2} \MeasSymbol_{-1})
+\end{align*}
+First we need a new equivalence relation.
+\begin{align*}
+\ast \meassymbol_{-R}^{R'} \stackrel{R}{\sim} \ast \meassymbol_{-R}^{R''} \iff \Pr(\Future_0 | \meassymbol_{-R}^{R'}) = \Pr(\Future_0 | \meassymbol_{-R}^{R''})
+\end{align*}
+Assume order-R Markov, and show that this relation induces the same partition on histories as the original causal relation.
+\begin{align*}
+\forall \causalstate \in \CausalStateSet, \forall \past', \past'' \in \causalstate, \past' \sim \past''\\
+\iff \Pr(\Future | \past') = \Pr(\Future | \past'')\\
+\iff \Pr(\Future | \meassymbol_{-R}^{R'}) = \Pr(\Future | \meassymbol_{-R}^{R''})\\
+\iff \meassymbol_{-R}^{R'} \stackrel{R}{\sim} \meassymbol_{-R}^{R''}
+\end{align*}
+Thus $H[\CausalState_R | \MeasSymbol_0^R] = 0$.
+
+Assume $H[\CausalState_R | \MeasSymbol_0^R] = 0$.
+Expanding,
+\begin{align*}
+\sum_{w \in \mathcal{A}^R}{\Pr(\MeasSymbol_0^R = w) H[\CausalState_R | \MeasSymbol_0^R = w]} = 0
+\end{align*}
+Since we must only consider words with non-zero probability, we have
+\begin{align*}
+\forall w \in \mathcal{A}^R : \Pr(w)>0, H[\CausalState_R | \MeasSymbol_0^R = w] = 0
+\end{align*}
+In other words, all words of length $R$ induce a causal state. What is left is to show that the causal state induced is the same as any induced by a history ending with that word.\\
+If a word $w$ induces a state, then
+\begin{align*}
+\sum_{i \ldots m}\pi_i T_{ij}^{w_1} T_{jk}^{w_2} \ldots T_{mn}^{w_R}
+\end{align*}
+has only one non-zero entry.
+
+Since $\pi_i \ne 0$ the inside sum
+\begin{align*}
+\sum_{jk \ldots m}T_{ij}^{w_1} T_{jk}^{w_2} \ldots T_{mn}^{w_R} \propto \mathcal{P}_{in}^{\causalstate}
+\end{align*}
+Where $\mathcal{P}_{in}^{\causalstate}$ is a projector onto causal state $\causalstate$.\\
+Assume $sw$ induces a different state
+\begin{align*}
+\sum_{h \ldots m}\pi_h T_{hi}^s T_{ij}^{w_1} T_{jk}^{w_2} \ldots T_{mn}^{w_R}
+\end{align*}
+We can perform the sum $\sum_{h}\pi_h T_{hi}^s$ to get another distribution, $\pi'_i$.\\
+\begin{align*}
+\sum_{i}\pi'_{i} \mathcal{P}_{in}^{\causalstate} = 0, 1
+\end{align*}
+If zero, this is not a valid word. If 1, the projector must project onto the same subspace and thus the same state is induced by this extended word.
+
+\ifx\master\undefined\input{../settings/autocompile}\fi

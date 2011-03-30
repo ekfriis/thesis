@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.5)
+The top-level auxiliary file: tba.aux
+The style file: unsrt.bst
+Database file #1: ref.bib
+Database file #2: chaos.bib
+Warning--I didn't find a database entry for "endnote1"
+Warning--I didn't find a database entry for "endnote2"
+Warning--empty title in Shan49a
+Warning--empty title in Crut01a
+Warning--empty title in CompMechMerge
+Warning--empty title in Shan48a
+Warning--empty title in Fras86a
+Warning--empty title in Crut97a
+Warning--empty title in Erb04a
+Warning--empty title in Tono94a
+Warning--empty title in Bial00a
+Warning--empty title in Ebel94c
+Warning--empty title in Debo08a
+Warning--empty title in Crut91bc
+Warning--empty journal in Crut91bc
+Warning--empty year in Crut91bc
+Warning--empty title in Yeun91a
+You've used 16 entries,
+            1791 wiz_defined-function locations,
+            568 strings with 4990 characters,
+and the built_in function-call counts, 3508 in all, are:
+= -- 325
+> -- 111
+< -- 0
++ -- 44
+- -- 28
+* -- 282
+:= -- 539
+add.period$ -- 35
+call.type$ -- 16
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 145
+empty$ -- 367
+format.name$ -- 28
+if$ -- 759
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 17
+newline$ -- 69
+num.names$ -- 17
+pop$ -- 46
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 51
+stack$ -- 0
+substring$ -- 343
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 15
+while$ -- 38
+width$ -- 18
+write$ -- 150
+(There were 17 warnings)

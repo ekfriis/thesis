@@ -1,0 +1,31 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage[active,tightpage]{preview}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{pspicture}(-.4,0)(12.5,7.7)
+\rput(6,4){\includegraphics[scale=.8]{_IDiagramEMempty}}
+\rput(4,4){\small$H[\FutureCausalState|\PastCausalState]$}
+\rput(8.25,4){$H[\PastCausalState|\FutureCausalState]$}
+\rput(6,4.5){$ \EE = $}
+\rput(6,4){$I[\PastCausalState;\FutureCausalState]$}
+\rput(10.4,4){$H[\Future|\PastCausalState]$}
+\rput(2,4){$H[\Past|\FutureCausalState]$}
+%\rput(4,-.25){\textbf{Prediction}}
+%\rput(8,-.25){\textbf{Retrodiction}}
+\rput(6.2,7.2){$H[\FutureCausalState] = \FutureCmu$}
+\rput(6.2,.57){$H[\PastCausalState] = \PastCmu$}
+\psline[arrows=->,linewidth=.05,arrowsize=.22,arrowlength=.8](5.12,7.3)(5.12,6.43) % top
+\psline[arrows=->,linewidth=.05,arrowsize=.22,arrowlength=.8](7.23,.6)(7.23,1.5) % bottom
+\psline[arrows=->,linewidth=.05,arrowsize=.22,arrowlength=.8](-.1,4)(.77,4)  % left
+\psline[arrows=->,linewidth=.05,arrowsize=.22,arrowlength=.8](12.1,4)(11.23,4) % right
+\rput(.15,3.6){$H[\Past]$}
+\rput(11.93,4.4){$H[\Future]$}
+\end{pspicture}
+\end{preview}
+\end{document}

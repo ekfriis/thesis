@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+\begin{tikzpicture}[every node/.style={inner sep=0pt}]
+\begin{pgfonlayer}{background}
+\node {\includegraphics{../MarkovVsCryptic/MarkovVsCrypticOrderEmpty}};
+\end{pgfonlayer}
+
+\node[scale=0.5] at (-5.0cm,-6.0cm) {\includegraphics{../MarkovVsCryptic/IID}};
+\node[scale=0.5] at (-2.5cm,-4.4cm) {\includegraphics{../MarkovVsCryptic/golden_mean}};
+\node[scale=0.5] at (0.7cm,-2.2cm) {\includegraphics{../MarkovVsCryptic/butterfly}};
+\node[scale=0.5] at (8.3cm,3.8cm) {\includegraphics{../MarkovVsCryptic/nemo}};
+\node[scale=0.5] at (2.2cm,1.8cm) {\includegraphics{../MarkovVsCryptic/restricted}};
+\node[scale=0.5] at (-5.0cm,1.8cm) {\includegraphics{../MarkovVsCryptic/stretched}};
+\node[scale=0.5] at (-7.4cm,0.4cm) {\includegraphics{../MarkovVsCryptic/R0}};
+\node[scale=0.5] at (-6.0cm,5.5cm) {\includegraphics{../MarkovVsCryptic/even}};
+\node[scale=0.5] at (-1.2cm,4.2cm) {\includegraphics{../MarkovVsCryptic/Rk}};
+\end{tikzpicture}
+\end{preview}
+\end{document}

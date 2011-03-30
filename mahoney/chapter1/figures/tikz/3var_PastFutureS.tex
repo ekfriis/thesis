@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usepackage[active,tightpage]{preview}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\input{../../../includes/cmechabbrev}
+
+\begin{document}
+\begin{preview}
+
+% pin refers to the small lines that lead to the external labels
+\begin{tikzpicture} [every pin/.style={text=black, text opacity=1.0, pin distance=0.5cm, pin edge={black!60, semithick}},
+% define a new style 'venn'
+venn/.style={circle, draw=black!60, semithick, minimum size = 5cm}]
+
+% excess entropy
+\begin{pgfonlayer}{background}
+\clip (180:1.6) circle (2.5cm);
+\fill[green!30] (0:1.6) circle (2.5cm);
+\end{pgfonlayer}
+
+% crypticity
+\begin{pgfonlayer}{background}
+\begin{scope}[even odd rule]
+\fill[fill=orange!30, semithick] (-0.85,0) ellipse (50pt and 62pt) (0:1.6) circle (2.5cm);
+\end{scope}
+\end{pgfonlayer}
+
+% create circle and give it external (pin) label
+\node[venn] (Past) at (180:1.6) [pin={150:$H[\Past]$}] {};
+\node[venn] (Future) at (0:1.6) [pin={30:$H[\Future]$}] {};
+
+% draw an ellipse for causal state - clip because of inexact alignment
+\begin{scope}
+\clip (180:1.6) circle (2.5cm);
+\draw[draw=black!60, semithick] (-0.84,0) ellipse (50pt and 62pt);
+\end{scope}
+% use fake node to make pin label
+\node[venn, minimum size = 0, inner sep = 0] (State) at (-0.85, 2.17) [pin={90:$\Cmu=H[\CausalState]$}] {};
+
+% place labels of the atoms by hand
+\node at (-3.1, -1.1) {$H[\Past|\CausalState]$};
+\node at (-2.3, 1.2) {$H[\Past|\Future]$};
+\node at (2.5, 0) {$H[\Future|\CausalState]$};
+
+\node at (-1.7, 0.3) {$\PC=$};
+\node at (-1.7, -0.3) {$H[\CausalState|\Future]$};
+
+\node at (0, 0.6) {$\EE=$};
+\node at (0, 0) {$I[\CausalState;\Future]=$};
+\node at (0, -0.6) {$I[\Past;\Future]$};
+
+\end{tikzpicture}
+\end{preview}
+\end{document}

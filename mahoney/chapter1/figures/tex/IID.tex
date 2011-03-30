@@ -1,0 +1,25 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[pstricks 1-10]{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgStateFillStatus{none}
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}{(-2.2,-0.6)(2.8,0.6)}
+\LargeState
+
+\State[A]{(0,0)}{A}
+\CLoopW[.5]{A}{p|0}
+\CLoopE[.5]{A}{1-p|1}
+
+\end{VCPicture}
+\end{preview}
+\end{document}

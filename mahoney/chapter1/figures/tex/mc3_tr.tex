@@ -1,0 +1,53 @@
+%Name       Markov Chain
+%Type       Forward
+%Label      Topological
+%Full       False
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgStateFillStatus{none}
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}{(-2,-3)(17,3)}
+% labels
+\LargeState
+
+\State[A]{(0,0)}{000}
+\State[B]{(3,1.5)}{100}
+\State[F]{(12,1.5)}{110}
+\State[G]{(15,0)}{111}
+\State[D]{(3,-1.5)}{001}
+\State[C]{(6,0)}{010}
+\State[E]{(9,0)}{101}
+\State[H]{(12,-1.5)}{011}
+\CLoopW[.5]{000}{0}
+\ReverseArrow
+\CLoopE[.5]{111}{1}
+\StraightArrow
+\ArcR[.5]{000}{001}{1}
+\ArcR[.5]{001}{010}{0}
+\ArcR[.5]{001}{011}{1}
+\ArcL[.5]{010}{101}{1}
+\ArcR[.5]{101}{011}{1}
+\ArcR[.5]{111}{110}{0}
+\ArcR[.5]{110}{100}{0}
+\ArcR[.5]{100}{000}{0}
+\ArcR[.5]{110}{101}{1}
+\ArcR[.5]{100}{001}{1}
+\ArcR[.5]{010}{100}{0}
+\ArcL[.5]{101}{010}{0}
+\ArcR[.5]{011}{110}{0}
+\ArcR[.5]{011}{111}{1}
+\end{VCPicture}
+\end{preview}
+\end{document}

@@ -1,0 +1,160 @@
+\ifx\master\undefined\input{../settings/autocompile}\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Mixed-State Presentation is Sufficient to
+Calculate the Switching Maps}
+\label{app:EFromMixedState}
+
+While we conjecture that the mixed-state operation $\MSP(\widetilde{M}^+)$
+yields an $\eM$, this remains an open problem. Our conjecture, however, is
+based on a rather large number of test cases in which it is an \eM.
+Fortunately for our present needs, we can show that
+$\MSP(\widetilde{M}^+)$ is sufficient for
+calculating the conditional probability distribution
+$\Prob(\FutureCausalState | \PastCausalState)$.
+
+For a moment, ignore the details of forward and reverse machines and simply
+consider machines $A$ and $B$ such that $\MSP(A) = B$ where neither $A$ nor $B$ is
+necessarily an $\eM$. We would like to learn the conditional probability
+distribution $\Prob(\AlternateState_A | \AlternateState_B)$, where
+$\AlternateState_A$ and $\AlternateState_B$ are $A$'s and $B$'s states,
+respectively.
+
+\begin{Prop}
+$B$'s states are mixed states of $A$.
+\end{Prop}
+
+\begin{ProProp}
+We use the mixed-state presentation algorithm to form states based on the
+transition matrices of $A$. If a state $\AlternateState_B$ is induced by a
+word $w$, then:
+\begin{align*}
+\AlternateState_B = \frac{\pi_A T_A^{\omega}}{\pi_A T_A^{w} \one} ~.
+\qed
+\end{align*}
+\end{ProProp}
+
+We now show that $B$ is deterministic.
+
+\begin{Prop}
+$H[\AlternateState' | \AlternateState, \MeasSymbol] = 0$ for machine $B$.
+\end{Prop}
+
+\begin{ProProp}
+Although any given state in $B$ will generally be a distribution over states
+in $A$, each of these distributions \emph{defines} a state of $B$. The
+particular state of $B$ (or distribution over states in $A$),
+$\AlternateState'$, that follows $\AlternateState$ and $\MeasSymbol$ can be
+written:
+\begin{align*}
+\AlternateState'_B
+  = \frac{\pi_A T_A^{\omega} T^{\MeasSymbol}}
+    {\pi_A T_A^{\omega} T^{\MeasSymbol} \eta} ~.
+\end{align*}
+So, by construction, $B$ is deterministic.
+\qed
+\end{ProProp}
+
+Moreover, $\AlternateState_B$ is a refinement of $\CausalStateSet_B$.
+
+\begin{Prop}
+Two pasts that induce the same state in $B$ must be pasts in the same
+causal state of $B$'s \eM.
+\end{Prop}
+
+\begin{ProProp}
+The future probability distribution given a word is exactly the future
+probability distribution given the mixed state induced by that word:
+\begin{align*}
+\Prob(\Future | \omega)
+  & = \frac{\pi T^{\omega} T^{\Future}}
+  	{\pi T^{\omega} T^{\Future} \eta}\\
+\Prob(\Future | \mu(\omega))
+  & = \frac{\frac{\pi T^{\omega}}{\pi T^{\omega} \eta} T^{\Future}}
+  	{\frac{\pi T^{\omega} T^{\Future} \eta}{\pi T^{\omega} \eta}}
+  = \frac{\pi T^{\omega} T^{\Future}}{\pi T^{\omega} T^{\Future} \eta}
+\end{align*}
+Therefore, if two words induce the same mixed state, the future probability
+distribution conditioned on those words are the same. This means that those
+words are causally equivalent and thus in the same causal state.
+\qed
+\end{ProProp}
+
+Now we show how, even in this very generic case, we can calculate the relevant
+conditional probability distribution.
+
+The mixed-state construction of $B$ implicitly has given us
+$\Prob(\AlternateState_A | \AlternateState_B)$, which we can use to
+find $\Prob(\AlternateState_A | \CausalState_B)$, our goal:
+\begin{align*}
+\Prob(\AlternateState_A | \CausalState_B)
+  &= \sum_{\AlternateState_B}
+  	\Prob(\AlternateState_A | \CausalState_B, \AlternateState_B)
+	\Prob(\AlternateState_B | \CausalState_B) \\
+  &= \sum_{\AlternateState_B}
+  	\Prob(\AlternateState_A | \AlternateState_B)
+	\Prob(\AlternateState_B | \CausalState_B) \\
+  &= \sum_{\AlternateState_B}
+  	\Prob(\AlternateState_A | \AlternateState_B)
+	\Prob(\CausalState_B | \AlternateState_B)
+	\frac{\Prob(\AlternateState_B)}{\Prob(\CausalState_B)} \\
+  &= \sum_{\AlternateState_B}
+  	\Prob(\AlternateState_A | \AlternateState_B)
+	\delta_{\AlternateState_B \in \CausalState_B}
+	\frac{\Prob(\AlternateState_B)}{\Prob(\CausalState_B)} \\
+  &= \sum_{\AlternateState_B}
+  	\Prob(\AlternateState_A | \AlternateState_B)
+	\frac{\Prob(\AlternateState_B)}{\Prob(\CausalState_{\AlternateState_B})} ~.
+\end{align*}
+The second line follows since $\AlternateStateSet_B$ is a refinement of
+$\CausalStateSet_B$. The third line is an application of Bayes Rule. The
+fourth line follows again from the refinement. The final form reminds us that
+$\CausalStateSet_B$ is not a free variable.
+
+To sum up, we calculate the conditional distribution using this final form as
+follows. The first factor is found by applying $\MSP$ to $A$. Granting
+ourselves the ability to ascertain predictive equality among a finite set of
+states $\AlternateStateSet_B$, we determine if
+$\AlternateState_B \in \CausalState_B$ for each $\AlternateState_B$. Lastly,
+we compute the stationary distribution over the states of $B$ and divide by
+the stationary probability of the corresponding causal state.
+
+In effect, this establishes a general method for computing the conditional
+probability of states from the ``input'' machine given a state of the
+``resultant'' machine. We can now recall the specific context of forward
+and reverse \eMs\ and apply this technique to calculate $\EE$ in the case
+where the resultant machine $\TR(\FutureEM)$ is not an $\eM$.
+
+The input machine is the reversed $\eM$ $\TR(\FutureEM)$, whose states
+$\widetilde{\CausalStateSet}{}^+$ are in one-to-one correspondence with
+$\FutureCausalStateSet$. Thus, the previous result:
+\begin{align*}
+\Prob(\AlternateState_A | \CausalState_B)
+  &= \sum_{\AlternateState_B}
+  {\Prob(\AlternateState_A | \AlternateState_B)
+  \frac{\Prob(\AlternateState_B)}{\Prob(\CausalState_{\AlternateState_B})}}
+\end{align*}
+now becomes:
+\begin{align*}
+\Prob(\CausalState_A | \CausalState_B)
+  &= \sum_{\AlternateState_B}{\Prob(\CausalState_A | \AlternateState_B)
+  \frac{\Prob(\AlternateState_B)}{\Prob(\CausalState_{\AlternateState_B})}}
+\end{align*}
+or, more specifically,
+\begin{align*}
+\Prob(\FutureCausalState | \PastCausalState)
+  &= \sum_{\AlternateState_B}
+  	\Prob(\FutureCausalState | \AlternateState_B)
+	\frac{\Prob(\AlternateState_B)}
+	{\Prob(\PastCausalState_{\AlternateState_B})} ~.
+\end{align*}
+From which we readily calculate $\EE$ using:
+\begin{align*}
+\EE &= I[\FutureCausalState; \PastCausalState] \\
+    &= H[\FutureCausalState] - H[\FutureCausalState | \PastCausalState] ~.
+\end{align*}
+
+
+
+\ifx\master\undefined\input{../settings/autocompile}\fi

@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: pratisp.aux
+The style file: unsrt.bst
+Database file #1: ref.bib
+Database file #2: chaos.bib
+Warning--I didn't find a database entry for "endnote33"
+Warning--I didn't find a database entry for "endnote34"
+Warning--I didn't find a database entry for "endnote35"
+Warning--I didn't find a database entry for "endnote36"
+Warning--I didn't find a database entry for "endnote37"
+Warning--I didn't find a database entry for "endnote38"
+Warning--I didn't find a database entry for "endnote39"
+Warning--empty journal in Feld98b
+Warning--empty title in Ay05a
+You've used 32 entries,
+            1791 wiz_defined-function locations,
+            700 strings with 7966 characters,
+and the built_in function-call counts, 6868 in all, are:
+= -- 653
+> -- 254
+< -- 5
++ -- 97
+- -- 65
+* -- 426
+:= -- 1106
+add.period$ -- 103
+call.type$ -- 32
+change.case$ -- 27
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 322
+empty$ -- 683
+format.name$ -- 65
+if$ -- 1537
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 35
+newline$ -- 166
+num.names$ -- 39
+pop$ -- 76
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 133
+stack$ -- 0
+substring$ -- 439
+swap$ -- 60
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 69
+width$ -- 34
+write$ -- 368
+(There were 9 warnings)

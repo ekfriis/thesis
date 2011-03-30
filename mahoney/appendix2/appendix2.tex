@@ -1,0 +1,127 @@
+\ifx\master\undefined\input{../settings/autocompile}\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Venn Diagrams and Information Theory}
+\label{app:Venn}
+
+\begin{quote}
+\centering
+``The reader will find many figures in this work.\footnote{``The reader will find no figures in this work'' - J. L. Lagrange, M\'{e}canique Analytique, 1888.}''
+\end{quote}
+
+\section{Venn Diagrams and Information Theory}
+
+Venn diagrams used to understand the information theoretic relationships among random variables, or \emph{I-diagrams}, are a crucial member of any information theorist's tool belt (see Fig.~\ref{fig:2var_bare}).
+
+Given a set of random variables, there is a one-to-one mapping from the set of information quantities---entropies, mutual informations, conditional mutual informations---to an I-diagram.
+
+Given that this map is one-to-one, how can I claim that the I-diagram is crucial? Is this not just another redundant representation to learn? The answer is most definitely: No.
+
+As is the general theme of this thesis and the surrounding body of work, \emph{natural} representations are given special status and attention. The I-diagram is not claimed to be natural in the same sense that the \eM\ is. However, the association of random variables with geometric bodies, and their relationships with geometric intersection and occlusion, will \emph{prove itself} to be natural for humans.
+
+Why might this be the case? I claim that this is due to our visual hardware/firmware. We very naturally perceive connected homogeneous regions as objects. We also are skilled at understanding occlusion and how occlusions change as objects move. Then again, for some reason it seemed to take man a rather long time to figure out what the lunar eclipse was.
+
+I submit that the student of information theory \emph{knows} I-diagrams whether or not they have seen one.\footnote{``Before hearing Monge, I did not know that I knew descriptive geometry.'' - J. L. Lagrange, said after a lecture by Gaspard Monge. Monge was the inventer of descriptive geometry. This highly intuitive method is now integral to design and engineering.} Here we seek only to make this knowledge more explicit and to develop a little of the I-diagram calculus.
+
+\section{How to read an I-diagram}
+Each random variable corresponds to one `smooth' object in the diagram. This is not a requirement, but makes visual inspection easier. When possible, we will use circles or ellipses. Certain circumstances will encourage slightly more exotic smooth shapes.
+
+The area of a smooth shape corresponds to the entropy of that random variable, $H[X]$ (see Fig.~\ref{fig:1var_bare}). This is the total uncertainty in the variable $X$. We will loosely refer to these shapes as both random variables and their entropies. The meaning should be clear from context.
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/1var/1var_bare}
+\caption{The simplest I-diagram - one random variable, $X$.}
+\label{fig:1var_bare}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/2var/2var_bare}
+\caption{I-diagram for two random variables, $X$ and $Y$.}
+\label{fig:2var_bare}
+\end{figure}
+
+In an I-diagram involving two random variables, the area of intersection of two random variable shapes, $X, Y$, corresponds to the mutual information between those random variables, $I[X;Y]$ (see Fig.~\ref{fig:2var_IXY}). This is the information that the two random variables share.
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/2var/2var_IXY}
+\caption{The mutual information between $X$ and $Y$ is highlighted.}
+\label{fig:2var_IXY}
+\end{figure}
+
+The area of random variable $X$ that is unoccluded by random variable $Y$ corresponds to the conditional entropy, $H[X|Y]$. This is the uncertainty in $X$ that remains when $Y$ is known.
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/2var/2var_HX_Y}
+\caption{The conditional entropy of $X$ given $Y$ is highlighted.}
+\label{fig:2var_HX_Y}
+\end{figure}
+
+Now consider a three variable I-diagram. What is the uncertainty in $X$ given \emph{both} $Y$ and $Z$? This is notated $H[X|YZ]$ as in Fig.~\ref{fig:3var_HX_YZ}.
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/3var/3var_HX_YZ}
+\caption{The conditional entropy of $X$ given $Y$ and $Z$ is highlighted.}
+\label{fig:3var_HX_YZ}
+\end{figure}
+
+ We can equivalently think of merging $Y$ and $Z$ to form a random variable, $W$, with a larger event space. In this light, our quantity of interest would look like $H[X|W]$. We can think of this graphically quite naturally by considering $W$ as the union of $Y$ and $Z$ (see Fig.~\ref{fig:3var_HX_W}).
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/3var/3var_HX_W}
+\caption{The mutual information of $X$ and joint variable $W$ is highlighted.}
+\label{fig:3var_HX_W}
+\end{figure}
+
+Now considering a three variable I-diagram, the area of intersection between $X$ and $Y$ that is unoccluded by $Z$ is the conditional mutual information, $I[X;Y|Z]$ (see Fig.~\ref{fig:3var_IXY_Z}). This is the information shared by $X$ and $Y$ when $Z$ is known. Adding knowledge about $Z$ can either increase or decrease the (conditioned) mutual information.
+
+From these diagrams, e.g. Fig.~\ref{fig:2var_bare}, we can visually prove such identities as:
+\begin{align*}
+H[X Y] &= H[X|Y] + I[X;Y] + H[Y|X]\\
+I[X;Y] &= H[X] - H[X|Y]
+\end{align*}
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/3var/3var_IXY_Z}
+\caption{The conditional mutual entropy of $X$ and $Y$ given $Z$ is highlighted.}
+\label{fig:3var_IXY_Z}
+\end{figure}
+
+\subsection{Stratification of a Composite Variable}
+Just as more than one random variable can be considered as a composite variable, as in Fig.~\ref{fig:3var_HX_W}, a composite variable can be stratified in a very intuitive way. Consider the set of random variables $\{\MeasSymbol_0, \MeasSymbol_1, \MeasSymbol_2, \MeasSymbol_3, \MeasSymbol_4\}$. The composite random variable $\MeasSymbol_0^5$ can be stratified by the set $\{\MeasSymbol_{0}^{1}, \MeasSymbol_{0}^{2}, \MeasSymbol_{0}^{3}, \MeasSymbol_{0}^{4}, \MeasSymbol_{0}^{5}\}$. These results are generic for any set of `stratifying' variables.
+
+\begin{Def}
+Given a set $\mathbf{X} = \{X_1, \ldots, X_N\}$ for some integer, $N$, a set of subsets of $\mathbf{X}$, $\mathbf{Y}$, is called \emph{stratifying} if a total ordering on $\mathbf{Y}$ is induced by the relation $\subset$.
+\end{Def}
+
+For any such $\mathbf{X}$, we have the stratifying set $\mathbf{Y} = \{\{X_1\}, \{X_1, X_2\}, \ldots, \{X_1, X_2, \ldots, X_N\}\}$.
+
+We can stratify the past random variables of a process as in Fig.~\ref{fig:FoliationPast}.
+
+\begin{figure}[h]
+\centering
+\includegraphics{../appendix2/figures/tikz/FoliationPast}
+\caption{The standard stratification of the conglomerate random variable $\protect \Past$.}
+\label{fig:FoliationPast}
+\end{figure}
+
+That this is true follows straightforwardly from the duality between information measures and set operations demonstrated by \FIX{cite Yeung}.
+
+Additionally, the I-diagram involving a stratified variable and one additional variable has the form in Fig.~\ref{fig:FolationPastAndZ}. To see that this is not a trivial statement, consider the following scenario. Let random variables $X$ and $Y$ each be fair coins. Then let $Z$ be the exclusive-or (XOR) of $X$ and $Y$.  If we were to begin with the I-diagram for just $X$ and $Y$, we would have the following picture.
+\FIX{graphic here}
+
+Then naively `adding' $Z$ to the I-diagram yields the following picture.
+\FIX{graphic here}
+
+This fails to capture the true information theoretic structure. Specifically, it does not capture that $I[X;Y|Z]=1$ or that $I[X;Y;Z]=-1$. The correct picture does not allow for regions to be eliminated before the addition of all variables to the diagram. This is why it is non-trivial to `naturally' add $Z$ to the stratified variable I-diagram.
+ 
+
+
+\ifx\master\undefined\input{../settings/autocompile}\fi

@@ -1,0 +1,52 @@
+%% Script to create EvenProcess.pdf
+
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{vaucanson-g}
+\usepackage[active,tightpage]{preview}
+
+\ChgEdgeLabelScale{.65}
+\ChgStateLabelScale{.75}
+\FixVCScale{1}
+
+\input{cmechabbrev}
+
+\begin{document}
+\begin{preview}
+\begin{VCPicture}(1.25,2)(11.75,10.5)
+% labels
+\rput(2.5,10){(a) $\FutureEM$}
+\rput(2.5,7.5){(b) $\PastEM$}
+\rput(2.5,4.5){(c) $\BiEM$}
+\LargeState
+
+% M+
+\State[A]{(5,9)}{A}
+\State[B]{(9,9)}{B}
+\ReverseArrow
+\CLoopW[.5]{A}{p|0}
+\StraightArrow
+\ArcL[.5]{A}{B}{1-p|1}
+\ArcL[.5]{B}{A}{1|1}
+
+% M-
+\State[C]{(5,6.5)}{C}
+\State[D]{(9,6.5)}{D}
+\ReverseArrow
+\CLoopW[.5]{C}{p|0}
+\StraightArrow
+\ArcL[.5]{C}{D}{1-p|1}
+\ArcL[.5]{D}{C}{1|1}
+
+% M +-
+\State[AC]{(5,3.5)}{AC}
+\State[BD]{(9,3.5)}{BD}
+\ReverseArrow
+\CLoopW[.5]{AC}{\StackTwoLabels{+|p|0}{-|p|0}}
+\StraightArrow
+\ArcL[.5]{AC}{BD}{\StackTwoLabels{+|1-p|1}{-|1-p|1}}
+\ArcL[.5]{BD}{AC}{\StackTwoLabels{+|1|1}{-|1|1}}
+\end{VCPicture}
+\end{preview}
+\end{document}

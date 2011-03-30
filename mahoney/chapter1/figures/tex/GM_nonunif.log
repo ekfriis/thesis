@@ -1,0 +1,321 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2009.11.7)  2 AUG 2010 23:38
+entering extended mode
+ %&-line parsing enabled.
+**GM_nonunif.tex
+(./GM_nonunif.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, ku
+rmanji, latin, latvian, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, po
+lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
+ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2009/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2009/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(/Users/Tlon/Library/texmf/tex/latex/vaucanson-g/vaucanson-g.sty
+Package: vaucanson-g 2008/10/27 package wrapper for VauCanSon-G v. 0.4
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `pst' ignored on input line 216.
+Package xcolor Info: Driver file: dvips.def on input line 225.
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/Users/Tlon/Library/texmf/tex/latex/vaucanson-g/VCColor-names.def)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pstricks/pstricks.tex
+`PSTricks' v1.29  <2009/05/19> (tvz)
+\pst@dima=\dimen112
+\pst@dimb=\dimen113
+\pst@dimc=\dimen114
+\pst@dimd=\dimen115
+\pst@dimg=\dimen116
+\pst@dimh=\dimen117
+\pst@hbox=\box28
+\pst@boxg=\box29
+\pst@cnta=\count99
+\pst@cntb=\count100
+\pst@cntc=\count101
+\pst@cntd=\count102
+\pst@cntg=\count103
+\pst@cnth=\count104
+\pst@toks=\toks19
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen118
+\psxunit=\dimen119
+\psyunit=\dimen120
+\pslinewidth=\dimen121
+\pst@customdefs=\toks20
+\pslinearc=\dimen122
+\everypsbox=\toks21
+\psframesep=\dimen123
+\pslabelsep=\dimen124
+\pst@shift=\dimen125
+\theoverlaybox=\box30
+)
+File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/pstricks/pst-node.sty
+Package: pst-node 2006/01/01 package wrapper for pst-node.tex
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pstricks/pst-node.tex
+ v1.01, 2008/11/26
+\psrow=\count105
+\pscol=\count106
+\psmatrixcnt=\count107
+\psrowsep=\skip46
+\pscolsep=\skip47
+)
+File: pst-node.tex 2008/11/26 1.01 `pst-node' (tvz)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/pstricks/pst-plot.sty
+Package: pst-plot 2004/07/15 package wrapper for pst-plot.tex
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pstricks/pst-plot.tex
+(/usr/local/texlive/2009/texmf-dist/tex/generic/multido/multido.tex
+ v1.41, 2004/05/18 <tvz>
+\multido@count=\count108
+\multidocount=\count109
+\multido@stuff=\toks22
+)  v1.04, 2009/06/08)
+File: pst-plot.tex 2009/06/08 1.04 `pst-plot' (tvz)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/pst-coil/pst-coil.sty
+Package: pst-coil 2006/08/11 package wrapper for pst-coil.tex (hv)
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pst-coil/pst-coil.tex
+ v1.04, 2009/06/08
+(/usr/local/texlive/2009/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+\XKV@depth=\count110
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/xkeyval/keyval.tex)))))
+File: pst-coil.tex 2006/11/05 v1.00 `pst-coil' (tvz)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/multido/multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/pst-3d/pst-3d.sty
+Package: pst-3d 2005/09/02 package wrapper for pst-3d.tex (hv)
+
+(/usr/local/texlive/2009/texmf-dist/tex/generic/pst-3d/pst-3d.tex
+`PST-3d' v1.00, 2005/09/03 (tvz))
+File: pst-3d.tex 2005/09/03 v1.00 `PST-3d' (tvz)
+)
+(/usr/local/texlive/2009/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count111
+\calc@Bcount=\count112
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count113
+\calc@Cskip=\skip50
+)
+(/Users/Tlon/Library/texmf/tex/latex/vaucanson-g/Vaucanson-G.tex
+\MediumStateDiameter=\skip51
+\SmallStateDiameter=\skip52
+\LargeStateDiameter=\skip53
+\VerySmallStateDiameter=\skip54
+\StateLineWidth=\skip55
+\EdgeLineWidth=\skip56
+\EdgeArrowWidth=\skip57
+\EdgeDblArrowWidth=\skip58
+\ZZSize=\skip59
+\EdgeOffset=\skip60
+\EdgeNodeSep=\skip61
+\VaucArcOffset=\skip62
+\LoopOffset=\skip63
+\LoopVarOffset=\skip64
+\TransLabelSep=\skip65
+\VertShiftH=\skip66
+LaTeX Font Info:    Try loading font information for U+msa on input line 206.
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 206.
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+\VertShiftD=\skip67
+\VertShift=\skip68
+\StateLineWid=\skip69
+\StateDiam=\skip70
+\VaucAOS=\skip71
+\VaucAOSdiag=\skip72
+\VariableStateIntDiam=\skip73
+\VariableStateWidth=\skip74
+\VariableStateITPos=\skip75
+\ExtraSpace=\skip76
+\EdgeLineWid=\skip77
+\EdgeArrowSZDim=\skip78
+\EdgeLineBord=\skip79
+\ZZSiZ=\skip80
+\EdgeOff=\skip81
+\VaucArcOff=\skip82
+\LoopOff=\skip83
+\LoopVarOff=\skip84
+\EdgeNodeSP=\skip85
+\TransLabelSP=\skip86
+\c@anglea=\count114
+\c@angleb=\count115
+)
+\VaucMinHeight=\skip87
+\VaucMaxHeight=\skip88
+
+(/Users/Tlon/Library/texmf/tex/latex/vaucanson-g/VCPref-default.tex))
+(/usr/local/texlive/2009/texmf-dist/tex/latex/preview/preview.sty
+Package: preview 2006/08/25 11.84 (AUCTeX/preview-latex)
+
+(/usr/local/texlive/2009/texmf-dist/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen128
+)
+\pr@snippet=\count116
+\pr@box=\box31
+\pr@output=\toks25
+)
+(./GM_nonunif.aux)
+\openout1 = `GM_nonunif.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+
+Preview: Fontsize 10pt
+Preview: Tightpage -32891 -32891 32891 32891
+[1] (./GM_nonunif.aux) ) 
+Here is how much of TeX's memory you used:
+ 4130 strings out of 493849
+ 50525 string characters out of 3149230
+ 136341 words of memory out of 3000000
+ 7363 multiletter control sequences out of 15000+200000
+ 5339 words of font info for 22 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 37i,8n,58p,293b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on GM_nonunif.dvi (1 page, 8916 bytes).

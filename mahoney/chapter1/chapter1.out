@@ -1,0 +1,16 @@
+\BOOKMARK [0][-]{chapter.1}{Computational Mechanics}{}
+\BOOKMARK [1][-]{section.1.1}{Philosophy}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.1.1}{-machine Prelude}{section.1.1}
+\BOOKMARK [1][-]{section.1.2}{Our Domain: Processes}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{-machines}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{First Examples}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.4.1}{IID}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.2}{Entropy and Entropy Rate}{section.1.4}
+\BOOKMARK [1][-]{section.1.5}{Statistical Complexity}{chapter.1}
+\BOOKMARK [1][-]{section.1.6}{Excess Entropy}{chapter.1}
+\BOOKMARK [1][-]{section.1.7}{Estimation of Excess Entropy}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.7.1}{Example of Sharp Convergence : Order-3 Markov}{section.1.7}
+\BOOKMARK [2][-]{subsection.1.7.2}{Example of Slow Convergence : Even Process}{section.1.7}
+\BOOKMARK [1][-]{section.1.8}{Crypticity and Cryptic Order}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.8.1}{Crypticity}{section.1.8}
+\BOOKMARK [2][-]{subsection.1.8.2}{Cryptic Order}{section.1.8}
