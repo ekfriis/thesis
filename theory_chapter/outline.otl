@@ -2,24 +2,56 @@ Theory chapter
 : The MSSM is a promixing extension to the standard model, and tau leptons are
 : an important probe.
 	The standard model
-		Model is discribed by symmetries.
-		Electromagnetic, weak and strong force.
-		The EW force is recognized to be single symmetry.
+		Electromagnetic, Weak, QCD
+		Particle soup
+		QED
+			Extension of E&M
+			U(1)
+			matter & light interactions
+			Agreement between SR & QM
+			Exchange of gauge bosons 
+			Extremely accurate
+		Weak
+			Contact interaction (Fermi)
+			SU(2)
+			Radioactive Decay
+			Extension to gauge theory (W & Z)
+			Weak isospin
+		QCD
+			SU(3)
+			Quarks
+			Gluons
+			Color symmetry
+			Hadronization/Confinement
+			Jets
+			Non-Abelian
+		Unification of EW by symmettry breaking
+			Addition of VEV
+			Yukawa terms
 		Symmetry broken by the Higgs mechanism.
-		Higgs boson not yet observed.
+			Add a new field w/ Mexican hat potential
+			Field gets VEV
+			Particles get mass
+			Coupling prop to mass
+			Not yet found
 	Searches for the Higgs boson
-		SM higgs boson production through Higgstrahlung or top loops
-		SM model higgs boson has been excluded at lower masses by LEP.
-		Some higher masses by Tevatron.
-		Decays to taus and bs at low mass.  Gauge bosons at high mass.
-	Problems in the SM
-		Number of problems with SM.
-		No Higgs boson found
-		Hierarchy problem
-	Supersymmetry
-		Superpartners for all the particles
-		Solves hierarchy problem
-		Higgs is now a doublet.  5 physical higgses. (is this only MSSM)?
+		Higgs boson phenomenolgy
+			Decays to taus and bs at low mass.  Gauge bosons at high mass.
+			No mass prediction
+			SM higgs boson production through Higgstrahlung or top loops
+		Searches at LEP
+			SM model higgs boson has been excluded at lower masses by LEP.
+		Searches at Tevatron
+			SM has been excluded at high masses
+	Beyond the standard model
+		Problems in the SM
+			Number of problems with SM.
+			No Higgs boson found
+			Hierarchy problem
+		Supersymmetry
+			Superpartners for all the particles
+			Solves hierarchy problem
+			Higgs is now a doublet.  5 physical higgses. (is this only MSSM)?
 		MSSM
 			Described at tree level by MA & tanBeta
 			Production of Higgs is enhanced by tanBeta^2

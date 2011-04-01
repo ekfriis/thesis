@@ -1,0 +1,24 @@
+\contentsline {chapter}{\numberline {1}The Standard Model and Beyond}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}The Standard Model}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Quantum Electrodynamics}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}The Weak Interactions}{3}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Quantum Chromodynamics}{3}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Electroweak Unification}{3}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}The Higgs mechanism}{3}{subsection.1.1.5}
+\contentsline {section}{\numberline {1.2}Searches for the Higgs boson}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Higgs boson phenomenology}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Searches at LEP}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Searches at the Tevatron}{3}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Searches at the Tevatron}{3}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}Beyond the Standard Model}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}The Hierarchy Problem}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Supersymmetry}{3}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}The Minimal Supersymmetric Model and $\tau $ leptons}{3}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}$\tau $ leptons as a probe of new physics}{3}{section.1.4}
+\contentsline {chapter}{\numberline {2}The Compact Muon Solenoid Experiment}{4}{chapter.2}
+\contentsline {chapter}{\numberline {3}Beyond the Standard Model}{5}{chapter.3}
+\contentsline {chapter}{\numberline {4}The Secondary Vertex Fit}{6}{chapter.4}
+\contentsline {chapter}{\numberline {5}Analysis Selections}{7}{chapter.5}
+\contentsline {chapter}{\numberline {6}Systematics}{8}{chapter.6}
+\contentsline {chapter}{\numberline {7}Results}{9}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{10}{chapter.8}

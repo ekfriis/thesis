@@ -1,6 +1,133 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 
-\chapter{Beyond the Standard Model}
+\chapter{The Standard Model and Beyond}
 \label{ch:theory}
+
+\section{The Standard Model}
+
+The Standard Model (SM) is a ``theory of almost everything'' that describes the
+interactions of elementary particles.  The theory is the synthesis of quantum
+electrodynamics, the theory of weak nuclear interactions, and the strong nuclear 
+force.  There are three types of elementary particles in the SM: quarks,
+leptons, and gauge bosons.  
+
+Prior to the development of the SM, three different theories theories of
+particle physics where used to describe different phenomena, which are
+discussed in turn.   The interaction of light and matter, is described by
+Quantum Electrodynamics~(QED), a relativistic field extension of the theory of
+electromagnetism.  The physics of radioactivity and nuclear decay was described
+by the theory of weak interactions.  Finally, the forces that bind together the
+nuclei of atoms was described by the strong nuclear force. 
+
+The development of the complete Standard Model as it is known today was
+precipitated by two theoretical developments:  Glashow's
+discovery~\cite{ref:GlashowSymmetryBreaking} of the potential to unify QED with
+the weak force using spontaneous symmetry breaking, and the development of the
+Higgs mechanism~\cite{ref:HiggsMechanism}, which breaks the electroweak symmetry
+using the clever addition of an additional scalar particle (the Higgs boson).
+
+\subsection{Quantum Electrodynamics}
+
+The theory of QED is a relativistic formulation of Maxwell's theory of
+electromagnetism, describing the interaction of matter with light.  The
+development of QED is a result of efforts to develop a quantum mechanical
+formulation of electromagnetism compatible with the theory of Special Relativity.
+QED is a \emph{gauge} theory, which means that the physical observables are
+invariant under local gauge transformations.  Requiring local gauge
+invariance gives rise to a ``gauge'' field, which can be interpreted as 
+particles that are exchanged during an interaction.  
+
+In the following, we can show that requiring the relativistic Lagrangian of a
+free charged particle to be invariant under local gauge transformations creates
+an effective gauge boson field.  This ``gauge field'' creates terms in the
+Lagrangian that represent interactions between the particles.
+
+The Dirac equation \FIX{what is this} of a free spin~$1/2$ particle of mass~$m$
+is
+%http://en.wikipedia.org/wiki/Gauge_field#An_example:_Electrodynamics
+\begin{equation}
+  \mathcal{L} = \bar \psi (i\hbar c\gamma^\mu \partial_\mu - mc^2) \psi 
+  \label{eq:FreeQEDLagrangian}
+\end{equation}
+where $\psi$ is the field of the particle in question, $\hbar$ is Planck's
+constant, $c$ the speed of light, and $\gamma^\mu$ are the Dirac matrices.  As
+$\bar\psi$ is the Hermitian conjugate of $\psi$, the Lagrangian is invariant
+under the global gauge transformation 
+\begin{equation}
+  \psi' \to e^{i\theta}\psi
+  \label{eq:U1GaugeTransform}
+\end{equation}.
+The Lagrangian is invariant under \emph{local} gauge translations if $\theta$
+can be defined differently at each point in space, \ie if $\theta = \theta(x)$
+in equation~\ref{eq:U1GaugeTransform}.  However, as the derivative operator
+$\partial_\mu$ in equation~\ref{eq:FreeQEDLagrangian} does not commute with
+$\theta(x)$, the Lagrangian must be modified to satisfy local gauge invariance.
+This modification is accomplished with the use of a ``gauge covariant
+derivative.''  By making the replacement 
+\begin{equation} 
+  \partial_\mu \to D_\mu = \partial_\mu - \frac{ie}{\hbar}A^\mu      
+\end{equation}
+in equation~\ref{eq:FreeQEDLagrangian}, where \FIX{don't think this is right}
+$A^\mu = \partial^\mu \theta(x)$ and $e$ is the electric charge, the Lagrangian
+becomes locally gauge invariant:
+\begin{equation}
+  \mathcal{L} = \bar \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi 
+  \label{eq:LocalQEDLagrangian}
+\end{equation}
+The difference between
+the locally (equation~\ref{eq:LocalQEDLagrangian}) and globally 
+(equation~\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangians is then
+\begin{equation}
+  \mathcal{L}_{int} = \frac{e}{\hbar}\bar\psi\gamma^\mu\psi A_\mu 
+\end{equation}.
+This term can be interpreted as the coupling between the particle and the gauge
+boson (force carrier) fields.  The coupling is proportional to the constant
+$e$, which is associated with the electric charge.  This is consistent with the
+experimental observation that particles with zero electric charge do not
+interact electromagnetically with each other.  In this interpretation, the
+electromagnetic force between two charged particles is caused by the exchange
+of gauge bosons (photons).  The existence of this coupling is required if the
+Lagrangian is to satisfy local gauge invariance. The addition of a term with
+the gauge Field Strength Tensor yields the QED Lagrangian:
+\begin{equation}
+  \mathcal{L}_{QED} = \bar \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi -
+  \frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+
+\subsection{The Weak Interactions}
+
+The theory of Weak Interactions was created to describe the physics of
+radioactivity.  The first formulation of the theory was done by
+Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $beta$ decay
+of radioactive elements.  The initial theory was a four-fermion ``contact''
+theory.  In a contact theory, all four fermions come from a single vertex.
+The Lagrangian for the Fermi interactions is:
+\begin{equation}
+ find me 
+\end{equation}
+
+However, the contact interaction form of Fermi's theory is not complete.  At 
+higher energies the theory suffers from \FIX{what?}.  The theory can 
+be completed using the gauge theory formalism.  In this case, the 
+
+
+\subsection{Quantum Chromodynamics}
+
+\subsection{Electroweak Unification}
+
+\subsection{The Higgs mechanism}
+
+\section{Searches for the Higgs boson}
+\subsection{Higgs boson phenomenology}
+\subsection{Searches at LEP}
+\subsection{Searches at the Tevatron}
+\subsection{Searches at the Tevatron}
+
+\section{Beyond the Standard Model}
+\subsection{The Hierarchy Problem}
+\subsection{Supersymmetry}
+\subsection{The Minimal Supersymmetric Model and $\tau$ leptons}
+
+\section{$\tau$ leptons as a probe of new physics}
 
 \ifx\master\undefined\input{settings/autocompile}\fi
