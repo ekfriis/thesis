@@ -1,0 +1,21 @@
+The major task in reconstructing the decay mode of the tau is determining the
+number of $\pi^0$ mesons produced in the decay.  A $\pi^0$ meson decays almost
+instantaneously to a pair of photons.  The photon objects are reconstructed using the
+particle flow algorithm~\cite{PFT09}. The initial collection of
+photon objects considered to be $\pi^0$ candidates are the photons in the signal
+cone described by using the ``shrinking--cone'' tau algorithm, described
+in~\cite{PFT08001}.  
+
+The reconstruction of photons from $\pi^0$ decays present in the signal cone is
+complicated by a number of factors.  To suppress calorimeter noise and underlying
+event photons, all photons with minimum transverse energy less than 0.5 GeV are
+removed from the signal cone, which removes some signal photons.  Photons
+produced in secondary interactions, pile-up events, and electromagnetic showers
+produced by signal photons that convert to electron--positron pairs can
+contaminate the signal cone with extra low transverse energy photons.  Highly
+boosted $\pi^0$ mesons may decay into a pair of photons with a small opening
+angle, resulting in two overlapping showers in the ECAL being reconstructed as
+one photon.  The $\pi^0$ meson content of the tau--candidate is reconstructed in
+two stages.  First, photon pairs are merged together into candidate $\pi^0$
+mesons.  The remaining un--merged photons are then subject to a quality
+requirement.

@@ -1,0 +1,28 @@
+Tau candidates in all CMS tau identification algorithms are seeded by
+reconstructed jets.  After particle-flow reconstruction, particle candidates
+are clustered into collections by the iterativeCone5 jet algorithm. The
+efficiencies for jet seed reconstruction are described in~\cite{PFT08001} and are near
+unity for both signal and background.  Quality cuts (see
+~\ref{table:pftau_q_cuts} are are then applied to the constituents in the jets.
+The remaining particles are then considered a ``tau candidate.''  
+
+\begin{table}
+   \centering
+   \caption{Quality cuts on tau seed jet constituents} 
+   \begin{tabular}{l r}
+      Particle flow charged hadron candidates & \\
+      \hline
+      Minimum transverse momentum & 0.5 GeV/$c$ \\
+      Minimum tracker hits & 3 \\
+      Maximum tracker $\chi^2$ & 100 \\
+      Maximum track transverse impact parameter & 0.03cm \\
+      \hline \hline
+      Particle flow gamma candidates & \\
+      \hline
+      Minimum transverse energy & 0.5 GeV \\
+   \end{tabular}
+\end{table}
+
+The constituents of tau candidate seed jets are then divided into two
+collections, called ``signal'' and ``isolation'' collections as the method at
+this stage is identical to the process for defining the isolation annulus.

@@ -1,6 +1,130 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 
-\chapter{Beyond the Standard Model}
-\label{ch:theory}
+\chapter{Tau Identification: The Tau Neural Classifier}
+\label{ch:tanc}
+
+\section{Introduction}
+
+High tau identification performance is important for the discovery potential of
+many possible new physics signals at the Compact Muon Solenoid (CMS).  The
+Standard Model background rates from true tau leptons are typically the same
+order of magnitude as the expected signal rate in many searches for new
+physics.  The challenge of doing physics with taus is driven by the rate at
+which objects are incorrectly tagged as taus.  In particular, quark and gluon
+jets have a significantly higher production cross-section and events where
+these objects are incorrectly identified as tau leptons can dominate the
+backgrounds of searches for new physics using taus.  Efficient identification
+of hadronic tau decays and low misidentification rate for quarks and gluons
+is thus essential to maximize the significance of searches for new physics at
+CMS.
+
+Tau leptons are unique in that they are the only type of leptons which are heavy
+enough to decay to hadrons.  The hadronic decays compose approximately 65\% of
+all tau decays, the remainder being split nearly evenly between $\tau^{-} \to
+\mu^{-} \bar \nu_\mu \nu_\tau$ and $\tau^{-} \to e^{-} \bar \nu_e \nu_\tau$.
+The hadronic decays are typically composed of one or three charged pions and
+zero to two neutral pions.  The neutral pions decay almost instantaneously to
+pairs of photons.
+
+In this chapter, we describe a technique to identify hadronic tau decays.  Tau
+decays to electrons and muons are difficult to distinguish from prompt
+production of electrons and
+muons in $pp$ collisions.  Analyses that use exclusively
+non--hadronically decaying taus typically require that the leptonic ($e,\mu$)
+decays be of opposite flavor.  The discrimination of hadronic tau decays from
+electrons and muons is described in~\cite{PFT08001}.  With the Tau Neural
+Classifier, we aim to improve the discrimination of true hadronic tau decays
+from quark and gluon jets using a neural network approach.
+
+\section{Geometric Tau Identification Algorithms}
+
+The tau identification strategies used in previously published CMS analyses are
+fully described in~\cite{PFT08001}.  A summary of the basic methods and
+strategies is given here. There are two primary methods for selecting objects
+used to reconstruct tau leptons.  The CaloTau algorithm uses tracks
+reconstructed by the tracker and clusters of hits in the electromagnetic and
+hadronic calorimeter.  The other method (PFTau) uses objects reconstructed by
+the CMS particle flow algorithm, which is described in~\cite{PFT09}.  The
+particle flow algorithm provides a global and unique description of every
+particle (charged hadron, photon, electron, etc.) in the event; measurements
+from sub--detectors are combined according to their measured resolutions to
+improve energy and angular resolution and reduce double counting.  The
+strategies described in this paper use the particle flow objects.
+
+Both methods typically use an ``leading object'' and an isolation requirement to reject
+quark and gluon jet background.  Quark and gluon jets are less collimated and
+have a higher constituent multiplicity and softer constituent $p_T$ spectrum
+than a hadronic tau decay of the same transverse momentum.  The ``leading
+track'' requirement is applied by requiring a relatively high momentum object
+near the center of the jet; typically a charged track with transverse momentum
+greater than 5 GeV/c within $\Delta R < 0.1$ about the center of the jet axis.
+The isolation requirement exploits the collimation of true taus by defining an
+isolation annulus about the kinematic center of the jet and requiring no
+detector activity about a threshold in that annulus.  This approach yields a
+misidentification rate of approximately 1\% for QCD backgrounds and a hadronic
+tau identification efficiency of approximately 50\%~\cite{PFT08001}.
+
+\section{Decay Mode Tau Identification: Motivation}
+
+The tau identification strategy described previously can be extended by
+looking at the different hadronic decay modes of the tau individually.
+The dominant hadronic decays of taus consist of a one or three charged
+$\pi^{\pm}$ mesons and up to two $\pi^0$ mesons and are enumerated in
+table~\ref{tab:decay_modes}.  The majority of these decays proceed through
+intermediate resonances and each of these decay modes maps directly to a tau
+final state multiplicity. Each intermediate resonance has a different invariant
+mass (see figure~\ref{fig:trueInvMass}).  This implies that the problem of
+hadronic tau identification can be re-framed from a global search for
+collimated hadrons satisfying the tau mass constraint into a ensemble of
+searches for single production of the different hadronic tau decay resonances.
+The Tau Neural Classifier algorithm implements this approach using two
+complimentary techniques: a method to reconstruct the decay mode and an
+ensemble of neural network classifiers used to identify each decay mode
+resonance and reject quark and gluon jets with the same final state topology.
+
+\begin{figure}[thbp]
+   \begin{center}
+     \includegraphics[width=90mm]{tanc_chapter/figures/truthIMvsDM.pdf}
+   \end{center}
+   \caption{The invariant mass of the visible decay products in hadronic tau
+   decays.  The decay mode $\tau^{-} \to \pi^{-} \nu_\tau$ is omitted.
+   The different decay modes have different invariant masses corresponding to
+   the intermediate resonance in the decay.}
+   \label{fig:trueInvMass}
+\end{figure}
+
+\section{The Tau Neural Classifier}
+
+The Tau Neural Classifier algorithm reconstructs the decay mode of the
+tau--candidate and then feeds the tau--candidate to a discriminator associated
+to that decay mode to make the classification decision.  Each discriminator
+therefore maps to a reconstructed decay mode in a one-to-one fashion.  To
+optimize the discrimination for each of the different decay modes, the TaNC uses
+an ensemble of neural nets.  Each neural net corresponds to one of the dominant
+hadronic decay modes of the tau lepton.  These selected hadronic decays
+constitute 95\% of all hadronic tau decays.  Tau--candidates with reconstructed
+decay modes not in the set of dominant hadronic modes are immediately tagged as
+background.  
+
+\subsection{Decay mode reconstruction}
+\label{sec:decay_mode_reco}
+\input{tanc_chapter/note/tanc_dm_reco_intro.tex}
+\subsubsection{Photon merging}
+\input{tanc_chapter/note/tanc_dm_photon_merging.tex}
+\subsubsection{Quality requirements}
+\input{tanc_chapter/note/tanc_dm_photon_filtering.tex}
+\subsubsection{Performance}
+\input{tanc_chapter/note/tanc_dm_reco_results.tex}
+
+\subsection{Neural network classification}
+\subsubsection{Neural Network Training}
+\input{tanc_chapter/note/tanc_nn_training.tex}
+\subsubsection{Discriminants}
+\label{sec:tanc_nn_discriminants}
+\input{tanc_chapter/note/tanc_nn_discriminants.tex}
+\subsubsection{Neural network performance}
+\input{tanc_chapter/note/tanc_nn_performance.tex}
+\section{Summary}
+\input{tanc_chapter/note/summary.tex}
 
 \ifx\master\undefined\input{settings/autocompile}\fi

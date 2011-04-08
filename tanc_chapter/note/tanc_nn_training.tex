@@ -1,0 +1,188 @@
+The samples used to train the TaNC neural networks are typical of the signals
+and backgrounds found in common physics analyses using taus.  The signal--type
+training sample is composed of reconstructed tau--candidates that are matched
+to generator level hadronic tau decays coming from simulated $Z \rightarrow
+\tau^{+}\tau^{-}$ events.  The background training sample consists of
+reconstructed tau--candidates in simulated QCD $2\rightarrow2$ hard scattering
+events.  The QCD $P_T$ spectrum is steeply falling, and to obtain sufficient
+statistics across a broad range of $P_T$ the sample is split into different
+$\hat P_{T}$ bins.  Each binned QCD sample imposes a generator level cut on the
+transverse momentum of the hard interaction.  During the evaluation of discrimination
+performance the QCD samples are weighted according to their respective
+integrated luminosities to remove any effect of the binning.
+
+The signal and background samples are split into five subsamples corresponding
+to each reconstructed decay mode.  An additional selection is applied to each
+subsample by requiring a ``leading pion'': either a charged hadron or gamma
+candidate with transverse momentum greater than 5 GeV$/c$.  A large number of
+QCD training events is required as both the leading pion selection and the
+requirement that the decay mode match one of the dominant modes given in
+table~\ref{tab:decay_modes} are effective discriminants.  For each subsample,
+80\% of the signal and background tau--candidates are used for training the
+neural networks by the TMVA software, with half (40\%) used as a validation
+sample used to ensure the neural network is not over--trained. The number of
+signal and background entries used for training and validation in each decay
+mode subsample is given in table~\ref{tab:trainingEvents}.
+
+%Chained 100 signal files.
+%Chained 208 background files.
+%Total signal entries: 874266
+%Total background entries: 9526176
+%Pruning non-relevant entries.
+%After pruning, 584895 signal and 644315 background entries remain.
+%**********************************************************************************
+%*********************************** Summary **************************************
+%**********************************************************************************
+%*     NumEvents with weight > 0 (Total NumEvents)                                *
+%*--------------------------------------------------------------------------------*
+%*shrinkingConePFTauDecayModeProducer   ThreeProngNoPiZero: Signal:      53257(53271)            Background:155793(155841)
+%*shrinkingConePFTauDecayModeProducer  ThreeProngOnePiZero: Signal:      13340(13342)            Background:135871(135942)
+%*shrinkingConePFTauDecayModeProducer    OneProngTwoPiZero: Signal:      34780(34799)            Background:51181(51337)
+%*shrinkingConePFTauDecayModeProducer    OneProngOnePiZero: Signal:      136464(138171)          Background:137739(139592)
+%*shrinkingConePFTauDecayModeProducer     OneProngNoPiZero: Signal:      300951(345312)          Background:144204(161603)
+
+\begin{table}
+   \centering
+   \begin{tabular}{lcc}
+      %\multirow{2}{*}{}                         & \multicolumn{2}{c}{Events}    \\
+                                                & Signal        & Background    \\
+      \hline
+      Total number of tau--candidates           & 874266        & 9526176       \\
+      Tau--candidates passing preselection      & 584895        & 644315        \\
+      Tau--candidates with $W(P_T,\eta)>0$      & 538792        & 488917        \\
+      \hline
+      Decay Mode                        & \multicolumn{2}{c}{Training Events}   \\
+      \hline
+      $\pi^{-}$                         & 300951   & 144204                     \\
+      $\pi^{-}\pi^0$                    & 135464   & 137739                     \\
+      $\pi^{-}\pi^0\pi^0$               & 34780    & 51181                      \\
+      $\pi^{-}\pi^{-}\pi^{+}$           & 53247    & 155793                     \\
+      $\pi^{-}\pi^{-}\pi^{+}\pi^0$      & 13340    & 135871                     \\
+   \end{tabular}
+   \label{tab:trainingEvents}
+   \caption{Number of events used for neural network training and validation for each
+   selected decay mode.}
+\end{table}
+
+The remaining 20\% of the signal and background samples are
+reserved as a statistically independent sample to evaluate the performance of
+the neural nets after the training is completed.  The TaNC uses the ``MLP''
+neural network implementation provided by the TMVA software package, described
+in~\cite{TMVA}.  The ``MLP'' classifier is a feed-forward artificial neural
+network. There are two layers of hidden nodes and a single node in the output
+layer.  The hyperbolic tangent function is used for the neuron activation
+function.  
+
+The neural networks used in the TaNC have two hidden layers and single node in
+the output layers.  The number of nodes in the first and second hidden layers
+are chosen to be $N+1$ and $2N+1$, respectively, where $N$ is the number of
+input observables for that neural network.  According to the Kolmogorov's
+theorem~\cite{Kolmogorov}, any continuous function $g(x)$ defined on a vector
+space of dimension $d$ spanned by $x$ can be represented by
+\begin{equation}
+   g(x) = \sum_{j=1}^{j=2d+1} \Phi_j \left(\sum_{i=1}^{d} \phi_i(x) \right)
+   \label{eq:Kolmogorov}
+\end{equation}
+for suitably chosen functions for $\Phi_j$ and $\phi_j$.  As the form of
+equation~\ref{eq:Kolmogorov} is similar to the topology of a two hidden--layer
+neural network, Kolmogorov's theorem suggests that \emph{any} classification
+problem can be solved with a neural network with two hidden layers containing
+the appropriate number of nodes.
+
+The neural network is trained for 500 epochs. At ten epoch intervals, the
+neural network error is computed using the validation sample to check for
+over--training (see figure~\ref{fig:overTrainCheck}). The neural network error
+$E$ is defined~\cite{TMVA} as
+\begin{equation}
+   E = \frac{1}{2} \sum_{i=1}^N (y_{ANN,i} - \hat y_i)^2
+   \label{eq:NNerrorFunc}
+   %note - not right for weighted dists?
+\end{equation}
+where $N$ is the number of training events, $y_{ANN,i}$ is the neural network output
+for the $i$th training event, and $y_i$ is the desired (-1 for background, 1 for signal) output
+the $i$th event. No evidence  of over--training is observed.
+
+\begin{figure}[thbp]
+   \setlength{\unitlength}{1mm}
+   \begin{center}
+      \begin{picture}(150, 195)(0,0)
+         \put(0.5, 130)
+         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngNoPiZero.pdf}}}
+         \put(65,  130)
+         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngOnePiZero.pdf}}}
+         \put(0.5, 65) 
+         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngTwoPiZero.pdf}}}
+         \put(65, 65) 
+         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngNoPiZero.pdf}}}
+         \put(33, 0) 
+         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngOnePiZero.pdf}}}
+      \end{picture}
+   \caption{Neural network classification error for training (solid red) and testing
+   (dashed blue) samples at ten epoch intervals over the 500 training epochs for each
+   decay mode neural network.  The vertical axis represents the classification
+   error, defined by equation~\ref{eq:NNerrorFunc}.  N.B. that the choice of
+   hyperbolic tangent for neuron activation functions results in the desired
+   outputs for signal and background to be 1 and -1, respectively.  This results
+   in the computed neural network error being larger by a factor of four than
+   the case where the desired outputs are (0, 1).  Classifier over--training
+   would be evidenced by divergence of the classification error of the training
+   and testing samples, indicating that the neural net was optimizing about
+   statistical fluctuations in the training sample.  
+   }
+   \label{fig:overTrainCheck}
+   \end{center}
+\end{figure}
+
+
+The neural networks use as input observables the transverse momentum and $\eta$
+of the tau--candidates.  These observables are included as their correlations
+with other observables can increase the separation power of the ensemble of
+observables.  For example, the opening angle in $\Delta R$ for signal
+tau--candidates is inversely related to the transverse momentum, while for
+background events the correlation is very small~\cite{DavisTau}. In the
+training signal and background samples, there is significant discrimination
+power in the $P_T$ spectrum.   However, it is desirable to eliminate any
+systematic dependence of the neural network output on $P_T$ and $\eta$, as in
+practice the TaNC will be presented with tau--candidates whose $P_T-\eta$
+spectrum will be analysis dependent. The dependence on $P_T$ and $\eta$ is
+removed by applying a $P_T$ and $\eta$ dependent weight to the tau--candidates
+when training the neural nets.  
+
+The weights are defined such that in any region in the vector space spanned by
+$P_T$ and $\eta$ where the signal sample and background sample probability
+density functions are different, the sample with higher probability density is
+weighted such that the samples have identical $P_T-\eta$ probability
+distributions.  This removes regions of $P_T-\eta$ space where the training
+sample is exclusively signal or background.  The weights are computed according to
+\begin{align*}
+   W(P_T, \eta) &=  {\rm less}(p_{sig}(P_T, \eta), p_{bkg}(P_T, \eta))\\
+   w_{sig}(P_T, \eta) &=  W(P_T, \eta)/p_{sig}(P_T, \eta) \\
+   w_{bkg}(P_T, \eta) &=  W(P_T, \eta)/p_{bkg}(P_T, \eta) 
+\end{align*}
+where $p_{sig}(P_T,\eta)$ and $p_{bkg}(P_T,\eta)$ are the probability densities of
+the signal and background samples after the ``leading pion'' and dominant decay mode
+selections. Figure~\ref{fig:nnTrainingWeights} shows the signal and background
+training $P_T$ distributions before and after the weighting is applied.
+
+
+\begin{figure}[thbp]
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(150,60)(0,0)
+\put(10.5, 2){\mbox{\includegraphics*[height=58mm]{tanc_chapter/figures/training_weights_unweighted.pdf}}}
+\put(86.0, 2){\mbox{\includegraphics*[height=58mm]{tanc_chapter/figures/training_weights_weighted.pdf}}}
+%\put(-5.5, 112.5){\small (a)}
+%\put(72.0, 112.5){\small (b)}
+%\put(-5.5, 54.5){\small (c)}
+%\put(72.0, 54.5){\small (d)}
+\end{picture}
+\caption{Transverse momentum spectrum of signal and background
+tau--candidates used in neural net training before (left) and after (right) the
+application of $P_T-\eta$ dependent weight function.  Application of the weights
+lowers the training significance of tau--candidates in regions of $P_T-\eta$
+phase space where either the signal or background samples has an excess of
+events. }
+\label{fig:nnTrainingWeights}
+\end{center}
+\end{figure} 
+

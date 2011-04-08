@@ -1,0 +1,11 @@
+The Tau Neural Classifier algorithm reconstructs the decay mode of the
+tau--candidate and then feeds the tau--candidate to a discriminator associated
+to that decay mode to make the classification decision.  Each discriminator
+therefore maps to a reconstructed decay mode in a one-to-one fashion.  To
+optimize the discrimination for each of the different decay modes, the TaNC uses
+an ensemble of neural nets.  Each neural net corresponds to one of the dominant
+hadronic decay modes of the tau lepton.  These selected hadronic decays
+constitute 95\% of all hadronic tau decays.  Tau--candidates with reconstructed
+decay modes not in the set of dominant hadronic modes are immediately tagged as
+background.  
+

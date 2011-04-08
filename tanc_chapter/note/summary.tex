@@ -1,0 +1,78 @@
+The Tau Neural classifier introduces two complimentary new techniques for tau
+lepton physics at CMS: reconstruction of the hadronic tau decay mode and
+discrimination from quark and gluon jets using neural networks.  The decay mode
+reconstruction strategy presented in section~\ref{sec:decay_mode_reco}
+significantly improves the determination of the decay mode. This information has
+the potential to be useful in studies of tau polarization and background
+estimation.
+
+The Tau Neural classifier tau identification algorithm significantly improves
+tau discrimination performance compared to isolation--based
+approaches~\cite{PFT08001} used in previous CMS analyses.
+Figure~\ref{fig:finalPerfCurve} compares the performance of the ``shrinking
+cone'' isolation tau--identification algorithm~\cite{PFT08001} to the
+performance of the TaNC for a scan of requirements on the transformed neural
+network output.  The signal efficiency and QCD di--jet fake rate versus
+tau--candidate transverse momentum and pseudo--rapidity for the four benchmark
+points and the isolation based tau identification are show in
+figure~\ref{fig:kinematicPerformance}.  For tau--candidates with transverse
+momentum between 20 and 50 GeV/c, the TaNC operating cut can be chosen such that
+the two methods have identical signal efficiency; at this point the TaNC
+algorithm reduces the background fake rate by an additional factor of 3.9.  This
+reduction in background will directly improve the significance of searches for
+new physics using tau leptons at CMS.
+
+\begin{figure}[thbp]
+   \setlength{\unitlength}{1mm}
+   \begin{center}
+      \begin{picture}(150, 150)(0,0)
+         \put(0.5, 0.5)
+         {\mbox{\includegraphics*[height=150mm]{tanc_chapter/figures/20_pt_50_perf_curve_from_5_pt_200_transform_plain_test_wrt_classic.pdf}}}
+      \end{picture}
+   \caption{Performance curve (red) of the TaNC tau identification for various
+   requirements on the output transformed according to
+   equation~\ref{eq:tancTransform}.  The horizontal axis is the efficiency for
+   true taus with transverse momentum between 20 and 50 \GeVc to satisfy the tau
+   identification requirements.  The vertical axis gives the rate at which QCD
+   di--jets with generator--level transverse momentum between 20 and 50 \GeVc
+   are incorrectly identified as taus.  The performance point for the same
+   tau--candidates using the isolation based tau--identification~\cite{PFT08001}
+   used in many previous CMS analyses is indicated by the black star in the
+   figure.  An additional requirement that the signal cone contain one or three
+   charged hadrons (typical in a final physics analysis) has been applied to the
+   isolation based tau--identification to ensure a conservative comparison.  }
+   \label{fig:finalPerfCurve}
+   \end{center}
+\end{figure}
+
+
+\begin{figure}[thbp]
+   \setlength{\unitlength}{1mm}
+   \begin{center}
+      \begin{picture}(150, 150)(0,0)
+         \put(2.5, 75)
+         {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/eff_background_pt.pdf}}}
+         \put(75,  75)
+         {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/eff_background_eta.pdf}}}
+         \put(2.5, 0)
+         {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/eff_signal_pt.pdf}}}
+         \put(75, 0)
+         {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/eff_signal_eta.pdf}}}
+      \end{picture}
+   \caption{Comparison of the identification efficiency for hadronic tau decays
+   from $Z \to \tau^{+} \tau^{-}$ decays (bottom row) and the
+   misidentification rate for QCD di--jets (top row) versus tau--candidate
+   transverse momentum (left) and pseudo-rapidity (right) for different tau
+   identification algorithms.  The efficiency (fake--rate) in a given bin is
+   defined as the quotient of the number of true tau hadronic decays (generator
+   level jets) in that bin that are matched to a reconstructed tau--candidate
+   that passes the identification algorithm divided by the number of true tau
+   hadronic decays (generator level jets) in that bin.  In the low transverse
+   momentum region both the number of tau--candidates in the denominator and the
+   algorithm acceptance vary rapidly with respect to $P_T$ for both signal and
+   background; a minimum transverse momentum requirement of 20 \GeVc is applied
+   to the pseudorapidity plots to facilitate interpretation of the plots.  }
+   \label{fig:kinematicPerformance}
+   \end{center}
+\end{figure}
+
