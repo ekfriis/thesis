@@ -7,15 +7,15 @@
 \chapter{The Secondary Vertex Fit}
 \label{ch:svfit}
 
-The dominant background in the search for the Higgs $\to \TT$
-signal is due to Standard Model $Z \to \tau^{+} \tau^{-}$ events.  The most
-``natural'' observable to discriminate between Higgs signal and $Z$ background
-would be the invariant mass of the di--tau system, utilizing the fact that the
-$Z$ resonance is well known ($m_{Z} = 91.1876 \pm 0.0021$~\GeVcc) and has a narrow
-width ($\Gamma_{Z} = 2.4952 \pm 0.0023$~\GeV)~\cite{PDG}.  The experimental
-complication in this approach is due to the neutrinos produced in the tau lepton
-decays, which escape detection, carrying away an unmeasured amount of energy,
-and making it difficult to reconstruct the tau lepton four--vectors.
+The dominant background in the search for the Higgs $\to \TT$ signal is due to
+Standard Model $\ZTT$ events.  The most ``natural'' observable to discriminate
+between Higgs signal and $Z$ background would be the invariant mass of the
+di--tau system, utilizing the fact that the $Z$ resonance is well known ($m_{Z}
+= 91.1876 \pm 0.0021$~\GeVcc) and has a narrow width ($\Gamma_{Z} = 2.4952 \pm
+0.0023$~\GeV)~\cite{PDG}.  The experimental complication in this approach is due
+to the neutrinos produced in the tau lepton decays, which escape detection,
+carrying away an unmeasured amount of energy, and making it difficult to
+reconstruct the tau lepton four--vectors.
 
 The conventional algorithm to reconstruct the di--tau invariant mass assumes
 that the momenta of neutrinos produced in tau decays are collinear to the
@@ -32,7 +32,7 @@ large fraction of signal events.
 A novel algorithm is presented in the following, which succeeds in finding a
 physical solution for every event.  As an additional benefit, the new algorithm
 is found to improve the di--tau invariant mass resolution, making it easier to
-separate the Higgs signal from the $Z \to \TT$ background.
+separate the Higgs signal from the $\ZTT$ background.
 
 The novel Secondary Vertex fit (SVfit) algorithm for di--tau invariant mass
 reconstruction that we present in the following utilizes a likelihood
@@ -41,12 +41,12 @@ event.  The likelihood is composed of separate terms which represent probability
 densities of:
 \begin{itemize}
 \item tau decay kinematics
-\item matching between the momenta of neutrinos produced in the tau decays
- and the reconstructed missing transverse momentum
+\item matching between the momenta of neutrinos produced in the tau decays and
+  the reconstructed missing transverse momentum
 \item a regularization ``$P_{T}$--balance'' term which accounts for the effects on the di--tau invariant mass
  of acceptance cuts on the visible tau decay products
 \item the compatibility of tau decay parameters with the position of reconstructed tracks
- and the known tau lifetime of $c \cdot \tau = 87~\micron$~\cite{PDG}.
+ and the known tau lifetime of $c\tau = 87~\micron$~\cite{PDG}.
 \end{itemize}
 The likelihood is maximized as function of a set of parameters which fully describe the tau decay.
 
@@ -205,9 +205,9 @@ p^{*} \left( P_{T} | M \right) &= \frac{\mathrm{d}p}{\mathrm{d}P_T} = \frac{\mat
 \end{align}
 The first term of the $P_{T}$--balance likelihood is taken as the convolution of
 equation~\ref{eq:ptBalanceTerm1} with a Gaussian of width s.  The second term is
-taken to be a Gamma distribution of scale parameter $\theta$ and shape parameter
-k, in order to account for tails in the $P_{T}$ distribution of the tau lepton
-pair.  The complete functional form is thus given by
+taken to be a Gamma distribution of scale parameter $\theta$ and shape
+parameter~$k$, in order to account for tails in the $P_{T}$ distribution of the
+tau lepton pair.  The complete functional form is thus given by
 \begin{equation}
 p \left( P_{T} | M \right) \propto \int_0^{\frac{M}{2}} \! p^* \left( P_{T}' | M \right) 
  e^{-\frac{\left( P_{T} - P_{T}' \right)^2}{2 s^2}} \; \mathrm{d}P_T' + a \Gamma \left( P_T, k, \theta \right).
@@ -316,7 +316,7 @@ SVfit algorithm.  In the analysis presented in this note, the decay vertex
 information is not used, however, because of systematic effects arising from
 tracker (mis--)alignment which are not yet fully understood.
 
-\subsection{Performance}
+\section{Performance}
 
 Blah blah blah see figure~\ref{fig:SVversusCollinear}.
 Blah blah blah see figure~\ref{fig:SVversusVis}.
@@ -325,8 +325,9 @@ Blah blah blah see figure~\ref{fig:SVversusVis}.
 \begin{center}
 \includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_coll_ZTT_normed.pdf}
 \includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_coll_A120.pdf}
-\caption{Comparison of the reconstructed tau pair mass spectrum in \ZTT~(left)
-and MSSM \HTT{120}~(right) events after the selections described in
+\caption[Comparison of SVfit with the Collinear Approximation
+algorithm]{Comparison of the reconstructed tau pair mass spectrum in
+\ZTT~(left) and MSSM \HTT{120}~(right) events after the selections described in
 chapter~\ref{ch:selections}.  The mass spectrum reconstructed by the Secondary
 Vertex fit is shown in blue, the result of the collinear approximation algorithm
 is given in green.  In the left plot, both distributions are normalized to
@@ -342,10 +343,14 @@ solutions in the application of the collinear approximation.}
 \begin{center}
 \includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_vis_A120.pdf}
 \includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_vis_A300.pdf}
-\caption{fixme}
-\label{fig:SVversusVis}
+\caption[Comparison of SVfit with the visible mass observable]{Comparison of the
+invariant mass of the muon and \tjet (the ``visible mass'') with the full \TT
+mass reconstructed by the SVfit. The spectrum is shown for two simulated MSSM
+Higgs samples, with $\ma = 120\GeVcc$~(left), and $\ma = 200\GeVcc$~(right).  To
+illustrate that relative resolution of the SVfit is superior to that of the
+visible mass, the visible mass is also shown scaled up such that the mean of the
+two distributions are identical.} \label{fig:SVversusVis}
 \end{center}
 \end{figure} 
-
 
 \ifx\master\undefined\input{settings/autocompile}\fi
