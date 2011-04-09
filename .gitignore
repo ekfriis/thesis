@@ -1,5 +1,9 @@
 */*.aux
 */*.log
 */*.out
+*/*.lof
+*/*.toc
+*/*.bbl
+*/*.blg
 */.DS_Store
 .DS_Store
