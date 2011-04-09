@@ -1,0 +1,548 @@
+\ifx\master\undefined\input{settings/autocompile}\fi
+
+\newcommand{\tablesize}{\small}
+
+\chapter{Data--Driven Background Estimation}
+\label{ch:backgrounds}
+
+\section{Introduction}
+
+\section{The Fake--rate Method}
+
+In this note, we describe how knowledge of the probabilities with which quark
+and gluon jets get misidentified as tau--jets may be utilized to obtain an
+estimate of background contributions in physics analyses.  As an illustrative
+example and in order to demonstrate the precision achievable with the method, we
+present results of applying the fake--rate technique to estimate the
+contributions of QCD, \WpJets, \ttbarpJets and $Z \rightarrow \mu^{+}
+\mu^{-}$ backgrounds in the measurement of the $Z \rightarrow \tau^{+} \tau^{-}$
+cross--section, in the channel $Z \rightarrow \tau^{+} \tau^{-} \rightarrow \mu
++ \tau\mbox{-jet}$.  Details of the analysis can be found in
+reference~\cite{EWKtauNote}.
+
+The results described in this note were obtained from Monte Carlo simulations of
+the $Z \rightarrow \tau^{+} \tau^{-}$ signal and different background processes
+for a centre--of--mass energy of $\sqrt{s} = 7$~TeV.  Analysis of the $\sqrt{s}
+= 7$~\TeV data recorded in 2009~\cite{refFakeRate2009dataResults} indicate that
+the probabilities for quark and gluon jets to fake the signatures of hadronic
+tau decays are well modeled by the Monte Carlo simulation.  Once data--samples
+of sufficient event statistics are available at collision energies of $\sqrt{s}
+= 7$~TeV, fake--rates at the higher centre--of--mass energy will be measured in
+data and the values obtained from data will henceforth be used for the purpose
+of estimating background contributions via the fake--rate technique.
+
+\subsection{Parameterization of fake--rates}
+
+\begin{figure}[t]
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(150,112)(0,0)
+\put(10.5, 60){\mbox{\includegraphics*[height=52mm]{backgrounds_chapter/2010_fake_rate_note/figures/AN2008_043_fig20left.pdf}}}
+\put(86.0, 60){\mbox{\includegraphics*[height=52mm]{backgrounds_chapter/2010_fake_rate_note/figures/AN2008_043_fig20right.pdf}}}
+\put(10.5, 2){\mbox{\includegraphics*[height=52mm]{backgrounds_chapter/2010_fake_rate_note/figures/AN2008_043_fig22left.pdf}}}
+\put(86.0, 2){\mbox{\includegraphics*[height=52mm]{backgrounds_chapter/2010_fake_rate_note/figures/AN2008_043_fig22right.pdf}}}
+%\put(-5.5, 112.5){\small (a)}
+%\put(72.0, 112.5){\small (b)}
+%\put(-5.5, 54.5){\small (c)}
+%\put(72.0, 54.5){\small (d)}
+\end{picture}
+\caption[$P_T$ and $\eta$ dependency of tau ID performance]{Cumulative
+efficiencies (left) and fake--rates (right) of successively applied tau
+identification cuts of the ``shrinking signal cone'' particle--flow based tau
+identification algorithm described in~\cite{PFlowTauReco} as function of
+$P_{T}^{jet}$ (top) and $\eta_{jet}$ (bottom) of tau--jet candidates.  The
+efficiencies/fake--rates for the complete set of tau identification criteria are
+represented by the blue (downwards facing) triangles.}
+\label{figPFTauReco_EfficienciesAndFakeRates}
+\end{center}
+\end{figure} 
+
+Efficiencies and fake--rates of the tau identification algorithm based on
+requiring no tracks of $P_{T} > 1$~GeV and ECAL energy deposits of $P_{T} >
+1.5$~GeV reconstructed within an ``isolation cone'' of size $dR_{iso} = 0.5$ and
+outside of a ``shrinking signal cone'' of size $dR_{sig} = 5.0 / E_{T}$ as it is
+used in the $Z \rightarrow \tau^{+} \tau^{-} \rightarrow \mu + \tau\mbox{-jet}$
+analysis are displayed in figure~\ref{figPFTauReco_EfficienciesAndFakeRates}.
+In order to account for the visible $P_{T}$ and $\eta$ dependence, we
+parametrize the fake--rates in bins of transverse momentum and pseudo--rapidity.
+As we will show in section~\ref{secFakeRateApplication}, the parametrization of
+the fake--rates by $P_{T}$ and $\eta$ makes it possible to not only estimate the
+total number of background events contributing to physics analyses, but to model
+the distributions of kinematic observables with a precision that is sufficient
+to extract information on the background shape.
+
+We add a third quantity, the $E_{T}$-weighted jet--width $R_{jet}$, to the
+parametrization in order to account for differences between the fake--rates of
+quark and gluon jets.  The jet width is defined as 
+\begin{equation}
+R_{jet} = \sqrt{E \left( \eta^2 \right) + E \left( \phi^2 \right)}
+\end{equation}
+where $E \left( \eta^2 \right)$ ($E \left( \phi^2 \right)$) is the second $\eta$
+($\phi$) moment of the jet constituents, weighted by constituent transverse
+energy. Analyses performed by the CDF collaboration~\cite{CDFtypeFakeRateMethod}
+found that systematic uncertainties on background estimates obtained from the
+fake--rate method are reduced in case differences between quark and gluon jets
+get accounted for in this way.
+
+\subsection{Measurement of fake--rates}
+
+Efficiencies and fake--rates are then obtained by counting the fraction of tau--jet candidates
+passing all tau identification cuts and discriminators
+in a given bin of $P_{T}^{jet}$, $\eta_{jet}$ and $R_{jet}$:
+\begin{equation}
+P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := 
+  \frac{N_{jets} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \vert \mbox{all tau ID cuts and discriminators passed} \right)}
+       {N_{jets} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \vert \mbox{preselection passed} \right)}
+\label{eqBgEstFakeRate_fr}
+\end{equation}
+The pre--selection in the denominator of equation~\ref{eqBgEstFakeRate_fr} in
+general refers to $P_{T}$ and $\eta$ cuts, which are applied with thresholds
+matching those applied on the final analysis level, but may as well include
+loose tau identification criteria (which may be applied \eg already during event
+skimming).
+
+Different sets of fake--rates are determined for the highest $P_{T}$ and for the
+second highest $P_{T}$ jet in QCD di--jet events, for jets in a QCD event sample
+enriched by the contribution of heavy quarks and gluons by requiring the
+presence of a muon reconstructed in the final state, and for jets in
+``electroweak'' events selected by requiring a $W$ boson in the final state.
+
+\subsection{The Fake--rate method}
+
+Knowledge of the tau identification efficiencies and fake--rates as function of
+the parameters $P_{T}^{jet}$, $\eta_{jet}$ and $R_{jet}$ as defined by
+equation~\ref{eqBgEstFakeRate_fr} is utilized to obtain an estimate for the
+contributions of background processes to physics analyses involving tau lepton
+hadronic decays in the final state.  The basic idea is to replace tau
+identification cuts and discriminators by appropriately chosen weights.
+
+Application of the fake--rate technique consists of two stages.  The first stage
+consists of loosening the tau identification cuts and discriminators and
+applying only the preselection requirements defined by the denominator of
+equation~\ref{eqBgEstFakeRate_fr}, in order to obtain an event sample dominated
+by contributions of background processes, which are expected to increase by the
+inverse of the (average) fake--rate, typically by a factor $\mathcal{O} \left(
+100 \right)$.  In the second stage, weights are applied to all events in the
+background dominated control sample, according to the probabilities $P_{fr}
+\left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$ for jets to fake the signature
+of a hadronic tau decay.  After application of the weights, an estimate for the
+total number of background events passing the tau identification cuts and
+discriminators and thus contributing to the final analysis sample is obtained.
+
+The fake--rate technique works best if all background contributions to the
+analysis arise from misidentification of quark and gluon jets as hadronic tau
+decays.  Corrections to the estimate obtained from the fake--rate technique  are
+needed in case of background processes contributing to the final analysis sample
+which either produce genuine tau leptons in the final state (e.g. $t\bar{t}$+
+jets) or in which tau--jet candidates are due to misidentified electrons or
+muons (e.g. $Z \rightarrow \mu^{+} \mu^{-}$, $Z \rightarrow e^{+} e^{-}$), as
+the latter may fake signatures of hadronic tau decays with very different
+probabilities than quark and gluon jets.
+
+In the ``simple'' fake--rate method described in more detail in the next
+section, the corrections are taken from Monte Carlo simulations.  Corrections
+based on Monte Carlo are needed also to compensate for signal contributions to
+the background dominated control sample.
+
+An alternative to Monte Carlo based corrections is to utilize additional
+information contained in the background dominated control sample.  The modified
+version is described in section~\ref{secBgEstFakeRate_frCDFtypeWeights}.  It has
+been used to estimate background contributions in searches for Higgs boson
+production with subsequent decays into tau lepton pairs performed by the CDF
+collaboration in TeVatron run $II$ data~\cite{CDFtypeFakeRateMethod}.  We will
+refer to the modified version as ``CDF--type'' method in the following.
+
+\subsubsection{``Simple'' weight method}
+
+In the ``simple'' method all tau--jet candidates within the background dominated
+event sample are weighted by the probabilities of quark and gluon jets to fake
+the signature of a hadronic tau decay:
+\begin{equation}
+w_{jet}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)
+\label{eqBgEstFakeRate_frSimpleJetWeight}
+\end{equation}
+These weights are applied to all jets in the background dominated control sample
+which pass the preselection defined by the denominator of
+equation~\ref{eqBgEstFakeRate_fr}.  Note that the weights defined by
+equation~\ref{eqBgEstFakeRate_frSimpleJetWeight} can be used to estimate the
+contributions of background processes to distributions of tau--jet related
+observables.  They cannot be used as event weights.
+
+In order to compare distributions of event level quantities or per--particle
+quantities for particles of types different from tau leptons decaying
+hadronically, event weights need to be defined.  Neglecting the small fraction
+of background events in which multiple tau--jet candidates pass the complete set
+of all tau identification cuts and discriminators, event weights can be computed
+by summing up the per--jet weights defined by
+equation~\ref{eqBgEstFakeRate_frSimpleJetWeight} over all tau--jet candidates in
+the event which pass the preselection:
+\begin{equation}
+W_{event}^{simple} := \Sigma w_{jet}^{simple}
+\label{eqBgEstFakeRate_frSimpleEventWeight}
+\end{equation}
+
+A bit of care is needed in case one wants to compare distributions of
+observables related to ``composite particles'' the multiplicity of which depends
+on the multiplicity of tau--jet candidates in the event (\eg combinations of
+muon + tau--jet pairs in case of the $Z \rightarrow \tau^{+} \tau^{-}
+\rightarrow \mu + \tau\mbox{--jet}$ analysis).  Per--particle weights need to be
+computed for such ``composite particles'', depending on $P_{T}^{jet}$,
+$\eta_{jet}$, $R_{jet}$ of its tau--jet candidate constituent, according to:
+\begin{equation}
+w_{comp-part}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := 
+  w_{jet}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)
+\label{eqBgEstFakeRate_frSimpleCompositeParticleWeight}
+\end{equation}
+
+Different estimates are obtained for the fake--rate probabilities determined for
+the highest and second highest $P_{T}$ jet in QCD di--jet events, jets in a muon
+enriched QCD sample and jets in $W$+jets events.  The arithmetic average of the
+four estimates together with the difference between the computed average and the
+minimum/maximum value is given in table~\ref{tabBgEstFakeRate_frSimpleResults}.
+
+We take the average value as ``best'' estimate of the background contribution
+and the difference between the average and the minimum/maximum estimate as its
+systematic uncertainty.  We obtain a value of $\mathcal{O} \left( 15 \% \right)$
+for the systematic uncertainty and find that the true sum of QCD, $W$+jets,
+$t\bar{t}$+jets and $Z \rightarrow \mu^{+} \mu^{-}$ background contributions
+agrees well with the ``best'' estimate obtained by the fake--rate method within
+the systematic uncertainty.
+
+Note that the estimate for the sum of background contributions which one obtains
+in case one applies the ``simple'' fake--rate weights defined by
+equation~\ref{eqBgEstFakeRate_frSimpleEventWeight} to a background dominated
+control sample selected in data is likely to overestimate the true value of
+background contributions by a significant amount.  The reason is that
+contributions of the $Z \rightarrow \tau^{+} \tau^{-}$ signal are
+non--negligible.  In fact, signal contributions to the background dominated
+control sample are expected to be $14.9 \%$ and since the per--jet weights
+computed by equation~\ref{eqBgEstFakeRate_frSimpleJetWeight} are larger on
+average in signal than in background events, the signal contribution increases
+by the weighting and amounts to $37.1 \%$ of the sum of event weights computed
+by equation~\ref{eqBgEstFakeRate_frSimpleEventWeight} and given in
+table~\ref{tabBgEstFakeRate_frSimpleResults}.
+
+The contribution of the $Z \rightarrow \tau^{+} \tau^{-}$ signal needs to be
+determined by Monte Carlo simulation and subtracted from the estimate obtained
+by applying the ``simple'' fake--rate method to data, in order to get an
+unbiased estimate of the true background contributions.
+
+\subsubsection{``CDF--type'' weights}
+\label{secBgEstFakeRate_frCDFtypeWeights}
+
+%The ``simple'' method described in the last section does actually overestimate the sum of background contributions 
+%to the final analysis by some amount.
+%The reason is that signal events present in the background dominated control
+%sample (selected by not applying any tau identification cuts or discriminators)
+%contribute to the estimate.
+%One way of handling the signal contribution is to subtract from the estimate obtained from the ``simple'' method
+%a correction term which is to be estimated from Monte Carlo.
+%Another way is to correct for the signal contribution by adjusting the weights,
+%based on information that is in the analyzed data sample only,
+%avoiding the need to rely on Monte Carlo based corrections.
+%The idea of adjusting the weights in such a way that signal contributions cancel
+%while an unbiased estimate of the sum of background contributions is maintained 
+%is the basis of the ``CDF--type'' fake--rate method.
+
+Instead of subtracting from the estimate obtained for the sum of background
+contributions a correction determined by Monte Carlo simulation, the signal
+contribution to the background dominated event sample selected in data can be
+corrected for by adjusting the weights, based solely on information contained in
+the analyzed data sample, hence avoiding the need to rely on Monte Carlo based
+corrections.
+
+In the ``CDF--type'' method, additional information, namely whether or not
+tau--jet candidates pass or fail the tau identification cuts and discriminators,
+is drawn from the data.  The desired cancellation of signal contributions is
+achieved by assigning negative weights to those tau--jet candidates which pass
+all tau identification cuts and discriminators, \ie to a fair fraction of
+genuine hadronic tau decays, but to a small fraction of quark and gluon jets
+only.  The small reduction of the background estimate by negative weights
+assigned to quark and gluon jets is accounted for by a small increase of the
+positive weights assigned to those tau--jet candidates for which at least one of
+the tau identification cuts or discriminators fails.  In this way, an unbiased
+estimate of the background contribution is maintained.
+
+To be specific, the ``CDF--type'' weights assigned to tau--jet candidates are computed as
+(for a derivation of the formula, see section~\ref{secDerrivationCDFtypeFakeRateWeights} of the appendix):
+\begin{equation}
+w_{jet}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) 
+:= 
+\begin{cases} 
+   \frac{P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
+         \varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
+        {\varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
+      \mbox{if all tau ID cuts and discriminators passed} \\
+   \frac{P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
+         \left( 1 - \varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \right)}
+        {\varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
+      %\mbox{ if at least one tau id. cut or discriminator failed}
+      \mbox{otherwise}
+\end{cases}
+\label{eqBgEstFakeRate_frCDFtypeJetWeight}
+\end{equation}
+
+The basic idea of the ``CDF--type'' weights is to assign negative (positive)
+weights to tau--jet candidates passing all tau identification cuts and
+discriminators (failing at least one cut or discriminator), such that signal
+contributions of genuine hadronic tau decays to the background dominated control
+sample on average cancel after application of the weights, while providing an
+unbiased estimate of the contribution of background processes arising from
+misidentification of quark and gluon jets.
+
+For the derivation of equation~\ref{eqBgEstFakeRate_frCDFtypeJetWeight} for the
+``CDF--type'' weights assigned to tau--jet candidates, we will use the following
+notation: Let $n_{\tau}$ ($n_{QCD}$) denote the total number of tau--jets (quark
+and gluon jets) in a certain bin of transverse momentum $P_{T}^{jet}$,
+pseudo--rapidity $\eta_{jet}$ and jet--width $R_{jet}$ and $n_{\tau}^{sel}$
+($n_{QCD}^{sel}$) denote the number of tau--jets (quark and gluon jets) in that
+bin which pass all tau identification cuts and discriminators.
+
+By definition of the tau identification efficiency $\varepsilon := \varepsilon
+\left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$ and fake--rate $f := f \left(
+P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$:
+\begin{eqnarray}
+n_{\tau}^{sel} & = & \varepsilon \cdot n_{\tau} \nonumber \\
+n_{QCD}^{sel} & = & f \cdot n_{QCD}.
+\label{eqBgEstFakeRate_eff_and_frDef}
+\end{eqnarray}
+
+Depending on whether or not a given tau--jet candidate passes all tau
+identification cuts and discriminators or not, we will assign a weight of value
+$w_{passed}$ or $w_{failed}$ to it.
+
+The values of the weights $w_{passed}$ and $w_{failed}$ shall be adjusted such
+that they provide an unbiased estimate of the background contribution:
+\begin{equation}
+w_{passed} \cdot f \cdot n_{QCD} + w_{failed} \cdot \left( 1 - f \right) \cdot n_{QCD} \equiv n_{QCD}^{sel} = f \cdot n_{QCD}
+\label{eqBgEstFakeRate_QCD}
+\end{equation}
+while averaging to zero for genuine hadronic tau decays:
+\begin{equation*}
+w_{passed} \cdot \varepsilon \cdot n_{\tau} + w_{failed} \cdot \left( 1 - \varepsilon \right) \cdot n_{\tau} \equiv 0.
+\label{eqBgEstFakeRate_tau}
+\end{equation*}
+The latter equation yields the relation:
+\begin{equation}
+w_{passed} = -\frac{1 - \varepsilon}{\varepsilon} \cdot w_{failed},
+\label{eqBgEstFakeRate_weightRelation}
+\end{equation}
+associating the two types of weights.  By inserting
+relation~\ref{eqBgEstFakeRate_weightRelation} into
+equation~\ref{eqBgEstFakeRate_QCD} we obtain:
+\begin{eqnarray*}
+& & -\frac{1 - \varepsilon}{\varepsilon} \cdot w_{failed} \cdot f \cdot n_{QCD} + w_{failed} \cdot \left( 1 - f \right) \cdot n_{QCD} 
+ = f \cdot n_{QCD} \\
+& \Rightarrow & \left( \frac{-f + \varepsilon \cdot f + \varepsilon - f \cdot \varepsilon}{\varepsilon} \right) \cdot w_{failed} = f \\
+& \Rightarrow & w_{failed} = \frac{f \cdot \varepsilon}{\varepsilon - f} 
+\end{eqnarray*}
+and 
+\begin{equation}
+w_{passed} = -\frac{f \cdot \left( 1 - \varepsilon \right)}{\varepsilon - f}
+\end{equation}
+which matches exactly equation~\ref{eqBgEstFakeRate_frCDFtypeJetWeight} 
+for the ``CDF--type'' weights applied to tau--jet candidates given in section~\ref{secBgEstFakeRate_frCDFtypeWeights}.
+
+
+Event weights and the weights assigned to ``composite particles'' 
+are computed in the same way as for the ``simple'' weights,
+based on the weights assigned to the tau--jet candidates:
+\begin{eqnarray}
+W_{event}^{CDF} & := & \Sigma w_{jet}^{CDF} \nonumber \\
+w_{comp-part}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) & := & 
+  w_{jet}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right),
+\label{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}
+\end{eqnarray}
+where the sums extend over all jets in the background dominated control sample
+which pass the preselection defined by the denominator of
+equation~\ref{eqBgEstFakeRate_fr}.
+
+The effect of the negative weights to compensate the positive weights
+in case the ``CDF--type'' fake--rate method is applied 
+to signal events containing genuine hadronic tau decays 
+is shown in table~\ref{tabBgEstFakeRate_frCDFtypeResults}.
+% illustrated in figure~\ref{figBgEstFakeRate_frCDFtypeResults_mVisibleSignal}.
+As expected, positive and negative weights do indeed cancel
+in the statistical average.
+
+%\begin{figure}[t]
+%\setlength{\unitlength}{1mm}
+%\begin{center}
+%\begin{picture}(150,54)(0,0)
+%\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525 404]{figures/plotBgEstFakeRateZtoMuTau_Ztautau_frSimpleMvisible.pdf}}}
+%\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525 404]{figures/plotBgEstFakeRateZtoMuTau_Ztautau_frCDFmVisible.pdf}}}
+%\end{picture}
+%\caption{\captiontext Distributions of visible invariant mass of muon plus tau--jet in
+%	  $Z \rightarrow \tau^{+} \tau^{-}$ signal events weighted by ``simple'' weights 
+%         computed according to equation~\ref{eqBgEstFakeRate_frSimpleCompositeParticleWeight} (left)
+%         and ``CDF--type'' weights 
+%         computed according to equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight} (right).
+%	  The signal contribution to the background estimate computed by the ``simple'' method is non--negligible 
+%         and needs to be corrected for.
+%	  The ``CDF--type'' weights achieve a statistical cancellation of positive and negative weights,
+%         such that the total signal contribution averages to zero, avoiding the need for Monte Carlo based corrections.}
+%\label{figBgEstFakeRate_frCDFtypeResults_mVisibleSignal}
+%\end{center}
+%\end{figure} 
+
+Figures~\ref{figBgEstFakeRate_frCDFtypeResults_muonPt},~\ref{figBgEstFakeRate_frCDFtypeResults_tauJetPt} 
+and~\ref{figBgEstFakeRate_frCDFtypeResults_mVisible}
+demonstrate that an unbiased estimate of the background contribution by the ``CDF--type'' weights is maintained.
+Overall, the estimates obtained are in good agreement with the contributions
+expected for different background processes, indicating that the adjustment of negative and positive weights 
+works as expected for the background as well.
+%The agreement between expected contributions and the estimates obtained from the ``CDF--type'' method
+%is summarized in terms of the total number of events in table~\ref{tabBgEstFakeRate_frCDFtypeResults}.
+
+Results obtained by the ``CDF--type'' fake--rate method are summarized in
+table~\ref{tabBgEstFakeRate_frCDFtypeResults}, in which the total number of
+background events estimated by
+equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight} is
+compared to the true background contributions.  The ``best'' estimate of the
+background contribution obtained from the ``CDF--type'' method is again taken as
+the arithmetic average of the estimates obtained by applying the fake--rate
+probabilities for the highest and second highest $P_{T}$ jet in QCD di--jet
+events, jets in a muon enriched QCD sample and jets in $W$+jets events.
+Systematic uncertainties are taken from the difference between the computed
+average value and the minimum/maximum estimate.  We obtain a value of
+$\mathcal{O} \left( 15 \mbox{--} 20 \% \right)$ for the systematic uncertainty
+of the ``CDF--type'' method, slightly higher than the systematic uncertainty
+obtained for the ``simple'' method.  The small increase of systematic
+uncertainties is in agreement with our expectation for fluctuations of the
+jet--weights in case weights of negative and positive sign are used.
+
+\subsection{k-Nearest Neighbor fake--rate calculation}
+
+\subsection{Results of Background Estimation}
+
+An independent estimate of the background contributions is obtained by applying
+the fake--rate method described in~\cite{CMS_AN_2010-074}.  Fake--rates in QCD
+multi--jet events (light quark enriched sample), QCD events containing muons
+(heavy quark and gluon enriched sample) and $W$ + jet events are measured in
+data~\cite{PFT-10-004,CMS_AN_2010-XXX} and applied to events which pass all the
+event selection criteria listed in table~\ref{tab:AHtoMuTauEventSelection}
+except for the requirement for tau--jet candidates to pass the ``medium'' tight
+TaNC discriminator and have unit charge.
+
+No assumption is made on the composition of $Z \to \mu^{+} \mu^{-}$, \WpJets,
+$t\bar{t} + jets$ and QCD backgrounds contributing to the event sample selected
+by the analysis.  Differences between fake--rates obtained for QCD multi--jet,
+QCD muon enriched and $W$ + jets background events are attributed as systematic
+uncertainties of the fake--rate method.  Per jet and per event weights have been
+computed by the ``simple'' and ``CDF-type'' weights as described
+in~\cite{CMS_AN_2010-074} and the results are found to be compatible within
+statistical and systematic uncertainties.  In the following, we present results
+for ``CDF-type'' weights.  The ``CDF-type'' weights have the advantage that the
+background estimate obtained does not change, whether there is MSSM Higgs $\to
+\tau^{+} \tau^{-}$ signal present in the data or not.
+
+Tau identification efficiencies need to be known when using ``CDF-type''
+weights.  Dedicated studies have checked the tau identification efficiencies in
+data~\cite{tauIdEff01,tauIdEff02}.  Statistical and systematic uncertainties of
+these studies are still sizeable at present, in the order to $20-30\%$.  No
+indication has been found, however, that the Monte Carlo simulation would not
+correctly model hadronic tau decays in data.  For the purpose of computing
+fake--rate weights via the ``CDF-type'' method, tau identification efficiencies
+are taken from the Monte Carlo simulation of hadronic tau decays in $Z \to
+\tau^{+} \tau^{-}$ events.  Systematic uncertainties on the background estimate
+obtained by the fake--rate method are determined by varying the tau
+identification efficiencies by $\pm 30\%$ relative to the value obtained from
+the Monte Carlo simulation.
+
+The results of applying the fake--rate method to the mu + tau channel are
+summarized in table~\ref{tab:MuTauFakeRateResultsOS}.  The background prediction
+has been corrected for the expected contribution of $XX.X$ events from $Z \to
+\mu^{+} \mu^{-}$ background events in which the reconstructed tau--jet is due to
+a misidentified muon.  The obtained estimate is in good agreement with the Monte
+Carlo expectation.
+
+\begin{table}[t]
+\begin{center}
+\tablesize
+\begin{tabular}{|l|c|c|}
+\hline
+Events weighted by: & Estimate \\
+\hline
+QCD leading jet       & \\
+QCD sub--leading jet      & \\
+QCD $\mu$--enriched & \\
+$W$ + jets          & \\
+\hline
+Fake--rate estimate & \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\caption{Estimate for background contributions in mu + tau channel obtained by
+weighting events passing all selection criteria listed in
+table~\ref{tab:AHtoMuTauEventSelection} except for the requirement for tau--jet
+candidates to pass the ``medium'' tight TaNC discriminator and have unit charge
+by fake--rates measured in QCD multi--jet, QCD muon enriched and $W$ + jets data
+samples.} \label{tab:MuTauFakeRateResultsOS}
+\end{center}
+\end{table}
+
+As an additional cross--check of the method, a sample of events containing a
+muon plus a tau--jet of like--sign charge is selected in data and compared to
+the background prediction obtained by applying the fake--rate method to the
+like--sign sample.  The like--sign sample is expected to be dominated by the
+contributions of $W$ + jets and QCD background processes and allows to verify
+the fake--rate method in a practically signal free event sample.  The background
+estimate obtained by the fake--rate method is compared to the number of events
+observed in the like--sign data sample in
+table~\ref{tab:MuTauFakeRateResultsSS}.  The number of events expected in the
+like--sign control sample from Monte Carlo simulation is indicated in the
+caption.  All numbers are in good agreement.
+
+The fake--rate method does not only allow to estimate the total number of
+background events, but allows to model the distributions of background processes
+as well.  The capability to model distributions is illustrated in
+figure~\ref{fig:MuTauFakeRateResultsSS}, which shows good agreement between the
+distributions observed in the like-sign data sample and the predictions obtained
+by the fake--rate method for the distributions of muon plus tau--jet visible
+mass and of the ``full'' invariant mass reconstructed by the SVfit algorithm.
+
+\begin{table}[t]
+\begin{center}
+\tablesize
+\begin{tabular}{|l|c|c|}
+\hline
+Events weighted by:     & Estimate \\
+\hline
+QCD leading jet           & \\
+QCD sub--leading jet          & \\
+QCD $\mu$--enriched     & \\
+$W$ + jets              & \\
+\hline
+Fake--rate estimate     & \\
+\hline
+Observed                & \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\caption{Number of events observed in like--sign control region compared to
+estimate obtained by fake--rate method.  The number of observed events as well
+as the number of background events predicted by the fake--rate method is on good
+agreement with the Monte Carlo expectation of $XX.X$ events for the sum of $Z
+\to \mu^{+} \mu^{-}$, \WpJets, \ttbarpJets and QCD background
+contributions in the like--sign control region.}
+\label{tab:MuTauFakeRateResultsSS}
+\end{center}
+\end{table}
+
+\begin{figure}[t]
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(150,52)(0,0)
+%\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{figures/likeSignMuTau_visMass.pdf}}}
+%\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{figures/likeSignMuTau_SVfitMass.pdf}}}
+\end{picture}
+\caption{Distribution of visible mass (left) and ``full'' invariant mass
+reconstructed by the SVfit algorithm (right) observed in the like--sign charge
+control region compared to the background estimate obtained by the fake--rate
+method.} \label{fig:MuTauFakeRateResultsSS}
+\end{center}
+\end{figure} 
+
+\ifx\master\undefined\input{settings/autocompile}\fi
