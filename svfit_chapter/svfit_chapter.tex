@@ -1,6 +1,351 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 
+\newcommand{\mtau}{m_{\tau}}
+\newcommand{\mnus}{m_{\nu\nu}}
+\newcommand{\mvis}{m_{vis}}
+
 \chapter{The Secondary Vertex Fit}
 \label{ch:svfit}
+
+The dominant background in the search for the Higgs $\to \TT$
+signal is due to Standard Model $Z \to \tau^{+} \tau^{-}$ events.  The most
+``natural'' observable to discriminate between Higgs signal and $Z$ background
+would be the invariant mass of the di--tau system, utilizing the fact that the
+$Z$ resonance is well known ($m_{Z} = 91.1876 \pm 0.0021$~\GeVcc) and has a narrow
+width ($\Gamma_{Z} = 2.4952 \pm 0.0023$~\GeV)~\cite{PDG}.  The experimental
+complication in this approach is due to the neutrinos produced in the tau lepton
+decays, which escape detection, carrying away an unmeasured amount of energy,
+and making it difficult to reconstruct the tau lepton four--vectors.
+
+The conventional algorithm to reconstruct the di--tau invariant mass assumes
+that the momenta of neutrinos produced in tau decays are collinear to the
+momenta of the visible tau decay products~\cite{massRecoCollinearApprox}.  The
+main disadvantage of the collinear approximation algorithm is that it fails to
+find physical solutions for about half of the MSSM Higgs $\to \TT$
+decays, in particular for events in which the Higgs boson has small $P_{T}$ and
+the two tau leptons are back--to--back in azimuth.  Improvements to the
+collinear approximation algorithm have recently been made which aim to recover
+part of the events with unphysical solutions~\cite{improvedCollinearApprox}.
+But even with these improvements, no physical solution is still found for a
+large fraction of signal events.
+
+A novel algorithm is presented in the following, which succeeds in finding a
+physical solution for every event.  As an additional benefit, the new algorithm
+is found to improve the di--tau invariant mass resolution, making it easier to
+separate the Higgs signal from the $Z \to \TT$ background.
+
+The novel Secondary Vertex fit (SVfit) algorithm for di--tau invariant mass
+reconstruction that we present in the following utilizes a likelihood
+maximization to fit a $\TT$ invariant mass hypothesis for each
+event.  The likelihood is composed of separate terms which represent probability
+densities of:
+\begin{itemize}
+\item tau decay kinematics
+\item matching between the momenta of neutrinos produced in the tau decays
+ and the reconstructed missing transverse momentum
+\item a regularization ``$P_{T}$--balance'' term which accounts for the effects on the di--tau invariant mass
+ of acceptance cuts on the visible tau decay products
+\item the compatibility of tau decay parameters with the position of reconstructed tracks
+ and the known tau lifetime of $c \cdot \tau = 87~\micron$~\cite{PDG}.
+\end{itemize}
+The likelihood is maximized as function of a set of parameters which fully describe the tau decay.
+
+\section{Parametrization of tau decays}
+\label{sec:svParameterization}
+
+The decay of a tau of visible four--momentum $P_{vis}$ measured in the CMS
+detector (``laboratory'') frame can be parametrized by three variables.  The
+invisible (neutrino) momentum is fully determined by these parameters.
+
+The ``opening--angle'' $\theta$ is defined as the angle between the boost
+direction of the tau lepton and the momentum vector of the visible decay
+products in the rest frame of the tau.  The azimuthal angle of the tau in the
+lab frame is denoted as $\overline{\phi}$ (we denote quantities defined in the
+laboratory frame by a overline).  A local coordinate system is defined such that the
+$\bar{z}$--direction lies along the visible momentum and $\overline{\phi} = 0$ lies
+in the plane spanned by the momentum vector of the visible decay products and
+the proton beam direction. The third parameter, $m_{\nu\nu}$, denotes the
+invariant mass of the invisible momentum system.
+
+Given $\theta$, $\overline{\phi}$ and $m_{\nu\nu}$, the energy and direction of the
+tau lepton can be computed by means of the following equations: The energy of
+the visible decay products in the rest frame of the tau lepton is related to the
+invariant mass of the neutrino system by:
+\begin{equation}
+E^{vis} = \frac{m_\tau^2 + \mvis^2 - \mnus^2}{2m_\tau} 
+\label{eq:restFrameMomentumRelation}
+\end{equation}
+Note that for hadronic decays, $\mnus$ is a constant of value zero, as only a
+single neutrino is produced.  Consequently, the magnitude of $P^{vis}$ depends
+on the reconstructed mass of the visible decay products only and is a constant
+during the SVfit.
+
+The opening angle $\overline{\theta}$ between the tau lepton direction and the
+visible momentum vector in the laboratory frame is determined by the rest frame
+quantities via the (Lorentz invariant) component of the visible momentum
+perpendicular to the tau lepton direction:
+\begin{align}
+P^{vis}_{\perp} &= \overline P^{vis}_{\perp} \nonumber \\
+\Rightarrow \sin \overline \theta &= \frac{P^{vis} \sin \theta}{\overline P^{vis}} 
+\label{eq:labFrameOpeningAngle} 
+\end{align}
+
+Substituting the parameters $\mnus$ and $\theta$ into
+equations~\ref{eq:restFrameMomentumRelation} and~\ref{eq:labFrameOpeningAngle},
+the energy of the tau is obtained by solving for the boost factor $\gamma$ in
+the Lorentz transformation between tau rest frame and laboratory frame of the
+visible momentum component parallel to the tau direction:
+\begin{align}
+\overline{P}^{vis} \cos \overline{\theta} &= \gamma \beta E^{vis} + \gamma P^{vis} \cos\theta \nonumber \\ 
+\Rightarrow \gamma &= \frac{E^{vis}[{\left( E^{vis} \right)^2 + \left( \overline{P}^{vis} \cos \overline{\theta} \right)^2 
+ - \left( P^{vis} \cos \theta \right)^2}]^{1/2} - P^{vis} \cos \theta \overline{P}^{vis} \cos \overline{\theta}}{\left( E^{vis} \right)^2 
+ - \left( P^{vis} \cos \theta \right)^2}, \nonumber \\
+E^{\tau} &= \gamma m_\tau \nonumber
+%\label{eq:LorentzRelationship}
+\end{align}
+
+The energy of the tau lepton in the laboratory frame as function of the measured
+visible momentum depends on two of the three parameters only - the rest frame
+opening angle $\theta$ and the invariant mass $\mnus$ of the neutrino system.
+The direction of the tau lepton momentum vector is not fully determined by
+$\theta$ and $\mnus$, but is constrained to lie on the surface of a cone of
+opening angle $\overline{\theta}$ (given by equation~\ref{eq:labFrameOpeningAngle}),
+the axis of which is given by the visible momentum vector.  The tau lepton
+four--vector is fully determined by the addition of the third parameter
+$\overline{\phi}$, which describes the azimuthal angle of the tau lepton with respect
+to the visible momentum vector.  The spatial coordinate system used is
+illustrated in figure~\ref{fig:svFitDecayParDiagram}.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=72mm]{svfit_chapter/figures/decay_parameters_graphic.pdf}
+\caption{Illustration of the coordinate system used by the SVfit to describe
+the decays of tau leptons.} \label{fig:svFitDecayParDiagram}
+\end{center}
+\end{figure} 
+
+\section{Likelihood for tau decay}
+
+The probability density functions for the tau decay kinematics are taken from
+the kinematics review of the PDG~\cite{PDG}.  The likelihood is proportional to
+the phase--space volume for two--body ($\tau \to \tau_{had} \nu$) and
+three--body ($\tau \to e \nu\nu$ and $\tau \to \mu \nu\nu$) decays.  For
+two--body decays the likelihood depends on the decay angle $\theta$ only:
+\begin{equation*}
+\mathrm{d}\Gamma \propto |\mathcal{M}|^2 \sin \theta d \theta
+\label{eq:pdfKineHadronic}
+\end{equation*}
+For three--body decays, the likelihood depends on the invariant mass of the
+neutrino system also:
+\begin{equation}
+\mathrm{d}\Gamma \propto |\mathcal{M}|^2 
+\frac{((\mtau^2 - (\mnus + \mvis)^2)(\mtau^2 - (\mnus - \mvis)^2))^{1/2}}
+{2 \mtau} 
+\mnus
+\mathrm{d}\mnus
+\sin \theta d\theta 
+\label{eq:pdfKineLeptonic}
+\end{equation}
+In the present implementation of the SVfit algorithm, the matrix element is
+assumed to be constant, so that the likelihood depends on the phase--space
+volume of the decay only~\footnote{The full matrix elements for tau decays may
+be added in the future, including terms for the polarization of the tau lepton
+pair, which is different in Higgs and $Z$ decays~\cite{tauDecayPolarization}.
+}.
+
+
+\subsection{Likelihood for reconstructed missing transverse momentum}
+
+Momentum conservation in the plane perpendicular to the beam axis implies that
+the vectorial sum of the momenta of all neutrinos produced in the decay of the
+tau lepton pair matches the reconstructed missing transverse momentum.
+Differences are possible due to the experimental resolution and finite $P_{T}$
+of particles escaping detection in beam direction at high $\left| \eta \right|$.
+
+The \MET resolution is measured in $Z \to \mu^{+} \mu^{-}$ events selected in
+the $7$~TeV data collected by CMS in 2010.  Corrections are applied to Monte
+Carlo simulated events to match the resolution measured in data.  The momentum
+vectors of reconstructed \MET and neutrino momenta given by the fit parameters
+are projected in direction parallel and perpendicular to the direction of the
+$\tau^{+} \tau^{-}$ momentum vector.  For both components, a Gaussian
+probability function is assumed.  The width and mean values of the Gaussian in
+parallel (``$\parallel$'') and perpendicular (``$\perp$'') direction are:
+\begin{align}
+\sigma_\parallel &= \max \left( 7.54 \left( 1 - 0.00542 \cdot q_{T} \right), 5. \right) \nonumber\\
+\mu_\parallel &= -0.96 \nonumber \\
+\sigma_\perp &= \max \left( 6.85 \left( 1 - 0.00547 \cdot q_{T} \right), 5. \right) \nonumber \\
+\mu_\perp &= 0.0, \nonumber
+%\label{eq:METparams}
+\end{align}
+where $q_{T}$ denotes the transverse momentum of the tau lepton pair.
+
+
+\subsection{Likelihood for tau lepton transverse momentum balance}
+
+The tau lepton transverse momentum balance likelihood term represents the
+probability $p \left( P^{\tau}_{T} | M_{\tau\tau} \right)$ for a tau to have a
+certain $P_{T}$, given that the tau is produced in the decay of a resonance of
+mass $M_{\tau\tau}$.  The likelihood is constructed by parametrizing the shape
+of the tau lepton $P_{T}$ distribution in simulated Higgs $\to \tau^{+}
+\tau^{-}$ events as a function of the Higgs mass.  The functional form of the
+parametrization is taken to be the sum of two terms.  The first term, denoted by
+$p^{*} \left( P_{T} | M \right)$, is derived by assuming an isotropic two--body
+decay, that is
+\begin{equation*}
+\mathrm{d}p^{*} \propto \sin\theta \mathrm{d}\theta.
+\end{equation*}
+Performing a variable transformation from $\theta$ to $P_{T} \sim \frac{M}{2}
+\sin\theta$, we obtain
+\begin{align}
+p^{*} \left( P_{T} | M \right) &= \frac{\mathrm{d}p}{\mathrm{d}P_T} = \frac{\mathrm{d}p}{\mathrm{d}\cos\theta}
+\left| \frac{\mathrm{d}\cos\theta}{\mathrm{d}P_T} \right| \nonumber \\
+&\propto \left| \frac{\mathrm{d}}{\mathrm{d}P_T} \sqrt{1 - \left(2 \frac{P_T}{M} \right)^2} \right| \nonumber \\
+&= \frac{1}{\sqrt{\left( \frac{M}{2 P_{T}} \right)^2 - 1}}. 
+\label{eq:ptBalanceTerm1}
+\end{align}
+The first term of the $P_{T}$--balance likelihood is taken as the convolution of
+equation~\ref{eq:ptBalanceTerm1} with a Gaussian of width s.  The second term is
+taken to be a Gamma distribution of scale parameter $\theta$ and shape parameter
+k, in order to account for tails in the $P_{T}$ distribution of the tau lepton
+pair.  The complete functional form is thus given by
+\begin{equation}
+p \left( P_{T} | M \right) \propto \int_0^{\frac{M}{2}} \! p^* \left( P_{T}' | M \right) 
+ e^{-\frac{\left( P_{T} - P_{T}' \right)^2}{2 s^2}} \; \mathrm{d}P_T' + a \Gamma \left( P_T, k, \theta \right).
+\label{eq:ptBalanceLikelihood}
+\end{equation}
+Numerical values of the parameters s, $\theta$ and k are determined by fitting
+function~\ref{eq:ptBalanceLikelihood} to the tau lepton $P_{T}$ distribution in
+simulated Higgs $\to\TT$ events.  The relative weight a of the
+two terms is also determined in the fit.  Replacing the integrand in
+equation~\ref{eq:ptBalanceLikelihood} by its Taylor expansion, so that the
+integration can be carried out analytically, keeping polynomial terms up to
+fifth order, and assuming the fit parameters to depend at most linearly on the
+Higgs mass, we obtain the following numerical values for the parameters:
+\begin{align}
+s &= 1.8 + 0.018 \cdot M_{\tau\tau} \nonumber \\
+k &= 2.2 + 0.0364 \cdot M_{\tau\tau} \nonumber \\
+\theta &= 6.74 + 0.02 \cdot M_{\tau\tau} \nonumber \\
+a &= 0.48 - 0.0007 \cdot M_{\tau\tau}. \nonumber 
+\end{align}
+
+The motivation to add the $P_{T}$--balance likelihood to the SVfit is to add a
+``regularization'' term which compensates for the effect of $P_{T}$ cuts applied
+on the visible decay products of the two tau leptons.  In particular for tau
+lepton pairs produced in decays of resonances of low mass, the visible $P_{T}$
+cuts significantly affect the distribution of the visible momentum fraction $x =
+\frac{E_{vis}}{E_{\tau}}$.  The effect is illustrated in
+figures~\ref{fig:ptBalancePtVisCuts}
+and~\ref{fig:ptBalancePtVisCutsCompareMasses}.  If no attempt would be made to
+compensate for this effect,
+equations~\ref{eq:pdfKineHadronic},~\ref{eq:pdfKineLeptonic} would yield
+likelihood values that are too high at low $x$, resulting in the SVfit to
+underestimate the energy of visible decay products (overestimate the energy of
+neutrinos) produced in the tau decay, resulting in a significant tail of the
+reconstructed mass distribution in the high mass region.  The $\tau^{+}
+\tau^{-}$ invariant mass distribution reconstructed with and without the
+$P_{T}$--balance likelihood term is shown in
+figure~\ref{fig:ptBalanceImprovedMassResolution}.  A significant improvement in
+resolution and in particular a significant reduction of the non--Gaussian tail
+in the region of high masses is seen.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[height=72mm, angle=90]{svfit_chapter/figures/pt_balance_effect.pdf}
+\caption{\captiontext Distribution of di--tau invariant mass reconstructed by
+the SVfit algorithm in simulated Higgs events with $M_{A} = 130$~\GeV$/c^2$.
+The SVfit algorithm is run in two configurations, with~(blue) and without~(red)
+the $P_{T}$--balance likelihood term included in the fit. 
+  %The addition of the $P_{T}$ balance term improves the resolution and reduces
+  %the non--Gaussian tail.
+} \label{fig:ptBalanceImprovedMassResolution}
+\end{center}
+\end{figure} 
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=72mm]{svfit_chapter/figures/scuplting_A130_muon.pdf}
+\includegraphics*[width=72mm]{svfit_chapter/figures/scuplting_A130_tau.pdf}
+\caption{\captiontext Normalized distributions of the fraction of total tau
+decay energy carried by the muon (left) and hadronic constituents (right) in
+simulated Higgs events with \mbox{$M_{A} = 130~\GeVcc$}.  The distribution is shown
+before (blue) and after (red) the requirement on the $P_T$ of the visible decay
+products described in section~\ref{sec:EventSelectionMuTau}.  }
+\label{fig:ptBalancePtVisCuts}
+\end{center}
+\end{figure} 
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=72mm]{svfit_chapter/figures/scuplting_Ztautau_powheg_muon.pdf}
+\includegraphics*[width=72mm]{svfit_chapter/figures/scuplting_A200_muon.pdf}
+\caption{\captiontext Normalized distributions of the fraction of total tau
+decay energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs events
+with \mbox{$M_{A} = 200~\GeVcc$}~(right).  The distribution is shown before
+(blue) and after (red) the requirement that the $P_T$ of the muon be greater
+than 15~\GeVc.} \label{fig:ptBalancePtVisCutsCompareMasses}
+\end{center}
+\end{figure} 
+
+\subsection{Secondary vertex information} 
+
+The parametrization of the tau decay kinematics described in
+section~\ref{sec:svParameterization} can be extended to describe the production
+and decay of the tau.  As the flight direction of the tau is already fully
+determined by the parameters $\theta$, $\overline{\phi}$ and $m_{\nu\nu}$, the
+position of the secondary (decay) vertex is hence fully determined by addition
+of a single parameter for the flight distance, $r$.  The tau lifetime $c\tau =
+87$~$\mu$m is large enough to allow the displacement of the tau decay vertex
+from the primary event vertex to be resolved by the CMS tracking detector.  The
+resolution provided by the CMS tracking detector is utilized to improve the
+resolution on the $\tau^{+} \tau^{-}$ invariant mass reconstructed by the SVfit
+algorithm.  The likelihood term based on the secondary vertex information is
+based on the compatibility of the decay vertex position with the reconstructed
+tracks of charged tau decay products.  Perhaps surprisingly, it turns out that
+the flight distance parameter $R$ is sufficiently constrained even for tau
+decays into a single charged hadron, electron or muon.
+
+The parameter $R$ can be constrained further by a term which represents the
+probability for a tau lepton of momentum $P$ to travel a distance $d$ before
+decaying:
+\begin{equation*}
+p \left( d | P \right) = \frac{m_\tau}{P c\tau}e^{-\frac{m_\tau d}{P c\tau}}
+\end{equation*}
+
+The likelihood terms for the secondary vertex fit have been implemented in the
+SVfit algorithm.  In the analysis presented in this note, the decay vertex
+information is not used, however, because of systematic effects arising from
+tracker (mis--)alignment which are not yet fully understood.
+
+\subsection{Performance}
+
+Blah blah blah see figure~\ref{fig:SVversusCollinear}.
+Blah blah blah see figure~\ref{fig:SVversusVis}.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_coll_ZTT_normed.pdf}
+\includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_coll_A120.pdf}
+\caption{Comparison of the reconstructed tau pair mass spectrum in \ZTT~(left)
+and MSSM \HTT{120}~(right) events after the selections described in
+chapter~\ref{ch:selections}.  The mass spectrum reconstructed by the Secondary
+Vertex fit is shown in blue, the result of the collinear approximation algorithm
+is given in green.  In the left plot, both distributions are normalized to
+unity, illustrating the improvement in resolution (shape) provided by the SVfit.
+In the right plot, the distributions are normalized to an (arbitrary)
+luminosity, illustrating the loss of events that occurs due to unphysical
+solutions in the application of the collinear approximation.}
+\label{fig:SVversusCollinear}
+\end{center}
+\end{figure} 
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_vis_A120.pdf}
+\includegraphics*[width=72mm]{svfit_chapter/figures/sv_fit_approval_plots/sv_vs_vis_A300.pdf}
+\caption{fixme}
+\label{fig:SVversusVis}
+\end{center}
+\end{figure} 
+
 
 \ifx\master\undefined\input{settings/autocompile}\fi
