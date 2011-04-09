@@ -94,40 +94,122 @@ the gauge Field Strength Tensor yields the QED Lagrangian:
   \frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
 \end{equation}
 
+The gauge symmetry group of QED is $U(1)$, the unitary group of degree 1.  This
+symmetry can be visualized as a rotation of a two--dimensional unit vector. (The
+application of the gauge transformation $e^{i\theta}$ rotates a number in the
+complex plane.)  In gauge theory that the symmetry group
+defines the behavior of the gauge bosons and thus the interactions of the
+theory.  
+
 \subsection{The Weak Interactions}
 
 The theory of Weak Interactions was created to describe the physics of
 radioactivity.  The first formulation of the theory was done by
-Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $beta$ decay
-of radioactive elements.  The initial theory was a four-fermion ``contact''
-theory.  In a contact theory, all four fermions come from a single vertex.
-The Lagrangian for the Fermi interactions is:
+Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $beta$
+decay of radioactive elements.  The initial theory was a four-fermion
+``contact'' theory.  In a contact theory, all four fermions come from a single
+vertex.  The Lagrangian for the Fermi interactions is:
 \begin{equation}
  find me 
+ \label{eq:FermiContactInteraction}
 \end{equation}
+The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e +
+\bar{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to \nu_\mu
++ e + \bar{\nu_e}$).
 
-However, the contact interaction form of Fermi's theory is not complete.  At 
-higher energies the theory suffers from \FIX{what?}.  The theory can 
-be completed using the gauge theory formalism.  In this case, the 
+However, the contact interaction form of Fermi's theory is not complete.  At
+higher energies the theory suffers from \FIX{what?}.  The theory is made
+renormalizable by the using the gauge theory formalism.  The contact interaction
+is replaced by massive propagators, the $W^\pm$ and $Z$ gauge bosons.  The term
+in the $\beta$--decay Feynman diagram associated with the massive $Z$ boson
+propagator is
+\begin{equation}
+  fidn me
+  \label{eq:WeakPropagator}
+\end{equation}
+The presence of the large mass of gauge boson in the denominator is the reason
+why the contact interaction original formulated by Fermi is effectively
+describes of low--energy weak phenomenon.  When the momentum transfer $q$ is
+small compared to $M_W$, the effect of the propagator is an effective constant.
+In the low energy limit, the full propagator in equation~\ref{eq:WeakPropagator}
+is equivalent to the Fermi contact interaction
+in~\ref{eq:FermiContactInteraction}.
 
+The ``charge'' of the theory of interaction is called weak isospin.  Similar to
+the electric charge of QED, only particles with non--zero weak isospin couple to
+the gauge bosons of the weak force, and weak isospin is conserved in weak
+interactions.   The weak force is \emph{chiral}; the ``handedness'' of the
+particles affects how they interact with each other.  In fact, the weak
+interaction violates parity: the interaction is not invariant under spatial
+inversion.  Left--handed fermions carry weak isospin $T = 1/2$, and form a
+doublet under the $SU(2)$ gauge group.  The right--handed fermions have no weak
+isospin, and are singlets under the gauge group.  
 
 \subsection{Quantum Chromodynamics}
 
 \subsection{Electroweak Unification}
+In the early 1960s Glashow published a series of papers describing how the
+electromagnetic and weak forces could be unified into a common ``electroweak''
+force.  The fact that at low energy the electromagnetic and weak forces appear
+to be separate phenomena is due to the fact that the symmetry of the electroweak
+gauge group is spontaneously broken.
 
 \subsection{The Higgs mechanism}
 
+
 \section{Searches for the Higgs boson}
 \subsection{Higgs boson phenomenology}
-\subsection{Searches at LEP}
-\subsection{Searches at the Tevatron}
-\subsection{Searches at the Tevatron}
+\label{sec:SMHiggsPhenom}
+\subsection{Results from LEP and Tevatron}
 
 \section{Beyond the Standard Model}
 \subsection{The Hierarchy Problem}
 \subsection{Supersymmetry}
 \subsection{The Minimal Supersymmetric Model and $\tau$ leptons}
+\label{sec:MSSMAndTaus}
 
-\section{$\tau$ leptons as a probe of new physics}
+\section{The physics of the \taul}
+As discussed in sections~\ref{sec:SMHiggsPhenom} and~\ref{sec:MSSMAndTaus}, the
+$\tau$ lepton is an important probe of Higgs physics.  The \taul has some
+unusual properties which make it particularly challenging at hadron colliders.
+With a mass of 1.78~\GeVcc, the \taul is heaviest of the leptons.  The nominal
+decay distance $c\tau$ of the \taul is 87~\micron, which in practice means that
+the $\tau$ will always decay before reaching the first layer of the detector.
+Tau decays can be effectively classified into two types. ``Leptonic'' decays
+consist of a $\tau$ decaying to a light lepton ($\ell = e, \mu$) and two
+neutrinos $\tau^+ \to \ell^+ \nu_\tau \bar{ \nu_{\ell}}$.  ``Hadronic'' decays 
+consist of a low--multiplicity collimated group of hadrons, typically \Pgppm and \Pgpz
+mesons.  The hadronic decays of the \taul compose approximately $65\%$ of the
+\taul branching fraction, with the remainder shared approximately equally by the
+leptonic decays.  The branching fractions for the leptonic and most common hadronic decays
+are shown in table~\ref{tab:TauDecayModes}.
+\begin{table}
+   \centering
+   \begin{tabular}{lcrr}
+      Visible Decay Products  & Resonance & Mass (\MeVcc) &
+      Fraction~\cite{PDG} \\
+      \hline
+      \hline
+      \multicolumn{4}{c}{Leptonic modes modes} \\
+      \hline
+      $e^- \nu_\tau \bar \nu_e$             & -      & 0.5  & 17.8\% \\
+      $\mu^-\nu_\tau \bar \nu_\mu$          & -      & 105  & 17.4\% \\
+      \hline
+      \multicolumn{4}{c}{Hadronic modes} \\
+      \hline
+      $\pi^{-} \nu_\tau$                    & -      & 135  & 10.9\% \\
+      $\pi^{-}\pi^0 \nu_\tau$               & $\rho$ & 770  & 25.5\% \\
+      $\pi^{-}\pi^0\pi^0 \nu_\tau$          & $a1$   & 1200 & 9.3\% \\
+      $\pi^{-}\pi^{-}\pi^{+} \nu_\tau$      & $a1$   & 1200 & 9.0\% \\
+      $\pi^{-}\pi^{-}\pi^{+}\pi^0 \nu_\tau$ & $a1$   & 1200 & 4.5\% \\
+      \hline
+      Total                                 &        &      & 94.4\% \\
+      \hline
+   \end{tabular}
+   \label{tab:decay_modes}
+   \caption{Resonances and branching ratios of the dominant decay modes of
+   the \taul.  The decay products listed correspond to a negatively
+   charged \taul; the table is identical under charge conjugation.}
+\end{table}
 
 \ifx\master\undefined\input{settings/autocompile}\fi
