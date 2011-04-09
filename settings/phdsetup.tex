@@ -25,7 +25,10 @@
 
 \usepackage[pdftex]{graphicx}
 \usepackage{epstopdf}
+\usepackage{multirow}
+\usepackage{fixme}
 
+\usepackage{feynmp}
 %\usepackage{tikz}
 %\usetikzlibrary{positioning} % [right=of ...]
 %\usetikzlibrary{fit} % [fit= ...]
@@ -175,7 +178,9 @@
 \newcommand{\signaturebox}[1]{\multicolumn{1}{p{4in}}{\vspace{3ex}}\\\midrule #1\\}
 
 \usepackage{xspace}
+\usepackage{includes/pennames}
 \input{includes/ptdr-definitions}
+\input{includes/my_defs.tex}
 
 % [some math stuff - maybe stick in sep file]
 \usepackage{amsthm}
