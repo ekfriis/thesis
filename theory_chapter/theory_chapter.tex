@@ -6,29 +6,33 @@
 \section{The Standard Model}
 
 The Standard Model (SM) is a ``theory of almost everything'' that describes the
-interactions of elementary particles.  The theory is the synthesis of quantum
-electrodynamics, the theory of weak nuclear interactions, and the strong nuclear 
-force.  There are three types of elementary particles in the SM: quarks,
-leptons, and gauge bosons.  
+interactions of elementary particles.  The Standard Model is a \emph{quantum
+field theory}, first appearing in its modern form in the middle of the 20th
+century.  The model is the synthesis of the independent theories of
+electromagnetism, and the weak and strong nuclear forces.  Each of these
+theories was used to describe different phenomena, which each have extremely
+different strengths and act at different scales.  The interaction of light and
+matter is described by Quantum Electrodynamics~(QED), a relativistic field
+extension of the theory of electromagnetism.  The physics of radioactivity and
+nuclear decay was described by the Fermi theory of weak interactions and the
+forces that strong nuclear force binds the nuclei of atoms was described by
+Yukawa.  An overview of these theories will be presented in this chapter.  
 
-Prior to the development of the SM, three different theories theories of
-particle physics where used to describe different phenomena, which are
-discussed in turn.   The interaction of light and matter, is described by
-Quantum Electrodynamics~(QED), a relativistic field extension of the theory of
-electromagnetism.  The physics of radioactivity and nuclear decay was described
-by the theory of weak interactions.  Finally, the forces that bind together the
-nuclei of atoms was described by the strong nuclear force. 
-
-The development of the complete Standard Model as it is known today was
-precipitated by two theoretical developments:  Glashow's
+The feature that united the disparate theories into the Standard Model was the
+application of the principle of \emph{local gauge invariance}. The principle of
+gauge invariance first found success in QED, which predicted electromagnetic
+phenomenon with astounding accuracy.  Local gauge invariance is now believed to
+a fundamental feature of nature that underpins all theories of elementary
+particles.  Furthermore, the development of the complete Standard Model as it
+is known today was precipitated by  Glashow, Weinberg, and Salam's
 discovery~\cite{ref:GlashowSymmetryBreaking} of the potential to unify QED with
 the weak force using spontaneous symmetry breaking, and the development of the
 Higgs mechanism~\cite{ref:HiggsMechanism}, which breaks the electroweak symmetry
 using the clever addition of an additional scalar particle (the Higgs boson).
 
-\subsection{Quantum Electrodynamics}
+\subsection{Quantum Electrodynamics and Gauge Invariance}
 
-The theory of QED is a relativistic formulation of Maxwell's theory of
+The theory of QED is a modern extension of Maxwell's theory of
 electromagnetism, describing the interaction of matter with light.  The
 development of QED is a result of efforts to develop a quantum mechanical
 formulation of electromagnetism compatible with the theory of Special Relativity.
@@ -37,21 +41,54 @@ invariant under local gauge transformations.  Requiring local gauge
 invariance gives rise to a ``gauge'' field, which can be interpreted as 
 particles that are exchanged during an interaction.  
 
-In the following, we can show that requiring the relativistic Lagrangian of a
-free charged particle to be invariant under local gauge transformations creates
-an effective gauge boson field.  This ``gauge field'' creates terms in the
+In the following, we first describe the Dirac equation for a free electron,
+which is the relativistic extension of the Schroedinger equation for spin~$1/2$
+particles.  We then show that requiring the corresponding Lagrangian of the free
+charged particle to be invariant under local gauge transformations creates an
+effective gauge boson field.  This ``gauge field'' creates terms in the
 Lagrangian that represent interactions between the particles.
 
-The Dirac equation \FIX{what is this} of a free spin~$1/2$ particle of mass~$m$
-is
-%http://en.wikipedia.org/wiki/Gauge_field#An_example:_Electrodynamics
+% Dirac equation comes from pg. 215 of Griffiths
+The Dirac equation is the equation of motion of a free spin~$1/2$ particle of
+mass~$m$ and is derived from the energy--momentum relationship of relativity
 \begin{equation}
-  \mathcal{L} = \bar \psi (i\hbar c\gamma^\mu \partial_\mu - mc^2) \psi 
+  p^{\mu}p_\mu - m^2c^2 = 0
+  \label{eq:EnergyPRelationship}
+\end{equation}.
+Dirac sought to express this relationship in the framework of quantum mechanics
+by applying the transformation
+\begin{equation}
+  p_\mu \to i \hbar \partial_\mu 
+  \label{eq:QuantizeMomentumTransformation}
+\end{equation}
+to equation Equation~\ref{eq:EnergyPRelationship}, but with the requirement that
+the resulting equation be first order in time.\footnote{A detailed
+discussion of this topic is available in~\cite{Griffiths:IntroParticle}.}
+To achieve this, Dirac factorized Equation~\ref{eq:EnergyPRelationship} into 
+\begin{equation}
+  (\gamma^\kappa p_\kappa + mc)(\gamma^\mu p_\mu - mc) = 0,
+  \label{eq:DiracEquation}
+\end{equation}
+where $\gamma^\mu$ is a set of four $4\times4$ matrices referred to as the Dirac
+matrices.  The equation of motion is obtained by choosing either term (they are
+equivalent) from the
+left hand side of Equation~\ref{eq:DiracEquation} and
+making the substitution in Equation~\ref{eq:QuantizeMomentumTransformation}.
+\begin{equation}
+  i \hbar \gamma^\mu \partial_\mu \psi - mc \psi = 0
+  \label{eq:DiracEquation}
+\end{equation}
+The solutions, $\psi$, to the Dirac equation are called ``Dirac Spinors,'' and
+represent the quantum mechanical state of spin~$1/2$ particles.
+
+The Lagrangian corresponding to the Dirac equation~(\ref{eq:DiracEquation}) is
+\begin{equation}
+  \mathcal{L} = \overline \psi (i\hbar c\gamma^\mu \partial_\mu - mc^2) \psi,
   \label{eq:FreeQEDLagrangian}
 \end{equation}
-where $\psi$ is the field of the particle in question, $\hbar$ is Planck's
+where $\psi$ is the spinor field of the particle in question, $\hbar$ is Planck's
 constant, $c$ the speed of light, and $\gamma^\mu$ are the Dirac matrices.  As
-$\bar\psi$ is the Hermitian conjugate of $\psi$, the Lagrangian is invariant
+$\overline\psi$ is the Hermitian conjugate of $\psi$, the Lagrangian is invariant
 under the global gauge transformation 
 \begin{equation}
   \psi' \to e^{i\theta}\psi
@@ -71,14 +108,14 @@ in equation~\ref{eq:FreeQEDLagrangian}, where \FIX{don't think this is right}
 $A^\mu = \partial^\mu \theta(x)$ and $e$ is the electric charge, the Lagrangian
 becomes locally gauge invariant:
 \begin{equation}
-  \mathcal{L} = \bar \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi 
+  \mathcal{L} = \overline \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi 
   \label{eq:LocalQEDLagrangian}
 \end{equation}
 The difference between
 the locally (equation~\ref{eq:LocalQEDLagrangian}) and globally 
 (equation~\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangians is then
 \begin{equation}
-  \mathcal{L}_{int} = \frac{e}{\hbar}\bar\psi\gamma^\mu\psi A_\mu 
+  \mathcal{L}_{int} = \frac{e}{\hbar}\overline\psi\gamma^\mu\psi A_\mu 
 \end{equation}.
 This term can be interpreted as the coupling between the particle and the gauge
 boson (force carrier) fields.  The coupling is proportional to the constant
@@ -90,7 +127,7 @@ of gauge bosons (photons).  The existence of this coupling is required if the
 Lagrangian is to satisfy local gauge invariance. The addition of a term with
 the gauge Field Strength Tensor yields the QED Lagrangian:
 \begin{equation}
-  \mathcal{L}_{QED} = \bar \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi -
+  \mathcal{L}_{QED} = \overline \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi -
   \frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
 \end{equation}
 
@@ -114,8 +151,8 @@ vertex.  The Lagrangian for the Fermi interactions is:
  \label{eq:FermiContactInteraction}
 \end{equation}
 The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e +
-\bar{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to \nu_\mu
-+ e + \bar{\nu_e}$).
+\overline{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to \nu_\mu
++ e + \overline{\nu_e}$).
 
 However, the contact interaction form of Fermi's theory is not complete.  At
 higher energies the theory suffers from \FIX{what?}.  The theory is made
@@ -163,6 +200,7 @@ gauge group is spontaneously broken.
 \subsection{Results from LEP and Tevatron}
 
 \section{Beyond the Standard Model}
+\label{sec:BSM}
 \subsection{The Hierarchy Problem}
 \subsection{Supersymmetry}
 \subsection{The Minimal Supersymmetric Model and $\tau$ leptons}
@@ -177,7 +215,7 @@ decay distance $c\tau$ of the \taul is 87~\micron, which in practice means that
 the $\tau$ will always decay before reaching the first layer of the detector.
 Tau decays can be effectively classified into two types. ``Leptonic'' decays
 consist of a $\tau$ decaying to a light lepton ($\ell = e, \mu$) and two
-neutrinos $\tau^+ \to \ell^+ \nu_\tau \bar{ \nu_{\ell}}$.  ``Hadronic'' decays 
+neutrinos $\tau^+ \to \ell^+ \nu_\tau \overline{ \nu_{\ell}}$.  ``Hadronic'' decays 
 consist of a low--multiplicity collimated group of hadrons, typically \Pgppm and \Pgpz
 mesons.  The hadronic decays of the \taul compose approximately $65\%$ of the
 \taul branching fraction, with the remainder shared approximately equally by the
@@ -192,8 +230,8 @@ are shown in table~\ref{tab:TauDecayModes}.
       \hline
       \multicolumn{4}{c}{Leptonic modes modes} \\
       \hline
-      $e^- \nu_\tau \bar \nu_e$             & -      & 0.5  & 17.8\% \\
-      $\mu^-\nu_\tau \bar \nu_\mu$          & -      & 105  & 17.4\% \\
+      $e^- \nu_\tau \overline \nu_e$             & -      & 0.5  & 17.8\% \\
+      $\mu^-\nu_\tau \overline \nu_\mu$          & -      & 105  & 17.4\% \\
       \hline
       \multicolumn{4}{c}{Hadronic modes} \\
       \hline
