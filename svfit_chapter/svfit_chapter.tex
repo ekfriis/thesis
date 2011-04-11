@@ -4,7 +4,7 @@
 \newcommand{\mnus}{m_{\nu\nu}}
 \newcommand{\mvis}{m_{vis}}
 
-\chapter{The Secondary Vertex Fit}
+\chapter{Mass Reconstruction: The Secondary Vertex Fit}
 \label{ch:svfit}
 
 The dominant background in the search for the Higgs $\to \TT$ signal is due to
@@ -13,22 +13,86 @@ between Higgs signal and $Z$ background would be the invariant mass of the
 di--tau system, utilizing the fact that the $Z$ resonance is well known ($m_{Z}
 = 91.1876 \pm 0.0021$~\GeVcc) and has a narrow width ($\Gamma_{Z} = 2.4952 \pm
 0.0023$~\GeV)~\cite{PDG}.  The experimental complication in this approach is due
-to the neutrinos produced in the tau lepton decays, which escape detection,
-carrying away an unmeasured amount of energy, and making it difficult to
-reconstruct the tau lepton four--vectors.
+to the neutrinos produced in the tau lepton decays, which escape detection and
+carry away an unmeasured amount of energy, and making it difficult to
+reconstruct the tau lepton four--vectors.  In this chapter we give an overview
+of techniques used in the past \fixme{fuck}
 
-The conventional algorithm to reconstruct the di--tau invariant mass assumes
-that the momenta of neutrinos produced in tau decays are collinear to the
-momenta of the visible tau decay products~\cite{massRecoCollinearApprox}.  The
-main disadvantage of the collinear approximation algorithm is that it fails to
-find physical solutions for about half of the MSSM Higgs $\to \TT$
-decays, in particular for events in which the Higgs boson has small $P_{T}$ and
-the two tau leptons are back--to--back in azimuth.  Improvements to the
+\section{Existing mass reconstruction algorithms}
+
+The simplest observable elated to the \TT mass is one can construct that is
+sensitive to new particle content is the invariant mass of the visible
+(reconstructible) decay products associated with each tau decays.  This
+quantity, referred in this document as the ``Visible Mass,'' has the advantages
+of simplicity and lack of exposure to systematic errors associated with the
+reconstruction of the $\MET$.  However, no attempt is made to reconstruct the
+neutrinos in the event.  The reconstructed mass is thus systematically smaller
+than mass of the resonance which produced the tau leptons.  The visible mass is
+typically on the order of $1/2$ of the resonance mass, depending on the
+kinematic requirements applied to the visible products of the tau decays. 
+
+The Collinear Approximation is the conventional technique to reconstruct the
+\emph{full} \TT mass.  In an event with two tau decays, there are a total of six
+unknowns associated with the missing energy: the three components of the
+momentum of each neutrino.  The Collinear Approximation makes the assumption
+that the neutrinos have the same direction as their associated visible decay
+products.  This assumption reduces the number of unknown quantities to two,
+corresponding to the total energy of each neutrino.  These two unknowns can be
+solved for by using the two components of the reconstructed missing transverse
+energy, which in the ideal case corresponds to the transverse component of the
+vector sum of the two neutrino's four momentum.  The characteristic equation of
+the Collinear Approximation is 
+\begin{equation}
+  \left( \begin{array}{c} \MEx \\ \MEy \end{array} \right) = 
+    \left( \begin{array}{cc} 
+      \cos\phi_1 & \cos\phi_2 \\
+      \sin\phi_1 & \sin\phi_2 
+    \end{array} \right) 
+    \left(\begin{array}{c} E_1 \\ E_2 \end{array} \right)
+      \label{eq:CollinearApproxCharacteristicEquation}
+\end{equation}
+where $(\MEx, \MEy)$ are the two components of the reconstructed missing
+transverse energy, $\phi_{1(2)}$ is the azimuthal angle of the visible component
+of the first (second) tau decay, and $E_{1(2)}$ is the reconstructed energy of
+neutrino of the first (second) tau decay.  $E_1$ and $E_2$ can be extracted by
+inverting the matrix on the right hand side of
+Equation~\ref{eq:CollinearApproxCharacteristicEquation}.
+\begin{equation}
+  \left(\begin{array}{c} E_1 \\ E_2 \end{array} \right) = 
+    \frac{1}{\sin(\phi_2 - \phi_1)} 
+    \left( \begin{array}{cc} 
+      \sin\phi_2 & -\cos\phi_2 \\
+      -\sin\phi_1 & \cos\phi_1 
+    \end{array} \right) 
+  \left( \begin{array}{c} \MEx \\ \MEy \end{array} \right) 
+    \label{eq:CollinearApproxInvertedEquation} 
+\end{equation}
+
+The Collinear Approximation suffers from two problems.  The approximation can
+fail (yielding unphysical negative energies for the reconstructed neutrinos)
+when the missing transverse energy is mis--measured.  The events with unphysical
+solutions must be removed from the analysis, leading to a dramatic reduction in
+acceptance (on the order of 50\% in this analysis).  Improvements to the
 collinear approximation algorithm have recently been made which aim to recover
 part of the events with unphysical solutions~\cite{improvedCollinearApprox}.
 But even with these improvements, no physical solution is still found for a
-large fraction of signal events.
+large fraction of signal events.  Additionally, the method is numerically
+sensitive when the two \taul are nearly back-to-back in azimuth.  In these cases
+the $\sin(\phi_2 - \phi_1)^{-1}$ term in
+Equation~\ref{eq:CollinearApproxInvertedEquation} is very large and small
+mis--measurements of the missing transverse energy can produce a large tail on
+the reconstructed mass.  This tail is particularly large for low--mass
+resonances.  The large tail for low mass is predominantly due to the fact
+(discussed in subsection~\ref{sec:ptBalance}) that the kinematic
+requirements\footnote{The kinematic requirements on the visible decay products
+are necessary to reduce backgrounds and maintain compatibility with
+un--prescaled event triggers.  This topic is discussed in detail in
+chapter~\ref{ch:selections}.} applied on the visible decay products
+preferentially selects events where the visible decay products carry the
+majority of the energy of the original \taul, reducing the amount of true
+missing energy in the event.  
 
+\section{The Secondary Vertex fit}
 A novel algorithm is presented in the following, which succeeds in finding a
 physical solution for every event.  As an additional benefit, the new algorithm
 is found to improve the di--tau invariant mass resolution, making it easier to
@@ -43,7 +107,7 @@ densities of:
 \item tau decay kinematics
 \item matching between the momenta of neutrinos produced in the tau decays and
   the reconstructed missing transverse momentum
-\item a regularization ``$P_{T}$--balance'' term which accounts for the effects on the di--tau invariant mass
+\item a regularization ``\pt--balance'' term which accounts for the effects on the di--tau invariant mass
  of acceptance cuts on the visible tau decay products
 \item the compatibility of tau decay parameters with the position of reconstructed tracks
  and the known tau lifetime of $c\tau = 87~\micron$~\cite{PDG}.
@@ -53,7 +117,7 @@ The likelihood is maximized as function of a set of parameters which fully descr
 \section{Parametrization of tau decays}
 \label{sec:svParameterization}
 
-The decay of a tau of visible four--momentum $P_{vis}$ measured in the CMS
+The decay of a tau of visible four--momentum $p_{vis}$ measured in the CMS
 detector (``laboratory'') frame can be parametrized by three variables.  The
 invisible (neutrino) momentum is fully determined by these parameters.
 
@@ -85,8 +149,8 @@ visible momentum vector in the laboratory frame is determined by the rest frame
 quantities via the (Lorentz invariant) component of the visible momentum
 perpendicular to the tau lepton direction:
 \begin{align}
-P^{vis}_{\perp} &= \overline P^{vis}_{\perp} \nonumber \\
-\Rightarrow \sin \overline \theta &= \frac{P^{vis} \sin \theta}{\overline P^{vis}} 
+p^{vis}_{\perp} &= \overline p^{vis}_{\perp} \nonumber \\
+\Rightarrow \sin \overline \theta &= \frac{p^{vis} \sin \theta}{\overline p^{vis}} 
 \label{eq:labFrameOpeningAngle} 
 \end{align}
 
@@ -96,10 +160,10 @@ the energy of the tau is obtained by solving for the boost factor $\gamma$ in
 the Lorentz transformation between tau rest frame and laboratory frame of the
 visible momentum component parallel to the tau direction:
 \begin{align}
-\overline{P}^{vis} \cos \overline{\theta} &= \gamma \beta E^{vis} + \gamma P^{vis} \cos\theta \nonumber \\ 
-\Rightarrow \gamma &= \frac{E^{vis}[{\left( E^{vis} \right)^2 + \left( \overline{P}^{vis} \cos \overline{\theta} \right)^2 
- - \left( P^{vis} \cos \theta \right)^2}]^{1/2} - P^{vis} \cos \theta \overline{P}^{vis} \cos \overline{\theta}}{\left( E^{vis} \right)^2 
- - \left( P^{vis} \cos \theta \right)^2}, \nonumber \\
+\overline{p}^{vis} \cos \overline{\theta} &= \gamma \beta E^{vis} + \gamma p^{vis} \cos\theta \nonumber \\ 
+\Rightarrow \gamma &= \frac{E^{vis}[{\left( E^{vis} \right)^2 + \left( \overline{p}^{vis} \cos \overline{\theta} \right)^2 
+ - \left( p^{vis} \cos \theta \right)^2}]^{1/2} - p^{vis} \cos \theta \overline{p}^{vis} \cos \overline{\theta}}{\left( E^{vis} \right)^2 
+ - \left( p^{vis} \cos \theta \right)^2}, \nonumber \\
 E^{\tau} &= \gamma m_\tau \nonumber
 %\label{eq:LorentzRelationship}
 \end{align}
@@ -114,7 +178,7 @@ the axis of which is given by the visible momentum vector.  The tau lepton
 four--vector is fully determined by the addition of the third parameter
 $\overline{\phi}$, which describes the azimuthal angle of the tau lepton with respect
 to the visible momentum vector.  The spatial coordinate system used is
-illustrated in figure~\ref{fig:svFitDecayParDiagram}.
+illustrated in Figure~\ref{fig:svFitDecayParDiagram}.
 
 \begin{figure}[t]
 \begin{center}
@@ -181,6 +245,7 @@ where $q_{T}$ denotes the transverse momentum of the tau lepton pair.
 
 
 \subsection{Likelihood for tau lepton transverse momentum balance}
+\label{sec:ptBalance}
 
 The tau lepton transverse momentum balance likelihood term represents the
 probability $p \left( P^{\tau}_{T} | M_{\tau\tau} \right)$ for a tau to have a
@@ -318,7 +383,12 @@ tracker (mis--)alignment which are not yet fully understood.
 
 \section{Performance}
 
-Blah blah blah see figure~\ref{fig:SVversusCollinear}.
+This section describes the performance of the SVfit algorithm for reconstructing
+the invariant mass of resonances decaying to \taul pairs.  The performance is
+presented as a contrasted to the performance of the  
+
+Both of these effects are illustrated in
+Figure~\ref{fig:SVversusCollinear}.
 Blah blah blah see figure~\ref{fig:SVversusVis}.
 
 \begin{figure}[t]
@@ -335,6 +405,7 @@ unity, illustrating the improvement in resolution (shape) provided by the SVfit.
 In the right plot, the distributions are normalized to an (arbitrary)
 luminosity, illustrating the loss of events that occurs due to unphysical
 solutions in the application of the collinear approximation.}
+
 \label{fig:SVversusCollinear}
 \end{center}
 \end{figure} 
