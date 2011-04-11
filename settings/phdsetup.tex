@@ -17,13 +17,13 @@
 
 % [ GLOBAL SETUP ]
 
-\documentclass[letterpaper,oneside,11pt]{report}
+\documentclass[letterpaper,oneside,11pt,draft]{report}
 
 \usepackage{calc}
 \usepackage{breakcites}
 \usepackage[newcommands]{ragged2e}
 
-\usepackage[pdftex]{graphicx}
+\usepackage[pdftex,final]{graphicx}
 \usepackage{epstopdf}
 \usepackage{multirow}
 \usepackage{fixme}
@@ -94,13 +94,15 @@
 \geometry{bmargin = 1.0in}
 
 % [ PDF SETTINGS ]
+\usepackage{color}
+\definecolor{darkred}{rgb}{0.663, 0.059, 0.2}
 
 \usepackage[final]{hyperref}
 \hypersetup{breaklinks  = true}
 \hypersetup{colorlinks  = true}
 \hypersetup{linktocpage = false}
-\hypersetup{linkcolor   = blue}
-\hypersetup{citecolor   = green}
+\hypersetup{linkcolor   = darkred}
+\hypersetup{citecolor   = darkred}
 \hypersetup{urlcolor    = black}
 \hypersetup{plainpages  = false}
 \hypersetup{pageanchor  = true}
@@ -108,6 +110,7 @@
 \hypersetup{pdftitle    = {\PHDTITLE}}
 \hypersetup{pdfsubject  = {Dissertation, \PHDSCHOOL}}
 \urlstyle{same}
+\usepackage{refcheck}
 
 % [ LETTER SPACING ]
 
