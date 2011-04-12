@@ -112,20 +112,21 @@ becomes locally gauge invariant:
   \label{eq:LocalQEDLagrangian}
 \end{equation}
 The difference between
-the locally (equation~\ref{eq:LocalQEDLagrangian}) and globally 
-(equation~\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangians is then
+the locally (\ref{eq:LocalQEDLagrangian}) and the globally 
+(\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangians is then
 \begin{equation}
   \mathcal{L}_{int} = \frac{e}{\hbar}\overline\psi\gamma^\mu\psi A_\mu 
 \end{equation}.
 This term can be interpreted as the coupling between the particle and the gauge
-boson (force carrier) fields.  The coupling is proportional to the constant
-$e$, which is associated with the electric charge.  This is consistent with the
+boson (force carrier) fields.  The coupling is proportional to the constant $e$,
+which is associated with the electric charge.  This is consistent with the
 experimental observation that particles with zero electric charge do not
 interact electromagnetically with each other.  In this interpretation, the
-electromagnetic force between two charged particles is caused by the exchange
-of gauge bosons (photons).  The existence of this coupling is required if the
-Lagrangian is to satisfy local gauge invariance. The addition of a term with
-the gauge Field Strength Tensor yields the QED Lagrangian:
+electromagnetic force between two charged particles is caused by the exchange of
+gauge bosons (photons).  The existence of this ``minimal coupling'' is
+\emph{required} if the Lagrangian is to satisfy local gauge invariance. The
+addition of a term with the gauge Field Strength Tensor to represent the kinetic
+term of the gauge (photon) field yields the QED Lagrangian:
 \begin{equation}
   \mathcal{L}_{QED} = \overline \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi -
   \frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
@@ -141,27 +142,61 @@ theory.
 \subsection{The Weak Interactions}
 
 The theory of Weak Interactions was created to describe the physics of
-radioactivity.  The first formulation of the theory was done by
-Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $beta$
-decay of radioactive elements.  The initial theory was a four-fermion
-``contact'' theory.  In a contact theory, all four fermions come from a single
-vertex.  The Lagrangian for the Fermi interactions is:
+radioactive decay.  The first formulation of the theory was done by
+Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $\beta$
+decay of neutrons. The initial theory was a four-fermion ``contact'' theory.  In
+a contact theory, all four fermions come involved in the $\beta$--decay are
+connected at a single vertex.  The Fermi theory Hamiltonian for the
+$\beta$--decay of a proton is then~\cite{Morii:SMandBSM}
 \begin{equation}
- find me 
- \label{eq:FermiContactInteraction}
+  H = \frac{G_\beta}{\sqrt{2}}
+  \left[\overline \psi_p \gamma_\mu (1 - g_A\gamma_5)\psi_n\right]
+  \left[[\overline \psi_e \gamma^\mu (1 - \gamma_5) \psi_\nu\right] + h.c., 
+ \label{eq:FermiTheoryHamiltonian}
 \end{equation}
-The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e +
-\overline{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to \nu_\mu
-+ e + \overline{\nu_e}$).
+where $G_\beta$ is the Fermi constant and $g_A$ is the relative fraction of the
+interaction with axially Lorentz structure.  The value of $g_A$ was determined
+experimentally to be $1.26$.  One of the most notable things discovered about
+the weak force is that weak interactions violate parity; that is, the physics of
+the interaction change (or become disallowed) under inversion of the spatial
+coordinates.  This is evidenced by the $(1-\gamma_5)$ term in
+Equation~\ref{eq:FermiTheoryHamiltonian}.  This term is the ``helicity
+operator''; the left and right ``handed'' helicity states are eigenstates states
+of this term.
+\begin{eqnarray}
+  h = (1 - \gamma_5)/2 \nonumber \\
+  h\psi_R = \frac{1}{2}\psi_R \nonumber \\ 
+  h\psi_L = -\frac{1}{2}\psi_L \nonumber
+\end{eqnarray}
+It is observed that only left--handed neutrinos (or right--handed
+anti--neutrinos) \fixme{check handedness is correct} participate in the weak
+interaction.
 
-However, the contact interaction form of Fermi's theory is not complete.  At
-higher energies the theory suffers from \FIX{what?}.  The theory is made
-renormalizable by the using the gauge theory formalism.  The contact interaction
-is replaced by massive propagators, the $W^\pm$ and $Z$ gauge bosons.  The term
-in the $\beta$--decay Feynman diagram associated with the massive $Z$ boson
-propagator is
+The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e^+ +
+\overline{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to
+\nu_\mu + e + \overline{\nu_e}$).  However, the contact interaction form of
+Fermi's theory is not complete.  When applied to scattering processes, the
+interaction violates unitarity: the calculated cross section grows with the
+center of mass energy, so that for some energy the probability for an
+interaction is greater than one.  Furthermore, the techniques successfully used
+to ``renormalize''\footnote{Renormalization of quantum field theories is a broad
+topic beyond the scope of this thesis.  Briefly, the process involves
+``absorbing'' infinite divergences that occur in higher--order interactions into
+physical observables~\cite{Griffiths:IntroParticle}.} QED fail when applied to
+the Fermi interaction.
+
+The first attempt to solve the problems with the Fermi theory was made by
+introducing an intermediate weak boson.  The contact interaction is replaced by
+a massive propagator, the $W^\pm$ bosons.  The decay of a muon to an electron
+and two neutrinos then proceeds as pictured in
+Figure~\ref{fig:MuonDecayFeynmanDiagram} with an amplitude given
+by~\cite{Morii:SMandBSM}
 \begin{equation}
-  fidn me
+  M = - \left[\frac{g}{\sqrt{2}} \overline u_{\nu_\mu} \gamma_\rho \frac{1 -
+  \gamma_5}{2} u_\mu\right] \frac{-g^{\rho\sigma} + \frac{q^\rho
+  q^\sigma}{M_W^2}}{q^2 - M_W^2} 
+  \left[\frac{g}{\sqrt{2}} \overline u_{\nu_e} \gamma_\rho \frac{1 -
+  \gamma_5}{2} u_e\right]
   \label{eq:WeakPropagator}
 \end{equation}
 The presence of the large mass of gauge boson in the denominator is the reason
