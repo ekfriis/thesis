@@ -7,4 +7,6 @@
 */*.bbl
 */*.blg
 */.DS_Store
+output/*.1
+output/*.t1
 .DS_Store
