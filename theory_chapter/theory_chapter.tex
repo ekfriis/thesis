@@ -25,12 +25,13 @@ phenomenon with astounding accuracy.  Local gauge invariance is now believed to
 a fundamental feature of nature that underpins all theories of elementary
 particles.  Furthermore, the development of the complete Standard Model as it
 is known today was precipitated by  Glashow, Weinberg, and Salam's
-discovery~\cite{ref:GlashowSymmetryBreaking} of the potential to unify QED with
+discovery~\cite{GlashowSymmetryBreaking} of the potential to unify QED with
 the weak force using spontaneous symmetry breaking, and the development of the
-Higgs mechanism~\cite{ref:HiggsMechanism}, which breaks the electroweak symmetry
+Higgs mechanism~\cite{HiggsMechanism}, which breaks the electroweak symmetry
 using the clever addition of an additional scalar particle (the Higgs boson).
 
 \subsection{Quantum Electrodynamics and Gauge Invariance}
+\label{sec:QEDandGaugeInvariance}
 
 The theory of QED is a modern extension of Maxwell's theory of
 electromagnetism, describing the interaction of matter with light.  The
@@ -78,7 +79,7 @@ making the substitution in Equation~\ref{eq:QuantizeMomentumTransformation}.
   i \hbar \gamma^\mu \partial_\mu \psi - mc \psi = 0
   \label{eq:DiracEquation}
 \end{equation}
-The solutions, $\psi$, to the Dirac equation are called ``Dirac Spinors,'' and
+The solutions, $\psi$, to the Dirac equation are called ``Dirac spinors,'' and
 represent the quantum mechanical state of spin~$1/2$ particles.
 
 The Lagrangian corresponding to the Dirac equation~(\ref{eq:DiracEquation}) is
@@ -140,7 +141,7 @@ defines the behavior of the gauge bosons and thus the interactions of the
 theory.  
 
 \subsection{The Weak Interactions}
-
+\label{sec:WeakInteractions}
 The theory of Weak Interactions was created to describe the physics of
 radioactive decay.  The first formulation of the theory was done by
 Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $\beta$
@@ -174,7 +175,20 @@ interaction.
 
 The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e^+ +
 \overline{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to
-\nu_\mu + e + \overline{\nu_e}$).  However, the contact interaction form of
+\nu_\mu + e + \overline{\nu_e}$).  Furthermore, the coupling constant $G$ is
+found to be a \emph{universal} constant in weak interactions, in that it is the
+same for interactions regardless of the particle species participating in the
+interaction.  That is, $G_\mu = G_e = G_F$.  Using an Hamiltonian analogous to
+Equation~\ref{eq:FermiTheoryHamiltonian} for muon decay, the decay amplitude $M$
+is found to be
+\begin{equation}
+  M = \frac{G_F}{\sqrt{2}}
+  \left[\overline u_{\nu_\mu} \gamma_\rho \frac{1 - \gamma_5}{2} u_\mu\right]  
+  \left[\overline u_{\nu_e} \gamma_\rho \frac{1 - \gamma_5}{2} u_e\right].
+  \label{eq:ContactAmplitudeMuonDecay}
+\end{equation}
+
+However, the contact interaction form of
 Fermi's theory is not complete.  When applied to scattering processes, the
 interaction violates unitarity: the calculated cross section grows with the
 center of mass energy, so that for some energy the probability for an
@@ -199,34 +213,456 @@ by~\cite{Morii:SMandBSM}
   \gamma_5}{2} u_e\right]
   \label{eq:WeakPropagator}
 \end{equation}
-The presence of the large mass of gauge boson in the denominator is the reason
-why the contact interaction original formulated by Fermi is effectively
-describes of low--energy weak phenomenon.  When the momentum transfer $q$ is
-small compared to $M_W$, the effect of the propagator is an effective constant.
-In the low energy limit, the full propagator in equation~\ref{eq:WeakPropagator}
-is equivalent to the Fermi contact interaction
-in~\ref{eq:FermiContactInteraction}.
+The presence of the large mass of gauge boson in the denominator of the central
+term of Equation~\ref{eq:WeakPropagator} is the reason why the contact
+interaction original formulated by Fermi is effectively describes of low--energy
+weak phenomenon.  When the momentum transfer $q$ in the interaction is small
+compared to $M_W$, the effect of the propagator is an effective constant.  In
+the low energy limit, the full propagator in equation~\ref{eq:WeakPropagator} is
+effectively equivalent to the Fermi contact interaction
+in~\ref{eq:ContactAmplitudeMuonDecay} as
+\begin{equation}
+  \lim_{q/M_W \to 0}\frac{g^2}{8(q^2-M^2_W)} = \frac{G_F}{\sqrt{2}} 
+  \label{eq:ContactVersusWeakBosonExchange}
+\end{equation}
+Unfortunately, the weak boson exchange model did not solve the problems of
+unitarity and renormalizability in the weak interaction.   However, the form of
+the boson--exchange propagator in
+Equation~\ref{eq:ContactVersusWeakBosonExchange} suggests the observed
+``weakness'' of the weak interactions is an artifact of the presence of the
+massive propagator ($M_W$) and that the fundamental scale of the interaction $g$
+is the same order of magnitude as that of QED, $g \approx e$.  This observation
+lead to the unification of the electromagnetic and weak forces, which we
+describe in the next section.
 
-The ``charge'' of the theory of interaction is called weak isospin.  Similar to
-the electric charge of QED, only particles with non--zero weak isospin couple to
-the gauge bosons of the weak force, and weak isospin is conserved in weak
-interactions.   The weak force is \emph{chiral}; the ``handedness'' of the
-particles affects how they interact with each other.  In fact, the weak
-interaction violates parity: the interaction is not invariant under spatial
-inversion.  Left--handed fermions carry weak isospin $T = 1/2$, and form a
-doublet under the $SU(2)$ gauge group.  The right--handed fermions have no weak
-isospin, and are singlets under the gauge group.  
+\subsection{Spontaneous Symmetry Breaking}
+\label{sec:SSB}
+In the early 1960s Glashow, Weinberg, and Salam published a series of papers
+describing how the electromagnetic and weak forces could be unified into a
+common ``electroweak'' force.  The fact that at low energy the electromagnetic
+and weak forces appear to be separate phenomena at low energy is due to the fact that the
+symmetry of the electroweak gauge group is ``spontaneously broken.''  Modern
+field theories (both the Standard Model and beyond) are predicated on the idea
+that the all interactions are part of a single, unified symmetry group and the 
+differences between various scales (electromagnetic, weak, etc.) at lower
+energies are due to the unified symmetry being spontaneously broken.
+
+A symmetry of a Lagrangian is spontaneously broken when the ground state, or
+vacuum, is at a value which about which the Lagrangian is not symmetric.  In
+quantum field theories, a particle is interpreted as quantized fluctuations of
+its corresponding field about some constant (vacuum) ground state.  The
+``effective'' Lagrangian that we observe in the (low energy) laboratory would be
+the expansion of the Lagrangian about this stable point.  The effective
+Lagrangian no longer obeys the original symmetry, which has been ``broken''.  We
+give a brief example of the phenomenological effects of a spontaneously broken
+symmetry in a toy model, following the treatment in~\cite{Morii:SMandBSM}.
+\begin{equation}
+  \mathcal{L} = 
+  \frac{1}{2}\partial_\mu\phi_1\partial^\mu\phi_1 + 
+  \frac{1}{2}\partial_\mu\phi_2\partial^\mu\phi_2 -
+  V(\phi_1^2 + \phi_2^2)
+  \label{eq:ToySSBLagrangian}
+\end{equation}
+The toy Lagrangian in Equation~\ref{eq:ToySSBLagrangian} has a global
+$U(1)$\footnote{Technically, the symmetric transformation is 
+\begin{equation}
+  \left(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\right)
+    \to
+  \left(\begin{array}{c} \phi'_1 \\ \phi'_2 \end{array}\right)
+    =
+  \left(\begin{array}{cc} \cos\theta & -\sin\theta \\ 
+    \sin\theta & \cos\theta \end{array}\right)
+  \left(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\right),
+    \nonumber
+\end{equation} which is $O(2)$.  However, this transformation is equivalent to 
+$U(1)$, as the two real fields $\phi_1$ and $\phi_2$ can be seen to correspond
+to the real and imaginary parts of a complex field $\phi$ that does transform
+according to $U(1)$.} symmetry and consists of two real-valued fields, $\phi_1$
+and $\phi_2$.  The particle mass spectra of the theory is given by expanding the
+field potential $V(\phi_1, \phi_2)$ about its minimum, $(\phi^{min}_1,
+\phi^{min}_2)$.  The first three terms in the series are found by
+\begin{eqnarray}
+  V(\phi_1, \phi_2) &= &V(\phi^{min}_1, \phi^{min}_2) + 
+  \sum_{a=1,2} \left(\frac {\partial V}{\partial \phi_a}\right)_{0} (\phi_a -
+  \phi^{min}_a) \\
+  &+ &\frac{1}{2} \sum_{a,b=1,2} \left(\frac {\partial^2 V}{\partial \phi_a \partial
+  \phi_b}\right)_{0} (\phi_a - \phi^{min}_a)(\phi_b - \phi^{min}_b) + \ldots
+  \label{eq:ExpandedPotential}
+\end{eqnarray}
+Since at the minimum the partial derivative of $V$ is zero with respect to all
+fields, the second term in equation~\ref{eq:ExpandedPotential} is zero.  The
+third term determines the masses of the particles in the theory.  Since a mass
+term for a particle corresponding to a field $\phi_n$ in the Lagrangian appears
+as $\frac{1}{2}m^2\phi_n\phi_n$, we can identify 
+\begin{equation}
+\left(\frac {\partial^2
+V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}}
+\label{eq:MassMatrixTerms}
+\end{equation}
+as the $a$th row and $b$th
+column in the ``mass matrix''.  Off diagonal terms in this matrix indicate
+mixing terms between the fields.  By diagonalizing the matrix, the combinations
+of fields which correspond to the physical particles are found.  The $m^2$ of
+each particle is then the corresponding entry in the diagonal of the mass
+matrix.
+
+The particle spectra of the model depends heavily on the form of the potential.
+An illustrative form (that is renormalizable and bounded from below) of a
+possible configuration for the potential $V$ in
+Equation~\ref{eq:ToySSBLagrangian} is 
+\begin{equation}
+  V(\phi_1^2 \phi_2^2) = \frac{m^2}{2}(\phi_1^2 + \phi_2^2) +
+  \frac{\lambda}{4}(\phi_1^2+\phi_2^2)^2.
+  \label{eq:SSBPotential}
+\end{equation}
+If the parameters $m^2$ and $\lambda$ are both positive, then the minimum of $V$
+is at the origin $(\phi_1 = \phi_2 = 0)$.  In this case, the mass matrix term in
+Equation~\ref{eq:ExpandedPotential} takes the form $\left(\frac {\partial^2
+V}{\partial \phi_a \partial \phi_b}\right)_{0} = \frac{m^2}{2}\delta_{ab}$,
+where $\delta_{ab}$ is the Kronecker delta function.  Therefore the mass matrix
+is already diagonalized, and the $\phi_1$ and $\phi_2$ both correspond to
+particles with mass $m$.  If the $m^2$ parameter in
+Equation~\ref{eq:SSBPotential} is negative, the spectrum is dramatically
+different.  After making the replacement $m^2 = -\mu^2 (\mu^2 > 0)$, the extrema
+of $V$ are no longer unique.  The requirement of $\frac{\partial V}{\partial
+\phi_i} = 0$ for all $i$ is satisfied in two cases:
+\begin{eqnarray}
+  (\phi^{min}_1, \phi^{min}_2) & = & (0,0) \label{eq:WignerPoint}\\
+  (\phi^{min}_1)^2+ (\phi^{min}_2)^2 & = & \frac{\mu^2}{\lambda} = \nu^2. 
+  \label{eq:NambuGoldstonePoint} 
+\end{eqnarray}
+If the vacuum state is defined at the point in Equation~\ref{eq:WignerPoint},
+the symmetry is unbroken and the mass spectra is unchanged.  However, the system
+is unstable at this point, as it is a local maximum.  The true global minimum is
+defined as the set of points which satisfy
+Equation~\ref{eq:NambuGoldstonePoint}, which form a continuous circle in
+$\phi_1-\phi_2$ space (and is therefore infinitely degenerate).  We can choose
+any point on the circle as the vacuum expectation value (VEV).  If the point
+$(\phi_1^{min} = \nu, \phi_2^{min} = 0)$\footnote{The point chosen for the VEV
+here is not arbitrary.  One can chose any point thats satisfies
+Equation~\ref{eq:NambuGoldstonePoint} as the VEV\@.  However, after the mass
+matrix is diagonalized, there will always be one physical field with a VEV$ =
+\nu$ and one with a VEV$ = 0$.  Therefore the physical content of the theory
+does not depend on the choice of VEV\@.} is chosen, evaluating
+Equation~\ref{eq:MassMatrixTerms} yields the mass matrix \fixme{check matrix}
+\begin{equation}
+  \left(
+  \begin{array}{cc}
+    v^2 & 0 \\
+    0 & 0 \\
+  \end{array}
+  \right).
+  \nonumber
+\end{equation}
+Breaking the symmetry has changed the mass spectrum of the physical particles in
+the model.  There is now a massive particle with $m=v^2$ and a massless
+particle.  This massless particle is called the ``Goldstone boson.''
+\fixme{check ref} Goldstone found~\cite{GoldstoneBosons} that a massless
+particle appears for each generator in the symmetry group that is broken.
+
+\subsection{The Higgs Mechanism}
+\label{sec:HiggsMech}
+
+As in section~\ref{sec:QEDandGaugeInvariance}, extending the gauge symmetry
+requirement to be \emph{locally} invariant creates interesting consequences for
+models that have spontaneously broken symmetry.  This gives rise to the ``Higgs
+Mechanism,'' which we overview here.  For simplicity we will again consider a
+model with $U(1)$ symmetry.  The model is identical to the one presented in 
+section~\ref{sec:SSB}, with two exceptions: First, we express the two real fields
+$\phi_1$ and $\phi_2$ as a single complex--valued field $\phi$.  Second, the
+model is required to be locally $U(1)$ invariant, and so uses the
+gauge--covariant derivatives, minimal coupling to the gauge field, and kinetic
+term for the gauge field, as discussed in
+section~\ref{sec:QEDandGaugeInvariance}.  The unbroken Lagrangian is
+\begin{eqnarray}
+  \mathcal{L} &=& -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} 
+  + (D_\mu \phi^*)(D^\mu \phi) - V(\phi^*\phi) \label{eq:LocalInvariantU1} \\
+  V(\phi^*\phi) &=& -\mu^2 \phi^*\phi + \lambda (\phi^*\phi)^2,
+  \label{eq:PotentialLocalInvariantU1}
+\end{eqnarray}
+where $F_{\mu\nu}$ is related to the gauge field by $F_{\mu\nu} = \partial_\mu
+A_\nu - \partial_\nu A_\mu$.  The Lagrangian is invariant under the local $U(1)$
+gauge transformation
+\begin{eqnarray}
+  \phi \to \phi' &=& e^{-i \alpha(x)} \phi \nonumber \\
+  A_\mu \to A_\mu' &=& A_\mu - \frac{1}{3} \partial_\mu \alpha(x) 
+\end{eqnarray}
+
+The potential is minimized when $\phi^*\phi = \frac{\mu^2}{2\lambda}$.  To
+simplify the algebra, we can
+re--parameterize the field into a real part $\eta(x)$ defined about $\nu$, the minimum of $V$, 
+and a complex phase $\theta(x)/\nu$
+\begin{equation}
+  \phi(x) = \frac{1}{\sqrt 2}(\nu + \eta(x))e^{i \theta(x)/\nu}
+  \label{eq:HiggsMechanismFieldParameterization}
+\end{equation}
+If the gauge transform is chosen to be $\alpha(x) = \theta(x)/\nu$, the fields
+of are defined in the
+so--called ``unitary gauge'' and have the special forms
+\begin{eqnarray}
+  \phi(x) \to \phi'(x) &=& \frac{1}{\sqrt 2}(\nu + \eta(x)) \nonumber \\
+  A_\mu(x) \to B_\mu(x) &=& A_\mu(x) - \frac{1}{e \nu}\partial_\mu \theta(x)
+  \label{eq:AfterUnitaryGaugeTransformation}
+\end{eqnarray}
+The kinetic term of the gauge field $F_{\mu\nu}$ is invariant under this
+transformation.  If the gauge transformations of
+Equation~\ref{AfterUnitaryGaugeTransformation} are substituted into the
+Lagrangian~(\ref{eq:LocalInvariantU1}) the effective Lagrangian at the minimum
+of $V$ is
+\begin{equation}
+  \mathcal{L} = \frac{1}{2} \partial_\mu \eta \partial^\mu \eta -
+  \mu^2 \eta^2 
+  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu} + \frac{1}{2} (e\nu)^2 B_\mu B^\mu 
+  + \frac{1}{2} e^2 B_\mu B^\mu \eta (\eta + 2 \nu) - \lambda \nu \eta^3 -
+  \frac{\lambda }{4}\eta^4
+  \label{eq:HiggsMechanism}
+\end{equation}
+The breaking of the original symmetry has dramatically altered the physical
+consequences of the model.  In its unbroken form, the model described by
+Equation~\ref{eq:LocalInvariantU1} would produce two real massive particles and
+one massless gauge boson mandated by local gauge invariance.  After symmetry
+breaking, the effective Lagrangian in Equation~\ref{eq:HiggsMechanism} contains
+a massive scalar $\eta$ with $m = \sqrt{2\mu^2}$ and a \emph{massive} gauge
+boson $B_\mu$ with mass $m = \sqrt 2 e\nu$.  By acquiring a mass, the gauge
+boson $B_\mu$ has acquired the degree of freedom (as it can now be
+longitudinally polarized) previously associated to the second degree of freedom
+in the scalar $\phi$ field.  This phenomenon, known as the ``Higgs Mechanism,''
+is a simplified version of the techniques successfully used to unify the
+electromagnetic and weak forces that we will discuss in the next section.  
+
+\subsection{Electroweak Unification}
+
+In the 1960s, the ideas of local gauge invariance in field theories, spontaneous
+symmetry breaking, and the Higgs mechanism were combined by
+Glashow~\cite{GlashowEW}, Weinberg~\cite{WeinbergEW} and Salam~\cite{SalamEW} to
+form the unified theory of electroweak interactions, the nucleus of the Standard
+Model.  This model successfully unified the electromagnetic and weak
+interactions into a unified theory with a larger symmetry group.  The reason for
+the empirically observed difference in scales between two interactions is due to
+the larger, unified symmetry group being broken.  This broken symmetry creates
+heavy gauge bosons via the Higgs mechanism, whose large mass decreases the
+strength of ``weak'' interactions at low energy, as discussed in
+Section~\ref{sec:WeakInteractions}.  The model successfully predicted the
+existence and approximate masses of the weak force carriers, the $W^\pm$ and $Z$
+bosons.  These particles were later observed~\cite{SPSWandZDiscovery} with the
+predicted masses at the SPS experiment~\cite{SPSexperiment}. 
+
+To provide a simple introduction to the mechanisms of the model, we will start
+with a model that includes only one family of leptons, the electron $e$ and it's
+associated neutrino $\nu_e$. Following once again the treatment
+of~\cite{Morii:SMandBSM}, we describe the representation of the $e$ and $\nu_e$
+in, and the choice of, the symmetry group of the model.  We then construct the
+gauge invariant Lagrangian, with spontaneously broken symmetry, and examine the
+particle content of the resulting model.
+
+The form of the charged current $J_\mu(x) = \overline u_{\nu_e} \gamma_\rho
+\frac{1 - \gamma_5}{2} u_e$ in the weak interaction amplitudes
+(~\ref{eq:ContactAmplitudeMuonDecay} indicates that the left--handed electron
+and neutrino 
+(remember that the $(1-\gamma_5)$ kills any right--handed spinors) can be
+combined into a doublet $L$ of $SU(2)$.  
+\begin{equation}
+  L = \frac{1 - \gamma_5}{2}
+  \left(\begin{array}{c} \nu_e \\ e^- \end{array}\right)
+    = \left(\begin{array}{c} \nu_e \\ e^- \end{array}\right)_L
+      \label{eq:EWDoubletForm}
+\end{equation}
+Defining operators that operate on ``weak isospin,''
+\begin{eqnarray}
+  \tau^+ &=& \frac{\tau^1 + i \tau^2}{2} = 
+  \left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right) 
+    \label{eq:Su2GeneratorPlus} \\
+  \tau^- &=& \frac{\tau^1 - i \tau^2}{2} = 
+  \left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right),
+    \label{eq:Su2GeneratorMinus}
+\end{eqnarray}
+where the $\tau^i$ are the Pauli matrices, the weak currents $J_\mu^\pm$ can be
+written by combining
+equations~\ref{eq:EWDoubletForm}--\ref{eq:Su2GeneratorMinus}
+\begin{equation}
+  J_\mu^\pm = \overline L \gamma_\mu \tau^\pm L.
+  \label{eq:WeakCurrentInSu2Doublets}
+\end{equation}
+Since $\tau^1$, $\tau^2$, and $\tau^3$ are the generators of the $SU(2)$ group,
+we can complete the group by adding a neutral current to the charged currents of
+Equation~\ref{eq:WeakCurrentInSu2Doubles}.  The $\tau^3$ generator is diagonal,
+so the charge of the current is zero and no mixing of the fields occurs:
+\begin{eqnarray}
+  J^3_\mu &= \overline L \gamma_\mu \frac{\tau^3}{2} L \nonumber \\
+  &= \overline L \gamma_\mu  \frac{1}{2} 
+  \left(\begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) L \nonumber \\
+    &=  \frac{1}{2} \overline \nu_e \gamma_\mu \nu_e - \frac{1}{2} \overline e_L
+    \gamma_\mu e_L 
+    \label{eq:EWNeutralCurrent}
+\end{eqnarray}
+Naively one might hope that the neutral current of
+Equation~\ref{eq:EWNeutralCurrent} would correspond to the electromagnetic
+(photon) current of QED\@.  However, this is impossible for two reasons.  First,
+the right--handed component $e_R$ does not appear in the current, so this
+interaction violates parity, a known symmetry of the electromagnetic
+interactions.  Second, the current couples to neutrinos, which have no electric
+charge.   Therefore, the ``charge'' corresponding to the $SU(2)$ gauge symmetry
+generators $T^i = \int J_0^i(x)d^3x$ cannot be that of the QED\@, and the gauge
+group must be enlarged to include an additional $U(1)$ symmetry.  The generator
+of the new symmetry is must commute with the generators of the $SU(2)_L$ group.
+The symmetry cannot be directly extended with $U(1)_{em}$ as the electromagnetic
+charge $Q = \int (e^\dag_L e_L +  e^\dag_R e_R) d^3x$ does not commute with
+$T^i$.  The solution is to introduce the ``weak hypercharge'' $\frac{Y}{2} = Q -
+T^3$, which commutes the generators of $SU(2)_L$.  Thus the symmetry group of the
+electroweak model is $SU(2)_L\times U(1)_Y$.
+
+The $SU(2)_L\times U(1)_Y$ gauge invariant Lagrangian is written 
+\begin{eqnarray}
+  \mathcal{L} &=& 
+  \overline L i \gamma^\mu (\partial_\mu - i g \frac{\vec \tau}{2} \cdot \vec
+  {A_\mu} + \frac{i}{2}g'B_\mu)L \nonumber \\
+  &+& \overline R i \gamma^\mu (\partial_\mu + \frac{i}{2}g'B_\mu)R \nonumber \\
+  &+& -\frac{1}{4}F^i_{\mu\nu} F^{i\mu\nu} -\frac{1}{4}B_{\mu\nu} B^{\mu\nu}.  
+  \label{eq:FermionAndGaugeLagrangianGWS}
+\end{eqnarray}
+As $R$ is a singlet in $SU(2)$, it does not couple to the $SU(2)$ gauge bosons
+$A^i_\mu$.  For this Lagrangian to correspond to empirical observations at low
+energy, the $SU(2)_L \times U(1)_Y$ must be broken.  As $U(1)_{em}$ symmetry 
+is observed to be good symmetry at all scales the broken Lagrangian must
+be invariant under $U(1)_{em}$.
+
+To accomplish the symmetry breaking, we introduce a new $SU(2)$ doublet of
+complex Higgs fields $\phi$ that have hypercharge $Y = 1$, and contribute
+$\mathcal{L}_S$ to the Lagrangian:
+\begin{eqnarray}
+  \phi =& \left(\begin{array}{c}\phi^+ \\ \phi^0\end{array}\right) \\
+  \mathcal{L}_S =& (D_\mu \phi)^\dag(D^\mu \phi) - V(\phi^\dag\phi),
+\end{eqnarray}
+where $D_\mu$ is the gauge covariant derivative containing couplings to both the
+$SU(2)_L$ and $U(1)_Y$ gauge fields, and $V$ has a form analogous to $V$ in
+Equation~\ref{eq:PotentialLocalInvariantU1}.  At this point we also add $SU(2)_L
+\times U(1)_Y$ invariant ``Yukawa'' terms 
+\begin{equation}
+  \mathcal{L}_Y = -G_e(\overline L \phi R + \overline R \phi^\dag L) + h.c.)
+  \label{eq:YukawaTerms}
+\end{equation}
+to the Lagrangian which couple the fermions ($L$ and $R$) to the Higgs field.
+After symmetry breaking these terms will allow the fermions to acquire masses.
+By choosing the $m^2$ and $\lambda$ parameters of $V$ appropriately, the new
+$\phi$ field acquires a non--zero VEV and the symmetry is spontaneously broken.
+
+At the minimum of $V$, the Higgs field satisfies $\phi^\dag\phi =
+\frac{\nu^2}{2}$ and the Higgs fields has a VEV of
+\begin{equation}
+  \phi_{min} = \left(\begin{array}{c} 0 \\ v/\sqrt{2} \end{array}\right).
+\end{equation}
+The new symmetry of the model can be confirmed by looking at the action of
+different symmetry generators on the VEV\@.  If the generator acting on the
+vacuum state has a non--zero value, then the corresponding symmetry is broken.
+It can then be seen that the generators of $SU(2)_L \times U(1)_Y$, $T^{+,-,3}$
+and $Y$ are all broken.  The vacuum \emph{is} invariant under $Q$, the generator
+of $U(1)_{em}$
+\begin{equation}
+  Q\phi_{min} = (T^3 + \frac{Y}{2})\left(\begin{array}{c} 0 \\ v/\sqrt{2}
+  \end{array}\right) = 0 \nonumber.
+\end{equation}
+
+The gauge boson content of the electroweak interaction is obtained by
+parameterizing the Higgs field in the magnitude--phase notation of
+Equation~\ref{eq:HiggsMechanismFieldParameterization} and using the unitary
+gauge (see Section~\ref{sec:HiggsMech}), where the gauge transformation is
+chosen so Higgs field is real.  The Higgs scalar doublet is then 
+\begin{equation}
+  \phi' =  \left(\begin{array}{c} 0 \\ \frac{1}{\sqrt 2}(\nu +
+    H(x))\end{array}\right) = 
+    \frac{1}{\sqrt 2}(\nu + H(x))\chi.
+    \label{eq:HiggsFieldParameterization}
+\end{equation}
+In the unit
+The mass spectrum of the gauge bosons of the electroweak interaction (the photon, $W$,
+and $Z$) is determined by the interaction of the gauge field terms in the
+covariant derivative with the non--zero vacuum expectation value of the scalar
+Higgs field $\phi$
+\begin{equation}
+  (D_\mu\phi)' = (\partial_\mu - i g \frac{\vec \tau}{2}\cdot \vec{A'_\mu}) -
+  \frac{i}{2}g'B'_\mu)\frac{1}{\sqrt 2}(\nu + H)\chi.
+  \nonumber
+\end{equation}
+The terms in the expansion of the kinetic term of the Higgs field that are
+quadratic in $\nu^2$ and a gauge boson field give the mass associated to that
+boson, and can be written as
+\begin{equation}
+  \mathcal{L}_{mass} = \frac{\nu^2}{8}(
+  g^2 A'^1_\mu A'^{1\mu} + g^2 A'^2_\mu A'^{2\mu} + (g A'^3_\mu - g'B'_\mu)^2).
+  \label{eq:GaugeBosonMassTerms}
+\end{equation}
+The $A'^1_\mu$ and $A'^2_\mu$ fields can be combined such that the first two
+terms in Equation~\ref{eq:GaugeBosonMassTerms} into the mass term of the charged
+$W^\pm$ boson
+\begin{equation}
+  W^\pm_\mu = \frac{A'^{1}_\mu \mp iA'^2_\mu}{2},
+\end{equation}
+which then has mass $M_W = \frac{1}{2}g\nu$.  The third term in
+Equation~\ref{eq:GaugeBosonMassTerms} can be written in matrix form and then
+diagonalized into mass eigenstates
+\begin{eqnarray}
+  &\frac{\nu^2}{8}(A'^3_\mu~B'_\mu) 
+  \left(
+  \begin{array}{cc}
+    g^2 & -gg' \\
+    -gg' & g'^2 
+  \end{array}
+  \right)
+  \left(
+  \begin{array}{c}
+    A'^{3\mu} \\
+    B'^\mu
+  \end{array}
+  \right) \\
+  \to & 
+  \frac{\nu^2}{8}(Z_\mu~A_\mu) 
+  \left(
+  \begin{array}{cc}
+    g^2 + g'^2  & 0\\
+    0 & 0 
+  \end{array}
+  \right)
+  \left(
+  \begin{array}{c}
+    Z^\mu \\
+    A^\mu
+  \end{array}
+  \right), \nonumber 
+\end{eqnarray}
+giving a massive $Z$ boson with $M_Z = \frac{\nu}{2}\sqrt{g^2 + g'^2}$ and a
+massless photon.  The mass of the $Z$ is related to the mass of the $W^\pm$ by
+the 
+\begin{equation}
+  M_Z \equiv \frac{M_W}{\cos \theta_W},
+\end{equation}
+where $\theta_W$ is the ``Weinberg angle,'' which must be determined from
+experiment.  As the Fermi contact interaction of
+Section~\ref{sec:WeakInteractions} is an effective theory of the weak sector,
+the value of $G_F$ obtained from $\beta$ and muon decay experiments give clues
+to the masses of the $W$ and $Z$.  
+\begin{equation}
+  M_W = \frac{1}{2}(\frac{e^2}{\sqrt 2 G_F})^(1/2)\frac{1}{\sin\theta_W} \approx
+  \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \\ M_Z \approx \frac{76 \GeV}{\sin
+  2\theta_W} > 76\GeV.
+\end{equation}
+The discovery of the $W$~\cite{UA1WDiscovery,UA2WDiscovery} and
+$Z$~\cite{UA1ZDiscovery, UA2ZDiscovery} at the CERN SPS was a huge triumph for
+th electroweak model.
+
+The ``charge'' of the theory of electroweak interaction is called weak isospin.
+Similar to the electric charge of QED, only particles with non--zero weak
+isospin couple to the gauge bosons of the weak force, and weak isospin is
+conserved in weak interactions.   The weak force is \emph{chiral}; the
+``handedness'' of the particles affects how they interact with each other.  In
+fact, the weak interaction violates parity: the interaction is not invariant
+under spatial inversion.  Left--handed fermions carry weak isospin $T = 1/2$,
+and form a doublet under the $SU(2)$ gauge group.  The right--handed fermions
+have no weak isospin, and are singlets under the gauge group.  
+
+At the minimum of $V$, the scalar field
 
 \subsection{Quantum Chromodynamics}
 
-\subsection{Electroweak Unification}
-In the early 1960s Glashow published a series of papers describing how the
-electromagnetic and weak forces could be unified into a common ``electroweak''
-force.  The fact that at low energy the electromagnetic and weak forces appear
-to be separate phenomena is due to the fact that the symmetry of the electroweak
-gauge group is spontaneously broken.
-
-\subsection{The Higgs mechanism}
 
 
 \section{Searches for the Higgs boson}
