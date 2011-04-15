@@ -23,12 +23,21 @@ application of the principle of \emph{local gauge invariance}. The principle of
 gauge invariance first found success in QED, which predicted electromagnetic
 phenomenon with astounding accuracy.  Local gauge invariance is now believed to
 a fundamental feature of nature that underpins all theories of elementary
-particles.  Furthermore, the development of the complete Standard Model as it
-is known today was precipitated by  Glashow, Weinberg, and Salam's
-discovery~\cite{GlashowSymmetryBreaking} of the potential to unify QED with
-the weak force using spontaneous symmetry breaking, and the development of the
-Higgs mechanism~\cite{HiggsMechanism}, which breaks the electroweak symmetry
-using the clever addition of an additional scalar particle (the Higgs boson).
+particles.  Furthermore, the development of the complete Standard Model as it is
+known today was precipitated by Goldstones's work on spontaneous symmetry
+breaking~\cite{Goldstone:1961eq,PhysRev.127.965}, which produces an effective
+Lagrangian with additional massless ``Goldstone'' bosons.  Higgs (and
+others)~\cite{PhysRevLett.13.321, PhysRevLett.13.508,PhysRevLett.13.585}
+developed these ideas into what is ultimately called the ``Higgs Mechanism,''
+which uses a combination of new fields with broken symmetry to give mass to the
+Goldstone bosons.
+
+In the 1960s, Glashow~\cite{Glashow:1961tr}, Weinberg~\cite{Weinberg:1967tq}, 
+and Salam~\cite{Salam:1968rm} developed the above ideas into the
+electroweak model, which unified QED with the weak force using intermediate weak
+bosons in a gauge theory whose symmetry was spontaneously broken using the Higgs
+mechanism.  This unified theory has been incredibly experimentally successful
+and is the foundation of modern particle theory.
 
 \subsection{Quantum Electrodynamics and Gauge Invariance}
 \label{sec:QEDandGaugeInvariance}
@@ -175,10 +184,11 @@ interaction.
 
 The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e^+ +
 \overline{\nu_e}$) as well as the decay of a muon into an electron ($\mu \to
-\nu_\mu + e + \overline{\nu_e}$).  Furthermore, the coupling constant $G$ is
-found to be a \emph{universal} constant in weak interactions, in that it is the
-same for interactions regardless of the particle species participating in the
-interaction.  That is, $G_\mu = G_e = G_F$.  Using an Hamiltonian analogous to
+\nu_\mu + e + \overline{\nu_e}$, Figure~\ref{fig:MuonDecayContact}).
+Furthermore, the coupling constant $G$ is found to be a \emph{universal}
+constant in weak interactions, in that it is the same for interactions
+regardless of the particle species participating in the interaction.  That is,
+$G_\mu = G_e = G_F$.  Using an Hamiltonian analogous to
 Equation~\ref{eq:FermiTheoryHamiltonian} for muon decay, the decay amplitude $M$
 is found to be
 \begin{equation}
@@ -199,10 +209,54 @@ topic beyond the scope of this thesis.  Briefly, the process involves
 physical observables~\cite{Griffiths:IntroParticle}.} QED fail when applied to
 the Fermi interaction.
 
+\begin{figure}
+  \centering
+  \begin{fmffile}{muon_decay}
+    \begin{fmfgraph*}(120,75)
+    \fmfleft{i1}
+    \fmfright{o1,o2,o3}
+    %\fmftop{i2,d2,o2}
+    \fmf{fermion}{i1,v1,o1}
+    \fmf{fermion}{v1,o2}
+    \fmf{fermion}{o3,v1}
+    \fmflabel{$\mu^-$}{i1}
+    \fmflabel{$\nu_\mu$}{o1}
+    \fmflabel{$\overline \nu_e$}{o3}
+    \fmflabel{$e^-$}{o2}
+    \fmflabel{$G_F$}{v1}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \caption[Fermi contact interaction diagram]{Feynamn diagram of muon decay
+  in Fermi contact interaction theory.}
+  \label{fig:MuonDecayContact}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{fmffile}{muon_decay_propagator}
+    \begin{fmfgraph*}(120,75)
+    \fmfleft{i1}
+    \fmfright{o1,o2,o3}
+    %\fmftop{i2,d2,o2}
+    \fmf{fermion}{i1,v1,o1}
+    \fmf{photon, label=$W^-$}{v1,v2}
+    \fmf{fermion}{v2,o2}
+    \fmf{fermion}{v2,o3}
+    \fmflabel{$\mu^-$}{i1}
+    \fmflabel{$\nu_\mu$}{o1}
+    \fmflabel{$\overline \nu_e$}{o3}
+    \fmflabel{$e^-$}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \caption[Muon decaying through intermediate gauge boson]{Feynamn diagram of
+  muon decay proceeding through an intermediate gauge boson $W^-$. }
+  \label{fig:MuonDecayFeynmanDiagram}
+\end{figure}
+
 The first attempt to solve the problems with the Fermi theory was made by
-introducing an intermediate weak boson.  The contact interaction is replaced by
-a massive propagator, the $W^\pm$ bosons.  The decay of a muon to an electron
-and two neutrinos then proceeds as pictured in
+introducing an intermediate weak boson~\cite{Glashow:1961tr}.  The contact
+interaction is replaced by a massive propagator, the $W^\pm$ bosons.  The decay
+of a muon to an electron and two neutrinos then proceeds as pictured in
 Figure~\ref{fig:MuonDecayFeynmanDiagram} with an amplitude given
 by~\cite{Morii:SMandBSM}
 \begin{equation}
@@ -233,7 +287,7 @@ Equation~\ref{eq:ContactVersusWeakBosonExchange} suggests the observed
 massive propagator ($M_W$) and that the fundamental scale of the interaction $g$
 is the same order of magnitude as that of QED, $g \approx e$.  This observation
 lead to the unification of the electromagnetic and weak forces, which we
-describe in the next section.
+describe in the next sections.
 
 \subsection{Spontaneous Symmetry Breaking}
 \label{sec:SSB}
@@ -299,12 +353,11 @@ as $\frac{1}{2}m^2\phi_n\phi_n$, we can identify
 V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}}
 \label{eq:MassMatrixTerms}
 \end{equation}
-as the $a$th row and $b$th
-column in the ``mass matrix''.  Off diagonal terms in this matrix indicate
-mixing terms between the fields.  By diagonalizing the matrix, the combinations
-of fields which correspond to the physical particles are found.  The $m^2$ of
-each particle is then the corresponding entry in the diagonal of the mass
-matrix.
+as the $a$th row and $b$th column in the ``mass matrix''.  Off diagonal terms in
+this matrix indicate mixing terms between the fields.  By diagonalizing the
+matrix, the combinations of fields which correspond to the physical particles
+(the ``mass eigenstates'') are found.  The $m^2$ of each particle is then the
+corresponding entry in the diagonal of the mass matrix.
 
 The particle spectra of the model depends heavily on the form of the potential.
 An illustrative form (that is renormalizable and bounded from below) of a
@@ -357,7 +410,7 @@ Equation~\ref{eq:MassMatrixTerms} yields the mass matrix \fixme{check matrix}
 Breaking the symmetry has changed the mass spectrum of the physical particles in
 the model.  There is now a massive particle with $m=v^2$ and a massless
 particle.  This massless particle is called the ``Goldstone boson.''
-\fixme{check ref} Goldstone found~\cite{GoldstoneBosons} that a massless
+\fixme{check ref} Goldstone found~\cite{Goldstone:1961eq} that a massless
 particle appears for each generator in the symmetry group that is broken.
 
 \subsection{The Higgs Mechanism}
@@ -367,12 +420,12 @@ As in section~\ref{sec:QEDandGaugeInvariance}, extending the gauge symmetry
 requirement to be \emph{locally} invariant creates interesting consequences for
 models that have spontaneously broken symmetry.  This gives rise to the ``Higgs
 Mechanism,'' which we overview here.  For simplicity we will again consider a
-model with $U(1)$ symmetry.  The model is identical to the one presented in 
-section~\ref{sec:SSB}, with two exceptions: First, we express the two real fields
-$\phi_1$ and $\phi_2$ as a single complex--valued field $\phi$.  Second, the
-model is required to be locally $U(1)$ invariant, and so uses the
-gauge--covariant derivatives, minimal coupling to the gauge field, and kinetic
-term for the gauge field, as discussed in
+model with $U(1)$ symmetry.  The model is identical to the one presented in
+section~\ref{sec:SSB}, with two exceptions. First, we express the two real
+fields $\phi_1$ and $\phi_2$ as a single complex--valued field $\phi$.  Second,
+the model is required to be locally $U(1)$ invariant, and so uses the
+gauge--covariant derivatives, minimal coupling to the gauge field, and contains
+the kinetic term for the gauge field, as discussed in
 section~\ref{sec:QEDandGaugeInvariance}.  The unbroken Lagrangian is
 \begin{eqnarray}
   \mathcal{L} &=& -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} 
@@ -385,7 +438,7 @@ A_\nu - \partial_\nu A_\mu$.  The Lagrangian is invariant under the local $U(1)$
 gauge transformation
 \begin{eqnarray}
   \phi \to \phi' &=& e^{-i \alpha(x)} \phi \nonumber \\
-  A_\mu \to A_\mu' &=& A_\mu - \frac{1}{3} \partial_\mu \alpha(x) 
+  A_\mu \to A_\mu' &=& A_\mu - \frac{1}{2} \partial_\mu \alpha(x) 
 \end{eqnarray}
 
 The potential is minimized when $\phi^*\phi = \frac{\mu^2}{2\lambda}$.  To
@@ -406,7 +459,7 @@ so--called ``unitary gauge'' and have the special forms
 \end{eqnarray}
 The kinetic term of the gauge field $F_{\mu\nu}$ is invariant under this
 transformation.  If the gauge transformations of
-Equation~\ref{AfterUnitaryGaugeTransformation} are substituted into the
+Equation~\ref{eq:AfterUnitaryGaugeTransformation} are substituted into the
 Lagrangian~(\ref{eq:LocalInvariantU1}) the effective Lagrangian at the minimum
 of $V$ is
 \begin{equation}
@@ -640,30 +693,56 @@ experiment.  As the Fermi contact interaction of
 Section~\ref{sec:WeakInteractions} is an effective theory of the weak sector,
 the value of $G_F$ obtained from $\beta$ and muon decay experiments give clues
 to the masses of the $W$ and $Z$.  
-\begin{equation}
+\begin{eqnarray}
   M_W = \frac{1}{2}(\frac{e^2}{\sqrt 2 G_F})^(1/2)\frac{1}{\sin\theta_W} \approx
-  \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \\ M_Z \approx \frac{76 \GeV}{\sin
+  \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \\ 
+  M_Z \approx \frac{76 \GeV}{\sin
   2\theta_W} > 76\GeV.
-\end{equation}
+\end{eqnarray}
 The discovery of the $W$~\cite{UA1WDiscovery,UA2WDiscovery} and
 $Z$~\cite{UA1ZDiscovery, UA2ZDiscovery} at the CERN SPS was a huge triumph for
-th electroweak model.
+the electroweak model.
 
-The ``charge'' of the theory of electroweak interaction is called weak isospin.
-Similar to the electric charge of QED, only particles with non--zero weak
-isospin couple to the gauge bosons of the weak force, and weak isospin is
-conserved in weak interactions.   The weak force is \emph{chiral}; the
-``handedness'' of the particles affects how they interact with each other.  In
-fact, the weak interaction violates parity: the interaction is not invariant
-under spatial inversion.  Left--handed fermions carry weak isospin $T = 1/2$,
-and form a doublet under the $SU(2)$ gauge group.  The right--handed fermions
-have no weak isospin, and are singlets under the gauge group.  
-
-At the minimum of $V$, the scalar field
+The model that is presented in this section assumes only one species of leptons,
+the electron and its associated neutrino.  The electroweak model is trivially
+extended~\cite{Morii:SMandBSM} to include the other species ($\mu$, $\tau$) of
+leptons and the three families of quarks. The masses of the fermions are
+determined by the Yukawa terms in Equation~\ref{eq:YukawaTerms}.  Each particle
+species has a Yukawa term relating the Higgs VEV to its mass that is not
+constrained by the theory, and must be determined by experiment.
 
 \subsection{Quantum Chromodynamics}
 
+After electroweak unification, the Standard Model is completed by the theory of
+Quantum Chromodynamics (QCD), which describes the interactions between quarks
+and gluons.  QCD is a broad field and only a brief introduction to its
+motivations and the phenomenology relevant to the analysis presented in this
+thesis is contained in this section.  The existence of quarks as the composite
+was first proposed by Gell--Man and Zweig to explain the spectroscopy of
+hadrons.  QCD is an $SU(3)$ non--Abelian gauge theory which is invariant under
+\emph{color} transformations.  Color is the charge of QCD and comes in three
+types: red, green and blue.  The gauge boson that carries the force of QCD is
+called the gluon, which is massless as the $SU(3)_c$ color symmetry is unbroken.
 
+There are two marked differences between the photon of QED and the gluon of QCD.
+First, the gluon itself carries a color charge, where is the electron is
+neutral.  This has the consequence that a gluon can couple to other gluons.
+Furthermore, it is found that no colored object exists in nature.  The corollary
+of this is that it is believed to be impossible for a single quark or gluon to
+be observed.  The mechanism that gives rise to effect is called ``color
+confinement.''  The strength of the force between two interacting colored
+objects increases with distance.  If two colored objects in a hadron are pulled
+apart, the energy required to separate them will eventually be large enough to
+produce new colored objects, resulting in two (or more) color--less hadrons.
+
+The practical consequence of color confinement to a physicist at a high--energy
+particle physics experiment is the production of quark and gluon ``jets,'' which
+are high multiplicity sprays of particles observed in the detector.  In a
+proton--proton collision, quarks and gluons can knocked off the incident
+protons.  These quarks and gluons immediately ``hadronize,'' surrounding
+themselves with additional hadrons, the majority of which are charged and
+neutral pions.  Heavier quarks, such as the charm, beauty, and top quarks
+undergo a flavor--changing weak decays, giving rise to 
 
 \section{Searches for the Higgs boson}
 \subsection{Higgs boson phenomenology}
