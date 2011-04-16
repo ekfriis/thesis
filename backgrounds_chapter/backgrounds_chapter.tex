@@ -22,12 +22,12 @@ reference~\cite{EWKtauNote}.
 
 The results described in this note were obtained from Monte Carlo simulations of
 the $Z \rightarrow \tau^{+} \tau^{-}$ signal and different background processes
-for a centre--of--mass energy of $\sqrt{s} = 7$~TeV.  Analysis of the $\sqrt{s}
-= 7$~\TeV data recorded in 2009~\cite{refFakeRate2009dataResults} indicate that
+for a centre--of--mass energy of $\sqrt{s} = 7$~\TeV.  Analysis of the $\sqrt{s}
+= 7$~\\TeV data recorded in 2009~\cite{refFakeRate2009dataResults} indicate that
 the probabilities for quark and gluon jets to fake the signatures of hadronic
 tau decays are well modeled by the Monte Carlo simulation.  Once data--samples
 of sufficient event statistics are available at collision energies of $\sqrt{s}
-= 7$~TeV, fake--rates at the higher centre--of--mass energy will be measured in
+= 7$~\TeV, fake--rates at the higher centre--of--mass energy will be measured in
 data and the values obtained from data will henceforth be used for the purpose
 of estimating background contributions via the fake--rate technique.
 
@@ -46,11 +46,11 @@ of estimating background contributions via the fake--rate technique.
 %\put(-5.5, 54.5){\small (c)}
 %\put(72.0, 54.5){\small (d)}
 \end{picture}
-\caption[$P_T$ and $\eta$ dependency of tau ID performance]{Cumulative
+\caption[$\pt$ and $\eta$ dependency of tau ID performance]{Cumulative
 efficiencies (left) and fake--rates (right) of successively applied tau
 identification cuts of the ``shrinking signal cone'' particle--flow based tau
 identification algorithm described in~\cite{PFlowTauReco} as function of
-$P_{T}^{jet}$ (top) and $\eta_{jet}$ (bottom) of tau--jet candidates.  The
+$\pt^{jet}$ (top) and $\eta^{jet}$ (bottom) of tau--jet candidates.  The
 efficiencies/fake--rates for the complete set of tau identification criteria are
 represented by the blue (downwards facing) triangles.}
 \label{figPFTauReco_EfficienciesAndFakeRates}
@@ -58,15 +58,15 @@ represented by the blue (downwards facing) triangles.}
 \end{figure} 
 
 Efficiencies and fake--rates of the tau identification algorithm based on
-requiring no tracks of $P_{T} > 1$~GeV and ECAL energy deposits of $P_{T} >
-1.5$~GeV reconstructed within an ``isolation cone'' of size $dR_{iso} = 0.5$ and
+requiring no tracks of $\pt > 1~\GeVc$ and ECAL energy deposits of $\pt >
+1.5~GeV$ reconstructed within an ``isolation cone'' of size $dR_{iso} = 0.5$ and
 outside of a ``shrinking signal cone'' of size $dR_{sig} = 5.0 / E_{T}$ as it is
 used in the $Z \rightarrow \tau^{+} \tau^{-} \rightarrow \mu + \tau\mbox{-jet}$
 analysis are displayed in figure~\ref{figPFTauReco_EfficienciesAndFakeRates}.
-In order to account for the visible $P_{T}$ and $\eta$ dependence, we
+In order to account for the visible \pt and $\eta$ dependence, we
 parametrize the fake--rates in bins of transverse momentum and pseudo--rapidity.
 As we will show in section~\ref{secFakeRateApplication}, the parametrization of
-the fake--rates by $P_{T}$ and $\eta$ makes it possible to not only estimate the
+the fake--rates by \pt and $\eta$ makes it possible to not only estimate the
 total number of background events contributing to physics analyses, but to model
 the distributions of kinematic observables with a precision that is sufficient
 to extract information on the background shape.
@@ -88,21 +88,21 @@ get accounted for in this way.
 
 Efficiencies and fake--rates are then obtained by counting the fraction of tau--jet candidates
 passing all tau identification cuts and discriminators
-in a given bin of $P_{T}^{jet}$, $\eta_{jet}$ and $R_{jet}$:
+in a given bin of $\pt^{jet}$, $\eta_{jet}$ and $R_{jet}$:
 \begin{equation}
-P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := 
-  \frac{N_{jets} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \vert \mbox{all tau ID cuts and discriminators passed} \right)}
-       {N_{jets} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \vert \mbox{preselection passed} \right)}
+P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := 
+  \frac{N_{jets} \left( \pt^{jet}, \eta_{jet}, R_{jet} \vert \mbox{all tau ID cuts and discriminators passed} \right)}
+       {N_{jets} \left( \pt^{jet}, \eta_{jet}, R_{jet} \vert \mbox{preselection passed} \right)}
 \label{eqBgEstFakeRate_fr}
 \end{equation}
 The pre--selection in the denominator of equation~\ref{eqBgEstFakeRate_fr} in
-general refers to $P_{T}$ and $\eta$ cuts, which are applied with thresholds
+general refers to \pt and $\eta$ cuts, which are applied with thresholds
 matching those applied on the final analysis level, but may as well include
 loose tau identification criteria (which may be applied \eg already during event
 skimming).
 
-Different sets of fake--rates are determined for the highest $P_{T}$ and for the
-second highest $P_{T}$ jet in QCD di--jet events, for jets in a QCD event sample
+Different sets of fake--rates are determined for the highest \pt and for the
+second highest \pt jet in QCD di--jet events, for jets in a QCD event sample
 enriched by the contribution of heavy quarks and gluons by requiring the
 presence of a muon reconstructed in the final state, and for jets in
 ``electroweak'' events selected by requiring a $W$ boson in the final state.
@@ -110,7 +110,7 @@ presence of a muon reconstructed in the final state, and for jets in
 \subsection{The Fake--rate method}
 
 Knowledge of the tau identification efficiencies and fake--rates as function of
-the parameters $P_{T}^{jet}$, $\eta_{jet}$ and $R_{jet}$ as defined by
+the parameters $\pt^{jet}$, $\eta_{jet}$ and $R_{jet}$ as defined by
 equation~\ref{eqBgEstFakeRate_fr} is utilized to obtain an estimate for the
 contributions of background processes to physics analyses involving tau lepton
 hadronic decays in the final state.  The basic idea is to replace tau
@@ -124,7 +124,7 @@ by contributions of background processes, which are expected to increase by the
 inverse of the (average) fake--rate, typically by a factor $\mathcal{O} \left(
 100 \right)$.  In the second stage, weights are applied to all events in the
 background dominated control sample, according to the probabilities $P_{fr}
-\left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$ for jets to fake the signature
+\left( \pt^{jet}, \eta_{jet}, R_{jet} \right)$ for jets to fake the signature
 of a hadronic tau decay.  After application of the weights, an estimate for the
 total number of background events passing the tau identification cuts and
 discriminators and thus contributing to the final analysis sample is obtained.
@@ -158,7 +158,7 @@ In the ``simple'' method all tau--jet candidates within the background dominated
 event sample are weighted by the probabilities of quark and gluon jets to fake
 the signature of a hadronic tau decay:
 \begin{equation}
-w_{jet}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)
+w_{jet}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)
 \label{eqBgEstFakeRate_frSimpleJetWeight}
 \end{equation}
 These weights are applied to all jets in the background dominated control sample
@@ -186,16 +186,16 @@ observables related to ``composite particles'' the multiplicity of which depends
 on the multiplicity of tau--jet candidates in the event (\eg combinations of
 muon + tau--jet pairs in case of the $Z \rightarrow \tau^{+} \tau^{-}
 \rightarrow \mu + \tau\mbox{--jet}$ analysis).  Per--particle weights need to be
-computed for such ``composite particles'', depending on $P_{T}^{jet}$,
+computed for such ``composite particles'', depending on $\pt^{jet}$,
 $\eta_{jet}$, $R_{jet}$ of its tau--jet candidate constituent, according to:
 \begin{equation}
-w_{comp-part}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) := 
-  w_{jet}^{simple} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)
+w_{comp-part}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := 
+  w_{jet}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)
 \label{eqBgEstFakeRate_frSimpleCompositeParticleWeight}
 \end{equation}
 
 Different estimates are obtained for the fake--rate probabilities determined for
-the highest and second highest $P_{T}$ jet in QCD di--jet events, jets in a muon
+the highest and second highest $\pt$ jet in QCD di--jet events, jets in a muon
 enriched QCD sample and jets in $W$+jets events.  The arithmetic average of the
 four estimates together with the difference between the computed average and the
 minimum/maximum value is given in table~\ref{tabBgEstFakeRate_frSimpleResults}.
@@ -266,16 +266,16 @@ estimate of the background contribution is maintained.
 To be specific, the ``CDF--type'' weights assigned to tau--jet candidates are computed as
 (for a derivation of the formula, see section~\ref{secDerrivationCDFtypeFakeRateWeights} of the appendix):
 \begin{equation}
-w_{jet}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) 
+w_{jet}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) 
 := 
 \begin{cases} 
-   \frac{P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
-         \varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
-        {\varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
+   \frac{P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
+         \varepsilon \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)}
+        {\varepsilon \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)}
       \mbox{if all tau ID cuts and discriminators passed} \\
-   \frac{P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
-         \left( 1 - \varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) \right)}
-        {\varepsilon \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)}
+   \frac{P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
+         \left( 1 - \varepsilon \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) \right)}
+        {\varepsilon \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) - P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)}
       %\mbox{ if at least one tau id. cut or discriminator failed}
       \mbox{otherwise}
 \end{cases}
@@ -293,14 +293,14 @@ misidentification of quark and gluon jets.
 For the derivation of equation~\ref{eqBgEstFakeRate_frCDFtypeJetWeight} for the
 ``CDF--type'' weights assigned to tau--jet candidates, we will use the following
 notation: Let $n_{\tau}$ ($n_{QCD}$) denote the total number of tau--jets (quark
-and gluon jets) in a certain bin of transverse momentum $P_{T}^{jet}$,
+and gluon jets) in a certain bin of transverse momentum $\pt^{jet}$,
 pseudo--rapidity $\eta_{jet}$ and jet--width $R_{jet}$ and $n_{\tau}^{sel}$
 ($n_{QCD}^{sel}$) denote the number of tau--jets (quark and gluon jets) in that
 bin which pass all tau identification cuts and discriminators.
 
 By definition of the tau identification efficiency $\varepsilon := \varepsilon
-\left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$ and fake--rate $f := f \left(
-P_{T}^{jet}, \eta_{jet}, R_{jet} \right)$:
+\left( \pt^{jet}, \eta_{jet}, R_{jet} \right)$ and fake--rate $f := f \left(
+\pt^{jet}, \eta_{jet}, R_{jet} \right)$:
 \begin{eqnarray}
 n_{\tau}^{sel} & = & \varepsilon \cdot n_{\tau} \nonumber \\
 n_{QCD}^{sel} & = & f \cdot n_{QCD}.
@@ -349,8 +349,8 @@ are computed in the same way as for the ``simple'' weights,
 based on the weights assigned to the tau--jet candidates:
 \begin{eqnarray}
 W_{event}^{CDF} & := & \Sigma w_{jet}^{CDF} \nonumber \\
-w_{comp-part}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right) & := & 
-  w_{jet}^{CDF} \left( P_{T}^{jet}, \eta_{jet}, R_{jet} \right),
+w_{comp-part}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) & := & 
+  w_{jet}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right),
 \label{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}
 \end{eqnarray}
 where the sums extend over all jets in the background dominated control sample
@@ -401,7 +401,7 @@ equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight} is
 compared to the true background contributions.  The ``best'' estimate of the
 background contribution obtained from the ``CDF--type'' method is again taken as
 the arithmetic average of the estimates obtained by applying the fake--rate
-probabilities for the highest and second highest $P_{T}$ jet in QCD di--jet
+probabilities for the highest and second highest $\pt$ jet in QCD di--jet
 events, jets in a muon enriched QCD sample and jets in $W$+jets events.
 Systematic uncertainties are taken from the difference between the computed
 average value and the minimum/maximum estimate.  We obtain a value of

@@ -223,7 +223,7 @@ pair, which is different in Higgs and $Z$ decays~\cite{tauDecayPolarization}.
 Momentum conservation in the plane perpendicular to the beam axis implies that
 the vectorial sum of the momenta of all neutrinos produced in the decay of the
 tau lepton pair matches the reconstructed missing transverse momentum.
-Differences are possible due to the experimental resolution and finite $P_{T}$
+Differences are possible due to the experimental resolution and finite $\pt$
 of particles escaping detection in beam direction at high $\left| \eta \right|$.
 
 The \MET resolution is measured in $Z \to \mu^{+} \mu^{-}$ events selected in
@@ -248,38 +248,38 @@ where $q_{T}$ denotes the transverse momentum of the tau lepton pair.
 \label{sec:ptBalance}
 
 The tau lepton transverse momentum balance likelihood term represents the
-probability $p \left( P^{\tau}_{T} | M_{\tau\tau} \right)$ for a tau to have a
-certain $P_{T}$, given that the tau is produced in the decay of a resonance of
+probability $p \left( \pt^{\tau} | M_{\tau\tau} \right)$ for a tau to have a
+certain $\pt$, given that the tau is produced in the decay of a resonance of
 mass $M_{\tau\tau}$.  The likelihood is constructed by parametrizing the shape
-of the tau lepton $P_{T}$ distribution in simulated Higgs $\to \tau^{+}
+of the tau lepton $\pt$ distribution in simulated Higgs $\to \tau^{+}
 \tau^{-}$ events as a function of the Higgs mass.  The functional form of the
 parametrization is taken to be the sum of two terms.  The first term, denoted by
-$p^{*} \left( P_{T} | M \right)$, is derived by assuming an isotropic two--body
+$p^{*} \left( \pt | M \right)$, is derived by assuming an isotropic two--body
 decay, that is
 \begin{equation*}
 \mathrm{d}p^{*} \propto \sin\theta \mathrm{d}\theta.
 \end{equation*}
-Performing a variable transformation from $\theta$ to $P_{T} \sim \frac{M}{2}
+Performing a variable transformation from $\theta$ to $\pt \sim \frac{M}{2}
 \sin\theta$, we obtain
 \begin{align}
-p^{*} \left( P_{T} | M \right) &= \frac{\mathrm{d}p}{\mathrm{d}P_T} = \frac{\mathrm{d}p}{\mathrm{d}\cos\theta}
-\left| \frac{\mathrm{d}\cos\theta}{\mathrm{d}P_T} \right| \nonumber \\
-&\propto \left| \frac{\mathrm{d}}{\mathrm{d}P_T} \sqrt{1 - \left(2 \frac{P_T}{M} \right)^2} \right| \nonumber \\
-&= \frac{1}{\sqrt{\left( \frac{M}{2 P_{T}} \right)^2 - 1}}. 
+p^{*} \left( \pt | M \right) &= \frac{\mathrm{d}p}{\mathrm{d}\pt} = \frac{\mathrm{d}p}{\mathrm{d}\cos\theta}
+\left| \frac{\mathrm{d}\cos\theta}{\mathrm{d}\pt} \right| \nonumber \\
+&\propto \left| \frac{\mathrm{d}}{\mathrm{d}\pt} \sqrt{1 - \left(2 \frac{\pt}{M} \right)^2} \right| \nonumber \\
+&= \frac{1}{\sqrt{\left( \frac{M}{2 \pt} \right)^2 - 1}}. 
 \label{eq:ptBalanceTerm1}
 \end{align}
-The first term of the $P_{T}$--balance likelihood is taken as the convolution of
+The first term of the $\pt$--balance likelihood is taken as the convolution of
 equation~\ref{eq:ptBalanceTerm1} with a Gaussian of width s.  The second term is
 taken to be a Gamma distribution of scale parameter $\theta$ and shape
-parameter~$k$, in order to account for tails in the $P_{T}$ distribution of the
+parameter~$k$, in order to account for tails in the $\pt$ distribution of the
 tau lepton pair.  The complete functional form is thus given by
 \begin{equation}
-p \left( P_{T} | M \right) \propto \int_0^{\frac{M}{2}} \! p^* \left( P_{T}' | M \right) 
- e^{-\frac{\left( P_{T} - P_{T}' \right)^2}{2 s^2}} \; \mathrm{d}P_T' + a \Gamma \left( P_T, k, \theta \right).
+p \left( \pt | M \right) \propto \int_0^{\frac{M}{2}} \! p^* \left( \pt' | M \right) 
+ e^{-\frac{\left( \pt - \pt' \right)^2}{2 s^2}} \; \mathrm{d}\pt' + a \Gamma \left( \pt, k, \theta \right).
 \label{eq:ptBalanceLikelihood}
 \end{equation}
 Numerical values of the parameters s, $\theta$ and k are determined by fitting
-function~\ref{eq:ptBalanceLikelihood} to the tau lepton $P_{T}$ distribution in
+function~\ref{eq:ptBalanceLikelihood} to the tau lepton $\pt$ distribution in
 simulated Higgs $\to\TT$ events.  The relative weight a of the
 two terms is also determined in the fit.  Replacing the integrand in
 equation~\ref{eq:ptBalanceLikelihood} by its Taylor expansion, so that the
@@ -293,10 +293,10 @@ k &= 2.2 + 0.0364 \cdot M_{\tau\tau} \nonumber \\
 a &= 0.48 - 0.0007 \cdot M_{\tau\tau}. \nonumber 
 \end{align}
 
-The motivation to add the $P_{T}$--balance likelihood to the SVfit is to add a
-``regularization'' term which compensates for the effect of $P_{T}$ cuts applied
+The motivation to add the $\pt$--balance likelihood to the SVfit is to add a
+``regularization'' term which compensates for the effect of $\pt$ cuts applied
 on the visible decay products of the two tau leptons.  In particular for tau
-lepton pairs produced in decays of resonances of low mass, the visible $P_{T}$
+lepton pairs produced in decays of resonances of low mass, the visible $\pt$
 cuts significantly affect the distribution of the visible momentum fraction $x =
 \frac{E_{vis}}{E_{\tau}}$.  The effect is illustrated in
 figures~\ref{fig:ptBalancePtVisCuts}
@@ -308,7 +308,7 @@ underestimate the energy of visible decay products (overestimate the energy of
 neutrinos) produced in the tau decay, resulting in a significant tail of the
 reconstructed mass distribution in the high mass region.  The $\tau^{+}
 \tau^{-}$ invariant mass distribution reconstructed with and without the
-$P_{T}$--balance likelihood term is shown in
+$\pt$--balance likelihood term is shown in
 figure~\ref{fig:ptBalanceImprovedMassResolution}.  A significant improvement in
 resolution and in particular a significant reduction of the non--Gaussian tail
 in the region of high masses is seen.
@@ -319,8 +319,8 @@ in the region of high masses is seen.
 \caption{\captiontext Distribution of di--tau invariant mass reconstructed by
 the SVfit algorithm in simulated Higgs events with $M_{A} = 130$~\GeV$/c^2$.
 The SVfit algorithm is run in two configurations, with~(blue) and without~(red)
-the $P_{T}$--balance likelihood term included in the fit. 
-  %The addition of the $P_{T}$ balance term improves the resolution and reduces
+the $\pt$--balance likelihood term included in the fit. 
+  %The addition of the $\pt$ balance term improves the resolution and reduces
   %the non--Gaussian tail.
 } \label{fig:ptBalanceImprovedMassResolution}
 \end{center}
@@ -333,7 +333,7 @@ the $P_{T}$--balance likelihood term included in the fit.
 \caption{\captiontext Normalized distributions of the fraction of total tau
 decay energy carried by the muon (left) and hadronic constituents (right) in
 simulated Higgs events with \mbox{$M_{A} = 130~\GeVcc$}.  The distribution is shown
-before (blue) and after (red) the requirement on the $P_T$ of the visible decay
+before (blue) and after (red) the requirement on the $\pt$ of the visible decay
 products described in section~\ref{sec:EventSelectionMuTau}.  }
 \label{fig:ptBalancePtVisCuts}
 \end{center}
@@ -346,7 +346,7 @@ products described in section~\ref{sec:EventSelectionMuTau}.  }
 \caption{\captiontext Normalized distributions of the fraction of total tau
 decay energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs events
 with \mbox{$M_{A} = 200~\GeVcc$}~(right).  The distribution is shown before
-(blue) and after (red) the requirement that the $P_T$ of the muon be greater
+(blue) and after (red) the requirement that the $\pt$ of the muon be greater
 than 15~\GeVc.} \label{fig:ptBalancePtVisCutsCompareMasses}
 \end{center}
 \end{figure} 
