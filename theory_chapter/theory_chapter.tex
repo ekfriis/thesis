@@ -208,7 +208,6 @@ topic beyond the scope of this thesis.  Briefly, the process involves
 ``absorbing'' infinite divergences that occur in higher--order interactions into
 physical observables~\cite{Griffiths:IntroParticle}.} QED fail when applied to
 the Fermi interaction.
-
 \begin{figure}
   \centering
   \begin{fmffile}{muon_decay}
@@ -230,7 +229,6 @@ the Fermi interaction.
   in Fermi contact interaction theory.}
   \label{fig:MuonDecayContact}
 \end{figure}
-
 \begin{figure}
   \centering
   \begin{fmffile}{muon_decay_propagator}
@@ -484,7 +482,7 @@ is a simplified version of the techniques successfully used to unify the
 electromagnetic and weak forces that we will discuss in the next section.  
 
 \subsection{Electroweak Unification}
-
+\label{sec:ElectroweakUnification}
 In the 1960s, the ideas of local gauge invariance in field theories, spontaneous
 symmetry breaking, and the Higgs mechanism were combined by
 Glashow~\cite{GlashowEW}, Weinberg~\cite{WeinbergEW} and Salam~\cite{SalamEW} to
@@ -694,7 +692,7 @@ Section~\ref{sec:WeakInteractions} is an effective theory of the weak sector,
 the value of $G_F$ obtained from $\beta$ and muon decay experiments give clues
 to the masses of the $W$ and $Z$.  
 \begin{eqnarray}
-  M_W = \frac{1}{2}(\frac{e^2}{\sqrt 2 G_F})^(1/2)\frac{1}{\sin\theta_W} \approx
+  M_W = \frac{1}{2}(\frac{e^2}{\sqrt 2 G_F})^{(1/2)}\frac{1}{\sin\theta_W} \approx
   \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \\ 
   M_Z \approx \frac{76 \GeV}{\sin
   2\theta_W} > 76\GeV.
@@ -724,37 +722,373 @@ hadrons.  QCD is an $SU(3)$ non--Abelian gauge theory which is invariant under
 types: red, green and blue.  The gauge boson that carries the force of QCD is
 called the gluon, which is massless as the $SU(3)_c$ color symmetry is unbroken.
 
-There are two marked differences between the photon of QED and the gluon of QCD.
-First, the gluon itself carries a color charge, where is the electron is
+There are three marked differences between the photon of QED and the gluon of
+QCD\@.  First, the gluon itself carries a color charge, where is the electron is
 neutral.  This has the consequence that a gluon can couple to other gluons.
-Furthermore, it is found that no colored object exists in nature.  The corollary
-of this is that it is believed to be impossible for a single quark or gluon to
-be observed.  The mechanism that gives rise to effect is called ``color
+Secondly, it is found that no colored object exists in nature.  The corollary of
+this is that it is believed to be impossible for a single quark or gluon to be
+observed.  The mechanism that gives rise to effect is called ``color
 confinement.''  The strength of the force between two interacting colored
 objects increases with distance.  If two colored objects in a hadron are pulled
 apart, the energy required to separate them will eventually be large enough to
 produce new colored objects, resulting in two (or more) color--less hadrons.
+Finally, at low energy, QCD is non--perturbative.  What this means in practice
+is that when computing an amplitude from a QCD Feynman diagram, additional gluon
+interactions contribute a value greater than one.  The dominance of multi--loop
+diagrams is illustrated in Figure~\ref{fig:QCDFeynmanDiagrams}.
+\begin{figure}
+  \centering
+  \subfigure[]{\begin{fmffile}{perturbative_qcd_diagram}
+    \begin{fmfgraph*}(150,100)
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      %\fmftop{i2,d2,o2}
+      \fmf{fermion}{i1,v1,o1}
+      \fmf{fermion}{i2,v2,o2}
+      \fmffreeze
+      \fmf{gluon}{v1,v2}
+      \fmflabel{$u$}{i1}
+      \fmflabel{$u$}{o1}
+      \fmflabel{$d$}{i2}
+      \fmflabel{$d$}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:PerturbativeQCDDiagram}
+  }
+  \subfigure[]{\begin{fmffile}{nonperturbative_qcd_diagram}
+    \begin{fmfgraph*}(150,100)
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      \fmf{fermion}{i1,v1,v2,o1}
+      \fmf{phantom}{i2,v3,v4,v5,v6,o2}
+      \fmf{fermion, tension=0.6}{i2,v3,v4,v5,v6,o2}
+      \fmf{gluon,tension=0.5}{v1,v4}
+      \fmf{gluon,tension=0.5}{v2,v5}
+      \fmffreeze
+      \fmf{gluon,left,tension=0.2}{v3,v6}
+      \fmflabel{$u$}{i1}
+      \fmflabel{$u$}{o1}
+      \fmflabel{$d$}{i2}
+      \fmflabel{$d$}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:NonPerturbativeQCDDiagram}} \label{fig:QCDFeynmanDiagrams}
+  \caption[QCD Feynman Diagrams]{Feynman diagrams of a
+  first--order~\subref{fig:PerturbativeQCDDiagram} QCD interaction and a
+  multi--loop~\subref{fig:NonPerturbativeQCDDiagram} QCD interaction that have
+  the same initial and final states.  Each internal gluon propagator contributes
+  a factor of $g_s$, the strong coupling constant, to the the amplitude.  Since
+  $g_s > 1$, multi--loop diagrams have a larger contribution than simpler
+  diagrams.}
+\end{figure}
+Thus higher order diagrams with many internal loops cannot be ignored in
+QCD\@.  In practice what is done is to ``factorize'' QCD interaction
+amplitudes into a perturbative (high--energy) part and a non--perturbative
+part.  The perturbative portion is calculable using the Feynman calculus; the
+non--perturbative must be estimated from parameterization functions that are
+experimentally measured.
 
 The practical consequence of color confinement to a physicist at a high--energy
 particle physics experiment is the production of quark and gluon ``jets,'' which
 are high multiplicity sprays of particles observed in the detector.  In a
-proton--proton collision, quarks and gluons can knocked off the incident
+proton--proton collision, quarks and gluons can be knocked off the incident
 protons.  These quarks and gluons immediately ``hadronize,'' surrounding
 themselves with additional hadrons, the majority of which are charged and
 neutral pions.  Heavier quarks, such as the charm, beauty, and top quarks
-undergo a flavor--changing weak decays, giving rise to 
+undergo a flavor--changing weak decays, which can give rise to structure
+(leptons, sub--jets) within the jet.  Furthermore, due to the relative strength
+of the strong interaction compared that of the electroweak, collision events
+involving only strong interactions are produced at rates many orders of
+magnitudes larger than that of electroweak interactions.  This makes life
+difficult for physicists studying the electroweak force at hadron colliders.
+Sections~\ref{sec:Trigger}, and Chapters~\ref{ch:tanc}~and~\ref{ch:selection}
+will discuss the techniques used to identify and remove QCD events from the data
+at different stages of the analysis.
+
+\section{Beyond the Standard Model}
+\label{sec:BSM} The Standard model is one of the most successful theories of the
+natural world ever created.  The predictions of the SM have been tested to many
+orders of magnitude and no experiment to date\footnote{The Standard Model
+predicts that lepton number is a good quantum number and that the neutrinos are
+massless.  It has recently been found that the neutrinos do have non--zero mass,
+and that they undergo oscillations between different neutrino species, violating
+lepton number.} has found a result statistically incompatible with the Standard
+Model.  However, there is a general consensus in the physics community that the
+Standard Model is not complete. It is believed that is only an effective theory
+that is valid below some energy $\Lambda$.  Above this energy, there must exists
+some other ``new physics,'' which unifies the forces of the Standard Model and
+correctly describes the natural world at all scales, while maintaining
+equivalence to the Standard Model at low energy.  This concept is analogous to
+the relationship between the effective Fermi contact theory of
+Section~\ref{sec:WeakInteractions} and the unified electroweak theory of
+Section~\ref{sec:ElectroweakUnification}. The size of the cutoff scale $\Lambda$
+is estimated~\cite{Morii:SMandBSM} to be $O(10^{15})$~\GeV for a unified theory
+with $SU(5)$ symmetry and even larger, $O(10^{19})~\GeV = M_{planck}$ if the
+theory is unified with gravity.  
+
+There are many compelling reasons that indicate
+that the Standard Model is incomplete.  One is the fact that the model does not
+include gravity, which has still not be successfully reformulated into a quantum
+mechanical theory.  Another is that cosmological observations indicate the
+presences of massive amounts of ``dark matter'' in the universe.  Dark matter is
+expected to be composed of a stable massive neutral particle which interacts
+very weakly with other matter; no Standard Model particle fits this description.
+Finally, there is the ``hierarchy,'' or fine--tuning problem.  This problem
+strongly affects the Higgs sector, and motivated the development of
+Supersymmetry, which are the targets of the search presented in this thesis.  An
+short overview of the hierarchy problem and Supersymmetry are presented in the
+next section.
+
+\subsection{The Hierarchy Problem}
+The enormous size of the cutoff scale $\Lambda$ in the Standard Model causes a
+major theoretical problem in the Standard Model.  During renormalization of the
+Standard Model, amplitudes with divergent integrals are cut off at $\Lambda$.
+These large constant terms are ``absorbed'' into the physical observables.  The
+cutoff term appears directly in quantum corrections to the Higgs
+mass~\cite{Martin:1997um}.  The Yukawa term $-\lambda_f H \overline f f$
+coupling the fermion $f$ to the Higgs $H$ produces loop corrections to Higgs
+mass.  The two types of corrections due to fermion loops and scalar loops are
+illustrated in Figure~\ref{fig:HiggsMassLoopCorrections}.
+\begin{figure}
+  \centering
+  \subfigure[]{\begin{fmffile}{higgs_correction}
+    \begin{fmfgraph*}(150,100)
+      \fmfleft{i}
+      \fmfright{o}
+      \fmf{dashes}{i,v1}
+      \fmf{dashes}{v2,o}
+      \fmf{fermion,left,tension=0.2,tag=1,lab=$f$}{v1,v2}
+      \fmf{fermion,left,tension=0.2,tag=2}{v2,v1}
+      \fmfdot{v1,v2} 
+      \fmflabel{$H$}{i}
+      \fmflabel{$H$}{o}
+      \fmfposition
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:FermionLoopCorrection}
+  }
+  \hspace{15mm}
+  \subfigure[]{\begin{fmffile}{higgs_scalar_correction}
+    \begin{fmfgraph*}(150,100)
+      \fmfleft{i}
+      \fmfright{o}
+      \fmf{dashes}{i,v1,v1,o}
+      \fmfdot{v1} 
+      \fmflabel{$H$}{i}
+      \fmflabel{$H$}{o}
+      \fmfposition
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:ScalarLoopCorrection}
+  }
+  \caption[Loop corrections to Higgs mass]{Feynman diagram of
+  fermion \subref{fig:FermionLoopCorrection} and scalar
+  \subref{fig:ScalarLoopCorrection} loop corrections to Higgs mass.}
+  \label{fig:HiggsMassLoopCorrections}
+\end{figure}
+These contribution of the loop correction in
+Figure~\ref{fig:FermionLoopCorrection} is~\cite{Matrin:1997um} 
+\begin{equation}
+  m^2_H = -\frac{|\lambda_f|^2}{8 \pi^2} \Lambda^2 + \cdots.
+  \label{eq:HiggsMassCorrection}
+\end{equation}
+The mass of the Higgs is expected to have the same scale as $M_W$,
+$O(100)~\GeVcc$.  The fact that each fermion contributes a loop correction
+(Equation~\ref{eq:HiggsMassCorrection}) requires that the ``bare mass'' of the
+Higgs been tuned to the precision of $(M_W/\Lambda)^2 \approx 10^{-26}$ for the
+renormalized mass to be correct.  This is the so--called fine--tuning problem:
+it is believed that in a natural theory there will be only one scale.  The
+electroweak unification analogy is in
+Equation~\ref{eq:ContactVersusWeakBosonExchange}, where it was noticed that the
+difference between the QED and weak scale was due to the massive $M_W$
+propagator term, and that the fundamental scale $g$ of the intermediate weak
+boson theory was compatible with QED\@.  The most promising solution to the
+hierarchy problem is the introduction of a new, ``super'' symmetry.
+
+\subsection{Supersymmetry}
+
+
+\subsection{The Minimal Supersymmetric Model and $\tau$ leptons}
+\label{sec:MSSMAndTaus}
+
 
 \section{Searches for the Higgs boson}
 \subsection{Higgs boson phenomenology}
 \label{sec:SMHiggsPhenom}
-\subsection{Results from LEP and Tevatron}
+The phenomenology of the Higgs boson is strongly coupled to its relationship
+with mass.  The coupling of the Higgs to the fermions is determined by the
+Yukawa terms (Equation~\ref{eq:YukawaTerms}) in the Lagrangian.  Taking the
+electron as an example, after symmetry breaking, the Yukawa term is found to be 
+\begin{equation}
+  \mathcal{L}_e = -\frac{G_e}{\sqrt 2} (\nu + H(x)) \overline e e = 
+  - \frac{G_e \nu}{\sqrt 2} \overline e e - \frac{G_e}{\sqrt 2}
+  H(x) \overline e e.
+  \label{eq:ElectronYukawa}
+\end{equation}
+The value of $G_e$ is a free parameter of the theoryand is thus determined by
+the measurement of the electron mass and $\nu$, the VEV of the Higgs field
+\begin{equation}
+  \frac{G_e \nu}{\sqrt 2} = \frac{m_e}{\nu}.
+  \label{eq:HiggsVEVtoCoupling}
+\end{equation}
+The left--hand side of Equation~\ref{eq:HiggsVEVtoCoupling} is the same as the
+constant in the electron--Higgs $H(x)\overline e e$ coupling term in
+Equation~\ref{eq:ElectronYukawa}.  Therefore the coupling between the fermions
+and Higgs boson is proportional to their mass!  This remarkable fact shapes the
+possible production modes and the branching fractions of Higgs decays.
 
-\section{Beyond the Standard Model}
-\label{sec:BSM}
-\subsection{The Hierarchy Problem}
-\subsection{Supersymmetry}
-\subsection{The Minimal Supersymmetric Model and $\tau$ leptons}
-\label{sec:MSSMAndTaus}
+\begin{figure}
+  \centering
+  \begin{fmffile}{Higgstrahlung}
+    \begin{fmfgraph*}(150,100)
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      \fmf{fermion}{i1,v1}
+      \fmf{fermion}{v1,i2}
+      \fmf{boson,label=$Z^*$}{v1,v2}
+      \fmf{boson}{v2,o2}
+      \fmf{dashes}{v2,o1}
+      \fmflabel{$u$}{i1}
+      \fmflabel{$d$}{i2}
+      \fmflabel{$H$}{o1}
+      \fmflabel{$Z$}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:HiggsStrahlung} \caption{Higgstrahlung production diagram at
+  $e^+e^-$ colliders}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{fmffile}{GluonFusion}
+  \begin{fmfgraph*}(250,200)
+    \fmfbottom{P1,P2} \fmftop{P1',H',P2'}
+    \fmf{fermion,tension=2,lab=$P_1$}{P1,g1}
+    \fmf{fermion,tension=2,lab=$P_2$}{P2,g2}
+    \fmfblob{.16w}{g1,g2}
+    \fmf{gluon,lab.side=right}{g1,v1}
+    \fmf{gluon,lab.side=right}{v2,g2}
+    \fmf{fermion,tension=.6}{H,v1,v2,H}
+    \fmfdot{H,v1,v2}
+    \fmf{dashes,lab=$H$}{H,H'}
+    \fmf{fermion}{g1,P1'}
+    \fmf{fermion}{g2,P2'}
+    \fmfv{lab=$g(x_1,,Q^2)$,lab.dist=.1w}{g1}
+    \fmfv{lab=$g(x_2,,Q^2)$,lab.dist=.1w}{g2}
+    \fmffreeze
+    \renewcommand{\P}[3]{\fmfi{plain}{%
+    vpath(__#1,__#2) shifted (thick*(#3))}}
+    \P{P1}{g1}{2,0} \P{P1}{g1}{-2,1}
+    \P{P2}{g2}{2,1} \P{P2}{g2}{-2,0}
+    \P{g1}{P1'}{-2,-1} \P{g1}{P1'}{2,0}
+    \P{g2}{P2'}{-2,0} \P{g2}{P2'}{2,-1}
+  \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:GluonFusion} \caption[Gluon fusion Higgs production diagram]{Gluon
+  fusion Higgs production mechanism in a proton--proton collision.  The Higgs
+  mass coupling favors heavy quarks in the central loop.  Image
+  credit:~\cite{FeynmanDiagrams}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{fmffile}{VBFProdDiagram}
+  \begin{fmfgraph*}(250,200)
+    \fmfbottom{P1,P2} \fmftop{P1',H',P2'}
+    \fmf{fermion,tension=2,lab=$P_1$}{P1,g1}
+    \fmf{fermion,tension=2,lab=$P_2$}{P2,g2}
+    \fmfblob{.16w}{g1,g2}
+    \fmf{boson,lab.side=right,lab=$Z$}{g1,H}
+    \fmf{boson,lab.side=right,lab=$Z$}{H,g2}
+    %\fmf{fermion,tension=.6}{H,v1,v2,H}
+    %\fmfdot{H,v1,v2}
+    \fmf{dashes,lab=$H$}{H,H'}
+    \fmf{fermion}{g1,P1'}
+    \fmf{fermion}{g2,P2'}
+    \fmfv{lab=$g(x_1,,Q^2)$,lab.dist=.1w}{g1}
+    \fmfv{lab=$g(x_2,,Q^2)$,lab.dist=.1w}{g2}
+    \fmffreeze
+    \renewcommand{\P}[3]{\fmfi{plain}{%
+    vpath(__#1,__#2) shifted (thick*(#3))}}
+    \P{P1}{g1}{2,0} \P{P1}{g1}{-2,1}
+    \P{P2}{g2}{2,1} \P{P2}{g2}{-2,0}
+    \P{g1}{P1'}{-2,-1} \P{g1}{P1'}{2,0}
+    \P{g2}{P2'}{-2,0} \P{g2}{P2'}{2,-1}
+  \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:VBFProdDiagram} \caption[Vector boson fusion Higgs production
+  diagram]{Vector boson fusion (VBF) Higgs production mechanism in
+  proton--proton collisions.  The VBF
+  mechanism is notable for the lack of color--flow between the two incident
+  protons.}
+\end{figure}
+  
+The dominant modes of Higgs boson production depend on the type of experiment.
+In general, Higgs production is favored through high--mass intermediate states,
+due to the mass coupling.  At the Tevatron and LEP experiments, which are
+introduced in the next section, the dominant Higgs production mode is
+``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is produced and
+then radiates a Higgs boson.  Higgstrahlung is illustrated in
+Figure~\ref{fig:Higgstrahlung}.  At the Large Hadron Collider, higher gluon
+luminosities result in the favored cross section being ``gluon fusion,''
+(illustrated in Figure~\ref{fig:GluonFusion}) where two gluons from the incident
+protons combine in a quark (dominated by the massive top quark) loop which then
+radiates a Higgs boson.  Another important channel is ``vector boson fusion,''
+(Figure~\ref{fig:VBFProdDiagram}) where weak gauge bosons ($W^\pm$ or $Z$) are
+radiated from the incoming quarks and fuse to produce a Higgs.  This is a
+notable channel due to the lack of ``color--flow'' (gluons) between the two
+protons, producing an event with low central jet activity and two ``tag--jets''
+in the forward and backward regions.  The theoretical cross sections for the
+SM Higgs at the LHC are shown in Figure~\ref{fig:LHCSMHiggsXsec}.
+\begin{figure}
+  \centering
+  \includegraphics[width=90mm,angle=270]{theory_chapter/figures/lhcxs_mh.pdf}
+  \caption[SM Higgs cross sections at the LHC]{Cross section of the Standard
+  Model Higgs boson versus the Higgs boson mass.  The different curves give the
+  contribution to the cross section from different production mechanisms.
+  Source:~\cite{PDG}.}
+  \label{fig:LHCSMHiggsXsec}
+\end{figure}
+
+The branching fractions of the different decay modes of the SM Higgs boson
+depend strongly on the mass of the Higgs boson.  In general, the Higgs prefers
+(due to the Yukawa couplings) to decay pairs of the particles with the highest
+mass possible.  Below the threshold to decay to pairs of weak bosons ($M_H <
+160 \GeVcc$), the Higgs decays predominantly to either $b$--quarks (\bbbar,
+90\%) or a pair of $\tau$ leptons (\TT, $\approx 10$).  Above the $W^\pm W^\mp$
+threshold, decays to vector bosons ($H \to W^\pm W^\mp$ and $H \to ZZ$)
+dominate.  The dependence of branching fraction on $M_H$ and the other rare
+decay modes are illustrated in Figure~\ref{fig:SMHiggsBR}.  
+\begin{figure}
+  \centering
+  \includegraphics[width=90mm,angle=0]{theory_chapter/figures/smhiggsbr2_mh.pdf}
+  \caption[SM Higgs branching fractions]{Branching fraction of the Standard
+  Model Higgs bosons for different values of $M_H$. Source:~\cite{PDG}.}
+  \label{fig:SMHiggsBR}
+\end{figure}
+For low mass Higgs,
+the \TT decay mode plays a particularly important role.  The dominant decay mode
+$H to \bbbar$, suffers from enormous backgrounds from QCD jet production.
+It is important to understand the magnitude of difference between expected Higgs
+boson production and the rates of various backgrounds.
+\begin{figure}
+  \centering
+  \includegraphics[width=100mm,angle=00]{theory_chapter/figures/collider_crosssections.pdf}
+  \caption[Cross sections of interest at hadron colliders]{Cross sections of
+  various processes at hadron colliders.  The horizontal axis represents the
+  center of mass energy of the collision.  Of note is the vast difference in
+  scales between Higgs production (maroon lines, $O(10^-2)$~nb) and the QCD
+  cross section to produce \bbbar pairs (red line, $O(10^4)$~nb).
+  Source:~\cite{MSTWXSectionPlots}.} 
+  \label{fig:HadronColliderCrossSections}
+\end{figure}
+Figure~\ref{fig:HadronColliderCrossSections} illustrates the cross sections for
+different SM processes at hadron colliders.  The rate of Higgs production is
+many orders of magnitude ($O(10^{-7}$) smaller than that of QCD production.  It
+is important to therefore design searches to use handles that can reject the
+vast majority of the ``unintersting'' events at hadron colliders.  
+
+\subsection{Results from LEP and Tevatron}
 
 \section{The physics of the \taul}
 As discussed in sections~\ref{sec:SMHiggsPhenom} and~\ref{sec:MSSMAndTaus}, the

@@ -28,6 +28,4 @@ output/feynmp.1:
 output/%.1: output/%.mp
 	cd output/ && mpost $*
 
-output/muon_decay.mp: theory_chapter/theory_chapter.tex
-
-output/muon_decay_propagator.mp: theory_chapter/theory_chapter.tex
+output/nonperturbative_qcd_diagram.mp output/perturbative_qcd_diagram.mp output/muon_decay_propagator.mp output/muon_decay.mp: theory_chapter/theory_chapter.tex
