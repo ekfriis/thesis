@@ -4,8 +4,8 @@ training sample is composed of reconstructed tau--candidates that are matched
 to generator level hadronic tau decays coming from simulated $Z \rightarrow
 \tau^{+}\tau^{-}$ events.  The background training sample consists of
 reconstructed tau--candidates in simulated QCD $2\rightarrow2$ hard scattering
-events.  The QCD $P_T$ spectrum is steeply falling, and to obtain sufficient
-statistics across a broad range of $P_T$ the sample is split into different
+events.  The QCD $\pt$ spectrum is steeply falling, and to obtain sufficient
+statistics across a broad range of $\pt$ the sample is split into different
 $\hat P_{T}$ bins.  Each binned QCD sample imposes a generator level cut on the
 transverse momentum of the hard interaction.  During the evaluation of discrimination
 performance the QCD samples are weighted according to their respective
@@ -49,7 +49,7 @@ mode subsample is given in table~\ref{tab:trainingEvents}.
       \hline
       Total number of tau--candidates           & 874266        & 9526176       \\
       Tau--candidates passing preselection      & 584895        & 644315        \\
-      Tau--candidates with $W(P_T,\eta)>0$      & 538792        & 488917        \\
+      Tau--candidates with $W(\pt,\eta)>0$      & 538792        & 488917        \\
       \hline
       Decay Mode                        & \multicolumn{2}{c}{Training Events}   \\
       \hline
@@ -59,9 +59,9 @@ mode subsample is given in table~\ref{tab:trainingEvents}.
       $\pi^{-}\pi^{-}\pi^{+}$           & 53247    & 155793                     \\
       $\pi^{-}\pi^{-}\pi^{+}\pi^0$      & 13340    & 135871                     \\
    \end{tabular}
-   \label{tab:trainingEvents}
-   \caption{Number of events used for neural network training and validation for each
-   selected decay mode.}
+   \label{tab:trainingEvents} \caption[Neural network training event
+   statistics]{Number of events used for neural network training and validation
+   for each selected decay mode.}
 \end{table}
 
 The remaining 20\% of the signal and background samples are
@@ -117,18 +117,18 @@ the $i$th event. No evidence  of over--training is observed.
          \put(33, 0) 
          {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngOnePiZero.pdf}}}
       \end{picture}
-   \caption{Neural network classification error for training (solid red) and testing
-   (dashed blue) samples at ten epoch intervals over the 500 training epochs for each
-   decay mode neural network.  The vertical axis represents the classification
-   error, defined by equation~\ref{eq:NNerrorFunc}.  N.B. that the choice of
-   hyperbolic tangent for neuron activation functions results in the desired
-   outputs for signal and background to be 1 and -1, respectively.  This results
-   in the computed neural network error being larger by a factor of four than
-   the case where the desired outputs are (0, 1).  Classifier over--training
-   would be evidenced by divergence of the classification error of the training
-   and testing samples, indicating that the neural net was optimizing about
-   statistical fluctuations in the training sample.  
-   }
+   \caption[Neural network over--training validation plots]{Neural network
+   classification error for training (solid red) and testing (dashed blue)
+   samples at ten epoch intervals over the 500 training epochs for each decay
+   mode neural network.  The vertical axis represents the classification error,
+   defined by equation~\ref{eq:NNerrorFunc}.  N.B. that the choice of hyperbolic
+   tangent for neuron activation functions results in the desired outputs for
+   signal and background to be 1 and -1, respectively.  This results in the
+   computed neural network error being larger by a factor of four than the case
+   where the desired outputs are (0, 1).  Classifier over--training would be
+   evidenced by divergence of the classification error of the training and
+   testing samples, indicating that the neural net was optimizing about
+   statistical fluctuations in the training sample.  }
    \label{fig:overTrainCheck}
    \end{center}
 \end{figure}
@@ -141,28 +141,28 @@ observables.  For example, the opening angle in $\Delta R$ for signal
 tau--candidates is inversely related to the transverse momentum, while for
 background events the correlation is very small~\cite{DavisTau}. In the
 training signal and background samples, there is significant discrimination
-power in the $P_T$ spectrum.   However, it is desirable to eliminate any
-systematic dependence of the neural network output on $P_T$ and $\eta$, as in
-practice the TaNC will be presented with tau--candidates whose $P_T-\eta$
-spectrum will be analysis dependent. The dependence on $P_T$ and $\eta$ is
-removed by applying a $P_T$ and $\eta$ dependent weight to the tau--candidates
+power in the $\pt$ spectrum.   However, it is desirable to eliminate any
+systematic dependence of the neural network output on $\pt$ and $\eta$, as in
+practice the TaNC will be presented with tau--candidates whose $\pt-\eta$
+spectrum will be analysis dependent. The dependence on $\pt$ and $\eta$ is
+removed by applying a $\pt$ and $\eta$ dependent weight to the tau--candidates
 when training the neural nets.  
 
 The weights are defined such that in any region in the vector space spanned by
-$P_T$ and $\eta$ where the signal sample and background sample probability
+$\pt$ and $\eta$ where the signal sample and background sample probability
 density functions are different, the sample with higher probability density is
-weighted such that the samples have identical $P_T-\eta$ probability
-distributions.  This removes regions of $P_T-\eta$ space where the training
+weighted such that the samples have identical $\pt-\eta$ probability
+distributions.  This removes regions of $\pt-\eta$ space where the training
 sample is exclusively signal or background.  The weights are computed according to
 \begin{align*}
-   W(P_T, \eta) &=  {\rm less}(p_{sig}(P_T, \eta), p_{bkg}(P_T, \eta))\\
-   w_{sig}(P_T, \eta) &=  W(P_T, \eta)/p_{sig}(P_T, \eta) \\
-   w_{bkg}(P_T, \eta) &=  W(P_T, \eta)/p_{bkg}(P_T, \eta) 
+   W(\pt, \eta) &=  {\rm less}(p_{sig}(\pt, \eta), p_{bkg}(\pt, \eta))\\
+   w_{sig}(\pt, \eta) &=  W(\pt, \eta)/p_{sig}(\pt, \eta) \\
+   w_{bkg}(\pt, \eta) &=  W(\pt, \eta)/p_{bkg}(\pt, \eta) 
 \end{align*}
-where $p_{sig}(P_T,\eta)$ and $p_{bkg}(P_T,\eta)$ are the probability densities of
+where $p_{sig}(\pt,\eta)$ and $p_{bkg}(\pt,\eta)$ are the probability densities of
 the signal and background samples after the ``leading pion'' and dominant decay mode
 selections. Figure~\ref{fig:nnTrainingWeights} shows the signal and background
-training $P_T$ distributions before and after the weighting is applied.
+training $\pt$ distributions before and after the weighting is applied.
 
 
 \begin{figure}[thbp]
@@ -176,13 +176,12 @@ training $P_T$ distributions before and after the weighting is applied.
 %\put(-5.5, 54.5){\small (c)}
 %\put(72.0, 54.5){\small (d)}
 \end{picture}
-\caption{Transverse momentum spectrum of signal and background
-tau--candidates used in neural net training before (left) and after (right) the
-application of $P_T-\eta$ dependent weight function.  Application of the weights
-lowers the training significance of tau--candidates in regions of $P_T-\eta$
-phase space where either the signal or background samples has an excess of
-events. }
-\label{fig:nnTrainingWeights}
+\caption[Kinematic weighting of training sample]{Transverse momentum spectrum of
+signal and background tau--candidates used in neural net training before (left)
+and after (right) the application of $\pt-\eta$ dependent weight function.
+Application of the weights lowers the training significance of tau--candidates
+in regions of $\pt-\eta$ phase space where either the signal or background
+samples has an excess of events. } \label{fig:nnTrainingWeights}
 \end{center}
 \end{figure} 
 
