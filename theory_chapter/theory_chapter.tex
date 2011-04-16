@@ -953,7 +953,9 @@ sum of the fermion contributions cancel the anomaly.  Interestingly, the
 requirement of anomaly cancellation is only achieved in the SM is achieved only
 by requiring there be three types of color in QCD.}  By introducing an
 additional Higgs supermultiplet with opposite hypercharge, the anomaly is
-canceled.  The complete chiral and gauge supermultiplets of the MSSM are
+canceled. The scalar portion of the MSSM Higgs sector then contains two complex
+doublet fields $H_u = (H^+_u, H^0_u)$ (up--type) and $H_d = (H^0_d, H^-_d)$
+(down--type).  The complete chiral and gauge supermultiplets of the MSSM are
 enumerated in Tables~\ref{tab:chiral} and~\ref{tab:gauge}, respectively.
 \renewcommand{\arraystretch}{1.4}
 \begin{table}[tb]
@@ -1018,17 +1020,26 @@ enumerated in Tables~\ref{tab:chiral} and~\ref{tab:gauge}, respectively.
 \end{table}
 
 The superpotential (like the scalar potential of Section~\ref{sec:SSB} but
-invariant under supersymmetric transformations) of the MSSM is then
+invariant under supersymmetric transformations) of the MSSM is
+then~\cite{Martin:1997um}
 \begin{equation}
-  
+  W_{\rm MSSM} =
+  \sbar u {\bf y_u} Q H_u -
+  \sbar d {\bf y_d} Q H_d -
+  \sbar e {\bf y_e} L H_d +
+  \mu H_u H_d \>,
 \end{equation}
-The scalar portion of the MSSM Higgs sector then contains two
-complex doublet fields $H_u = (H^+_u, H^0_u)$ (up--type) and $H_d = (H^0_d,
-H^-_d)$ (down--type).  Using the scalar potential $V$ symmetry breaking
-technique of Section~\ref{sec:SSB}, the potential of $V$ at the minimum is
-found\footnote{A clever choice of the $SU(2)_L$ gauge has removed any
-contributions from the charged fields.  The charged Higgs fields cannot have a
-VEV without breaking $U(1)_{em}$.} to be 
+where $H_u$, $H_d$, $Q$, $L$, $\sbar u$, $\sbar d$, $\sbar e$ are the
+superfields defined in Table~\ref{tab:chiral}.  The $\overline y$ terms are
+Yukawa $3 \times 3$ matrices which act on the different families.  It is
+important to note that the up--type quarks couple to the up--type Higgs $H_u$,
+while the down--type quarks and leptons couple to the down--type Higgs.  This
+will features has large phenomenological consequences.  The scalar portion of
+the $W_{\rm MSSM}$ potential defines the symmetry breaking.  Similar to the
+scalar potential $V$ symmetry breaking of Section~\ref{sec:SSB}, the potential
+of $V$ at the minimum is found\footnote{A clever choice of the $SU(2)_L$ gauge
+has removed any contributions from the charged fields.  The charged Higgs fields
+cannot have a VEV without breaking $U(1)_{em}$.} to be 
 \begin{eqnarray}
   V =& &(|\mu|^2 + m^2_{H_u})|H^0_u|^2 + (|\mu|^2 + m^2_{H_d})|H^0_d|^2
   \nonumber \\ 
