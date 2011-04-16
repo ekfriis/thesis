@@ -114,7 +114,7 @@ derivative.''  By making the replacement
 \begin{equation} 
   \partial_\mu \to D_\mu = \partial_\mu - \frac{ie}{\hbar}A^\mu      
 \end{equation}
-in equation~\ref{eq:FreeQEDLagrangian}, where \FIX{don't think this is right}
+in equation~\ref{eq:FreeQEDLagrangian}, where 
 $A^\mu = \partial^\mu \theta(x)$ and $e$ is the electric charge, the Lagrangian
 becomes locally gauge invariant:
 \begin{equation}
@@ -935,17 +935,17 @@ given in Chapter~6 of~\cite{Martin:1997um}.
 
 \subsection{The Minimal Supersymmetric Model}
 \label{sec:MSSMAndTaus} The simplest possible Supersymmetric extension to the
-Standard Model is the Minimal Supersymmetric Model.  The model groups
+Standard Model is the Minimal Supersymmetric Model (MSSM).  The model groups
 superpartner pairs into chiral (a left or right--handed fermion field plus a
 complex scalar field) and gauge (a spin--1 vector boson and a left or
 right--handed \emph{gaugino} fermion)``supermultiplets.''  As the weak
 interactions of the Standard Model fermions are chiral, they (and their
-superpartners) must belong in the chiral supermultiplet.  It is interesting to
+superpartners) must belong in a chiral supermultiplet.  It is interesting to
 note that there is a different superpartner for the left and right--handed
 components of the fermions, even though the superpartners are spin--0 and cannot
 have any handedness. It is found that there must be two Higgs supermultiplets
 for the MSSM to be viable.  As there are now fermionic particles in the Higgs
-sector (the Higgsinos), if only one supermultiplet is included the MSSM suffers
+sector (the Higgsinos), if only one supermultiplet is introduced the MSSM suffers
 from non--renormalizable gauge anomalies.\footnote{A gauge anomaly is a linear
 divergence that occurs in diagrams containing a fermion loop with three gauge
 bosons (total) in the initial and final states.  In the Electroweak model, the
@@ -1030,15 +1030,16 @@ then~\cite{Martin:1997um}
   \mu H_u H_d \>,
 \end{equation}
 where $H_u$, $H_d$, $Q$, $L$, $\sbar u$, $\sbar d$, $\sbar e$ are the
-superfields defined in Table~\ref{tab:chiral}.  The $\overline y$ terms are
-Yukawa $3 \times 3$ matrices which act on the different families.  It is
-important to note that the up--type quarks couple to the up--type Higgs $H_u$,
-while the down--type quarks and leptons couple to the down--type Higgs.  This
-will features has large phenomenological consequences.  The scalar portion of
-the $W_{\rm MSSM}$ potential defines the symmetry breaking.  Similar to the
-scalar potential $V$ symmetry breaking of Section~\ref{sec:SSB}, the potential
-of $V$ at the minimum is found\footnote{A clever choice of the $SU(2)_L$ gauge
-has removed any contributions from the charged fields.  The charged Higgs fields
+superfields defined in Table~\ref{tab:chiral}.  The ${\bf y}$ terms are Yukawa
+$3 \times 3$ matrices which act on the different families.  It is important to
+note that the up--type quarks couple to the up--type Higgs $H_u$, while the
+down--type quarks and leptons couple to the down--type Higgs.  This feature has
+large phenomenological consequences, which are discussed
+in~\ref{sec:MSSMHiggsPhenom}.  The scalar portion of the $W_{\rm MSSM}$
+potential defines the spontaneous symmetry breaking.  Similar to the scalar
+potential $V$ symmetry breaking of Section~\ref{sec:SSB}, the potential of $V$
+at the minimum is found\footnote{A clever choice of the $SU(2)_L$ gauge has
+removed any contributions from the charged fields.  The charged Higgs fields
 cannot have a VEV without breaking $U(1)_{em}$.} to be 
 \begin{eqnarray}
   V =& &(|\mu|^2 + m^2_{H_u})|H^0_u|^2 + (|\mu|^2 + m^2_{H_d})|H^0_d|^2
@@ -1081,14 +1082,36 @@ Equation~\ref{eq:MSSMLittleHiggsMassRelationshipTreeLevel} is bounded from above
 by $\mhZero < \mz|\cos(2\beta)| < 90~\GeVcc$.  If this is true the
 model would have been excluded by LEP (see next section).  However, there are
 important quantum corrections to \mhZero from the top--quark and top--squark
-loop diagrams which increase \mhZero.  
-
-
+loop diagrams which increase \mhZero.  The Yukawa couplings in the MSSM depend
+on \tanb.  The relationships for the most massive members of each family are
+\begin{equation}
+  m_t \,=\, y_t v \sin\beta
+  ,
+  \qquad\quad
+  m_b \,=\, y_b v \cos\beta
+  ,
+  \qquad\quad
+  m_\tau = y_\tau v \cos\beta.\phantom{xxx}
+  \label{eq:YukawaTanBeta}
+\end{equation}
+The Yukawa couplings are free parameters determined by experimentally observed
+masses.  This means that when \tanb is large ($\beta \to \pi$), the Yukawa terms
+$y$ for the $b$ quarks and $\tau$ leptons must be enhanced to maintain the
+observed masses.  The effect of \tanb on the Higgs mass spectrum and couplings
+in the MSSM will be discussed further in Section~\ref{sec:MSSMHiggsPhenom}.
+%
 \section{Searches for the Higgs boson}
+The potential discovery of the Higgs boson is one of the biggest prizes in
+science today.  Dozens of experiments, thousands of scientists and billions of
+dollars (a human hierarchy problem\ldots) have been spent in efforts to
+discovery the Higgs.  In these sections we discuss how the Higgs and MSSM) could
+appear in modern colliders (with an emphasis on the LHC) and current the limits
+placed on the Higgs by the LEP and Tevatron experiments.  
+%
 \subsection{Standard Model Higgs boson phenomenology}
 \label{sec:SMHiggsPhenom}
 The phenomenology of the Higgs boson is strongly coupled to its relationship
-with mass.  The coupling of the Higgs to the fermions is determined by the
+with mass. The coupling of the Higgs to the fermions is determined by the
 Yukawa terms (Equation~\ref{eq:YukawaTerms}) in the Lagrangian.  Taking the
 electron as an example, after symmetry breaking, the Yukawa term is found to be 
 \begin{equation}
@@ -1108,7 +1131,7 @@ constant in the electron--Higgs $H(x)\overline e e$ coupling term in
 Equation~\ref{eq:ElectronYukawa}.  Therefore the coupling between the fermions
 and Higgs boson is proportional to their mass!  This remarkable fact shapes the
 possible production modes and the branching fractions of Higgs decays.
-
+%
 \begin{figure}
   \centering
   \begin{fmffile}{Higgstrahlung}
@@ -1120,8 +1143,8 @@ possible production modes and the branching fractions of Higgs decays.
       \fmf{boson,label=$Z^*$}{v1,v2}
       \fmf{boson}{v2,o2}
       \fmf{dashes}{v2,o1}
-      \fmflabel{$u$}{i1}
-      \fmflabel{$d$}{i2}
+      \fmflabel{$e^-$}{i1}
+      \fmflabel{$e^+$}{i2}
       \fmflabel{$H$}{o1}
       \fmflabel{$Z$}{o2}
     \end{fmfgraph*}
@@ -1129,7 +1152,7 @@ possible production modes and the branching fractions of Higgs decays.
   \label{fig:HiggsStrahlung} \caption{Higgstrahlung production diagram at
   $e^+e^-$ colliders}
 \end{figure}
-
+%
 \begin{figure}
   \centering
   \begin{fmffile}{GluonFusion}
@@ -1161,7 +1184,7 @@ possible production modes and the branching fractions of Higgs decays.
   mass coupling favors heavy quarks in the central loop.  Image
   credit:~\cite{FeynmanDiagrams}}
 \end{figure}
-
+%
 \begin{figure}
   \centering
   \begin{fmffile}{VBFProdDiagram}
@@ -1197,22 +1220,22 @@ possible production modes and the branching fractions of Higgs decays.
   
 The dominant modes of Higgs boson production depend on the type of experiment.
 In general, Higgs production is favored through high--mass intermediate states,
-due to the mass coupling.  At the Tevatron and LEP experiments, which are
-introduced in the next section, the dominant SM Higgs production mode is
-``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is produced and
-then radiates a Higgs boson.  Higgstrahlung is illustrated in
+due to the mass--proportional coupling.  At the Tevatron and LEP experiments,
+which will be introduced in the next section, the dominant SM Higgs production
+mode is ``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is
+produced and then radiates a Higgs boson.  Higgstrahlung is illustrated in
 Figure~\ref{fig:Higgstrahlung}.  At the Large Hadron Collider, higher gluon
 luminosities (See Figure~\ref{fig:GluonLumiRatio}) result in the favored cross
 section being ``gluon fusion,'' (illustrated in Figure~\ref{fig:GluonFusion})
 where two gluons from the incident protons combine in a quark (dominated by the
 massive top quark) loop which then radiates a Higgs boson.  Another important
-channel is ``vector boson fusion,'' (Figure~\ref{fig:VBFProdDiagram}) where weak
-gauge bosons ($W^\pm$ or $Z$) are radiated from the incoming quarks and fuse to
-produce a Higgs.  This is a notable channel due to the lack of ``color--flow''
-(gluons) between the two protons, producing an event with low central jet
-activity and two ``tag--jets'' in the forward and backward regions.  The
-theoretical cross sections for the SM Higgs at the LHC are shown in
-Figure~\ref{fig:LHCSMHiggsXsec}.
+channel~\ref{Rainwater:1998kj} is ``vector boson fusion,''
+(Figure~\ref{fig:VBFProdDiagram}) where weak gauge bosons ($W^\pm$ or $Z$) are
+radiated from the incoming quarks and fuse to produce a Higgs.  This is a
+notable channel due to the lack of ``color--flow'' (gluons) between the two
+protons, producing an event with low central jet activity and two ``tag--jets''
+in the forward and backward regions.  The theoretical cross sections for the SM
+Higgs at the LHC are shown in Figure~\ref{fig:LHCSMHiggsXsec}.
 \begin{figure}
   \centering
   \includegraphics[width=90mm,angle=0]{theory_chapter/figures/parton_lumis_10TeV_vs_2TeV.pdf}
@@ -1271,8 +1294,78 @@ is important to therefore design searches to use handles that can reject the
 vast majority of the uninteresting events at hadron colliders.  
 
 \subsection{MSSM Higgs Phenomenology}
-The phenomenology of the Higgs sector of the MSSM is markedly different than
-that of Standard Model.  
+\label{sec:MSSMHiggsPhenom}
+The phenomenology of the Higgs sector of the MSSM is similar to the Standard
+Model in some respects, but differs in some key aspects which have important
+implications for final states involving $\tau$ leptons and $b$ quarks.  When the
+parameter \tanb is large, the coupling factor between the Higgs and the
+down--type quarks and leptons (effectively the $\tau$ and $b$ quark) is enhanced
+by $\tan\beta$.  The gluon--gluon cross section is therefore increased by
+$\tan^2\beta$, where the top quark loop in Figure~\ref{fig:GluonFusion} is
+replaced by a (\tanb enhanced) $b$ quark loop.  Additionally, MSSM Higgs
+production with associated $b$--quarks, illustrated in
+Figure~\ref{fig:AssociatedBProduction}, becomes an important production mode. 
+\begin{figure}
+  \centering
+  \begin{fmffile}{AssociatedBProduction}
+  \begin{fmfgraph*}(250,200)
+    \fmfbottom{P1,P2} \fmftop{P1',b1,H',b2,P2'}
+    \fmf{fermion,tension=2,lab=$P_1$}{P1,g1}
+    \fmf{fermion,tension=2,lab=$P_2$}{P2,g2}
+    \fmfblob{.16w}{g1,g2}
+    \fmf{gluon,lab.side=right}{g1,v1}
+    \fmf{gluon,lab.side=right}{v2,g2}
+    \fmf{fermion,tension=.6}{b1,H,v1,v2,b2}
+    \fmfdot{H,v1,v2}
+    \fmf{dashes,lab=$H$,tension=0}{H,H'}
+    \fmf{fermion}{g1,P1'}
+    \fmf{fermion}{g2,P2'}
+    \fmfv{lab=$g(x_1,,Q^2)$,lab.dist=.1w}{g1}
+    \fmfv{lab=$g(x_2,,Q^2)$,lab.dist=.1w}{g2}
+    \fmflabel{$\overline b$}{b1}
+    \fmflabel{$b$}{b2}
+    \fmffreeze
+    \renewcommand{\P}[3]{\fmfi{plain}{%
+    vpath(__#1,__#2) shifted (thick*(#3))}}
+    \P{P1}{g1}{2,0} \P{P1}{g1}{-2,1}
+    \P{P2}{g2}{2,1} \P{P2}{g2}{-2,0}
+    \P{g1}{P1'}{-2,-1} \P{g1}{P1'}{2,0}
+    \P{g2}{P2'}{-2,0} \P{g2}{P2'}{2,-1}
+  \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:AssociatedBProduction} \caption[MSSM Higgs production with
+  association $b$--quarks]{One possible diagram for an MSSM Higgs produced with
+  associated $b$--quarks in a proton--proton collision.}
+\end{figure}
+At tree--level, the MSSM can be defined by the mass of the CP--odd Higgs \ma and
+\tanb.  For a reasonably high \tanb, there is always one CP--even Higgs ($h^0$
+or $H^0$) which is mass--degenerate with the $A^0$.  When \tanb and \ma are both
+large, associated $b$ production dominates the total cross
+section~\cite{LHCHiggsXSecGroup}. The cross sections of the different MSSM
+neutral Higgs bosons are shown in Figure~\ref{fig:MSSMXSections}.
+\begin{figure}
+  \centering
+  \subfigure[]{\includegraphics[width=90mm,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6a.pdf}
+  \label{fig:MSSMXSectionsTanBeta5}
+  }
+  \subfigure[]{\includegraphics[width=90mm,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6b.pdf}
+  \label{fig:MSSMXSectionsTanBeta30}
+  }
+  \caption[MSSM Higgs cross sections at the LHC]{Cross sections for the
+  different MSSM Higgs bosons versus \ma in the $m_{h^{max}}$ benchmark
+  scenario~\cite{MHMaxBenchmark} scenario for
+  $\tanb=5$~\subref{fig:MSSMXSectionsTanBeta5} and
+  $\tanb=30$~\subref{fig:MSSMXSectionsTanBeta30}.  Source:~\cite{LHCHiggsXSecGroup}
+  }
+  \label{fig:MSSMXSectionsTanBeta}
+\end{figure}
+The \tanb enhancement of the MSSM Higgs coupling to the $b$ quarks and $\tau$
+leptons cause the branching fraction of all neutral MSSM Higgs to be
+$H\to\bbbar$~(90\%) and $H\to\TT$~(10\%) across the entire range of \ma.  The
+enhanced production rate and the high branching fraction to $\tau$ leptons make
+the MSSM Higgs decaying to $\tau$ leptons an exciting and promising channel to
+search for Higgses and Supersymmetric physics at colliders.
+
 \subsection{Results from LEP and Tevatron}
 
 \section{The physics of the \taul}
@@ -1313,10 +1406,10 @@ most common hadronic decays are shown in table~\ref{tab:TauDecayModes}.
       Total                                 &        &      & 94.4\% \\
       \hline
    \end{tabular}
-   \label{tab:decay_modes}
-   \caption{Resonances and branching ratios of the dominant decay modes of
-   the \taul.  The decay products listed correspond to a negatively
-   charged \taul; the table is identical under charge conjugation.}
+   \label{tab:decay_modes} \caption[Decay modes of the $\tau$ lepton]{Resonances
+   and branching ratios of the dominant decay modes of the \taul.  The decay
+   products listed correspond to a negatively charged \taul; the table is
+   identical under charge conjugation.}
 \end{table}
 
 \ifx\master\undefined\input{settings/autocompile}\fi
