@@ -1,6 +1,125 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
-
 \chapter{The Compact Muon Solenoid Experiment}
 \label{ch:detector}
+%
 
+The Compact Muon Solenoid (CMS) Experiment is a ``general purpose'' particle
+detector designed to measure collision events at the Large Hadron Collider
+(LHC), a proton--proton synchrotron located at the CERN laboratory in Geneva,
+Switzerland.  The design goals of the CMS experiment are~\cite{CMSExperiment},
+in order of priority:
+\begin{itemize}
+  \item Good muon identification and momentum resolution over a wide range of
+    momenta and angles, good dimuon mass resolution ($\approx 1\%$ at 100~\GeV),
+    and the ability to determine unambiguously the charge of muons with $p <
+    1~\TeV$;
+  \item Good charged-particle momentum resolution and reconstruction efficiency
+    in the inner tracker. Efficient triggering and offline tagging of $\tau$'s and
+    $b$--jets, requiring pixel detectors close to the interaction region;
+  \item Good electromagnetic energy resolution, good diphoton and dielectron
+    mass resolution ($\approx 1\%$ at 100~\GeV), wide geometric coverage,
+    $\pi^0$ rejection, and efficient photon and lepton isolation at high
+    luminosities;
+  \item Good missing--transverse--energy and dijet--mass resolution, requiring
+    hadron calorimeters with a large hermetic geometric coverage and with fine
+    lateral segmentation.
+\end{itemize}
+The detector uses a hermetic design that maximizes the
+solid--angle of the fiducial region to capture as much information about the
+collisions as possible.  The general geometry of the detector is cylindrical.
+At cutaway diagram of the detector is shown in Figure~\ref{fig:AllCMSCutaways}.
+Each of the sub--detector components consists of ``barrel'' and ``endcap''
+components.  As its name suggests, the detector is centered around a four Tesla
+superconducting solenoid magnet.  The individual sub--detectors of CMS are
+arranged in a manner that permits identification of different species of
+particles.  The central (closest to interaction point) sub--detector are the
+charged particle tracking systems (the ``tracker'').  The tracker is designed to
+be a \emph{non--destructive} instrument, which means that ideally that the
+momentum of particles are unchanged after passing through it.  Outside of the
+tracker is the electromagnetic and hadronic calorimeters, which are abbreviated
+ECAL and HCAL, respectively.  The calorimeter is a \emph{destructive} detector,
+and is designed such that visible incident particles are completely absorbed.
+The outer layers of CMS are designed to measure muons, the
+one\footnote{Neutrinos of course fulfill this requirement as well, but are so
+weakly interacting that they are effectively invisible.} species of particle
+that is immune to the effects of the calorimeter.  The arrangement of
+destructive and non--destructive sub--detectors facilitates the identification
+of different types of particles.  This concept is illustrated in
+Figure~\ref{fig:SubdetectorID}.
+\begin{figure}
+  \centering
+  %\subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/cms_complete_labelled.pdf}
+  \subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/cms_complete_labelled.png}
+  \label{fig:CMSDetector}
+  }
+  \subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/CMS_Slice.png}
+  \label{fig:SubdetectorID}
+  }
+  \caption[Schematic drawings of the CMS
+  detector]{Figure~\subref{fig:CMSDetector}, top, shows a schematic drawing of the CMS
+  detector.  The individual sub--detectors are labeled.  Two humans are shown in
+  the foreground for scale. Figure~\subref{fig:SubdetectorID} shows a radial
+  cross section of the detector and demonstrates how
+  the (non--)destructiveness of different sub--detectors facilitates particle
+  identification.} 
+  \label{fig:AllCMSCutaways}
+\end{figure}
+In this chapter we give an brief overview of the LHC machine, and then describe
+the individual sub--detector systems of CMS. 
+
+\section{The Large Hadron Collider}
+The Large Hadron Collider is a proton--proton synchrotron, with a design
+collision energy of 14~\TeV.  At the time of this writing (and for the
+foreseeable future), the LHC is the world's largest and highest energy particle
+accelerator. A synchrotron is a machine that accelerates beams of charged
+particles by using magnets to steer them in a circle through radio--frequency
+resonating cavities which accelerate the particles. As the LHC is a collider,
+there are two beams that are accelerated in opposite directions.  The maximum
+beam energy of a synchrotron is determined by its radius and the maximum
+strength of the magnetic fields used to bend the path of the beam.  The dipole
+magnets used by the LHC to steer the particles are superconducting
+niobium--titanium.  To maintain them in a superconducting state, they are cooled
+using superfluid liquid helium to 1.9~Kelvin.  To store the beam at the
+injection energy of 450~\GeV, the magnetic dipole fields must be maintained at
+$1/2$~Tesla.  As the energy of each beam energy is increased to its (design)
+maximum of 7~\TeV, the dipole fields are ramped to a maximum field of over 8
+Tesla.
+\section{Solenoid Magnet}
+The four Tesla field of the CMS solenoid magnet is a critical factor in ability
+of CMS to precisely measure collisions at the LHC\@. The momentum of charged
+particles is measured in the detector by examining the curvature of the
+particles path as it travels through the magnetic field.  The radius of
+curvature $r$ of a charged particle in a magnetic field is given by
+\begin{equation}
+  r = \frac{p_\perp}{|q| B},
+  \label{eq:LarmorRadius}
+\end{equation}
+where $q$ is the charge of the particle, $B$ is the magnetic field, and
+$p_\perp$ is the component of the particle's relativistic momentum perpendicular
+to the direction of the magnetic field.  From Equation~\ref{eq:LarmorRadius}, it
+is evident that the ability to measure high momentum charged particles (a
+critical goal of CMS) requires a high magnetic field.  Even at very high
+particle energies where the resolution becomes poor, the strength of the
+magnetic field is still very important for identifying the bending direction of
+the particle; the direction corresponds to the particle's electric charge.
+Furthermore, the homogeneity of the magnetic field is important to minimize
+systematic errors in the measurement of tracks.
+
+The CMS solenoid is extremely large.  The radial bore of the magnet is
+6.3~meters; the magnet is 12.5~meters in length and weighs 220~tons.  The large
+bore of the magnet allows the tracker and calorimeter systems to be located
+inside the solenoid.  The internal windings of solenoid is arranged in four
+layers to increase the total field strength.  The nominal current at full field
+of the solenoid is 19.14~kA.  The solenoid itself is surrounded by an iron
+return yoke with a total mass of 10,000~tons.  The return yoke surrounding the
+solenoid minimizes the fringing field.  The muon detector system is interspersed
+inside the yoke, and takes advantage of the field in the yoke to measure the
+momentum and charge of muons.
+
+\section{Charged Particle Tracking Systems}
+\section{Electromagnetic Calorimeter}
+\section{Hadronic Calorimeter}
+\section{Muon System}
+\section{Trigger System}
+\section{Particle Flow Reconstruction Algorithm}
 \ifx\master\undefined\input{settings/autocompile}\fi

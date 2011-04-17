@@ -4,7 +4,7 @@
 \label{ch:theory}
 
 \section{The Standard Model}
-
+%
 The Standard Model (SM) is a ``theory of almost everything'' that describes the
 interactions of elementary particles.  The Standard Model is a \emph{quantum
 field theory}, first appearing in its modern form in the middle of the 20th
@@ -41,7 +41,7 @@ and is the foundation of modern particle theory.
 
 \subsection{Quantum Electrodynamics and Gauge Invariance}
 \label{sec:QEDandGaugeInvariance}
-
+%
 The theory of QED is a modern extension of Maxwell's theory of
 electromagnetism, describing the interaction of matter with light.  The
 development of QED is a result of efforts to develop a quantum mechanical
@@ -292,7 +292,7 @@ describe in the next sections.
 In the early 1960s Glashow, Weinberg, and Salam published a series of papers
 describing how the electromagnetic and weak forces could be unified into a
 common ``electroweak'' force.  The fact that at low energy the electromagnetic
-and weak forces appear to be separate phenomena at low energy is due to the fact that the
+and weak forces appear to be separate phenomena is due to the fact that the
 symmetry of the electroweak gauge group is ``spontaneously broken.''  Modern
 field theories (both the Standard Model and beyond) are predicated on the idea
 that the all interactions are part of a single, unified symmetry group and the 
@@ -336,7 +336,7 @@ field potential $V(\phi_1, \phi_2)$ about its minimum, $(\phi^{min}_1,
 \begin{eqnarray}
   V(\phi_1, \phi_2) &= &V(\phi^{min}_1, \phi^{min}_2) + 
   \sum_{a=1,2} \left(\frac {\partial V}{\partial \phi_a}\right)_{0} (\phi_a -
-  \phi^{min}_a) \\
+  \phi^{min}_a) \nonumber \\
   &+ &\frac{1}{2} \sum_{a,b=1,2} \left(\frac {\partial^2 V}{\partial \phi_a \partial
   \phi_b}\right)_{0} (\phi_a - \phi^{min}_a)(\phi_b - \phi^{min}_b) + \ldots
   \label{eq:ExpandedPotential}
@@ -397,6 +397,8 @@ matrix is diagonalized, there will always be one physical field with a VEV$ =
 does not depend on the choice of VEV\@.} is chosen, evaluating
 Equation~\ref{eq:MassMatrixTerms} yields the mass matrix \fixme{check matrix}
 \begin{equation}
+  \left(\frac {\partial^2
+  V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}} = 
   \left(
   \begin{array}{cc}
     v^2 & 0 \\
@@ -407,9 +409,9 @@ Equation~\ref{eq:MassMatrixTerms} yields the mass matrix \fixme{check matrix}
 \end{equation}
 Breaking the symmetry has changed the mass spectrum of the physical particles in
 the model.  There is now a massive particle with $m=v^2$ and a massless
-particle.  This massless particle is called the ``Goldstone boson.''
-\fixme{check ref} Goldstone found~\cite{Goldstone:1961eq} that a massless
-particle appears for each generator in the symmetry group that is broken.
+particle.  This massless particle is called the ``Goldstone boson.'' Goldstone
+found~\cite{Goldstone:1961eq} that a massless particle appears for each
+generator in the symmetry group that is broken.
 
 \subsection{The Higgs Mechanism}
 \label{sec:HiggsMech}
@@ -591,7 +593,7 @@ $SU(2)_L$ and $U(1)_Y$ gauge fields, and $V$ has a form analogous to $V$ in
 Equation~\ref{eq:PotentialLocalInvariantU1}.  At this point we also add $SU(2)_L
 \times U(1)_Y$ invariant ``Yukawa'' terms 
 \begin{equation}
-  \mathcal{L}_Y = -G_e(\overline L \phi R + \overline R \phi^\dag L) + h.c.)
+  \mathcal{L}_Y = -G_e(\overline L \phi R + \overline R \phi^\dag L) + h.c.
   \label{eq:YukawaTerms}
 \end{equation}
 to the Lagrangian which couple the fermions ($L$ and $R$) to the Higgs field.
@@ -604,7 +606,7 @@ At the minimum of $V$, the Higgs field satisfies $\phi^\dag\phi =
 \begin{equation}
   \phi_{min} = \left(\begin{array}{c} 0 \\ v/\sqrt{2} \end{array}\right).
 \end{equation}
-The new symmetry of the model can be confirmed by looking at the action of
+The new symmetry of the model can be confirmed by looking at the action of the
 different symmetry generators on the VEV\@.  If the generator acting on the
 vacuum state has a non--zero value, then the corresponding symmetry is broken.
 It can then be seen that the original symmetry generators $T^+$, $T^-$, $T^3$,
@@ -632,7 +634,7 @@ photon, $W^\pm$, and $Z$) is determined by the interaction of the gauge field
 terms in the covariant derivative with the non--zero vacuum expectation value
 $\nu$ of the scalar Higgs field $\phi$
 \begin{equation}
-  (D_\mu\phi)' = (\partial_\mu - i g \frac{\vec \tau}{2}\cdot \vec{A'_\mu}) -
+  (D_\mu\phi)' = (\partial_\mu - i g \frac{\vec \tau}{2}\cdot \vec{A'_\mu} -
   \frac{i}{2}g'B'_\mu)\frac{1}{\sqrt 2}(\nu + H)\chi.
   \nonumber
 \end{equation}
@@ -688,7 +690,7 @@ giving a massive $Z$ boson with
   \label{eq:ZBosonMass}
 \end{equation}
 and the massless photon $A_\mu$ of QED\@.  The mass of the $Z$ is related to the
-mass of the $W^\pm$ by the 
+mass of the $W^\pm$ by 
 \begin{equation}
   M_Z \equiv \frac{M_W}{\cos \theta_W},
 \end{equation}
@@ -823,7 +825,7 @@ and that they undergo oscillations between different neutrino species, violating
 lepton number.} has found a result statistically incompatible with the Standard
 Model.  However, there is a general consensus in the physics community that the
 Standard Model is not complete. It is believed that it is only an effective theory
-that is valid below some energy scale $\Lambda$.  Above this energy, there must exists
+that is valid below some energy scale $\Lambda$.  Above this energy, there must exist
 some other ``new physics,'' which unifies the forces of the Standard Model and
 correctly describes the natural world at all scales, while maintaining
 equivalence to the Standard Model at low energy.  This concept is analogous to
@@ -904,7 +906,7 @@ scales with $\Lambda^2$, which is many orders of magnitude larger than the
 electroweak ($M_W$) scale.  The physical mass of the Higgs is expected to have
 the same scale as $M_W$, $O(100)~\GeVcc$.  The fact that each fermion
 contributes a loop correction (Equation~\ref{eq:HiggsMassCorrection}) requires
-that the ``bare mass'' of the Higgs been tuned to the precision of
+that the ``bare mass'' of the Higgs to be tuned to the precision of
 $(M_W/\Lambda)^2 \approx 10^{-26}$ for the renormalized mass to be correct!
 This is the so--called fine--tuning problem: it is believed that in a natural
 theory there will be only one scale.  The electroweak unification analogy is in
