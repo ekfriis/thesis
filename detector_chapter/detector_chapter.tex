@@ -85,6 +85,7 @@ $1/2$~Tesla.  As the energy of each beam energy is increased to its (design)
 maximum of 7~\TeV, the dipole fields are ramped to a maximum field of over 8
 Tesla.
 \section{Solenoid Magnet}
+\label{sec:Magnet}
 The four Tesla field of the CMS solenoid magnet is a critical factor in ability
 of CMS to precisely measure collisions at the LHC\@. The momentum of charged
 particles is measured in the detector by examining the curvature of the
@@ -109,14 +110,96 @@ The CMS solenoid is extremely large.  The radial bore of the magnet is
 6.3~meters; the magnet is 12.5~meters in length and weighs 220~tons.  The large
 bore of the magnet allows the tracker and calorimeter systems to be located
 inside the solenoid.  The internal windings of solenoid is arranged in four
-layers to increase the total field strength.  The nominal current at full field
-of the solenoid is 19.14~kA.  The solenoid itself is surrounded by an iron
-return yoke with a total mass of 10,000~tons.  The return yoke surrounding the
-solenoid minimizes the fringing field.  The muon detector system is interspersed
-inside the yoke, and takes advantage of the field in the yoke to measure the
-momentum and charge of muons.
-
+layers to increase the total field strength and are cooled by liquid helium to
+a temperature of 4.5 Kelvin.  The windings are magnetically
+coupled to the support superstructure.  This coupling allows the magnetic to
+heat uniformly during a ``quench\footnote{A quench event occurs when some part
+of the magnet is suddenly no longer in a superconducting state.  The coil
+becomes resistive and the large current in the magnet creates large amounts of
+heat.}'' event, reducing localized stresses.  The
+nominal current at full field of the solenoid is 19.14~kA.  The solenoid itself
+is surrounded by an iron return yoke with a total mass of 10,000~tons.  The
+return yoke surrounding the solenoid minimizes the fringing field.  The muon
+detector system is interspersed inside the yoke, and takes advantage of the
+field in the yoke to measure the momentum and charge of muons.
+%
 \section{Charged Particle Tracking Systems}
+\label{sec:Tracker}
+
+The charged particle tracking system measures the trajectories of charged
+particles emerging from the event.  The tracker measures the trajectory of a
+charged particle by measuring ``hits'' along the trajectory.  Each hit
+corresponds to the global position of the trajectory on a given surface.  The
+trajectory can then be reconstructed by a helix to the points.  The tracker is
+designed to have a resolution that permits the reconstruction of ``secondary
+vertices'' in $b$--quark and $\tau$ lepton decays.  To accomplish this, there
+are two types of tracking detectors in CMS\@.  The ``pixel detector''composes
+the inner layers (three in the barrel, two in the endcaps).  The pixel detector
+is  situated as close as possible (4.4~\cm) to the interaction point and has a
+very high resolution. Outside of the pixel detector is the silicon strip
+tracker, with ten layers in the barrel and 12 layers in the endcaps.  A
+secondary vertex occurs when a particle is semi--stable, traveling some
+non--negligible distance in the detector, but decaying before the first layer of
+the tracking system.  The pixel and strip tracking detectors have a fiducial
+region which extends to a pseudorapidity of approximately $|\eta| \approx 2.5$.
+
+Both the pixel and strip trackers are silicon based.  The principle of operation
+is similar to that of a charged--coupled discharge (CCD) \fixme{right acronym}
+in a modern digital camera.  The sensitive portion of the detector is a silicon
+chip that is arranged with diode junctions formed by a $p$--doped layer and an
+$n$--doped layer\footnote{The pixel detector actually uses a more complicated
+multi--layered scheme to improve radiation hardness.  For details, see
+Section~3.2.2 of~\cite{CMSExperiment}.}.  Each $p-n$ junction is electrically
+isolated from adjacent layers. The size of each junction region determines the
+spatial resolution of the sensor.  The rear side of the chip is mounted to read--out
+electronics.  During operation, a high--voltage reverse bias is applied to each
+$p-n$ junction to achieve full depletion.  When a charged particle passes
+through the detector, the diode--junction breaks down and the readout system
+registers the hit.
+
+The tracking system has been specifically designed for the high radiation
+environment around the interaction point.  The detector is cooled to -27\celsius
+during operation to minimize damage. Radiation exposure produced in LHC
+collisions can change behavior of the tracking detector in three ways.  Over
+time, radiation can induce positive holes in oxide layers fond in the read--out
+electrons which increase the signal--to--noise ratio.  In the sensor mass
+itself, radiation damage changes the doping from $n$ to $p$ over time.  The
+required voltage to deplete the sensor will thus increase over time.  The
+readout electronics, bias voltage supplies, and cooling systems are designed to
+scale with the radiation damage and maintain a signal--to--noise ration of 10:1
+or greater for 10 years of LHC operation.  The final radiation effect is not an
+integrating effect.  A ``single event upset'' is transient effect where an
+ionizing charged particle passes through the readout electronics and changes the
+state of the digital circuitry.  
+
+In the ideal case, the tracker would be a non--destructive instrument.  However,
+charged particles can interact with the mass of the tracker (and its support
+infrastructure).  These interactions limit the resolution of the tracker.  The
+amount of matter in the tracker is referred to as the ``material budget''.  The
+material budget of the CMS tracker depends heavily on the pseudorapidity $\eta$
+and is illustrated in Figure~\ref{fig:TrackerMaterialBudget}.
+\begin{figure}
+  \centering
+  \includegraphics[]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
+  \caption[Material budget of the CMS tracker]{Material budget of the CMS
+  tracker in units of radiation lengths $X_0$.  The material budget is broken down
+  into the contributions from the different components of the tracker.  The
+  amount of material is largest in the ``transition region'' between the barrel
+  and endcap.  } \label{fig:TrackerMaterialBudget}
+\end{figure}
+The relatively large material budget of the CMS tracker has two effects: charged
+particles can ``multiple scattering,'' interacting with material in the
+tracker.  This can cause ``kinks'' in the reconstructed track.   Hadronic
+particles (charged and neutral) can undergo ``nuclear interactions,'' which are
+a hard collisions between the incident particle and the tracker material. This
+typically produces a spray of hadrons from the point of interaction.  Finally,
+the material budget can cause ``photon conversions.''  A photon conversion
+occurs when a photon (which typically does not interact with the tracker)
+converts into an electron--positron pair while passing through matter in the
+tracker.  
+
+
+
 \section{Electromagnetic Calorimeter}
 \section{Hadronic Calorimeter}
 \section{Muon System}
