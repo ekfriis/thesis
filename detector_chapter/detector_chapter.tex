@@ -150,12 +150,18 @@ chip that is arranged with diode junctions formed by a $p$--doped layer and an
 $n$--doped layer\footnote{The pixel detector actually uses a more complicated
 multi--layered scheme to improve radiation hardness.  For details, see
 Section~3.2.2 of~\cite{CMSExperiment}.}.  Each $p-n$ junction is electrically
-isolated from adjacent layers. The size of each junction region determines the
-spatial resolution of the sensor.  The rear side of the chip is mounted to read--out
-electronics.  During operation, a high--voltage reverse bias is applied to each
-$p-n$ junction to achieve full depletion.  When a charged particle passes
-through the detector, the diode--junction breaks down and the readout system
-registers the hit.
+isolated from adjacent layers. The size of each junction region
+determines\footnote{Additionally, the size of the sensitive area needs to be
+small enough such that the hit occupancy during a typically LHC event is not too
+large, which would cause overlaps and spoil the ability to reconstruct tracks.
+The expected occupancy depends on the distance $r^2$ from the interaction.  The
+expected occupancy in the pixel detector for LHC collisions is $10^{-4}$.} the
+spatial resolution of the sensor.  In the pixel detector, each sensor region
+``pixel'' is $100 \times 150 \micron^2$.  In the strip tracker, The rear side of
+the chip is mounted to read--out electronics.  During operation, a high--voltage
+reverse bias is applied to each $p-n$ junction to achieve full depletion.  When
+a charged particle passes through the detector, the diode--junction breaks down
+and the readout system registers the hit.
 
 The tracking system has been specifically designed for the high radiation
 environment around the interaction point.  The detector is cooled to -27\celsius
@@ -198,11 +204,202 @@ occurs when a photon (which typically does not interact with the tracker)
 converts into an electron--positron pair while passing through matter in the
 tracker.  
 
-
+The expected (from simulation) impact parameter and transverse momentum
+resolution of the tracker is shown in Figure~\ref{fig:ExpectedTrackerRes}.  The
+momentum scale of the tracker has been measured~\cite{CMS-PAS-TRK-10-004} in
+7~\TeV 2010 CMS data using $\JPsi \to \MM$ decays and is found to agree within
+5\% with the prediction from simulation.  The impact parameter and vertex
+resolutions have also been measured~\cite{CMS-PAS-TRK-10-005} in data and found
+to be in excellent agreement with the simulation.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.97\textwidth]{detector_chapter/figures/predicted_momentum_resolution.pdf}
+  \caption[Momentum and impact parameter resolutions of CMS tracker]{Expected
+  resolutions of reconstructed transverse momentum~(left), transverse impact
+  parameter~(center), and longitudinal impact parameter~(right) versus absolute
+  pseudorapidity $|\eta|$. The resolution is shown for three different cases of
+  particle \pt, 1~\GeVc~(black), 10~\GeVc~(blue), and 100~\GeVc~(red).}
+  \label{fig:ExpectedTrackerRes}
+\end{figure}
 
 \section{Electromagnetic Calorimeter}
+The electromagnetic calorimeter (ECAL) of CMS is designed to measure the energy
+of particles which interact electromagnetically with high
+precision.\footnote{One of the design goals of the CMS experiment is to be able
+to conduct a search for Standard Higgs bosons decaying to pairs of photons The
+branching fraction to photons is illustrated in Figure~\ref{fig:SMHiggsBR}.}.
+The ECAL is a \emph{scintillation} detector, and functions by counting the
+number of photons produced in an electromagnetic shower inside a crystal.  Upon
+entering the crystal, a charged particle or photon will interact
+electromagnetically with the crystal, producing a shower of electrons and
+photons. The shower will expand until it consists entirely of photons.  The
+crystal is optically clear, so these photons travel to the rear face of the
+crystal where they are then counted by a photomultiplier.  The number of
+detected photons can then be related to the energy that was deposited in the
+crystal.  At 18\celsius, about 4.5 photoelectrons will be produced
+per~\mega\electronvolt~of deposited energy.  The ECAL has excellent solid angle
+coverage, extending to a pseudorapidity of $|\eta| = 3.0$.
+
+The ECAL uses lead tungstate (PbWO$_4$) crystals as the scintillation medium.
+The crystals have a very large density, which allows the calorimeter to be
+relatively compact.  To be able to correctly measure the energy of electrons and
+photons, an incident photon or electron must be completely stopped by
+interactions with the calorimeter.  The quantities that determine if an electron
+or photon will be completely contained is the total depth of the crystal, the
+crystal density, and the radiation length property $X_0$ of the crystal.  The
+radiation length $X_0$ is defined as the mean distance (normalized to material
+density) after which an electron will have lost $(1-\frac{1}{e})$ of its energy.
+The PbWO$_4$ crystals of the CMS ECAL have a density of
+8.28~\gram\per\square{\centi\meter} and a depth of 230~\mm.  A single crystal
+thus has a total radiation length of 25.8 $X_0$, and will capture on average
+99.9993\% of the energy of an incident electron.  The front face of the crystal
+is $22\mm \times 22\mm$, which corresponds to an $\eta-\phi$ area of $0.00174
+\times 0.00174$.  The Moli\`{e}re radius of a material is the average radial
+profile size of an electromagnetic shower, and for PbWO$_4$ is 2.2~\centi\meter.
+The fact that the Moli\`{e}re radius is larger than the size of the individual
+crystals improves the spatial resolution of the measurement.  As the shower is
+shared between multiple crystals, the relative amounts deposited in each crystal
+allows the true impact point to be determined with a resolution smaller than the
+individual crystal size.
+
+The transparency of the CMS ECAL crystals change as they are exposed to
+radiation.  However, at the working temperature of the ECAL (18\celsius), the
+crystal transparency will naturally return to its nominal value.  The
+transparency of the crystals thus decreases during the course of a run of
+collisions, then increases during the following period collision--less period.
+The changing transparency conditions need to be continuously monitored and
+corrected for to ensure a stable detector response.  The transparency of the
+crystals are measured continuously using two lasers. One laser has wavelength
+$\lambda = 400~\nano\meter$ which corresponds to the color of light produced in
+the scintillations and is sensitive to changes in transparency.  The other laser
+is in the near--infrared and is used to monitor the overall stability of the
+crystal.  The lasers synchronized to pulse between LHC bunch trains so the
+transparency can be continuously monitored while collisions are occuring.
+
+The energy resolution of the ECAL is given by
+\begin{equation}
+  \left(\frac{\sigma}{E}\right)^2 = \left(\frac{S}{\sqrt E}\right)^2 + 
+  \left(\frac{N}{E}\right)^2 + C^2,
+  \label{eq:ECALResolutionFormula}
+\end{equation}
+where $S$ is a stochastic noise term (due to photon counting statistics), $N$ is
+a noise term, and $C$ is a constant term.  The parameters of
+Equation~\ref{eq:ECALResolutionFormula} have been measured at an electron
+test--beam (see Figure~\ref{fig:ECALResolution}).  The energy resolution is
+better than 1\% for electron energies greater than 20~\GeV.  
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{detector_chapter/figures/ECAL_Energy_resolution.pdf}
+  \caption[Energy resolution of the CMS ECAL]{Energy resolution (in~\%) of the
+  CMS ECAL measured at an electron test beam.  The resolution depends on the
+  incident energy of the electron.  The points are fitted to function with the
+  form given in Equation~\ref{ed:ECALResolutionFormula}.  The fitted parameters
+  are given in the legend.}
+  \label{fig:ECALResolution}
+\end{figure}
+
 \section{Hadronic Calorimeter}
+\label{sec:HCAL} The hadronic calorimeter (HCAL) surrounds the CMS ECAL and is
+located within the coil of the CMS solenoid magnet.  To ensure incident
+particles are completely contained within the calorimeter volume, in the barrel
+region the HCAL employs a ``tail--catcher'', an extra layer of calorimetry
+outside of the magnet. The hadronic calorimeter measures the energy of charged
+and neutral hadronic particles.  The HCAL is a \emph{sampling} calorimeter.
+Layers of plastic scintillating tiles are interspersed between brass absorber
+plates.  An incident hadron produces a hadronic shower as it passes through the
+absorber.  The particles in the shower produce light as they pass through the
+scintillating tiles.  Measuring the light produced in each layer of tile allows
+the reconstruction of the radial profile of the shower which can be related to
+the deposited energy.  The response of the scintillator tiles are calibrated
+using a radioactive source, either Cs$^{137}$ or Co$^{60}$.  Small stainless
+tubes permit the radioactive sources to be moved into the center of the tile
+during calibration.  The granularity of the HCAL is $0.087 \times 0.087$ and
+$0.17 \times 0.17$ in $\eta-\phi$ in the barrel ($|\eta| < 1.6$) and endcap
+($|eta| > 1.6$), respectively.
+
+The outer HCAL (HO), or ``tail catcher'' is designed to capture showers which
+begin late in the ECAL or HCAL and ensure they do not create spurious signals in
+the muon system (``punch through'').  The HO is installed outside of the solenoid
+magnet in the first layer between the first to layers of the iron return yoke.
+The total depth of the HCAL, including the HO is then 11.8 interaction lengths.
+
+The HCAL includes a specially designed forward calorimeter (HF).  The design of
+the forward calorimeter is constrained by the extreme amount of radiation it is
+exposed to, particularly at the highest rapidities.  The active material of the
+HF are quartz fibers.  The fibers are installed inside grooves inside of a steel
+absorber.  Charged particles created in showers in the absorber create light in
+the fibers, provided they have energy greater than the with energy greater than
+the Cherenkov threshold.  As Cherenkov light is created by the passage of
+charged particles through matter, the HF design is not sensitive to neutrons
+emitted by radionucleids that may be created in the absorber material durin
+operation.  The fibers are grouped into two sets: one set of fibers are
+installed over the full depth of the detector, the other only cover half the
+depth.  A crude form of particle identification is possible, as showers created
+by electrons and photons will deposit the majority of the energy in the front of
+the detector.
+
 \section{Muon System}
+The ability to detect and measure muons is one of the most valuable tools an
+experimentalist has at at hadron collider experiment.  Muons have particular
+properties that cause them to leave extremely signatures in the detectors.
+\begin{itemize}
+  \item Muons are stable particles, for the typical energies and distances
+    considered at a collider.
+  \item Muons have non--zero charge, so their trajectories can be measured.
+  \item Muons are heavy enough that they are ``minimum ionizing particles,'' in
+    that they lose much less energy as they pass through material.
+\end{itemize}
+The approach to detecting muons is to build the detector to a thickness that
+typical particles (electrons, photons, hadrons) will not penetrate the outermost
+calorimeter.  Any charged particle that is detected outside of this region can
+be identified as a muon.  At CMS, the muon detection systems are built into the
+magnet return yoke outside of the CMS calorimeters and magnet, giving them
+excellent protection (illustrated in Figure~\ref{fig:PunchThroughProtectin}) 
+\begin{figure}
+  \centering
+  \subfigure[]{\includegraphics[width=0.45\textwidth]{detector_chapter/figures/interaction_lengths_before_muon.pdf}
+  \label{fig:PunchThroughProtectin} }
+  \subfigure[]{\includegraphics[width=0.45\textwidth]{detector_chapter/figures/global_muon_reco_eff.pdf}
+  \label{fig:GlobalMuonRecoEffJINST} } \label{fig:DetectorChapterMuonShit}
+  \caption{The left figure, \subref{fig:PunchThroughProtectin}, illustrates the
+  number of interaction lengths versus pseudorapidity $\eta$ of material that
+  must be traversed before reaching the different layers of the muon system.
+  On the right, \subref{fig:GlobalMuonRecoEffJINST} shows the efficiency versus
+  $\eta$ to reconstruct a ``global'' muon for different transverse momenta.}
+\end{figure}
+against hadronic ``punch--through.''  The purity of particles that reach the
+muon system make it especially effective as a ``trigger'' of interesting
+physics. The CMS muon system has the feature that it additionally can trigger on
+the transverse momenta of muons. The CMS muon system is composed of three types
+of detectors: drift tubes (DT), resistive plate chambers (RPC), and cathode
+strip chambers (CSC).  
+
+A drift tube detector is of a tube filled with a mixture of argon~(85\%) and
+carbon dioxide~(15\%) gas with a positively charged ($V = +3.6~\kilo\volt$) wire
+running through the middle of the tube.  When a charged particle passes through
+the tube, it ionizes some gas.  The free electrons are then drawn to the
+positively charged wire inside the tube, creating a signal when reach it. The
+speed of the detector is limited by the ``drift time,'' the maximum amount of
+time it may take for an electron to reach sensor wire.   The precision of the
+spatial measurement can be increased by recording the time at which each wire
+records a signal and correlating the measurements across multiple tubes. The
+time resolution of the CMS DTs is on the order of a few nanoseconds, allowing
+the DT to provide a trigger on a given proton bunch crossing.  The tubes in
+adjacent layers are offset by one half tube width to take advantage of this
+effect and ensure there are no gaps in the fiducial region.  In CMS, the
+smallest unit of the DT system is the superlayer, which consists of four layers
+of tubes.  A DT chamber consists of three or two superlayers.  The tubes in the
+two superlayers farthest from the beam are oriented parallel to the beam and
+measured the bending of the muons in the magnetic field.  The inner superlayer
+is oriented orthogonally to the beam and measures the longitudinal position of
+incident muons.  There are four muon ``stations'' in the barrel which contain DT
+chambers.  The stations correspond to available areas in the magnetic return
+yoke.  In the barrel, the muon momentum resolution of the DTs is better than
+95\%.
+
+
+
+
 \section{Trigger System}
 \section{Particle Flow Reconstruction Algorithm}
 \ifx\master\undefined\input{settings/autocompile}\fi
