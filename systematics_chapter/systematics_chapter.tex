@@ -1,6 +1,218 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 
-\chapter{Systematics}
-\label{ch:systematics}
+\chapter{Systematics} \label{ch:systematics} Proper determination of systematic
+uncertainties is one of the most challenging and important components in
+performing a correct measurement.  A systematic uncertainty is the effect of the
+uncertainty of some ancillary measurement (or assumption) that is used in the
+computation of the final result.  An instructive example of how a systematic
+uncertainty can affect the final result is a counting experiment measuring the cross
+section of some signal particle in the presence of background.  The formula for
+the cross section times the branching fraction is
+\begin{equation}
+  \sigma \times BR = \frac{N_{sig}}{\mathcal{L} \cdot \mathcal {A} \cdot
+  \epsilon} = \frac{N_{obs}-N_{bkg}}{\mathcal{L} \cdot \mathcal {A} \cdot
+  \epsilon}, \label{eq:CrossSectionEquation}
+\end{equation}
+where $N_{obs}$ is the number of events observed in data, $N_{bkg}$ is the
+estimated number of background events in the observed data sample, $\mathcal{L}$
+is the integrated luminosity, and $\mathcal{A} \cdot \epsilon$ is the acceptance
+times efficiency of the signal.  All of the quantities in
+Equation~\label{eq:CrossSectionEquation} (with the exception of the observed
+count $N_{obs}$) have some uncertainty which will effect the final measurement.
+Consider a situation where the expected number of background events is
+determined by fitting some sideband spectrum, and the fitted result has some
+error $\delta N_{bkg}$.  The total relative effect of this error can
+be obtained by error propagation
+\begin{equation}
+  \frac{\delta (\sigma \times BR)}{\sigma \times BR} = \frac{\partial(\sigma
+  \times BR)}{\partial N_{bkg}}  \frac{1}{\sigma \times BR} \delta N_{bkg} =
+  \frac{-\delta N_{bkg}} {N_{obs}-N_{bkg}}.
+  \label{eq:CrossSectionEquationBkgSystematicError}
+\end{equation}
+It is interesting to examine
+Equation~\ref{eq:CrossSectionEquationBkgSystematicError} in two scenarios.  In
+the limit that $N_{obs}$ is large compared to $N_{bkg}$, the effect of the error
+on the background estimate $\delta N_{bkg}$ does not affect the final result.
+In a scenario when the data is dominated by background events, the relative
+error on the signal measurement due to the background estimation approaches
+infinity.  The sensitivity of a measurement to a systematic uncertainty on a
+parameter depends on the context in which that parameter is used.
+
+Experimental systematic uncertainties relevant for MSSM Higgs $\to \TT$ signal
+extraction presented in this thesis are classified in three categories:
+normalization uncertainties on the signal, normalization uncertainties on
+background contributions, and shape uncertainties.  Normalization uncertainties
+on the signal are due to lepton reconstruction, identification, isolation and
+trigger efficiencies.  These terms are equivalent to the efficiency $\epsilon$
+and acceptance terms $\mathcal{A}$ of
+Equation~\ref{eq:CrossSectionEquationBkgSystematicError} and affect the expected
+yield of MSSM Higgs $\to \TT$ signal and of $Z \to \TT$ background events.  They
+do not affect the \emph{shapes} of visible and ``full'' invariant mass
+distributions which are used to extract the MSSM Higgs $\to \TT$ signal
+contribution in the analyzed dataset.  Uncertainties on the shapes of the
+distributions are described by ``morphing'' systematics.  These are are due to
+uncertainties on the momentum/energy scale of identified electrons, muons, tau
+and other jets in the event.  The measurement of missing transverse energy
+represents another source of uncertainty specific to the ``full'' mass
+reconstruction by the SVfit algorithm.  The ``morphing'' systematics affect the
+shapes of signal as well as background contributions.  Normalization
+uncertainties on background contributions are estimated from the level of
+agreement between data and Monte Carlo simulation in background dominated
+control regions.
+
+\section{Signal normalization uncertainties}
+
+The signal normalization uncertainties are due to imperfect knowledge of how
+improperly modeled effects in the detector affect our ``acceptance'' model, or
+the probability that a given signal event will pass one of the selections
+(detailed in Chapter~\ref{ch:selections}).  The general procedure to quantify
+these uncertainties is to measure the effect in some control region in both the
+data and Monte Carlo.  The ratio of data to Monte Carlo then gives a correction
+factor which is applied to the simulation.  An uncertainty on the measurement of
+the effect in control region (in data, simulation, or both) is then taken as the
+systematic uncertainties.  The signal normalization uncertainties affecting this
+analysis on muon trigger, reconstruction, identification and isolation
+efficiencies are taken from the tag and probe analysis of $Z \to \MM$ events
+presented in section~\ref{sec:ZmumuTagAndProbe}.  The uncertainty on the tau
+reconstruction and identification efficiency is taken to be $23\%$.  The
+dependency of the Higgs signal extraction on the tau identification efficiency
+has been studied, the result being that uncertainties on the tau identification
+efficiency affect the limit on cross--section times branching ratio for MSSM
+Higgs $\to \TT$ production by a few percent only.  An uncertainty of $11\%$ is
+attributed to the luminosity measurement.
+
+\section{Background normalization uncertainties}
+
+Uncertainties on the normalization of background processes are obtained from the
+study of background enriched control regions presented in
+section~\ref{sec:BackgroundStudies}.  The main non--$Z \to \TT$ background to
+the analysis is due to QCD multi--jet and $W$ + jets events.  These backgrounds
+are produced copiously enough for the backgrounds to be studied in control
+regions dominated by a single background process with a purity exceeding $90\%$
+and an event statistics exceeding the expected contribution of that background
+to the analysis by more than one order of magnitude.  Both backgrounds are found
+to be well modeled by the Monte Carlo simulation.  An uncertainty of $10\%$ is
+attributed to the contribution of QCD and $W$ + jet backgrounds to the analysis.
+The cross--section for $\ttbar + jets$ production makes it difficult to select a
+high purity sample of $\ttbar + jet$ events of high event statistics.  From the
+study of the $19$ events selected in the $\ttbar + jets$ background enriched
+control sample we assume an uncertainty on the $\ttbar + jets$ background
+contribution in the analysis of $30\%$.  The $Z \to \MM$ background has been
+studied with large statistical precision in two separate control regions,
+dominated by events in which the reconstructed tau--jet candidate is either due
+to a misidentified quark or gluon jet or due to a misidentified muon.  Good
+agreement between data and Monte Carlo simulation is found in both cases.
+Sizeable uncertainties on the $Z \to \MM$ background contribution arise due to
+the extrapolation from the background enriched control regions to the data
+sample considered in the analysis, however: the contribution of $Z \to \MM$
+background events to the analysis is due to events in which one of the two muons
+produced in the $Z$ decay either escapes detection or fakes the signature of a
+hadronic tau decay.  Both cases may be difficult to model precisely in the Monte
+Carlo simulation.  The non--observation of a $Z$ mass peak in the mu + tau
+visible mass distribution studied with the fake--rate method on the other hand
+sets a limit on possible contributions from $Z \to \MM$ background events.
+Conservatively, we assume an uncertainty of $100\%$ on both types of $Z \to \MM$
+background contributions.
+
+
+\section{Shape uncertainties}
+
+Shape uncertainties on the distributions of visible and ``full'' invariant mass
+reconstructed by the SVfit algorithm are estimated by varying the electron
+energy and muon momentum scale, the energy scale of tau--jets and other jets in
+the event and varying the missing transverse energy in Monte Carlo simulated
+events.  After each variation the complete event is rereconstructed and passed
+through the event selection.  Shifted visible and ``full'' invariant mass shapes
+are obtained for each variation from the events passing all event selection
+criteria.  The difference between shifted shapes and the ``nominal'' shapes
+obtained from Monte Carlo simulated events with no variation of energy or
+momentum scale or of the missing transverse energy applied is then taken as
+shape uncertainty.
+
+The uncertainty on the muon momentum scale is taken from the analysis known di--muon resonances~\cite{CMS_AN_2010-059}
+and found to have a very small effect only.
+The uncertainty on the jet energy scale is determined from an analysis of the $P_{T}$ balance between photons and jets
+in $\gamma$ + jets events~\cite{JME-10-010}.
+The jet energy scale uncertainties determined by the JetMET group are applied to tau--jets as well as other jets in the event.
+Work is ongoing in the Tau POG to determine energy scale correction factors and uncertainties 
+specific to tau--jets~\cite{tauJetEnergyCorrections}.
+
+The modelling of missing transverse energy in different types of background
+events has been studied in the background enriched control regions described in
+section~\ref{sec:BackgroundStudies}.  No significant deviations between data and
+Monte Carlo simulation have been found ({\it cf.}\ control plots in the
+appendix).  Uncertainties due to missing transverse energy are estimated by
+varying parameters of $Z$--recoil corrections within the uncertainties obtained
+when fitting the $Z$--recoil correction parameters in simulated $Z \to \MM$
+events versus $Z \to \MM$ events selected in data.
+
+
+\section{Theory uncertainties}
+
+The signal and background normalization as well as the shape uncertainties are
+all experimental uncertainties in nature.  Additional theoretical uncertainties
+arise from imprecise knowledge of parton--distribution functions (PDFs) and of
+the exact dependency of signal cross--sections and branching ratios on
+$tan\beta$ and $m_A$.
+
+The uncertainties on the signal acceptance due to PDF uncertainties are
+estimated using tools developed by the EWK
+group~\cite{CMS_EWK_pdfUncertaintyTools}.  The acceptance is computed with
+respect to MSSM Higgs $\to \TT$ decays that have electrons of $P_{T}^{e} >
+15$~\GeV and $\left| \eta_{e} \right| < 2.1$, muons of $P_{T}^{\mu} > 15$~\GeV
+and $\left| \eta_{\mu} \right| < 2.1$, jets produced in hadronic tau decays with
+visible $P_{T}^{vis} > 20$~\GeV and $\left| \eta_{vis} \right| < 2.3$ on
+generator level, depending on the analysis channel considered.  Acceptance
+values are computed for the central value and $44$ eigenvectors of the CTEQ66
+PDF set~\cite{CTEQpdfSet}.  The systematic uncertainty on the signal acceptance
+is computed following the PDF4LHC
+recommendations~\cite{pdfAccSys01,pdfAccSys02}.
+
+
+The effect of Monte Carlo normalization, shape and theory uncertainties on the
+signal efficiency times acceptance is summarized in
+table~\ref{tab:ExpUncertainties}.
+
+\begin{table}[t]
+\begin{center}
+\tablesize
+\begin{tabular}{|l|c|}
+\hline
+Source & Effect \\
+\hline
+\hline
+\multicolumn{2}{|c|}{Normalization uncertainties} \\
+\hline
+Trigger                         & $0.981 \pm 0.006$ \\
+Muon identification             & $1.001 \pm 0.001$ \\
+Muon isolation                  & $0.984 \pm 0.006$ \\
+Tau--jet identification         & $1.00  \pm 0.30$ \\
+\hline
+\hline
+\multicolumn{2}{|c|}{Shape uncertainties} \\
+\hline
+Muon momentum scale             & $\ll 1\%$ \\
+Tau--jet energy scale           & $1 - 4\%^{1}$ \\
+Jet energy scale (JES)          & $< 1\%^{2}$ \\
+$\MET$ ($Z$--recoil correction) & $1\%$ \\
+\hline
+\hline
+\multicolumn{2}{|c|}{Theory uncertainties} \\
+\hline
+PDF & $2\%^{3}$ \\
+\hline
+\end{tabular}
+\end{center}
+$^{1}$ decreasing with $m_{A}$ \\
+$^{2}$ number quoted for $gg \to A/H$ and $b\bar{b} \to A/H$ sample as a whole; \\
+\hspace{5mm} in the subsample of events with b--tagged jets the effect of the JES uncertainty is $4\%$ \\
+$^{3}$ with small dependence on $m_{A}$ \\
+\begin{center}
+\caption{\captiontext
+         Effect of normalization uncertainties on the $gg \to A/H$ and $b\bar{b} \to A/H$ signal efficiency times acceptance.}
+\label{tab:ExpUncertainties}
+\end{center}
+\end{table}
+
 
 \ifx\master\undefined\input{settings/autocompile}\fi

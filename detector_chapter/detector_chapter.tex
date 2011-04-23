@@ -397,9 +397,101 @@ chambers.  The stations correspond to available areas in the magnetic return
 yoke.  In the barrel, the muon momentum resolution of the DTs is better than
 95\%.
 
+Cathode strip chambers (CSCs) are used in the endcap muon system, providing
+coverage in the pseudorapidity range $0.9 < |\eta| < 2.4$.  A cathode strip
+chamber consists of a chamber filled with inert gas that with a number of
+internal wires held at a high voltage.   A number of cathode strips are
+installed perpendicular\footnote{The wires are actually placed at an angle to
+the perpendicular to compensate for a shifting effect caused by the magnetic
+field Lorentz force.} induced to the wires on the walls of the chamber.  When a
+muon passes through the CSC, it creates ionizes some of the gas.  The high
+voltage on a nearby wire causes this ionized gas to break down, forming a
+conductive passage in the gas and an ``avalanche'' current between the wire and
+a number of the cathode strips.  The spatial position of the hit in two
+dimensions is found taking one coordinate from the wire and the other coordinate
+from the signal average of the cathode strips.
 
+The CSCs in the CMS endcap are positioned such that a muon in the pseudorapidity
+range $1.2 < |\eta| < 2.4$ will cross three for four CSC detectors.  The
+geometry of the CSC strips and wires is designed to provided a spatial $r-\phi$
+resolution of 2~\milli\meter at the L1~trigger level and a final offline
+reconstruction resolution of 75~\micro\meter for the first layer and
+150~\micro\meter for outer layers.  The RMS of the response time for a CSC layer
+is about 11~\nano\second, which is too long to correctly associate a signal in
+the CSCs to an LHC bunch crossing (25~\nano\second) with high efficiency.  By
+grouping the layers into chambers, and taking the shortest response, the correct
+bunch crossing can be identified with \mbox{98--99\%} efficiency.
 
+The Resistive Plate Chamber (RPC) muon detectors ensure that the muon system can
+be used as a fast, first level trigger.  The RPC detector consists of two gaps
+filled with gas (up and down) with a common set of strips between the two gaps.
+The strips are oriented parallel to the beam line to permit measurement of the
+transverse momentum of the muons.
 
 \section{Trigger System}
+
+At the LHC, proton bunches crossings (collisions) occur every 25~\nano\second.
+This corresponds to an interaction of 40~\mega\hertz.  At this high rate, and
+with the huge number of channels in the CMS detector, the front--end bandwith
+readout from the detector is over 1~\peta b\per\second.  Due to bandwidth and
+storage requirements, the rate at which events are permanently recorded must be
+reduced by more than a factor of a million. This reduction is achieved by CMS
+trigger system.  As only a fraction of the total events can be stored, and the
+rate of diffractive and common QCD multi--jet production is many orders of
+magnitude larger than ``interesting'' new physics (see
+Figure~\ref{fig:HadronColliderCrossSections}).  The trigger must therefore be
+designed to select ``interesting'' events.  A typical requirement applied at the
+trigger level might be the presence of a high--\pt muon, an isolated ECAL
+deposit, or a large deposit of energy in the event.
+
+The CMS trigger consists of two stages: a fast Level--1 (L1) trigger and a
+High--Level Trigger (HLT).  The L1 trigger system is built on custom, typically
+re--programmable electronics and interfaces directly to the detector subsystems.
+The L1 trigger has access to information from the muon and calorimeter systems.
+The L1 does not have access to the full granularity of the muon system and
+calorimeters but must make the decision based on coarse segments.  The design
+acceptance rate of the L1 trigger is 100~\kilo\hertz.  The trigger typically
+operates at a nominal rate of 30~\kilo\hertz.  The maximum latency of the L1 is
+3.2~\micro\second, requiring that the output from detector electronics be passed
+through memory pipelines to ensure that no bunch crossings go unanalyzed.  The
+High--Level trigger runs on a farm of about 1000 commercial compute nodes and
+processes events that pass that are accepted by the L1 trigger.  A High--Level
+trigger decision (``path'') has the ability to reconstruct tracks and do a full
+regional unpacking of the recorded hits in a regions of the calorimeter.  Each
+HLT path has a strict rate budget, as the total rate of the HLT is required to
+be less than 100~\hertz.  The triggers used at CMS change as the conditions
+change.  To limit the total rate to 100~\hertz as the luminosity increases,
+trigger paths must either increase their thresholds, or apply a ``prescale.''
+When a prescale is applied, a fraction of events passing the trigger are thrown
+away randomly.
+
+The CMS trigger is a deep subject and a complete description is beyond the scope
+of this thesis.  A detailed description can be found in~\ref{CMS-PTDRI}. The
+triggers used in the analysis presented in this thesis will be briefly
+described.  Two types of trigger selections were applied to the 2010 datasets
+used in this analysis.  During the initial period of low luminosity running,
+single muon triggers were used.  As the luminosity increased, the \pt threshold
+of the trigger was increased.  In some cases, an ``isolated muon'' HLT trigger
+was required, in which a veto was applied on muons with associated energy
+deposits in the calorimeter.  In the final period of data taking, two
+``cross--triggers'' were used.  These required the presence of both a muon and a
+hadronic tau decay in the event.  The triggers used in this analysis in the
+different 2010 run periods are enumerated in Table~\ref{tab:AHtoMuTauTriggers}.
+
+The muon component of all the triggers used in this analysis is based on the
+``L1 seed trigger'' BLAH\fixme{what is it?}.  The L1 muon trigger decision is
+determined by the Global Muon Trigger (GMT), which combines information from the DT,
+CSC, and RPC sub--detectors, and is able to trigger muons up to a pseudorapidity
+of $|\eta| < 2.1$.  Each sub--detector has a ``local trigger,'' which can
+reconstruct tracks in the muon  system.  For the drift tubes, the Bunch Track
+Identifiers (BTI), a custom integrated circuit, searches for aligned hits in the
+associated DT chamber.  The CSCs and RPCs employ similar strategies to detect
+local muon tracks.  The sub--detectors send the GMT the charge, \pt,
+$\eta$, $\phi$, and a quality code of up to four local muons.  The 
+measurements from the sub--detectors are combined and a final decision is made
+by the GMT.
+
 \section{Particle Flow Reconstruction Algorithm}
+\section{DAQ}
+
 \ifx\master\undefined\input{settings/autocompile}\fi

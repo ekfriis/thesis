@@ -412,9 +412,58 @@ uncertainties is in agreement with our expectation for fluctuations of the
 jet--weights in case weights of negative and positive sign are used.
 
 \subsection{k-Nearest Neighbor fake--rate calculation}
+For the fake--rate method to give correct results, care must be taken that the
+measured fake--rate is well defined in all of the regions of phase space where
+it will be used.  Previous implementations~\cite{CMS_AN_2010-074} of the
+fake--rate method in CMS implemented the fake--rate parameterization by binning
+the numerator (tau ID passed) and denominator (tau ID passed and failed)
+distributions in the three dimensions of the parameterizations. This method has
+the disadvantage that the determination of the optimal binning is extremely
+difficult to determine. Furthermore, any bins with no entries in the denominator
+distribution caused the fake--rate to be undefined in those regions.
+
+To overcome these problems, the fake--rate parameterization is implemented by
+adapting a multivariate technique known as a $k-$Nearest~Neighbor classifier
+(\kNN).  A \kNN classifier is typically used to classify events operates by
+populating (``training'') an $n-$dimensional space with signal and background
+events.  The probability for a given point $x$ in the space to be
+``signal--like'' is determined by finding the $k$ nearest neighbors and
+computing the ratio
+\begin{equation}
+  p_{sig} = \frac{n_{sig}}{n_{sig} + n_{bkg}},
+  \label{eq:KNNEquation}
+\end{equation}
+where $n_{sig}$,$n_{bkg}$ are the observed number of signal and background events,
+respectively. By construction, $k = n_{sig} + n_{bkg}$.  The principle of
+operation is illustrated in Figure~\ref{fig:KNN}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{backgrounds_chapter/figures/knn_3d_s13_b7_x02.pdf}
+  \caption[$k-$Nearest Neighbor classifier example]{Example of the operation of
+  a \kNN classifier.  The closest $k=50$ neighbors (those inside the circle) to a
+  test point (indicated by the star marker) are selected. The probability that
+  the star marker is a signal event is given the number of signal neighbors (blue
+  markers) in the circle divided by $k$. Image credit:~\cite{TMVA}}
+  \label{fig:KNN}
+\end{figure}
+
+The classification feature of a \kNN can be trivially adapted to parameterize
+the fake--rate such that it is defined everywhere.  Examining the form of
+Equation~\ref{eq:KNNEquation}, if one replaces $n_{sig}$ with $n_{passed}$ and
+$n_{bkg}$ with $n_{failed}$, the equation is equivalent to the tau--fake rate.
+We thus train the \kNN with tau--candidates which pass the tau--ID as signal
+events and those which fail as background events. The resulting classifier is a
+function which returns the expected fake--rate for any point in the space of the
+parameterization.  The choice of $k$ must be optimized.  When $k$ is low, the
+small number of neighbors causes large counting fluctuations in the fake rate.
+If $k$ is too large, the \kNN effectively averages over a large area of the
+space of the variables\footnote{In the limit $k\to\inf$, the \kNN output reduces to a
+single number.  In this extreme case, all information about the dependence of
+the fake--rate on the variables is lost.}.  For the training statistics
+available in the 2010 data, $k=20$ is found to be the optimal choice.
 
 \subsection{Results of Background Estimation}
-
+%
 An independent estimate of the background contributions is obtained by applying
 the fake--rate method described in~\cite{CMS_AN_2010-074}.  Fake--rates in QCD
 multi--jet events (light quark enriched sample), QCD events containing muons
