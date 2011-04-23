@@ -1,0 +1,110 @@
+\ifx\master\undefined\input{settings/autocompile}\fi
+\chapter{Monte Carlo Corrections} \label{ch:corrections} 
+\section{Muon Identification Efficiency}
+\label{sec:ZmumuTagAndProbe}
+The identification efficiencies associated with the muon in the $\mu$--$\tau$
+channel are measured in $Z\rightarrow\mu^+\mu^-$ events using the ``tag and
+probe'' technique~\cite{EWK-10-002}.  $Z\rightarrow\mu^+\mu^-$ events are
+selected from the \mbox{/Mu/Run2010B-PromptReco-v2/RECO} and
+\mbox{/Mu/Run2010A-Sep17ReReco\_v2/RECO} 7TeV CMS datasets by requiring that the
+events pass the ``loose'' Vector Boson Task Force (VBTF) event
+selections~\cite{EWK-10-002}.  In the selected events, we define the ``tag''
+muons as those that have transverse momentum greater than 15~GeV/$c$ and pass
+the VBTF muon selection.  The tag muons are further required to pass the
+``combined relative isolation'' described in the VBTF paper.  We finally require
+that the tag muon be matched to an HLT object corresponding to the
+run--dependent requirements listed in table~\ref{tab:AHtoMuTauTriggers}.  We
+compare the events selected in data to simulated $Z\rightarrow\mu^+\mu^-$
+events.  The selection of events and tag muon in the simulated sample is the
+same as the data sample, with the notable exception that the only HLT
+requirement applied in MC is that the tag muon is matched to an HLT\_Mu9 object.  
+
+The efficiencies for the muon selections applied in this analysis are measured
+using the ``probe'' objects.  We measure the following marginal efficiencies:
+\begin{itemize}
+\item Efficiency of global probe muons to satisfy VBTF muon identification
+selections.
+\item Efficiency of global probe muons passing the VBTF muon identification
+selection to satisfy the isolation criteria described in
+section~\ref{sec:MuonId}.
+\item Efficiency of probe muons passing the offline analysis selection to
+pass the HLT selection.
+\end{itemize}
+
+In each case, the invariant mass spectrum of the tau--probe pair is fitted with
+a Crystal Ball function for the signal ($Z\rightarrow\mu^+\mu^-$) events and an
+exponential for the background.  The fit is done for two cases; where the probe
+fails the selection and the where it passes.  The signal yield $N$ is extracted
+from each fit and the efficiency is computed as $N_{pass}/(N_{pass} + N_{fail}$.
+Each efficiency is measured in both the data and the simulation. The results of
+the measurements are shown in table~\ref{tab:muonTagAndProbeResults}. In the
+final analysis, the simulated events are weighted by the fractional difference
+to the measured values; the statistical uncertainty on the weight is taken as
+the sum in quadrature of the statistical uncertainties for the data and
+simulation efficiency measurements.
+
+The correction for the trigger efficiency needs to take into account the
+differences in the HLT selections applied during different operating periods
+(see table~\ref{tab:AHtoMuTauTriggers}).  To determine the overall correction
+factor, we measure the trigger efficiency in data for each of the operating
+periods and compare it to the simualted efficiency of the HLT\_Mu9 selection.
+The overall efficiency in data is taken as the average of the three periods,
+weighted by integrated luminosity.
+
+The efficiency of the ``cross--triggers'' used in the run--range period 148822 -
+149182 (period C) cannot be measured in $Z\rightarrow\mu^+\mu^-$ events as they
+require a reconstructed PFTau object at the trigger level.  A single muon trigger
+(HLT\_Mu15) is also used in period C.  The contribution of the cross--triggers
+is taken as a correction to the single muon trigger period C efficiency. The
+``muon leg'' of the cross--triggers have the same requirements as the single
+muon triggers used in the run--range 147196 - 148058 (period B).  The
+``cross--trigger'' contribution is estimated as the difference between the
+efficiency in period B and the single--muon period C efficiency multiplied by a
+correction factor of $0.9 \pm 10\%$ to account for the $\tau$ leg efficiency.
+In the case that the measured single--muon period C efficiency is larger than
+the period B efficiency (due to statistical fluctuations and improvements in the
+trigger system), the period B efficiency is increased by 2\%.
+
+\begin{table}[t]
+\begin{center}
+%\tablesize
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multirow{2}{*}{Muon selection} &  \multicolumn{2}{|c|}{Efficiency} & \multirow{2}{*}{Ratio} & \multirow{2}{*}{Corection} \\ 
+&  Data  &          Simulation &      &      \\ 
+\hline
+% cut                           data      mc     ratio     correction
+VBTF identification &   $99.2^{+0.1}_{-0.1}$\%  &  $99.1^{+0.1}_{-0.1}$\% & $1.001^{+0.001}_{-0.001}$ & 1.0\\
+Particle Isolation  &  $76.8^{+0.4}_{-0.4}$\% &  $78.3^{+0.3}_{-0.3}$\% & $0.981^{+0.006}_{-0.006}$ & 0.98 \\
+Trigger             &   $95.0^{+0.5}_{-0.5}$\% & $96.5^{+0.1}_{-0.2}$\% & $0.984^{+0.006}_{-0.006}$ & 0.98 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\caption[Muon trigger, identification, and isolation correction
+factors]{Efficiency of the various global muon selections applied in the
+analysis measured in data and simulated $Z\rightarrow\mu^+\mu^-$ events.  The
+``correction'' column gives the event weight correction applied to the simulated
+events in the final analysis.  The efficiency for each selection is the marginal
+efficiency with respect to the selection in the row above it.  }
+
+\label{tab:muonTagAndProbeResults}
+\end{center}
+\end{table}
+
+\begin{figure}[t]
+\begin{center}
+%\includegraphics*[height=52mm, viewport=19 0 524
+%396]{figures/evtReco_PzetaDefinition.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/figures/pt_iso_pt_scaled.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/figures/etatrig_iso_abseta_scaled.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/figures/pt_trigCompX_pt_scaled.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/figures/etatrig_trigCompX_abseta_scaled.pdf}
+\caption[Muon isolation correction factors]{Ratio of muon isolation efficiency
+measured in data compared to simulated $Z\rightarrow\mu^+\mu^-$ events.}
+\label{fig:MuonIsoCorrVersusPt}
+\end{center}
+\end{figure} 
+
+
+\ifx\master\undefined\input{settings/autocompile}\fi
