@@ -7,13 +7,38 @@
 \subsection{Muons}
 \label{sec:MuonId}
 
-Muon candidates are required to be global muons and to pass the VBTF muon
-identification criteria~\cite{CMS-PAS-EWK-10-002}.
+Muon candidates are required to be reconstructed as global and as tracker muons,
+meaning that a full track is reconstructed in the muon system and is well
+matched to a track in the silicon strip and pixel trackers.
+Additionally, they are required to pass the ``Vector Boson Task Force'' (VBTF)
+muon identification criteria developed for the $Z \to \mu^{+} \mu^{-}$
+cross--section measurement~\cite{CMS-PAS-EWK-10-002}:
+\begin{itemize}
+\item $\geq 1$ Pixel hits
+\item $\geq 10$ hits in silicon Pixel $+$ Strip detectors
+\item $\geq 1$ hit(s) in muon system
+\item $\geq 2$ matched segments
+\item $\chi^{2}/DoF < 10$ for global track fit
+\item transverse impact parameter of ``inner'' track $d_\text{IP} < 2~\milli\meter$
+  with respect to beam--spot
+\end{itemize}
 
-The muons are required to be isolated with respect to charged hadrons of $\pt >
-1.0~\GeVc$ and photons of $\pt > 1.5~\GeVc$ as reconstructed by the
-particle--flow algorithm~\cite{CMS-PAS-PFT-09-001} in a cone of size $\Delta R =
-0.4$ around the direction of the muon.
+In order to reduce background contributions from muons originating from heavy
+quark decays in QCD multi--jet events, muons are required to be isolated.
+Isolation is computed as the \pt sum of charged and neutral hadrons plus photons
+reconstructed by the CMS particle--flow algorithm~\cite{PFT-09-001} within a
+cone of size $\Delta R_{iso} = 0.4$ around the muon direction.  The innermost
+region of size $\Delta R_{veto} = 0.08$ ($0.05$) is excluded from the
+computation of the isolation \pt sum with respect to neutral hadrons (photons),
+in order to avoid energy deposits in the electromagnetic and hadronic
+calorimeters which are due to the muon to enter the sum.  In order to reduce
+pile--up effects, particles entering the isolation \pt sum are required to have
+transverse momenta $\pt > 1.0$~\GeVc.  Charged particles are additionally
+required to originate from the same vertex as the muon.  The muons are required
+to be isolated with respect to charged hadrons of $\pt > 1.0~\GeVc$ and photons
+of $\pt > 1.5~\GeVc$ as reconstructed by the particle--flow
+algorithm~\cite{CMS-PAS-PFT-09-001} in a cone of size $\Delta R = 0.4$ around
+the direction of the muon.
 
 % End particle ID section
 \section{Event Selections}
