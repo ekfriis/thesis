@@ -26,7 +26,7 @@ cross--section measurement~\cite{CMS-PAS-EWK-10-002}:
 In order to reduce background contributions from muons originating from heavy
 quark decays in QCD multi--jet events, muons are required to be isolated.
 Isolation is computed as the \pt sum of charged and neutral hadrons plus photons
-reconstructed by the CMS particle--flow algorithm~\cite{PFT-09-001} within a
+reconstructed by the CMS particle--flow algorithm~\cite{CMS-PAS-PFT-09-001} within a
 cone of size $\Delta R_{iso} = 0.4$ around the muon direction.  The innermost
 region of size $\Delta R_{veto} = 0.08$ ($0.05$) is excluded from the
 computation of the isolation \pt sum with respect to neutral hadrons (photons),
@@ -39,6 +39,30 @@ to be isolated with respect to charged hadrons of $\pt > 1.0~\GeVc$ and photons
 of $\pt > 1.5~\GeVc$ as reconstructed by the particle--flow
 algorithm~\cite{CMS-PAS-PFT-09-001} in a cone of size $\Delta R = 0.4$ around
 the direction of the muon.
+
+\subsection{Hadronic Taus}
+
+Hadronic decays of taus are identified by the \hpsTanc hybrid algorithm
+described in Section~\ref{sec:TauId}.  The ``medium'' working point is used,
+corresponding to an expected QCD fake--rate of about 1\%. $Z \to \MM$ background
+contributions are largely due to muons which failed to get reconstructed as
+global muons (thus failing the muon identification requirement) and are
+misidentified as tau--jet candidates.  These muons are typically isolated and
+have a large chance to pass the hadronic tau ID discriminators.  To reject these
+events, hadronic taus are additionally required to pass an anti--muon veto
+described in Section~\ref{sec:LightLeptonRejection}. 
+
+\subsection{Missing Transverse Energy}
+
+The missing transverse energy \MET, in the event is reconstructed based on the
+vectorial momentum sum of particle candidates reconstructed by the
+particle--flow algorithm~\cite{CMS-PAS-PFT-09-001, CMS-PAS-JME-10-005}.  In the
+ideal case, the \MET corresponds to the vector sum of the transverse components
+of all neutrinos in the event.  The \MET resolution in simulated $Z\to\MM$
+events is found to be smaller (better) than in the data.   The reconstructed
+\MET in the simulated events is ``smeared'' by a correction factor such that the
+data and simulation are in agreement.  The ``Z--recoil'' \MET correction
+procedure is described in Section~\ref{sec:ZRecoilCorr}.
 
 % End particle ID section
 \section{Event Selections}
@@ -78,31 +102,30 @@ taus.} \label{tab:FakeBackgrounds}
 Events in the muon plus tau--jet channel are selected by requiring a muon of
 $\pt^{\mu} > 15$~\GeVc within $ \left| \eta_{\mu} \right| < 2.1$ and a tau-jet
 candidate of $\pt^{\tau\mbox{--jet}} > 20$~\GeVc within $ \left|
-\eta_{\tau\mbox{--jet}} \right| < 2.3$. The muon and tau--jet candidate are
-required to be of opposite charge, as expected for the $\ZTT$ signal.  The muon
-is required to be reconstructed as global muon and pass the VBTF muon
-identification criteria~\cite{CMS-PAS-EWK-10-002}. Furthermore, the muon is required to
-be isolated with respect to charged hadrons of $\pt > 1.0$~\GeVc and neutral
-electromagnetic objects of $\pt > 1.5$~\GeVc (reconstructed by the
-particle--flow algorithm) within a cone of size $\Delta R = 0.4$ around the muon
-direction.  The tau-jet candidate is required to pass the ``medium'' TaNC tau
-identification discriminator.
+\eta_{\tau\mbox{--jet}} \right| < 2.3$.  The $\eta$ requirement on the muon
+ensures that it is within the fiducial region of the muon trigger system.  The
+$\eta$ requirement on the hadronic tau ensures it is well within the fiducial
+region of the tracker ($|\eta| < 2.5$) and minimizes exposure to large QCD
+backgrounds in the very forward region.
+
+The muon and tau--jet candidate are required to be of opposite charge, as the
+Higgs is neutral and charge is conserved.  The muon is required to be pass the
+identification criteria described in Section~\ref{sec:MuonId}.   The tau-jet
+candidate is required to pass the ``medium'' TaNC tau identification \fixme{is
+it really medium??}
+discriminator. 
 
 Additional event selection criteria are applied to reduce contributions of
-background processes. $Z \rightarrow \mu^{+} \mu^{-}$ background contributions
-are largely due to muons which failed to get reconstructed as global muons and
-are misidentified as tau--jet candidates. These muons are typically isolated and
-have a large chance to pass the TaNC tau ID discriminators.  In order to reject
-this background, a dedicated discriminator against muons is
-applied~\cite{CMS-PAS-PFT-08-001}. Residual muon background is suppressed by
-rejecting tau-jet candidates which have a track of $\pt > 15~\GeV$ and for which
-the sum of energy deposits in ECAL plus HCAL is below $0.25 \cdot P$ within a
-cylinder of of radius $15$~\centi\meter (ECAL) and $25$~\centi\meter (HCAL),
-respectively.  The $\ttbar$, \WpJets and QCD multi--jet backgrounds are
-suppressed by cuts on the transverse mass and the \Pzeta variable.
-Contamination from $Z \to \TT$ events in which the reconstructed tau--jet
-candidate is due to a $\tau \to e \nu \nu$ decay is reduced by applying a
-dedicated tau ID discriminator against electrons.
+specific background processes. In order to reject this background, a dedicated
+discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. Remaining muon
+background is suppressed by rejecting events which have a track of $\pt >
+15~\GeV$ and for which the sum of energy deposits in ECAL plus HCAL is below
+$0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter (ECAL) and
+$25$~\centi\meter (HCAL), respectively.  The $\ttbar$ and \WpJets backgrounds
+are suppressed by cuts on the transverse mass of the $\mu--\MET$ system and the
+\Pzeta variable.  Contamination from $Z \to \TT$ events in which the
+reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$ decay is
+reduced by applying a dedicated tau ID discriminator against electrons.
 
 The complete set of event selection criteria applied in the muon +
 tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
@@ -150,13 +173,13 @@ tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
 The events are triggered by a combination of muon and muon + tau--jet
 ``cross--channel'' triggers. For the muon triggers, paths with lowest $P_{T}$
 thresholds are used as long as the path remained unprescaled (see
-table~\ref{tab:AHtoMuTauTriggers}). 
+Table~\ref{tab:AHtoMuTauTriggers}). 
 The muon + tau--jet ``cross--channel'' trigger paths increase the trigger efficiency for
 events containing muons of transverse momenta close to the
-$P_{T}^{\mu} > 15$~\GeV cut threshold.
+$\pt^{\mu} > 15$~\GeVc cut threshold.
 The trigger efficiency is measured in data via the tag--and--probe
 technique. Details of the muon trigger efficiency measurement are
-given in section~\ref{sec:ZmumuTagAndProbe} of the appendix.
+given in Section~\ref{sec:ZmumuTagAndProbe} of the appendix.
 Monte Carlo simulated events are required to pass the
 HLT\_Mu9 trigger path. Weights are applied to simulated events to account for the
 difference between the simulated HLT\_Mu9 efficiency and the combined

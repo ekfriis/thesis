@@ -1,14 +1,17 @@
-\ifx\master\undefined\input{settings/autocompile}\fi \chapter{Monte Carlo
-Corrections} \label{ch:corrections} One of the most important goals of the analysis
-is to minimize the effect of potentially incorrect simulation effects on the
-final result.  While the simulated CMS events have been observed to match the
-2010 data with surprising results, it is nonetheless critical to measure in real
-data phenomenon which can have significant effects on the analysis whenever
-possible.  In practice, these measurements are used to apply a correction factor
-to the corresponding measurement obtained from Monte Carlo.  This measured
-correction factor has an associated uncertainty, and is taken into account as
-a systematic uncertainty.  The application of systematic uncertainties is
-described in the next chapter.   
+\ifx\master\undefined\input{settings/autocompile}\fi 
+%
+\chapter{Monte Carlo Corrections} 
+%
+\label{ch:corrections} One of the most important goals of the analysis is to
+minimize the effect of potentially incorrect simulation effects on the final
+result.  While the simulated CMS events have been observed to match the 2010
+data with surprising results, it is nonetheless critical to measure in real data
+phenomenon which can have significant effects on the analysis whenever possible.
+In practice, these measurements are used to apply a correction factor to the
+corresponding measurement obtained from Monte Carlo.  This measured correction
+factor has an associated uncertainty, and is taken into account as a systematic
+uncertainty.  The application of systematic uncertainties is described in the
+next chapter.   
 
 The corrections measured and used in this analysis can be divided into two
 categories, efficiency and scale corrections. Identification efficiency
@@ -24,11 +27,11 @@ with the instantaneous luminosity provided by the collider.} events.  The
 simulated events are weighted such that the number of pile--up events in the
 simulation matches that observed in the data.
 
-\section{Muon Identification Efficiency}
-\label{sec:ZmumuTagAndProbe} The identification efficiencies associated with the
-muon in the $\mu$--$\tau$ channel are measured in $Z\rightarrow\mu^+\mu^-$
-events using the ``tag and probe'' technique~\cite{CMS-PAS-EWK-10-002}.
-$Z\rightarrow\mu^+\mu^-$ events are selected from the Muon 7~\TeV CMS 2010
+\section{Muon Identification Efficiency} \label{sec:ZmumuTagAndProbe} 
+%
+The identification efficiencies associated with the muon are measured in $\ZMM$
+events using the ``tag and probe'' technique~\cite{CMS-PAS-EWK-10-002}.  $\ZMM$
+events are selected from the Muon 7~\TeV CMS 2010
 datasets\footnote{\mbox{/Mu/Run2010A-Sep17ReReco\v2/RECO} and
 \mbox{/Mu/Run2010B-PromptReco-v2/RECO} } by requiring that the events pass the
 ``loose'' Vector Boson Task Force (VBTF) event
@@ -37,15 +40,21 @@ selections~\cite{CMS-PAS-EWK-10-002}.  In the selected events, we define the
 pass the VBTF muon selection.  The tag muons are further required to pass the
 ``combined relative isolation'' described in the VBTF paper.  We finally require
 that the tag muon be matched to an HLT object corresponding to the
-run--dependent requirements listed in table~\ref{tab:AHtoMuTauTriggers}.  We
-compare the muon identification performance in events selected in data to the
-performance in simulated $Z\rightarrow\mu^+\mu^-$ events.  The selection of
-events and tag muon in the simulated sample is the same as the data sample, with
-the notable exception that the only HLT requirement applied in MC is that the
-tag muon is matched to an HLT\_Mu9 object. 
+run--dependent requirements listed in table~\ref{tab:AHtoMuTauTriggers}.  The
+trigger match requirement ensures that the event would be recorded independently
+of the probe muon.  After the tag and probe muon pairs have been collected, we
+compare the muon identification performance in the probe collection in events
+selected in data to the performance in simulated $\ZMM$ events.  The selection
+of events and tag muon in the simulated sample is the same as the data sample,
+with the notable exception that the only HLT requirement applied in MC is that
+the tag muon is matched to an HLT\_Mu9 object.  Any difference in efficiency
+between the HLT\_Mu9 path and the paths used to select the data (in the
+tag--probe measurement and in the analysis) will be considered implicitly in the
+correction faction. 
 
 The efficiencies for the muon selections applied in this analysis are measured
-using the ``probe'' objects.  We measure the following marginal efficiencies:
+using the ``probe'' objects.  We measure the following marginal efficiencies,
+each relative to the previous requirement:
 \begin{itemize}
 \item Efficiency of global probe muons to satisfy VBTF muon identification
 selections.
@@ -57,7 +66,7 @@ Section~\ref{sec:MuonId}.
 \end{itemize}
 
 In each case, the invariant mass spectrum of the tag--probe pair is fitted with
-a Crystal Ball function for the signal ($Z\rightarrow\mu^+\mu^-$) events and an
+a Crystal Ball function for the signal ($\ZMM$) events and an
 exponential for the background.  The fit is done for two cases; where the probe
 fails the selection and the where it passes.  The method is illustrated in
 Figure~\ref{fig:TagAndProbeFits}.  The signal yield $N$ is extracted from each
@@ -68,7 +77,7 @@ analysis, the simulated events are weighted by the fractional difference to the
 measured values; the statistical uncertainty on the weight is taken as the sum
 in quadrature of the statistical uncertainties for the data and simulation
 efficiency measurements.  The uncertainty on this measurement is taken as
-systematic on the final measurement.
+systematic uncertainty in the final measurement.
 \begin{figure}[t]
 \begin{center}
 %\includegraphics*[height=52mm, viewport=19 0 524
@@ -94,7 +103,7 @@ The overall efficiency in data is taken as the average of the three periods,
 weighted by integrated luminosity.
 
 The efficiency of the ``cross--triggers'' used in the run--range period 
-$148822-149182$ (period~C) cannot be measured in $Z\rightarrow\mu^+\mu^-$ events as they
+$148822-149182$ (period~C) cannot be measured in $\ZMM$ events as they
 require a reconstructed PFTau object at the trigger level.  A single muon trigger
 (HLT\_Mu15) is also used in period C.  The contribution of the cross--triggers
 is taken as a correction to the single muon trigger period C efficiency. The
@@ -147,6 +156,97 @@ measured in data compared to simulated $Z\rightarrow\mu^+\mu^-$ events.}
 \label{fig:MuonIsoCorrVersusPt}
 \end{center}
 \end{figure} 
+
+\section{Missing Transverse Energy Correction}
+\label{sec:ZRecoilCorr} In practice, the resolution of the reconstructed missing
+transverse energy is poor as it is sensitive to the mis--measurement of any
+object in the event. Furthermore, a fraction of the particles produced in the
+hard collision can be produced in the very forward region, outside of the
+fiducial region of the calorimeters.  The resolution of the \MET reconstruction
+can be measured in $Z\to\MM$ events. The true \MET in such
+events is expected to be zero.  The \MET resolution in simulated $Z\to\MM$
+events is found to be smaller (better) than in the data.  
+
+The \MET resolution depends on the ``recoil'' of the
+$Z$ boson.  The reason for this effect is that for events where the $Z$ is
+produced nearly at rest, the associated recoil products have very small
+transverse momentum and are produced at very high pseudorapidity.  The \MET is
+corrected using a procedure called a ``Z--recoil'' correction, as described
+in~\cite{CMS_AN_2010-332}.  The resolution of the \MET is measured in $Z\to\MM$
+events in simulation and data.  The difference in the reconstructed \MET
+resolution in both samples is parameterized by the magnitude of the transverse
+momenta of the particles recoiling against the $Z$.\footnote{The ``recoil''
+particles are defined as all those not identified as $Z$ decay produces. This
+definition is equivalent to the total decay product transverse momentum $q_T$
+added reconstructed \MET.}  The
+reconstructed \MET in the simulated $\ZTT, \ZMM,$ and \WpJets samples is
+``smeared'' by a random amount such that the resolution is the correct 
+
+$Z$--recoil corrections are determined as described in~\cite{CMS_AN_2010-332}
+and applied to simulated $Z \to \TT$, $Z \rightarrow \mu^+\mu^-$ and $W$ + jets
+events, in order to correct for residual differences in $\MET$ response and
+resolution between data and Monte Carlo simulation~\cite{CMS_AN_2010-460}. The
+corrections are obtained by an unbinned maximum likelihood fit (in data and
+simulation) of the transverse recoil vector $\vec{u}_{T} = -\left( \vec{q}_{T} +
+\MET \right)$ as function of the transverse momentum $\vec{q}_{T}$ of the
+$Z$--boson in directions parallel and perpendicular to the $Z$--boson transverse
+momentum vector.  The effect of the $Z$--recoil correction is illustrated in
+figure~\ref{fig:ZrecoilCorrection}.
+\begin{figure}[t]
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(150,52)(0,0)
+\put(0.5, 2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt.pdf}}}
+\put(78.0, 2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt_corrected.pdf}}}
+\end{picture}
+\caption[$Z$--recoil \MET resolution correction]{Missing transverse energy
+reconstructed in $Z \to \mu^{+} \mu^{-}$ events selected in data compared to $Z
+\to \mu^{+} \mu^{-}$ events in Monte Carlo simulation before (left) and after
+(right) the $Z$--recoil corrections to the $\MET$ resolution are applied.}
+\label{fig:ZrecoilCorrection}
+\end{center}
+\end{figure}
+
+\section{Pile--up Event Weighting}
+The average number of pile--up interactions in the event can effect almost all
+aspects of the analysis.  In general, increasing pile--up lowers particle
+identification efficiencies and lowers \MET resolution.  It is therefore
+important that the distribution of pile--up events in the simulation matches the
+distribution found in the data.  Differences in the number of pile--up
+interactions between the data (averaged over the analyzed run--range) and
+pile-up Monte Carlo samples produced for ``BX156\footnote{The BX156 name comes
+from the fact that the pile--up scenario used in this simulation corresponds to
+an LHC configuration with 156 bunches.}'' pile--up conditions are corrected for
+by reweighting Monte Carlo simulated events according to the number of
+reconstructed event vertices, in order to match the distribution measured in a
+$W \to \mu \nu$ dataset triggered by the HLT\_Mu15 High Level Trigger path.
+Vertices considered for this purpose are required to pass $-24 < z_{vtx} <
++24$~cm, $\left| \rho \right| < 2$~\centi\meter, nDoF $> 4$.  In addition, the
+total transverse momenta of all tracks fitted to the vertex is required to
+exceed $10$~\GeVc, assuming that ``softer'' vertices have little or no effect on
+the ``hard'' event to pass event selection criteria.  The average vertex
+multiplicity distribution measured in data is compared to Monte Carlo simulation
+with ``BX156'' pile--up conditions in Figure~\ref{fig:pileUpReweighting}.  Both
+distributions are similar, resulting in Monte Carlo reweighting factors close to
+unity.
+
+\begin{figure}[t]
+  \setlength{\unitlength}{1mm}
+  \begin{center}
+    \begin{picture}(150,52)(0,0)
+      \put(0.5, 2){\mbox{\includegraphics*[width=52mm,
+      angle=90]{corrections_chapter/figures/vertexMultiplicity.pdf}}}
+      \put(78.0, 2){\mbox{\includegraphics*[width=52mm,
+      angle=90]{corrections_chapter/figures/vertexMultiplicityReweights.pdf}}}
+    \end{picture}
+    \caption[Distribution of number of reconstructed primary vertices per
+    event]{\captiontext Vertex multiplicity distribution measured in the
+    analyzed data--taking period compared to Monte Carlo simulation with
+    ``BX156'' pile--up conditions (left) and resulting Monte Carlo reweighting
+    factors (right).} \label{fig:pileUpReweighting}
+  \end{center}
+\end{figure} 
+
 
 
 \ifx\master\undefined\input{settings/autocompile}\fi

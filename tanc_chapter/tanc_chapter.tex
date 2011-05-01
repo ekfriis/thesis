@@ -28,13 +28,11 @@ pairs of photons.
 
 In this chapter, we describe a technique to identify hadronic tau decays.  Tau
 decays to electrons and muons are difficult to distinguish from prompt
-production of electrons and
-muons in $pp$ collisions.  Analyses that use exclusively
-non--hadronically decaying taus typically require that the leptonic ($e,\mu$)
-decays be of opposite flavor.  The discrimination of hadronic tau decays from
-electrons and muons is described in~\cite{CMS-PAS-PFT-08-001}.  With the Tau Neural
-Classifier, we aim to improve the discrimination of true hadronic tau decays
-from quark and gluon jets using a neural network approach.
+production of electrons and muons in $pp$ collisions.  Analyses that use
+exclusively use the leptonic ($e,\mu$) decays of taus typically require that the
+decays be of opposite flavor.  With the Tau Neural Classifier, we aim to improve
+the discrimination of true hadronic tau decays from quark and gluon jets using a
+neural network approach.
 
 \section{Geometric Tau Identification Algorithms}
 
@@ -128,26 +126,26 @@ background.
 \section{Summary}
 \input{tanc_chapter/note/summary.tex}
 
-\section{HPS + TaNC: A Hybrid Algorithm}
+\section{HPS+TaNC: A Hybrid Algorithm}
 \label{sec:TauId} The techniques used in the TaNC have been hybridized with
 techniques used by the ``Hadrons plus Strips'' (HPS) algorithm.  The combined
 algorithm is referred to ``Hadrons plus Strips and Tau Neural Classifier''
-(HPS+TaNC) identification algorithm.  The algorithm combines features of
+(\hpsTanc) identification algorithm.  The algorithm combines features of
 HPS~\cite{CMS_AN_2010-082} and the TaNC algorithm.  Both algorithms are based on
 reconstructing individual tau lepton hadronic decay modes, which has been
 demonstrated to improve the tau identification performance significantly with
 respect to previously used cone isolation based
-algorithms~\cite{CMS-PAS-PFT-10-004}.  The HPS+TaNC algorithm first reconstructs
+algorithms~\cite{CMS-PAS-PFT-10-004}.  The \hpsTanc algorithm first reconstructs
 the hadronic decay mode of the tau, and applies different discriminants based on
 the reconstructed decay mode.  Identification of hadronic tau decays by the
-HPS+TaNC algorithm proceeds in two stages: first, the hadronic decay mode of the
+\hpsTanc algorithm proceeds in two stages: first, the hadronic decay mode of the
 tau is reconstructed and then different discriminators are applied, based on the
 reconstructed decay mode.  In the decay mode reconstruction particular attention
 is paid to the reconstruction of neutral pions, which are expected for the
 majority of hadronic decay modes.
 
 
-\subsubsection{Decay mode reconstruction}
+\subsection{Decay mode reconstruction}
 
 The decay mode reconstruction algorithm is seeded by particle--flow jets
 reconstructed by the anti--$k_{T}$ algorithm~\cite{AntiKT}.  In order to
@@ -194,7 +192,7 @@ remaining.
 \end{figure}
 
 Once the final collection of $\pi^0$ candidates is determined, tau
-reconstruction in the HPS+TaNC algorithm proceeds by building tau candidates
+reconstruction in the \hpsTanc algorithm proceeds by building tau candidates
 from reconstructed $\pi^0$ candidates and charged hadrons reconstructed by the
 particle--flow algorithm.  A combinatoric approach is again employed for the tau
 candidate building.  A tau candidate hypothesis is built for every combination
@@ -219,7 +217,7 @@ In case multiple tau candidates satisfy all four categorical requirements,  the
 tau candidate with the highest energy sum of charged and neutral pions is
 selected as the highest ranking one.
 
-\subsubsection{Hadronic tau discrimination}
+\subsection{Hadronic tau discrimination}
 
 The final level of discrimination is performed by an ensemble of neural
 networks, with each neural network corresponding to a specific decay mode,
@@ -240,7 +238,29 @@ implementation, network layout, and training strategies are the same as in the
 original TaNC algorithm described in this chapter.  To account for differences
 in the input signal purity and separation power of the neural networks between
 decay modes, the outputs of each neural network are transformed according to the
-method described in~\cite{CMS_AN_2010-099}.  Multiple working--points,
-corresponding to different purities are provided. 
+method described in~\cite{CMS_AN_2010-099}.  Multiple working--points
+corresponding to different purities are provided.  The ``loose'' working point
+corresponds to an approximate fake--rate of 1\%, and has slightly higher
+signal efficiency performance at high \pt than the corresponding HPS--only
+working point.
+
+\section{Electron and Muon Rejection}
+\label{sec:LightLeptonRejection}
+Additional discriminators must be applied to prevent electrons and muons from
+being identified as hadronic tau decays.  This is especially important for
+removing $Z\to e^+e^-$ and $Z \to \MM$ contributions when selecting events with
+two taus and requiring one of them to decay leptonically and the other
+hadronically.  The electron and muon discrimination algorithms and performance
+are described in detail in~\cite{CMS-PAS-PFT-08-001}.  A cursory overview of the
+techniques used are given here.
+Muon removal is achieved with high purity by
+requiring that no track in the signal collection of the tau candidate is matched
+to a segment in the muon system.  The rejections of true electrons is more
+difficult.  Electrons leave no signal in the muon system and produce
+Bremsstrahlung photons as they travel through the magnetic field.  The most
+significant difference from a true hadronic tau is that an electron is not
+expected to deposit any energy in the hadronic calorimeter.  Electrons are thus
+rejected by requiring that there is a HCAL energy deposit with a magnitude that
+is greater than 10\% of the momentum of the leading track in the tau.
 
 \ifx\master\undefined\input{settings/autocompile}\fi
