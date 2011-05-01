@@ -1,23 +1,48 @@
-\ifx\master\undefined\input{settings/autocompile}\fi
-\chapter{Monte Carlo Corrections} \label{ch:corrections} 
+\ifx\master\undefined\input{settings/autocompile}\fi \chapter{Monte Carlo
+Corrections} \label{ch:corrections} One of the most important goals of the analysis
+is to minimize the effect of potentially incorrect simulation effects on the
+final result.  While the simulated CMS events have been observed to match the
+2010 data with surprising results, it is nonetheless critical to measure in real
+data phenomenon which can have significant effects on the analysis whenever
+possible.  In practice, these measurements are used to apply a correction factor
+to the corresponding measurement obtained from Monte Carlo.  This measured
+correction factor has an associated uncertainty, and is taken into account as
+a systematic uncertainty.  The application of systematic uncertainties is
+described in the next chapter.   
+
+The corrections measured and used in this analysis can be divided into two
+categories, efficiency and scale corrections. Identification efficiency
+corrections scale the expected yield (due to a given identification selection)
+up or down.  Scale corrections systematically scale the energy of a particle (or
+\MET) up or down.  In this analysis we apply efficiency corrections for the High
+Level Trigger, all stages of muon identification, and the hadronic tau
+identification.  We apply a momentum scale correction to the muon and tau legs,
+and to the resolution of the \MET\@.  Finally, events are simulated with
+overlapping ``pile--up''\footnote{A pile--up event occurs when there are
+multiple interactions in one bunch proton bunch crossing.  Pile--up increases
+with the instantaneous luminosity provided by the collider.} events.  The
+simulated events are weighted such that the number of pile--up events in the
+simulation matches that observed in the data.
+
 \section{Muon Identification Efficiency}
-\label{sec:ZmumuTagAndProbe}
-The identification efficiencies associated with the muon in the $\mu$--$\tau$
-channel are measured in $Z\rightarrow\mu^+\mu^-$ events using the ``tag and
-probe'' technique~\cite{EWK-10-002}.  $Z\rightarrow\mu^+\mu^-$ events are
-selected from the \mbox{/Mu/Run2010B-PromptReco-v2/RECO} and
-\mbox{/Mu/Run2010A-Sep17ReReco\_v2/RECO} 7TeV CMS datasets by requiring that the
-events pass the ``loose'' Vector Boson Task Force (VBTF) event
-selections~\cite{EWK-10-002}.  In the selected events, we define the ``tag''
-muons as those that have transverse momentum greater than 15~GeV/$c$ and pass
-the VBTF muon selection.  The tag muons are further required to pass the
+\label{sec:ZmumuTagAndProbe} The identification efficiencies associated with the
+muon in the $\mu$--$\tau$ channel are measured in $Z\rightarrow\mu^+\mu^-$
+events using the ``tag and probe'' technique~\cite{CMS-PAS-EWK-10-002}.
+$Z\rightarrow\mu^+\mu^-$ events are selected from the Muon 7~\TeV CMS 2010
+datasets\footnote{\mbox{/Mu/Run2010A-Sep17ReReco\v2/RECO} and
+\mbox{/Mu/Run2010B-PromptReco-v2/RECO} } by requiring that the events pass the
+``loose'' Vector Boson Task Force (VBTF) event
+selections~\cite{CMS-PAS-EWK-10-002}.  In the selected events, we define the
+``tag'' muons as those that have transverse momentum greater than 15~\GeVc and
+pass the VBTF muon selection.  The tag muons are further required to pass the
 ``combined relative isolation'' described in the VBTF paper.  We finally require
 that the tag muon be matched to an HLT object corresponding to the
 run--dependent requirements listed in table~\ref{tab:AHtoMuTauTriggers}.  We
-compare the events selected in data to simulated $Z\rightarrow\mu^+\mu^-$
-events.  The selection of events and tag muon in the simulated sample is the
-same as the data sample, with the notable exception that the only HLT
-requirement applied in MC is that the tag muon is matched to an HLT\_Mu9 object.  
+compare the muon identification performance in events selected in data to the
+performance in simulated $Z\rightarrow\mu^+\mu^-$ events.  The selection of
+events and tag muon in the simulated sample is the same as the data sample, with
+the notable exception that the only HLT requirement applied in MC is that the
+tag muon is matched to an HLT\_Mu9 object. 
 
 The efficiencies for the muon selections applied in this analysis are measured
 using the ``probe'' objects.  We measure the following marginal efficiencies:
@@ -26,38 +51,55 @@ using the ``probe'' objects.  We measure the following marginal efficiencies:
 selections.
 \item Efficiency of global probe muons passing the VBTF muon identification
 selection to satisfy the isolation criteria described in
-section~\ref{sec:MuonId}.
-\item Efficiency of probe muons passing the offline analysis selection to
-pass the HLT selection.
+Section~\ref{sec:MuonId}.
+\item Efficiency of probe muons passing the offline analysis selection defined
+  in Chapter~\ref{ch:selections} to pass the HLT selection.
 \end{itemize}
 
-In each case, the invariant mass spectrum of the tau--probe pair is fitted with
+In each case, the invariant mass spectrum of the tag--probe pair is fitted with
 a Crystal Ball function for the signal ($Z\rightarrow\mu^+\mu^-$) events and an
 exponential for the background.  The fit is done for two cases; where the probe
-fails the selection and the where it passes.  The signal yield $N$ is extracted
-from each fit and the efficiency is computed as $N_{pass}/(N_{pass} + N_{fail}$.
-Each efficiency is measured in both the data and the simulation. The results of
-the measurements are shown in table~\ref{tab:muonTagAndProbeResults}. In the
-final analysis, the simulated events are weighted by the fractional difference
-to the measured values; the statistical uncertainty on the weight is taken as
-the sum in quadrature of the statistical uncertainties for the data and
-simulation efficiency measurements.
+fails the selection and the where it passes.  The method is illustrated in
+Figure~\ref{fig:TagAndProbeFits}.  The signal yield $N$ is extracted from each
+fit and the efficiency is computed as $N_{pass}/(N_{pass} + N_{fail}$.  Each
+efficiency is measured in both the data and the simulation. The results of the
+measurements are shown in table~\ref{tab:muonTagAndProbeResults}. In the final
+analysis, the simulated events are weighted by the fractional difference to the
+measured values; the statistical uncertainty on the weight is taken as the sum
+in quadrature of the statistical uncertainties for the data and simulation
+efficiency measurements.  The uncertainty on this measurement is taken as
+systematic on the final measurement.
+\begin{figure}[t]
+\begin{center}
+%\includegraphics*[height=52mm, viewport=19 0 524
+%396]{figures/evtReco_PzetaDefinition.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/tag_probe_data/plot_0.pdf}
+\includegraphics*[height=52mm]{corrections_chapter/tag_probe_data/plot_1.pdf}
+\caption[Tag--probe muon isolation method]{The tag--probe dimuon invariant mass
+spectrum in events in which the probe muon passed (left) and failed (right) the
+muon isolation requirement.  The solid gives the result of the simultaneous fit
+of the signal (real $Z\to\MM$ events) and background.  The fitted background
+contribution is shown as the dotted line.  The muon isolation efficiency is then
+extracted from the number of signal events in the passing and failing bins.}
+\label{fig:MuonIsoCorrVersusPt}
+\end{center}
+\end{figure} 
 
 The correction for the trigger efficiency needs to take into account the
 differences in the HLT selections applied during different operating periods
 (see table~\ref{tab:AHtoMuTauTriggers}).  To determine the overall correction
 factor, we measure the trigger efficiency in data for each of the operating
-periods and compare it to the simualted efficiency of the HLT\_Mu9 selection.
+periods and compare it to the simulated efficiency of the HLT\_Mu9 selection.
 The overall efficiency in data is taken as the average of the three periods,
 weighted by integrated luminosity.
 
-The efficiency of the ``cross--triggers'' used in the run--range period 148822 -
-149182 (period C) cannot be measured in $Z\rightarrow\mu^+\mu^-$ events as they
+The efficiency of the ``cross--triggers'' used in the run--range period 
+$148822-149182$ (period~C) cannot be measured in $Z\rightarrow\mu^+\mu^-$ events as they
 require a reconstructed PFTau object at the trigger level.  A single muon trigger
 (HLT\_Mu15) is also used in period C.  The contribution of the cross--triggers
 is taken as a correction to the single muon trigger period C efficiency. The
 ``muon leg'' of the cross--triggers have the same requirements as the single
-muon triggers used in the run--range 147196 - 148058 (period B).  The
+muon triggers used in the run--range $147196-148058$ (period~B).  The
 ``cross--trigger'' contribution is estimated as the difference between the
 efficiency in period B and the single--muon period C efficiency multiplied by a
 correction factor of $0.9 \pm 10\%$ to account for the $\tau$ leg efficiency.

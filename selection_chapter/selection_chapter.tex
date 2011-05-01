@@ -3,38 +3,81 @@
 \chapter{Analysis Selections}
 \label{ch:selections}
 
+\section{Particle Identification}
+\subsection{Muons}
+\label{sec:MuonId}
+
+Muon candidates are required to be global muons and to pass the VBTF muon
+identification criteria~\cite{CMS-PAS-EWK-10-002}.
+
+The muons are required to be isolated with respect to charged hadrons of $\pt >
+1.0~\GeVc$ and photons of $\pt > 1.5~\GeVc$ as reconstructed by the
+particle--flow algorithm~\cite{CMS-PAS-PFT-09-001} in a cone of size $\Delta R =
+0.4$ around the direction of the muon.
+
+% End particle ID section
+\section{Event Selections}
+The selections applied to the analysis are designed to reject large fractions of
+the background while maintaining a high efficiency for identifying signal
+(Higgs) events.  The backgrounds can be divided into two classifications:
+``fake'' backgrounds, in which there is at least one misidentified hadronic tau
+decay, and the irreducible $Z\to\TT$ background, which cannot\footnote{Due to
+the differences in spin between the $Z$ (spin~1) and the Higgs (spin~0), it
+maybe be possible to separate the two using spin correlations of the two tau
+decays.} be distinguished from the potential presence of a Higgs boson of the
+same mass.  Strategies for dealing with the irreducible $Z$ background will be
+discussed in the Chapter~\ref{ch:results}.
+The different fake backgrounds, their cross section, and the basic 
+removal strategies are outlined in Table~\ref{tab:FakeBackgrounds}.
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+Background & Cross Section (\pb) \\
+QCD Heavy Flavor &  84679\footnote{The QCD cross section given here is after a
+requirement that at least one muon with $\pt > 15~\GeVc$ is produced in the
+event.} \\
+$W \to \mu \nu + \text{jets}$ & 10435 \\
+$Z \to \mu \mu + \text{jets}$ & 1666  \\
+$\ttbar + \text{jets}$ & 158 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\caption[Analysis backgrounds that include fake taus]{The different backgrounds
+to the analysis presented in this thesis that include misidentified hadronic
+taus.} \label{tab:FakeBackgrounds}
+\end{center}
+\end{table}
+
 Events in the muon plus tau--jet channel are selected by requiring a muon of
-$P_{T}^{\mu} > 15$~\GeV within $ \left| \eta_{\mu} \right| < 2.1$ and a tau-jet
-candidate of $P_{T}^{\tau\mbox{--jet}} > 20$~\GeV within $ \left|
+$\pt^{\mu} > 15$~\GeVc within $ \left| \eta_{\mu} \right| < 2.1$ and a tau-jet
+candidate of $\pt^{\tau\mbox{--jet}} > 20$~\GeVc within $ \left|
 \eta_{\tau\mbox{--jet}} \right| < 2.3$. The muon and tau--jet candidate are
 required to be of opposite charge, as expected for the $\ZTT$ signal.  The muon
 is required to be reconstructed as global muon and pass the VBTF muon
-identification criteria~\cite{EWK-10-002}. Furthermore, the muon is required to
-be isolated with respect to charged hadrons of $P_{T} > 1.0$~\GeV and neutral
-electromagnetic objects of $P_{T} > 1.5$~\GeV (reconstructed by the
+identification criteria~\cite{CMS-PAS-EWK-10-002}. Furthermore, the muon is required to
+be isolated with respect to charged hadrons of $\pt > 1.0$~\GeVc and neutral
+electromagnetic objects of $\pt > 1.5$~\GeVc (reconstructed by the
 particle--flow algorithm) within a cone of size $\Delta R = 0.4$ around the muon
 direction.  The tau-jet candidate is required to pass the ``medium'' TaNC tau
 identification discriminator.
 
-Additional event selection criteria are applied to reduce
-contributions of background processes. $Z
-\rightarrow \mu^{+} \mu^{-}$ background contributions are largely due
-to muons which failed to get reconstructed as global muons and are
-misidentified as tau--jet candidates. These muons are typically
-isolated and have a large chance to pass the TaNC tau ID discriminators. 
-In order to reject this background, a dedicated
-discriminator against muons is applied~\cite{PFT-08-001}. Residual
-muon background is suppressed by rejecting tau-jet candidates which have
-a track of $P_{T} > 15$~\GeV and for which the sum of energy deposits
-in ECAL plus HCAL is below $0.25 \cdot P$ within a cylinder of
-of radius $15$~cm (ECAL) and $25$~cm (HCAL), respectively.
-The $t\bar{t}$, W + jet and QCD multi--jet backgrounds are supressed
-by cuts on the transverse mass and the Pzeta variable.
-Contamination from $Z
-\rightarrow \tau^{+} \tau^{-}$ events in which the reconstructed
-tau--jet candidate is due to a $\tau \rightarrow e \nu \nu$ decay is
-reduced by applying a dedicated tau ID discriminator against
-electrons.
+Additional event selection criteria are applied to reduce contributions of
+background processes. $Z \rightarrow \mu^{+} \mu^{-}$ background contributions
+are largely due to muons which failed to get reconstructed as global muons and
+are misidentified as tau--jet candidates. These muons are typically isolated and
+have a large chance to pass the TaNC tau ID discriminators.  In order to reject
+this background, a dedicated discriminator against muons is
+applied~\cite{CMS-PAS-PFT-08-001}. Residual muon background is suppressed by
+rejecting tau-jet candidates which have a track of $\pt > 15~\GeV$ and for which
+the sum of energy deposits in ECAL plus HCAL is below $0.25 \cdot P$ within a
+cylinder of of radius $15$~\centi\meter (ECAL) and $25$~\centi\meter (HCAL),
+respectively.  The $\ttbar$, \WpJets and QCD multi--jet backgrounds are
+suppressed by cuts on the transverse mass and the \Pzeta variable.
+Contamination from $Z \to \TT$ events in which the reconstructed tau--jet
+candidate is due to a $\tau \to e \nu \nu$ decay is reduced by applying a
+dedicated tau ID discriminator against electrons.
 
 The complete set of event selection criteria applied in the muon +
 tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
@@ -50,13 +93,15 @@ tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
                             & {\it cf.}\ table~\ref{tab:AHtoMuTauTriggers} for Data \\ 
 \hline
 \multirow{2}{17mm}{Vertex}  & reconstructed with beam--spot constraint: \\
-                           & $-24 < z_{vtx} < +24$~cm, $\left| \rho \right| < 2$~cm, nDoF $> 4$ \\ 
+                           & $-24 < z_{vtx} < +24$~cm, $\left| \rho \right| <
+                           2~\centi\meter$, $N_\text{DOF} > 4$ \\ 
 \hline
 \multirow{4}{10mm}{Muon}    & reconstructed as global Muon with: \\
-                            & $P_{T} > 15$~\GeV, $\vert \eta \vert < 2.1$, VBTF
+                            & $\pt > 15~\GeV$, $\vert \eta \vert < 2.1$, VBTF
                             Muon ID passed, \\
                             & isolated within $\Delta R =0.4$ cone with respect to charged hadrons \\
-                            & of $P_{T} > 1.0$~\GeV and neutral electromagnetic objects of $P_{T} > 1.5$~\GeV \\ 
+                            & of $\pt > 1.0$~\GeV and neutral electromagnetic
+                            objects of $\pt > 1.5$~\GeV \\ 
 \hline
 \multirow{4}{23mm}{Tau--jet Candidate} & reconstructed by HPS + TaNC combined Tau ID algorithm \\
                             & TaNC ``medium'' Tau ID discriminator \\

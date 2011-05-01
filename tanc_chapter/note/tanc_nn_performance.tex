@@ -102,21 +102,62 @@ transverse momentum ranges are shown in figure~\ref{fig:mcPerfCurves}.
 \end{figure}
 
 The 5D performance curve can also be parameterized by using the probability for
-a tau--candidate to be identified for a given decay mode.  In this manner a
-single number (the ``transform cut'') can be used to specify any point on the
-performance curve.  For a given decay mode $i$, the appropriate neural network cut $x_i$
-can be mapped from transform cut $x$ using the following relation:
+a tau--candidate to be identified for a given decay mode.  
+An artificial neural network maps a point in the space of input observables to
+some value of neural network output $x$.  The neural network training error is
+given by equation~\ref{eq:NNerrorFunc}.  A given point in the vector space
+spanned by the neural network input observables (denoted as ``feature space'')
+contributes to the neural network training error $E$ by 
 \begin{equation}
-   x_i = \frac{\rho^{bkg}_i x} {(\rho^{bkg}_i - \rho^{signal}_i)x + \rho^{signal}_i}
-   \label{eq:tancTransform}
+   E' = (1 - x)^2\cdot\rho^\tau + x^2\cdot\rho^{QCD}
 \end{equation}
-where $\rho^{bkg}_i$ represents the probability that a preselected background
-tau--candidate will be reconstructed with decay mode $i$.  The training sample
-neural network output after the transformation has been applied is shown in
-figure~\ref{fig:transformedNNOutput}.  The theoretical motivation for the
-transformation given in equation~\ref{eq:tancTransform} is described in
-appendix~\ref{app:transform_derivation}.  The performance curve for the cut on
-the transformed output is nearly identical to the optimal performance curve
+where $\rho^\tau (\rho^{QCD})$ denotes the training sample density of the
+$\tau$ signal and QCD--jet background at that point in feature space.
+
+The value $x$ assigned by the neural network to this region in feature space
+should satisfy the requirement of minimal error:
+\begin{align}
+   \frac{\partial E'}{\partial x} &= 0 \nonumber \\ 
+   0 &= -2(1-x)\cdot\rho^\tau+2x\cdot\rho^{QCD} \nonumber \\ 
+   x &= \frac{\rho^\tau} {\rho^\tau + \rho^{QCD}} \label{eq:probFracToX} \\ 
+   \rho^\tau &= x(\rho^\tau + \rho^{QCD}) \nonumber \\ 
+   \frac{\rho^{QCD}}{\rho^\tau} &= \frac{1}{x} - 1  \label{eq:rawTransformX}
+\end{align}
+The ratio $\frac{\rho^{QCD}}{\rho^\tau}$ corresponds to the ratio of
+the normalized probability density functions of signal and background input
+observable distributions, \ie $\int \rho^{\tau} d\vec x = 1$.
+
+In the case of multiple neural networks, one can derive a formula that maps the
+output $x_j$ of the neural network corresponding to decay mode $j$ according to
+the ``prior probabilities'' $p_j^\tau (p_j^{QCD})$ for true $\tau$ lepton
+hadronic decays (quark and gluon jets) to pass the preselection criteria and
+be reconstructed with decay mode $j$.
+By substituting $\rho^s \rightarrow \rho^s p_j^s$ for $s \in \{\tau, QCD\}$ in
+equation~\ref{eq:probFracToX}, the output $x_j$ can be related to $p_j^\tau
+(p_j^{QCD})$ by 
+\begin{equation}
+   x_j' = \frac{\rho^\tau \cdot p_j^\tau} 
+   {\rho^\tau \cdot p_j^\tau + \rho^{QCD} \cdot p_j^{QCD} }
+   = \frac{p_j^\tau} 
+   {p_j^\tau + \frac{\rho^{QCD}}{\rho^\tau} \cdot p_j^{QCD} }
+   \label{eq:probFracToXWithPriors}
+\end{equation}
+Substituting equation~\ref{eq:rawTransformX} into
+ equation~\ref{eq:probFracToXWithPriors} yields the transformation of the output
+$x_j$ of the neural neural network corresponding to any selected decay mode $j$
+to a single discriminator output $x_j'$ which for a given point on the optimal
+performance curve should be independent of $j$.
+\begin{equation}
+   x_j' = \frac{p_j^\tau} 
+   {p_j^\tau + \left(\frac{1}{x_j}-1\right)\cdot p_j^{QCD} }
+   \label{eq:TransformCut}
+\end{equation}
+In this manner a single number (the ``transform cut'') given by
+Equation~\ref{eq:TransformCut} can be used to specify any point on the
+performance curve.  The training sample neural network output after the
+transformation has been applied is shown in
+figure~\ref{fig:transformedNNOutput}.  The performance curve for the cut on the
+transformed output is nearly identical to the optimal performance curve
 determined by the Monte Carlo sampling technique. 
 
 The discriminator output of the TaNC algorithm is a continuous quantity,
@@ -124,7 +165,7 @@ enabling analysis specific optimization of the selection to maximize
 sensitivity.  For the convenience of the user, four operating point benchmark
 selections are provided in addition to the continuous output. The four operating
 points are chosen such that for tau--candidates with transverse momentum between
-20 and 50 GeV/c, the expected QCD di--jet fake rate will be 0.1\%, 0.25\%,
+20 and 50 \GeVc, the expected QCD di--jet fake rate will be 0.1\%, 0.25\%,
 0.50\% and 1.0\%, respectively.  
 
 \begin{figure}[thbp]

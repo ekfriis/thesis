@@ -13,9 +13,8 @@ output/dissertation.pdf: output/dissertation.aux output/dissertation.bbl
 	pdflatex ${OPTS} --output-directory=./output/ dissertation/dissertation.tex
 
 output/dissertation.bbl: output/dissertation.aux
-	rm -f log/bibtex.log
-	bibtex output/dissertation  >& log/bibtex.log
-	pdflatex ${OPTS} --output-directory=./output/ dissertation/dissertation.tex
+	bibtex output/dissertation  
+	#pdflatex ${OPTS} --output-directory=./output/ dissertation/dissertation.tex
 
 output/dissertation.aux: dissertation/dissertation.tex  ${DIAGRAMS}
 	pdflatex ${OPTS} --output-directory=./output/ dissertation/dissertation.tex
@@ -25,7 +24,7 @@ output/dissertation.tex: ${CHAPTERS}
 output/feynmp.1:
 	true
 
-output/%.1: output/%.mp
-	cd output/ && mpost $*
+#output/%.1: output/%.mp
+	#cd output/ && mpost $*
 
-output/nonperturbative_qcd_diagram.mp output/perturbative_qcd_diagram.mp output/muon_decay_propagator.mp output/muon_decay.mp: theory_chapter/theory_chapter.tex
+#output/nonperturbative_qcd_diagram.mp output/perturbative_qcd_diagram.mp output/muon_decay_propagator.mp output/muon_decay.mp: theory_chapter/theory_chapter.tex

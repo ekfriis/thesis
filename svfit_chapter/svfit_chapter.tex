@@ -228,13 +228,17 @@ Differences are possible due to the experimental resolution and finite $\pt$
 of particles escaping detection in beam direction at high $\left| \eta \right|$.
 
 The \MET resolution is measured in $Z \to \mu^{+} \mu^{-}$ events selected in
-the $7$~TeV data collected by CMS in 2010.  Corrections are applied to Monte
-Carlo simulated events to match the resolution measured in data.  The momentum
-vectors of reconstructed \MET and neutrino momenta given by the fit parameters
-are projected in direction parallel and perpendicular to the direction of the
-$\tau^{+} \tau^{-}$ momentum vector.  For both components, a Gaussian
-probability function is assumed.  The width and mean values of the Gaussian in
-parallel (``$\parallel$'') and perpendicular (``$\perp$'') direction are:
+the $7$~\TeV data collected by CMS in 2010.  Corrections are applied to the
+distribution of \MET in the Monte Carlo simulated events to match the resolution
+measured in data.  The uncertainty on this correction factor is taken as a
+``shape systematic.''  The treatment of this correction and its corresponding
+uncertainty are described in Chapters~\ref{ch:corrections}
+and~\ref{ch:systematics}.  The momentum vectors of reconstructed \MET and
+neutrino momenta given by the fit parameters are projected in direction parallel
+and perpendicular to the direction of the $\tau^{+} \tau^{-}$ momentum vector.
+For both components, a Gaussian probability function is assumed.  The width and
+mean values of the Gaussian in parallel (``$\parallel$'') and perpendicular
+(``$\perp$'') direction are:
 \begin{align}
 \sigma_\parallel &= \max \left( 7.54 \left( 1 - 0.00542 \cdot q_{T} \right), 5. \right) \nonumber\\
 \mu_\parallel &= -0.96 \nonumber \\
@@ -320,7 +324,7 @@ in the region of high masses is seen.
 angle=90]{svfit_chapter/figures/pt_balance_effect.pdf} \caption[Effect of
 \pt--balance term on SVfit performance]{\captiontext Distribution of di--tau
 invariant mass reconstructed by the SVfit algorithm in simulated Higgs events
-with $\ma = 130$~\GeV$/c^2$.  The SVfit algorithm is run in two
+with $\ma = 130$~\GeVcc.  The SVfit algorithm is run in two
 configurations, with~(blue) and without~(red) the $\pt$--balance likelihood term
 included in the fit. 
   %The addition of the $\pt$ balance term improves the resolution and reduces

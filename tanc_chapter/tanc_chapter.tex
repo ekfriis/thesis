@@ -127,4 +127,120 @@ background.
 \section{Summary}
 \input{tanc_chapter/note/summary.tex}
 
+\section{HPS + TaNC: A Hybrid Algorithm}
+\label{sec:TauId} The techniques used in the TaNC have been hybridized with
+techniques used by the ``Hadrons plus Strips'' (HPS) algorithm.  The combined
+algorithm is referred to ``Hadrons plus Strips and Tau Neural Classifier''
+(HPS+TaNC) identification algorithm.  The algorithm combines features of
+HPS~\cite{CMS_AN_2010-082} and the TaNC algorithm.  Both algorithms are based on
+reconstructing individual tau lepton hadronic decay modes, which has been
+demonstrated to improve the tau identification performance significantly with
+respect to previously used cone isolation based
+algorithms~\cite{CMS-PAS-PFT-10-004}.  The HPS+TaNC algorithm first reconstructs
+the hadronic decay mode of the tau, and applies different discriminants based on
+the reconstructed decay mode.  Identification of hadronic tau decays by the
+HPS+TaNC algorithm proceeds in two stages: first, the hadronic decay mode of the
+tau is reconstructed and then different discriminators are applied, based on the
+reconstructed decay mode.  In the decay mode reconstruction particular attention
+is paid to the reconstruction of neutral pions, which are expected for the
+majority of hadronic decay modes.
+
+
+\subsubsection{Decay mode reconstruction}
+
+The decay mode reconstruction algorithm is seeded by particle--flow jets
+reconstructed by the anti--$k_{T}$ algorithm~\cite{AntiKT}.  In order to
+reconstruct the decay mode, the algorithm needs to merge photon candidates into
+candidate $\pi^0$ mesons.  $\pi^0$ candidates are reconstructed by two
+algorithms which are executed concurrently.  The ``combinatoric'' $\pi^0$
+algorithm produces a $\pi^0$ candidate for every possible pair of photons within
+the jet.  The ``strips'' algorithm clusters photons strips in $\eta-\phi$.  The
+results of both algorithms are combined and then ``cleaned'', resolving multiple
+hypotheses.  The quality of a $\pi^0$ candidate is determined according to the
+following categorical rankings:
+\begin{itemize}
+\item The $\pi^0$ candidate is in the ECAL barrel region ($|\eta| < 1.5$) 
+and has invariant mass $|m_{\gamma \gamma} - m_{\pi^0}| < 0.05~\GeVcc$.
+\item The $\pi^0$ candidate is in the ECAL endcap region ($|\eta| > 1.5$)
+ and has invariant mass $m_{\gamma \gamma} < 0.2~\GeVcc$.
+\item The $\pi^0$ candidate contains two or more photons within an $\eta-\phi$ strip of size $0.05 \times 0.20$.
+\item Photons not satisfying any of the other categories are considered as
+  unresolved $\pi^0$ candidates in case they have $\pt > 1.0~\GeVc$.
+\end{itemize}  
+$m_{\pi^0}$ denotes the nominal neutral pion mass~\cite{PDG}.  The choice of the
+invariant mass windows in the ECAL endcap and barrel regions is motivated by the
+resolution on the $\pi^0$ mass (illustrated in Figure~\ref{fig:PFPiZeroRes})
+measured in particle--flow commissioning~\cite{CMS-PAS-PFT-10-002}.  Multiple
+$\pi^0$ candidates in the same category are ranked in quality according to the
+difference of the reconstructed photon pair mass to the nominal $\pi^0$ mass.
+After the $\pi^0$ candidates are ranked, the highest ranked candidate is
+selected for the final collection.  The photon constituents of the highest
+ranked candidate are removed from remaining $\pi^0$ candidates not yet selected
+for the final collection in order to prevent photons from entering more than one
+$\pi^0$ candidate.  The rank of remaining $\pi^0$ candidates is reevaluated and
+the $\pi^0$ candidate with the next highest rank is selected for the output
+collection.  The process is repeated until no more $\pi^0$ candidates are
+remaining.
+\begin{figure}[thbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{tanc_chapter/figures/PFPiZeroRes.pdf}
+  \caption[Invariant mass distribution of PF photon pairs]{Invariant mass
+  distribution of photon pairs reconstructed by the particle--flow in 2010 CMS
+  minimum bias events (left), and predicted by the simulation (right).  A clear
+  resonant pick corresponding to the $\pi_0$ meson is visible above the
+  combinatoric background. Reference:~\cite{CMS-PAS-PFT-10-002}}
+  \label{fig:PFPiZeroRes}
+\end{figure}
+
+Once the final collection of $\pi^0$ candidates is determined, tau
+reconstruction in the HPS+TaNC algorithm proceeds by building tau candidates
+from reconstructed $\pi^0$ candidates and charged hadrons reconstructed by the
+particle--flow algorithm.  A combinatoric approach is again employed for the tau
+candidate building.  A tau candidate hypothesis is built for every combination
+of jet constituents ($\pi^0$ candidates plus charged hadrons) which has a
+multiplicity consistent with a hadronic tau decay.  The tau candidates are
+ranked analogous to the ranking utilized for the $\pi^0$ reconstruction, but
+with the following categorical rankings:
+\begin{itemize}
+\item In each decay mode category, the tau candidate with the highest neural network output is selected.
+\item The tau candidate has unit charge.
+\item The tau candidate passes the ``lead pion'' criteria, requiring that there
+  is a photon or charged pion candidate with $\pt > 5~\GeVc$.
+\item The tau candidate passes the HPS invariant mass and 
+  collimation\footnote{The invariant mass of the signal candidates is required
+  to be compatible with the resolution for that decay mode.  The collimation
+  selection requires the maximum $\Delta R$ between any two signal candidates to
+  be less than $2.8/\et$, where \et is the total transverse energy of the signal
+  candidates.  A full description is available in~\cite{CMS_AN_2010-082}.}
+  requirements.
+\end{itemize}  
+In case multiple tau candidates satisfy all four categorical requirements,  the
+tau candidate with the highest energy sum of charged and neutral pions is
+selected as the highest ranking one.
+
+\subsubsection{Hadronic tau discrimination}
+
+The final level of discrimination is performed by an ensemble of neural
+networks, with each neural network corresponding to a specific decay mode,
+analogously to the method used original TaNC algorithm
+(Section~\ref{sec:tanc_nn_training}).  The inputs of
+each neural network are different and correspond to the observables (invariant
+mass, Dalitz masses) available for its associated decay mode.  The neural
+networks are trained on samples simulated $Z \to \TT$ events
+(``signal'') and QCD di--jet events selected in the 7~\TeV data collected by CMS
+in 2010 (``background'').  All of the tau hypothesis from a given jet
+reconstructed in data are used for training.  The $Z \to \tau^+\tau^-$
+signal sample is generated by PYTHIA~\cite{pythia6_4} which has been interfaced
+TAUOLA~\cite{tauola} for the purpose of generating the tau decays and simulated
+passed through the ``full'' GEANT~\cite{geant} based simulation of the CMS
+detector.  Only tau candidates which have been reconstructed in a decay mode
+matching the true decay mode of the tau on generator level enter the signal
+training sample.  The neural network implementation, network layout, and
+training strategies are the same as in the original TaNC algorithm described in
+this chapter.  To account
+for differences in the input signal purity and separation power of the neural
+networks between decay modes, the outputs of each neural network are transformed
+according to the method described in~\cite{CMS_AN_2010-099}.  Multiple
+working--points, corresponding to different purities are provided. 
+
 \ifx\master\undefined\input{settings/autocompile}\fi
