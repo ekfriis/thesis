@@ -1,13 +1,13 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
-
+%
 \newcommand{\mtau}{m_{\tau}}
 \newcommand{\mnus}{m_{\nu\nu}}
 \newcommand{\mvis}{m_{vis}}
-
+%
 \chapter{Mass Reconstruction: The Secondary Vertex Fit}
 \label{ch:svfit}
-
-The dominant background in the search for the Higgs $\to \TT$ signal is due to
+%
+The dominant background in the search for a Higgs decaying to a $\TT$ pair is 
 Standard Model $\ZTT$ events.  The most ``natural'' observable to discriminate
 between Higgs signal and $Z$ background would be the invariant mass of the
 di--tau system, utilizing the fact that the $Z$ resonance is well known ($m_{Z}
@@ -16,10 +16,14 @@ di--tau system, utilizing the fact that the $Z$ resonance is well known ($m_{Z}
 to the neutrinos produced in the tau lepton decays, which escape detection and
 carry away an unmeasured amount of energy, and making it difficult to
 reconstruct the tau lepton four--vectors.  In this chapter we give an overview
-of techniques used in the past \fixme{fuck}
-
+of techniques used in previous literature~\cite{Rainwater:1998kj,CDFMSSMHiggs, 
+CMS-PTDRII} to construct an observable related to the tau pair mass.  We then
+introduce a new algorithm, called the Secondary Vertex (SV) fit.  The SVfit
+reconstructs the ``full'' tau pair mass, and provides increased performance with
+respect to techniques previously used in the literature.
+%
 \section{Existing mass reconstruction algorithms}
-
+%
 The simplest observable elated to the \TT mass is one can construct that is
 sensitive to new particle content is the invariant mass of the visible
 (reconstructible) decay products associated with each tau decays.  This
@@ -31,17 +35,17 @@ than mass of the resonance which produced the tau leptons.  The visible mass is
 typically on the order of $1/2$ of the resonance mass, depending on the
 kinematic requirements applied to the visible products of the tau decays. 
 
-The Collinear Approximation is the conventional technique to reconstruct the
-\emph{full} \TT mass.  In an event with two tau decays, there are a total of six
-unknowns associated with the missing energy: the three components of the
-momentum of each neutrino.  The Collinear Approximation makes the assumption
-that the neutrinos have the same direction as their associated visible decay
-products.  This assumption reduces the number of unknown quantities to two,
-corresponding to the total energy of each neutrino.  These two unknowns can be
-solved for by using the two components of the reconstructed missing transverse
-energy, which in the ideal case corresponds to the transverse component of the
-vector sum of the two neutrino's four momentum.  The characteristic equation of
-the Collinear Approximation is 
+The Collinear Approximation is a technique previously
+used~\cite{Rainwater:1998kj} to reconstruct the \emph{full} \TT mass.  In an
+event with two tau decays, there are a total of six unknowns associated with the
+missing energy: the three components of the momentum of each neutrino.  The
+Collinear Approximation makes the assumption that the neutrinos have the same
+direction as their associated visible decay products.  This assumption reduces
+the number of unknown quantities to two, corresponding to the total energy of
+each neutrino.  These two unknowns can be solved for by using the two components
+of the reconstructed missing transverse energy, which in the ideal case
+corresponds to the transverse component of the vector sum of the two neutrino's
+four momentum.  The characteristic equation of the Collinear Approximation is 
 \begin{equation}
   \left( \begin{array}{c} \MEx \\ \MEy \end{array} \right) = 
     \left( \begin{array}{cc} 
@@ -87,7 +91,7 @@ resonances.  The large tail for low mass is predominantly due to the fact
 requirements\footnote{The kinematic requirements on the visible decay products
 are necessary to reduce backgrounds and maintain compatibility with
 un--prescaled event triggers.  This topic is discussed in detail in
-chapter~\ref{ch:selections}.} applied on the visible decay products
+Chapter~\ref{ch:selections}.} applied on the visible decay products
 preferentially selects events where the visible decay products carry the
 majority of the energy of the original \taul, reducing the amount of true
 missing energy in the event.  
@@ -354,7 +358,7 @@ products described in Chapter~\ref{ch:selections}.  }
 \caption[Effect of the visible \pt requirements for $Z$ and Higgs
 events]{\captiontext Normalized distributions of the fraction of total tau decay
 energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs events with
-\mbox{$\ma = 200~\GeVcc$}~(right).  The distribution is shown before (blue) and
+\mbox{$\ma = 200~\GeVcc$}~(right).   The distribution is shown before (blue) and
 after (red) the requirement that the $\pt$ of the muon be greater than
 15~\GeVc.} \label{fig:ptBalancePtVisCutsCompareMasses}
 \end{center}
@@ -392,13 +396,32 @@ tracker (mis--)alignment which are not yet fully understood.
 
 \section{Performance}
 
-This section describes the performance of the SVfit algorithm for reconstructing
-the invariant mass of resonances decaying to \taul pairs.  The performance is
-presented as a contrasted to the performance of the  
-
-Both of these effects are illustrated in
-Figure~\ref{fig:SVversusCollinear}.
-Blah blah blah see figure~\ref{fig:SVversusVis}.
+The tau pair mass reconstructed by the Secondary Vertex fit (``SVfit mass'')
+provides the observable with the largest separation between signal Higgs events
+and the dominant \ZTT background.  The mean of the SVfit mass is located at the
+true mass of the di--tau pair.  The SVfit algorithm has a higher acceptance and
+better resolution than the Collinear Approximation algorithm.  The SVfit always
+finds a physical solution, improving the efficiency of the collinear
+approximation by a factor of two.  Additionally, it has a much better
+resolution.  The collinear approximation reconstructed mass distribution has a
+large tail at high mass due to events with poorly measured \MET\@.  The shape of
+the SVfit distribution is nearly Gaussian.  The comparison is illustrated in
+Figure~\ref{fig:SVversusCollinear}.  Previous searches for Higgs bosons decaying
+to tau leptons~\cite{CDFMSSMHiggs} have in general used the ``visible mass'' as the
+observable used to search for new resonances.  The SVfit method has the obvious
+difference that it reconstructs the ``full'' tau pair mass, which is the most
+natural observable corresponding to a particle decaying to tau leptons.  In
+addition, the relative resolution\footnote{We define this metric of performance
+as the variance of a distribution divided by its mean.}
+of the SV fit is superior to that of the visible mass.  This feature is
+illustrated in Figure~\ref{fig:SVversusVis}.  In Figure~\ref{fig:SVversusVis},
+the visible mass distribution is scaled by an arbitrary number such that the
+scaled mean of the distribution matches the true mass of the tau pair (and the
+SVfit mass).  The width of the SVfit distribution is smaller than that of
+the scaled visible mass distribution, indicating better performance.  The
+increase in relative resolution allows a ``bump,'' due to the presence of signal
+events, to be more easily distinguished from the \ZTT background.  This
+increases the power of the search for the new signal.
 
 \begin{figure}[t]
 \begin{center}
