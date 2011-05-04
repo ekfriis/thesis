@@ -1,4 +1,88 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 \chapter{Results}
 \label{ch:results}
+
+\begin{table}[t]
+\begin{center}
+\tablesize
+\begin{tabular}{|l|c|c|}
+\hline
+Process & Events without $b$--tag & Events with $b$--tag \\
+\hline
+\ttbarpJets & 0.6 & 2.26 \\
+\WpJets & 62.9 & 0.51 \\
+\ZMM & 3.8 & 0.04 \\
+QCD & 124.0 & 5.07 \\
+$(qq)Z\rightarrow\TT$ & 234.2 & 3.46 \\
+\hline
+Standard Model sum & 425.5 & 11.34 \\
+\hline
+\hline
+Data & 398 & 15 \\
+\hline
+\end{tabular}
+\caption[Final analysis yields and background expectations]{Number of Higgs $\to
+\TT \to \mu + \tau_{had}$ candidate events passing the selection criteria
+described in Chapter~\ref{ch:selections}.} \label{tab:ExpResultsLooseAHtoMuTau}
+\end{center}
+\end{table}
+
+\begin{table}[t]
+\begin{center}
+\tablesize
+\begin{tabular}{|l|c|c|}
+\hline
+Process & Events without $b$--tag & Events with $b$--tag \\
+\hline
+\hline
+\multicolumn{3}{|c|}{Gluon fusion production} \\
+\hline
+A90 & 37.21 & 0.86 \\
+A100 & 27.40 & 0.40 \\
+A120 & 14.39 & 0.14 \\
+A130 & 11.81 & 0.18 \\
+A160 & 4.46 & 0.09 \\
+%A180 & 2.71 & 0.04 \\  % not - jobs failed, bad stat.
+A200 & 1.51 & 0.03 \\
+A250 & 0.47 & 0.01 \\
+A300 & 0.15 & 0.0 \\
+A350 & 0.06 & 0.44 \\
+\hline
+\multicolumn{3}{|c|}{Associated $b$--quark production} \\
+\hline
+bbA90 & 33.07 &  5.50 \\
+bbA100 & 30.18 &  4.77 \\
+bbA120 & 21.91 & 4.02 \\
+bbA130 & 18.34 & 3.35 \\ 
+bbA160 & 10.35 &  2.10 \\
+%bbA180 & 7.23  &  1.69 \\
+bbA200 & 4.85  &  1.29 \\
+bbA250 & 2.11 &  0.55 \\
+bbA300 & 0.97 &  0.26 \\
+bbA350 & 0.41 & 0.13 \\
+\hline
+\end{tabular}
+\caption[Expected signal yields at \mbox{$\tan \beta = 30$}]{Number of Higgs
+signal event expected to pass the selection criteria described in
+Section~\ref{ch:selections}.  The expected signal yield is given for MSSM
+parameter \mbox{$\tan \beta = 30$}, using the cross sections provided by the LHC
+Higgs Cross Section working group.} \label{tab:SignalExpResultsLooseAHtoMuTau}
+\end{center}
+\end{table}
+\fixme{Get cite}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mVisible_linear.pdf}
+\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mVisible_log.pdf}
+\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mSVmethod_linear.pdf}
+\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mSVmethod_log.pdf}
+\caption[Distributions of final selected events]{Distribution of visible (top)
+and ``full'' \TT invariant mass reconstructed by the SVfit algorithm (bottom) in
+Higgs $\to \TT \to \mu + \tau_{had}$ candidate events passing the selection
+criteria described in Chapter~\ref{ch:selections}.  The distributions are shown
+in linear (logarithmic) scale on the left (right).}
+\label{fig:AHtoMuTauPlotsLoose}
+\end{center}
+\end{figure} 
 \ifx\master\undefined\input{settings/autocompile}\fi
