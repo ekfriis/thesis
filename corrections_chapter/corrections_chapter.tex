@@ -157,6 +157,75 @@ measured in data compared to simulated $Z\rightarrow\mu^+\mu^-$ events.}
 \end{center}
 \end{figure} 
 
+\section{Hadronic Tau Identification Efficiency}
+\label{sec:HadTauIdEff}
+%
+The hadronic tau identification efficiency has been measured in 2010 7~\TeV CMS
+data.  The most straight forward to measure the tau ID efficiency would be to
+use a resonance which decays to taus and has a known cross section.  One could
+then measure the tau ID efficiency in by comparing the observed yield
+$N_\text{obs}$ in data with that expected from the known cross section,
+according to the cross section equation,
+\begin{equation}
+  \varepsilon = \frac{N_\text{obs} - N_\text{bkg}}
+  {\mathcal{L} \times \mathcal{A} \times \xbr}.
+  \nonumber
+\end{equation}
+The only suitable resonance for this method is $Z\to\TT$.  This method has been
+applied\footnote{Actually, a slightly more complicated method is used. The
+analysis uses three decay channels, and the \ZTT cross section and tau
+identification correction factors are fitted simultaneously. The central value
+of the \ZTT cross section is driven by the $\ZTT \to e \mu$ channel, which is
+independent of the hadronic tau identification.} in CMS \ZTT cross section
+analysis~\ref{CMS-PAS-EWK-10-013}, and measured a tau identification simulation
+to data correction factor of \mbox{$0.960 \pm 0.067$}.
+
+Unfortunately, this method cannot be used in this analysis.  The measurement
+using the $Z$ resonance operates on the assumption there is no New Physics
+contribution to the events in the $Z$ bump.  In the case that there was a Higgs
+signal at $\ma = 90~\GeVcc$, it would be indistinguishable from the $Z$ and
+would appear as an increase of $N_{H}$ in the observed yield.  The analysis
+would the be completely insensitive to a Higgs boson on the $Z$ peak, and cause
+the efficiency to be overestimated by a factor 
+\begin{equation}
+  \delta \varepsilon = \frac{N_H}
+  {\mathcal{L} \times \mathcal{A} \times \xbr}.
+  \nonumber
+\end{equation}
+
+The solution to this problem is to use a ``tag and probe'' approach analogous to
+the muon efficiency measurement of Section~\ref{sec:ZmumuTagAndProbe}.  The tag
+and probe method is only sensitive to the shapes of the distributions, and will
+be independent of a Higgs contribution to the $Z$ peak.  This measurement has
+been performed by the CMS Tau Physics Object Group~\cite{CMS-PAS-TAU-11-001}.  A
+loose hadronic tau preselection is applied to events which pass the selections
+(excluding the hadronic tau identification) of the CMS EWK \ZTT cross section
+measurement~\cite{CMS-PAS-EWK-10-013}.  The preselected sample is then split
+into to categories, those that pass the hadronic tau identification and those
+that fail.  The signal and background yields in the each category are fitted
+using the Template Method described in Section~\ref{sec:template}.  An
+illustrative example of the fits for the yields is shown in
+Figure~\ref{fig:TauIdEffFits}.  The hadronic tau identification efficiency can
+then be computed using the relative size of the true tau yields in the passing
+and failing categories.  The efficiency is measured~\cite{CMS-PAS-TAU-11-001}
+for the loose \hpsTanc tau identification in the 2010 CMS dataset and is found
+to be \mbox{$1.06 \pm 0.30$}. 
+%
+\begin{figure}
+  \centering
+  % Use height instead of width due to rotation
+  \includegraphics*[height=0.49\textwidth,angle=90]{corrections_chapter/figures/controlPlotsTauIdEff_C1p_diTauVisMassFromJet_tauDiscrTaNCfrOnePercent_fitted.pdf}
+  \includegraphics*[height=0.49\textwidth,angle=90]{corrections_chapter/figures/controlPlotsTauIdEff_C1f_diTauVisMassFromJet_tauDiscrTaNCfrOnePercent_fitted.pdf}
+  \caption[Measurement of hadronic tau identification efficiency] {Visible mass
+  spectrum of preselected events used to measure the hadronic tau identification
+  efficiency in 2010 CMS 7~\TeV data.  The figure on the left (right) shows the
+  preselected events that pass (fail) the hadronic tau identification.  The
+  different colors indicate the fitted yields of the different signal and
+  background contributions. Reference:~\cite{CMS-PAS-TAU-11-001}.
+  }
+  \label{fig:TauIdEffFits}
+\end{figure}
+
 \section{Missing Transverse Energy Correction}
 \label{sec:ZRecoilCorr} In practice, the resolution of the reconstructed missing
 transverse energy is poor as it is sensitive to the mis--measurement of any

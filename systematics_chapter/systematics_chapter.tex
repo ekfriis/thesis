@@ -1,13 +1,27 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 
-\chapter{Systematics} \label{ch:systematics} Proper determination of systematic
-uncertainties is one of the most challenging and important components in
-performing a correct measurement.  A systematic uncertainty is the effect of the
-uncertainty of some ancillary measurement (or assumption) that is used in the
-computation of the final result.  An instructive example of how a systematic
-uncertainty can affect the final result is a counting experiment measuring the cross
-section of some signal particle in the presence of background.  The formula for
-the cross section times the branching fraction is
+\chapter{Systematics and Limit Extraction} \label{ch:systematics} 
+%
+In this chapter we discuss the systematic uncertainties affecting the search for
+the Higgs boson and the statistical techniques used to establish an upper limit
+on the Higgs~$\to\TT$ branching ratio times cross section (\xbr).  The limit can
+be interpreted as the largest\footnote{At some stated level of statistical
+confidence; the convention for limits in experimental high energy physics
+is 95\%.} signal presence that could exist in the data and still be consistent
+with the null hypothesis.  The limit on \xbr is roughly independent of the
+theoretical model\footnote{Provided that the width of the Higgs bosons in the
+given model is smaller than the resolution of the SVfit mass resolution.}.  In
+the conclusion, we will interpret the \xbr limit result in the context of the
+MSSM theory.
+
+Proper determination of systematic uncertainties is one of the most challenging
+and important components in performing the measurement correctly.  A systematic
+uncertainty is the effect of the uncertainty of some ancillary measurement (or
+assumption) that is used in the computation of the final result.  An instructive
+example of how a systematic uncertainty can affect the final result is a
+counting experiment measuring the cross section of some signal particle in the
+presence of background.  The formula for the cross section times the branching
+fraction is
 \begin{equation}
   \sigma \times BR = \frac{N_{sig}}{\mathcal{L} \cdot \mathcal {A} \cdot
   \epsilon} = \frac{N_{obs}-N_{bkg}}{\mathcal{L} \cdot \mathcal {A} \cdot
@@ -47,19 +61,23 @@ on the signal are due to lepton reconstruction, identification, isolation and
 trigger efficiencies.  These terms are equivalent to the efficiency $\epsilon$
 and acceptance terms $\mathcal{A}$ of
 Equation~\ref{eq:CrossSectionEquationBkgSystematicError} and affect the expected
-yield of MSSM Higgs $\to \TT$ signal and of $Z \to \TT$ background events.  They
-do not affect the \emph{shapes} of visible and ``full'' invariant mass
-distributions which are used to extract the MSSM Higgs $\to \TT$ signal
-contribution in the analyzed dataset.  Uncertainties on the shapes of the
-distributions are described by ``morphing'' systematics.  These are are due to
-uncertainties on the momentum/energy scale of identified electrons, muons, tau
-and other jets in the event.  The measurement of missing transverse energy
-represents another source of uncertainty specific to the ``full'' mass
-reconstruction by the SVfit algorithm.  The ``morphing'' systematics affect the
-shapes of signal as well as background contributions.  Normalization
-uncertainties on background contributions are estimated from the level of
-agreement between data and Monte Carlo simulation in background dominated
-control regions.
+yield of MSSM Higgs $\to \TT$ signal and of $Z \to \TT$ background events.  The
+uncertainties on these effects are obtained by measuring the effect in data and
+simulation, according to the procedures of Chapter~\ref{ch:corrections}, and
+calculating a correction factor.  The uncertainty on this correction factor is
+the systematic uncertainty.  The normalization uncertainties do not affect the
+\emph{shapes} of visible and ``full'' invariant mass distributions which are
+used to extract the MSSM Higgs $\to \TT$ signal contribution in the analyzed
+dataset.  Uncertainties on the shapes of the distributions are described by
+``morphing'' systematics.  These are are due to uncertainties on the
+momentum/energy scale of identified electrons, muons, tau and other jets in the
+event.  As the SVfit mass reconstruction algorithm uses the missing transverse
+energy, the shape of the SVfit distribution is sensitive to systematic
+uncertainties on the overall scale \MET measurement.  The ``morphing''
+systematics affect the shapes of signal as well as background contributions.
+Normalization uncertainties on background contributions are estimated from the
+level of agreement between data and Monte Carlo simulation in background
+dominated control regions.
 
 \section{Signal normalization uncertainties}
 
@@ -74,13 +92,15 @@ the effect in control region (in data, simulation, or both) is then taken as the
 systematic uncertainties.  The signal normalization uncertainties affecting this
 analysis on muon trigger, reconstruction, identification and isolation
 efficiencies are taken from the tag and probe analysis of $Z \to \MM$ events
-presented in section~\ref{sec:ZmumuTagAndProbe}.  The uncertainty on the tau
-reconstruction and identification efficiency is taken to be $23\%$.  The
-dependency of the Higgs signal extraction on the tau identification efficiency
-has been studied, the result being that uncertainties on the tau identification
-efficiency affect the limit on cross--section times branching ratio for MSSM
-Higgs $\to \TT$ production by a few percent only.  An uncertainty of $11\%$ is
-attributed to the luminosity measurement.
+presented in Section~\ref{sec:ZmumuTagAndProbe}.  The uncertainty on the tau
+reconstruction and identification efficiency is taken to be $23\%$.  The tau
+identification uncertainty measurement is discussed briefly
+in~\ref{sec:HadTauIdEff}.  The dependency of the Higgs signal extraction on the
+tau identification efficiency has been studied, the result being that
+uncertainties on the tau identification efficiency affect the limit on
+cross--section times branching ratio for MSSM Higgs $\to \TT$ production by a
+few percent only.  An uncertainty of $11\%$ is attributed to the luminosity
+measurement.
 
 \section{Background normalization uncertainties}
 
@@ -220,6 +240,162 @@ acceptance]{\captiontext
          Effect of normalization uncertainties on the $gg \to A/H$ and $b\bar{b} \to A/H$ signal efficiency times acceptance.}
 \label{tab:ExpUncertainties}
 \end{center}
+\end{table}
+%
+\section{Limit Extraction Method}
+\label{sec:statmethod}
+%
+Given the observed distribution of $m_{\tau\tau}$ we wish to test for
+the presence of a Higgs boson signal, taking into account all
+background predictions and systematic uncertainties.  To do this we
+use a binned Poisson likelihood, in which we represent all sources of
+systematic uncertainty by nuisance parameters.  The core of the
+likelihood is simply the product of the Poisson probabilities of
+observing $n_i$ events in bin $i$:
+\begin{eqnarray}
+  {\cal L} = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!}
+\end{eqnarray}
+where the expected number of events in the bin is the sum of the number
+of events from all sources
+\begin{eqnarray}
+  \mu_i = \sum_{j=1}^{N_{source}} \mu_{ji}.
+\end{eqnarray}
+number of expected events in a source, in turn, can be written
+\begin{eqnarray}
+  \mu_{ji} = L \sigma_j \epsilon_{ji}
+\end{eqnarray}
+where $L$ is the integrated luminosity, $\sigma_j$ is the cross section
+for source $j$, and$\epsilon_{ji}$ is the efficiency for source $j$ in bin
+$i$.  
+
+To test for the presence of the signal, we examine the likelihood is a
+function of our signal cross-section.  If there is a significant
+signal, one can simply maximize the likelihood as a function of the
+cross-section and use the usual methods to determine confidence
+intervals. If there is not a significant signal, we can set upper
+bounds on the signal cross-section using one of several methods, as
+discussed below.
+
+There are two types of systematic errors considered in this analysis,
+and represented in the likelihood by Gaussian constrained nuisance
+parameters.  In the first case, we modify our description of the
+number of events in a given bin from a given source to include a
+multiplicative parameter which represents the uncertainty in the
+cross-section for that source.  Nominally, such parameter is unity,
+but is allowed to float in the likelihood, constrained to within its
+uncertainty.  This method allows one to naturally take into account
+correlations between different sources, or the different channels
+combined together in the analysis. Thus one might have
+\begin{eqnarray}
+  \mu_i = \beta_1 L \sigma_1 \epsilon_{1i} + \beta_1 \beta_2 L \sigma_1 \epsilon_{2i}
+\end{eqnarray}
+where we have introduced two nuisance parameters, $\beta_1$ and
+$\beta_2$, where $\beta_1$ affects both sources but $\beta_2$ only
+affects the second source.
+
+The second type of nuisance parameter is used to represent systematic
+errors which affect the shape (and possibly also the normalization) of
+the mass distribution.  We refer to these as ``morphing parameters''
+and we use that technique known as ``vertical morphing'' in which we
+create templates (histograms of the efficiencies) after having shifted
+the value of some parameters such as an energy scale by an amount
+corresponding to a believe is one standard deviation of uncertainty in
+that scale.  This technique allows one to calculate the new shape of
+the mass distribution as a continuous function of the morphing
+parameter, which is Gaussian constrained to zero within its
+uncertainty.  We generate templates corresponding to a -1 standard
+deviation shift, the nominal template, and a +1 standard deviation
+shift. To get the number of predicted events in a bin, we interpolate
+quadratically between these three points, and extrapolate linearly
+beyond them.
+
+The overall likelihood then, including nuisance parameters, can be written
+\begin{eqnarray}
+  {\cal L}(\sigma_{Higgs}) = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!} \times \prod_{m=1}^{N_\beta}{\cal G}(\beta_m).
+\end{eqnarray}
+where here we have made it explicit that the likelihood is a function
+of the signal cross-section.  To eliminate the nuisance parameters, we
+use MINUIT to maximize this likelihood with respect to them.  This is
+known as a profile likelihood technique.
+
+In the absence of the signal, for even in the presence of one, we can
+determine a upper $95\%$ CL bound on the cross-section of the signal using
+the profile likelihood.  In one method we simply use Bayes' Theorem to
+convert the likelihood to a posterior density in the signal
+cross-section, and integrate to find the point below which 95\% of the
+probability lies.  Though this is not strictly Bayesian, we have shown
+that in complicated fits like this one the results of the profile
+likelihood are identical to marginalizing the nuisance parameters.
+
+In the other method, we find that point where the logarithm of the
+profile likelihood is 1.92 units below the value of the likelihood at
+zero signal cross-section. This gives similar limits to the previous
+method, which tend to be more stringent when there is a negative
+fluctuation or no fluctuation in the apparent signal, but less
+stringent than the Bayesian limits when there is an upward fluctuation
+giving an apparent signal.  The complete examination of the coverage
+properties of these two methods is beyond the scope of this note. We
+report the results of both prescriptions below.
+
+In order to combine the $ggA$ and $qqA$ production modes, what we call our
+signal cross-section is the sum of the cross-section times branching ratio for
+both modes, assuming \mbox{$\tan\beta = 30$}.  Additionally, as discussed in
+Section~\ref{sec:MSSMAndTaus}, the MSSM Higgs sector consists of two Higgs
+doublets, yielding five physical Higgs bosons.  This search is sensitive to
+the three neutral Higgs particles the $h^0, H^0$, and $A^0$.  The relative
+contributions of the three Higgs types depends on the mass $\ma$ of the CP--odd 
+Higgs.  For $\ma \leq
+130~\GeVcc$, the $A^0$ and $h^0$ are approximately degenerate in mass and width.
+In this region the $H^0$ has a very small relative cross section and a constant
+mass of $m_{H^0} \approx 130~\GeVcc$.
+For $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
+130~\GeVcc$, and the $H^0$ and $A^0$ become mass degenerate.   
+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|c|c|c|} 
+    \hline
+                & \multicolumn{3}{|c|}{Included when} \\
+    Higgs State & $\ma < 130~\GeVcc$ & $\ma = 130~\GeVcc$ & $\ma > 130~\GeVcc$ \\
+    \hline
+    $A^0$       & yes & yes & yes \\
+    $H^0$       & yes & yes & no \\
+    $h^0$       & no & yes & yes \\
+    \hline
+  \end{tabular}
+  \caption[Contributions of different MSSM Higgs boson types at different
+  $\ma$.]{Logic for determining the MSSM Higgs cross section for a given mass of
+  the CP--odd $A^0$ Higgs.  In some regions of parameter space, the
+  contributions of one of the
+  CP--event Higgs particles is ignored.}
+  \label{tab:HiggsXSectionCombination}
+\end{table}
+
+
+
+In the results presented below we use nuisance parameters corresponding
+to the systematic errors summarized in table~\ref{tab-sys}.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|l|c|c|} \hline
+  Source                 &       Method      &   Magnitude  \\ \hline
+Tau ID/trigger           &  Multiplicative   &    20\%      \\
+$Z$ cross section        &  Multiplicative   &     5\%      \\
+Jet to $\tau$ fake rate  &  Multiplicative   &    20\%      \\
+$\mu\to\tau$ fake rate   &  Multiplicative   &   100\%      \\
+$W+$jets cross section   &  Multiplicative   &    10\%      \\
+$t\bar{t}$ cross section &  Multiplicative   &    40\%      \\
+integrated luminosity    &  Multiplicative   &    10\%      \\
+Tau energy scale         &  Morphing         &     2\%      \\
+Missing $E_T$ scale      &  Morphing         &     XX\%      \\
+Muon $p_T$ scale         &   -               &   neg.       \\
+EM energy scale          &   -               &   neg.       \\ \hline
+    \end{tabular}
+   \end{center}
+  \caption{Summary of systematic uncertainties represented by nuisance 
+           parameters in the likelihood, their representation method 
+           and magnitudes.\label{tab-sys}}
 \end{table}
 
 
