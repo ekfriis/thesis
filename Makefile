@@ -24,6 +24,11 @@ output/dissertation.tex: ${CHAPTERS}
 output/feynmp.1:
 	true
 
+output/svfit_chapter.pdf: svfit_chapter/svfit_chapter.tex
+	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
+	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
+
+
 #output/%.1: output/%.mp
 	#cd output/ && mpost $*
 

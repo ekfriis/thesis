@@ -278,7 +278,8 @@ fake--rates measured in data, a multivariate method of computing the
 fake--rates, and the \hpsTanc tau identification algorithm used in this
 analysis.
 
-\subsection{Parameterization of fake--rates}
+\subsection{Parameterization of Fake--rates}
+\label{secFakeRateParametrization}
 %
 \begin{figure}[t]
 \setlength{\unitlength}{1mm}
@@ -681,18 +682,23 @@ equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}.}
 \begin{figure}[t]
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(150,54)(0,0)
-\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525
-404]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frSimpleMvisible.pdf}}}
-\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525
-404]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frCDFmVisible.pdf}}}
-\end{picture}
+\includegraphics*[width=0.49\textwidth, viewport=23 25 525
+504]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frSimpleMvisible.pdf}
+\mbox{\includegraphics*[width=0.49\textwidth, viewport=23 25 525
+504]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frCDFmVisible.pdf}}
+
+%\begin{picture}(150,54)(0,0)
+%\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525
+%504]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frSimpleMvisible.pdf}}}
+%\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=23 25 525
+%504]{backgrounds_chapter/figures/plotBgEstFakeRateZtoMuTau_Ztautau_frCDFmVisible.pdf}}}
+%\end{picture}
 \caption[Comparison of fake--rate contribution from genuine taus in the simple
 and CDF methods]{\captiontext Distributions of visible invariant mass of muon
 plus tau--jet in \ZTT signal events weighted by ``simple'' weights computed
-according to equation~\ref{eqBgEstFakeRate_frSimpleCompositeParticleWeight}
+according to Equation~\ref{eqBgEstFakeRate_frSimpleCompositeParticleWeight}
 (left) and ``CDF--type'' weights computed according to
-equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}
+Equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}
 (right).  The signal contribution to the background estimate computed by the
 ``simple'' method is non--negligible and needs to be corrected for.  The
 ``CDF--type'' weights achieve a statistical cancellation of positive and
@@ -1001,10 +1007,10 @@ fake--rate method.  } \label{tab:MuTauFakeRateResultsSS}
 (left) and ``full'' invariant mass reconstructed by the SVfit algorithm (right)
 observed in the like--sign charge control region compared to the background
 estimate obtained by the fake--rate method.
-%\fixme{THIS IS FROM THE HPS NOTE!}
 } \label{fig:MuTauFakeRateResultsSS}
 \end{center}
 \end{figure} 
+\fixme{THIS IS FROM THE HPS NOTE!}
 
 \section{Template method}
 \label{sec:template}

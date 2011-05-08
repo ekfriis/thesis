@@ -1103,10 +1103,11 @@ observed masses.  The effect of \tanb on the Higgs mass spectrum and couplings
 in the MSSM will be discussed further in Section~\ref{sec:MSSMHiggsPhenom}.
 %
 \section{Searches for the Higgs boson}
+\label{sec:PreviousSearches}
 The potential discovery of the Higgs boson is one of the biggest prizes in
 science today.  Dozens of experiments, thousands of scientists and billions of
 dollars (a human hierarchy problem\ldots) have been spent in efforts to
-discovery the Higgs.  In these sections we discuss how the Higgs and MSSM) could
+discovery the Higgs.  In this section we discuss how the Higgs and MSSM) could
 appear in modern colliders (with an emphasis on the LHC) and current the limits
 placed on the Higgs by the LEP and Tevatron experiments.  
 %
@@ -1369,8 +1370,85 @@ the MSSM Higgs decaying to $\tau$ leptons an exciting and promising channel to
 search for Higgses and Supersymmetric physics at colliders.
 
 \subsection{Results from LEP and Tevatron}
+\label{sec:lepAndTevatron}
+The LEP and Tevatron experiments have both set limits on the existence of the
+Standard Model and MSSM Higgs.  Additionally, precision electroweak measurements
+give additional hints on the prospects for both models.
 
-\section{The physics of the \taul}
+LEP was an $e^+e^-$ collider at CERN and has effectively excluded the presence
+of a low (less than $114~GeVcc$) mass Higgs boson.  The dominant SM Higgs
+production mode at LEP is Higgstrahlung, where the Higgs is produced in
+association with a $Z$ boson (see Figure~\ref{fig:HiggsStrahlung}).  The search
+at LEP utilized a number of different decay channels~\cite{PDG}.  The decay
+channels used in the LEP search are summarized in Table~\ref{tab:LEPModes}.
+\begin{table}
+   \centering
+   \begin{tabular}{|c|c|}
+     \hline
+     Higgs Decay & $Z$ Decay \\
+     \hline
+     \bbbar & \qqbar \\
+     \TT & \qqbar \\
+     \bbbar & \ttbar \\
+     \bbbar & \nunubar \\
+     \bbbar & \MM \\
+     \bbbar & \EE \\
+     \hline
+   \end{tabular}
+   \label{tab:LEPModes} 
+   \caption[Higgs search channels at LEP]{Different channels used at LEP to
+   search for Higgs bosons produced with the Higgstrahlung mechanism.}
+\end{table}
+
+The results using all channels from the four LEP experiments\footnote{ALEPH,
+DELPHI, L3, and OPAL} have been combined into a single limit, shown in
+Figure~\ref{fig:LEPHiggsLimit}.  The
+analysis sets a limit on the ratio $\xi^2 = (g_\text{HZZ}/g_\text{HZZ})^2$, the
+total HZZ yield divided by the Standard Model.  For Higgs masses below
+$114~\GeVcc$, the ratio is below unity at the 95\% confidence level, ruling out
+a Standard Model Higgs below that mass.
+\begin{figure}
+  \centering
+  \includegraphics[width=100mm,angle=00]{theory_chapter/figures/lep_sm_limit.pdf}
+  \caption[LEP Standard Model Higgs limit plot]{Combined LEP upper limit set on
+  the quantity $\xi^2 = (g_\text{HZZ}/g_\text{HZZ})^2$ at 95\% confidence
+  level.  Regions where the observed ratio is less than one exclude the Standard
+  Model.  The dashed line gives the expected limit for the null (background
+  only) hypothesis, with the green and yellow bands representing the expected
+  variance at one and two sigma, respectively, of the limit.  The solid line is
+  the observed limit from the combined LEP data. Reference:~\cite{PDG}
+  }
+  \label{fig:LEPHiggsLimit}
+\end{figure}
+
+The Tevatron is a proton--antiproton collider with a center--of--mass energy of
+$\sqrt s = 1.96~\TeV$.  There are two general purpose detectors at the Tevatron,
+CDF and \DZERO\@. The dominant Higgs production modes at the Tevatron are
+Higgstrahlung and gluon fusion (see Figure~\ref{fig:GluonFusion}).  For low mass
+\mbox{($m_H < 135~\GeVcc$)} Higgs bosons the dominant channel at the Tevatron is
+the Higgstrahlung production mode and \mbox{$H\to\bbbar$} decays.  Large
+multi--jet backgrounds prevent the \mbox{$H\to\bbbar$} decay mode from being
+useful for searching for Higgs bosons produced by gluon fusion.  The $H\to\TT$
+and $H \to \gamma \gamma$ decays are additionally used in an inclusive search at
+low mass, but do not dominate the search sensitivity.  The combined low--mass
+limit on the Standard Model Higgs from both Tevatron experiments is shown in
+Figure~\ref{fig:TevatronLowMassHiggsLimit}.  The Tevatron currently sets an
+upper limit on the SM Higgs cross section of about 2.5 times the Standard Model
+expectation.
+\begin{figure}
+  \centering
+  \includegraphics[height=100mm,angle=00]{theory_chapter/figures/tevatron_low_mass_sm_higgs_limit.pdf}
+  \caption[Tevatron low mass Standard Model Higgs limit plot]{Combined CDF and
+  \DZERO RunII upper limit on the cross section of a Standard Model--like Higgs
+  boson.  The LEP limit is shown in pink. Reference:~\cite{PDG}}
+  \label{fig:TevatronLowMassHiggsLimit}
+\end{figure}
+
+When \mbox{($m_H < 135~\GeVcc$)} the $H\to W^{+} W^{-}$ decay becomes
+significant.  Low di--boson backgrounds allow this decay mode to probe both
+Higgstrahlung and gluon fusion production modes.
+
+\section{The Physics of the Tau Lepton}
 As discussed in sections~\ref{sec:SMHiggsPhenom} and~\ref{sec:MSSMAndTaus}, the
 $\tau$ lepton is an important probe of Higgs physics.  The \taul has some
 unusual properties which make it particularly challenging at hadron colliders.
