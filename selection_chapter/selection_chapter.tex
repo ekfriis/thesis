@@ -1,7 +1,65 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
+%
+\chapter{Analysis Selections} \label{ch:selections}
+%
+The selections applied to data in this analysis are designed to maximize the
+significance of Higgs signal events in the final set of selected events.  This
+analysis presented in this thesis is an inclusive analysis, meaning that no
+preference is given to any single Higgs production mechanism.  The analysis
+looks specifically at the channel in which one tau decays to a muon and the
+other decays to hadrons.  Therefore the first step in the analysis selection is
+to find High Level Trigger selection that is highly efficiency for our signal
+and is not highly prescaled\footnote{If a trigger has high background rates, it
+may exceed its rate budget with increasing luminosity.  When this happens, it is
+generally ``prescaled,'' where some fraction of the events that pass this
+trigger are randomly thrown it away to reduce the rate.  In general, it is
+better to select an unprescaled trigger with lower efficiency than a prescaled
+trigger.}.  After the trigger selection, events are required to contain at least
+a good muon and a good tau.  Vetoes on extra leptons are applied to reduce
+backgrounds from di--muon events.  Finally, kinematic and charge selections on
+the are applied to the event to reduce \WpJets and QCD backgrounds.
 
-\chapter{Analysis Selections}
-\label{ch:selections}
+\section{High Level Trigger}
+Only data which passes the HLT is recorded, it is thus critical that an
+appropriate trigger path is found. The events in this analysis are
+triggered by a combination of muon and muon + tau--jet ``cross--channel''
+triggers. For the muon triggers, paths with lowest \pt thresholds are used as
+long as the path remained unprescaled (see Table~\ref{tab:AHtoMuTauTriggers}).
+The muon + tau--jet ``cross--channel'' trigger paths increase the trigger
+efficiency for events containing muons of transverse momenta close to the
+$\pt^{\mu} > 15$~\GeVc cut threshold.  The trigger efficiency is measured in
+data via the tag--and--probe technique. Details of the muon trigger efficiency
+measurement are given in Section~\ref{sec:ZmumuTagAndProbe}.  Monte Carlo
+simulated events are required to pass the HLT\_Mu9 trigger path. Weights are
+applied to simulated events to account for the difference between the simulated
+HLT\_Mu9 efficiency and the combined efficiency of the set HLT\_Mu9,
+HLT\_IsoMu9, HLT\_Mu11, HLT\_IsoMu13, HLT\_Mu15, HLT\_IsoMu9\_PFTau15 and
+HLT\_Mu11\_PFTau15 used to trigger the data.
+
+\begin{table}[t]
+\begin{center}
+
+\begin{tabular}{|l|c|}
+\hline
+Trigger path & run--range \\
+\hline
+HLT\_Mu9             & 132440 - 147116 \\
+HLT\_IsoMu9          & 147196 - 148058 \\
+HLT\_Mu11            & 147196 - 148058 \\
+HLT\_Mu15            & 147196 - 149442 \\
+HLT\_IsoMu13         & 148822 - 149182 \\
+HLT\_IsoMu9\_PFTau15 & 148822 - 149182 \\
+HLT\_Mu11\_PFTau15   & 148822 - 149182 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\caption[High Level Trigger paths used to select $\mu + \tau_h$ events]{\captiontext
+Muon and muon + tau--jet ``cross--channel'' trigger paths utilized to trigger
+events in the muon + tau--jet channel in different data--taking periods.}
+\label{tab:AHtoMuTauTriggers}
+\end{center}
+\end{table}
 
 \section{Particle Identification}
 \subsection{Muons}
@@ -111,26 +169,25 @@ backgrounds in the very forward region.
 The muon and tau--jet candidate are required to be of opposite charge, as the
 Higgs is neutral and charge is conserved.  The muon is required to be pass the
 identification criteria described in Section~\ref{sec:MuonId}.   The tau-jet
-candidate is required to pass the ``medium'' TaNC tau identification \fixme{is
-it really medium??}
-discriminator. 
+candidate is required to pass the ``loose'' TaNC tau identification discriminator. 
 
 Additional event selection criteria are applied to reduce contributions of
 specific background processes. In order to reject this background, a dedicated
 discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. Remaining muon
 background is suppressed by rejecting events which have a track of $\pt >
-15~\GeV$ and for which the sum of energy deposits in ECAL plus HCAL is below
+15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
 $0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter (ECAL) and
-$25$~\centi\meter (HCAL), respectively.  The $\ttbar$ and \WpJets backgrounds
+$25$~\centi\meter (HCAL), respectively.  
+
+The $\ttbar$ and \WpJets backgrounds
 are suppressed by cuts on the transverse mass of the $\mu--\MET$ system and the
-\Pzeta variable.  Contamination from $Z \to \TT$ events in which the
+\Pzeta variable.  
+
+Contamination from $Z \to \TT$ events in which the
 reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$ decay is
 reduced by applying a dedicated tau ID discriminator against electrons.
-
-
-
-The complete set of event selection criteria applied in the muon +
-tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
+The complete set of event selection criteria applied are summarized in
+Table~\ref{tab:AHtoMuTauEventSelection}.
 
 \begin{table}[t]
 \begin{center}
@@ -147,11 +204,11 @@ tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
                            2~\centi\meter$, $N_\text{DOF} > 4$ \\ 
 \hline
 \multirow{4}{10mm}{Muon}    & reconstructed as global Muon with: \\
-                            & $\pt > 15~\GeV$, $\vert \eta \vert < 2.1$, VBTF
+                            & $\pt > 15~\GeVc$, $\vert \eta \vert < 2.1$, VBTF
                             Muon ID passed, \\
                             & isolated within $\Delta R =0.4$ cone with respect to charged hadrons \\
-                            & of $\pt > 1.0$~\GeV and neutral electromagnetic
-                            objects of $\pt > 1.5$~\GeV \\ 
+                            & of $\pt > 1.0$~\GeVc and neutral electromagnetic
+                            objects of $\et > 1.5$~\GeV \\ 
 \hline
 \multirow{4}{23mm}{Tau--jet Candidate} & reconstructed by HPS + TaNC combined Tau ID algorithm \\
                             & TaNC ``medium'' Tau ID discriminator \\
@@ -169,48 +226,6 @@ tau--jet channel are summarized in table~\ref{tab:AHtoMuTauEventSelection}.
 \begin{center}
 \caption{\captiontext Event selection criteria applied in the muon + tau--jet channel.}
 \label{tab:AHtoMuTauEventSelection}
-\end{center}
-\end{table}
-
-The events are triggered by a combination of muon and muon + tau--jet
-``cross--channel'' triggers. For the muon triggers, paths with lowest $P_{T}$
-thresholds are used as long as the path remained unprescaled (see
-Table~\ref{tab:AHtoMuTauTriggers}). 
-The muon + tau--jet ``cross--channel'' trigger paths increase the trigger efficiency for
-events containing muons of transverse momenta close to the
-$\pt^{\mu} > 15$~\GeVc cut threshold.
-The trigger efficiency is measured in data via the tag--and--probe
-technique. Details of the muon trigger efficiency measurement are
-given in Section~\ref{sec:ZmumuTagAndProbe} of the appendix.
-Monte Carlo simulated events are required to pass the
-HLT\_Mu9 trigger path. Weights are applied to simulated events to account for the
-difference between the simulated HLT\_Mu9 efficiency and the combined
-efficiency of the set HLT\_Mu9, HLT\_IsoMu9, HLT\_Mu11, HLT\_IsoMu13,
-HLT\_Mu15, HLT\_IsoMu9\_PFTau15 and HLT\_Mu11\_PFTau15 used to trigger
-the data.
-
-\begin{table}[t]
-\begin{center}
-
-\begin{tabular}{|l|c|}
-\hline
-Trigger path & run--range \\
-\hline
-HLT\_Mu9             & 132440 - 147116 \\
-HLT\_IsoMu9          & 147196 - 148058 \\
-HLT\_Mu11            & 147196 - 148058 \\
-HLT\_Mu15            & 147196 - 149442 \\
-HLT\_IsoMu13         & 148822 - 149182 \\
-HLT\_IsoMu9\_PFTau15 & 148822 - 149182 \\
-HLT\_Mu11\_PFTau15   & 148822 - 149182 \\
-\hline
-\end{tabular}
-\end{center}
-\begin{center}
-\caption[High Level Trigger paths used to select $\mu + \tau_h$ events]{\captiontext
-Muon and muon + tau--jet ``cross--channel'' trigger paths utilized to trigger
-events in the muon + tau--jet channel in different data--taking periods.}
-\label{tab:AHtoMuTauTriggers}
 \end{center}
 \end{table}
 
