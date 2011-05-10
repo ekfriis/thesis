@@ -56,7 +56,7 @@ HLT\_Mu11\_PFTau15   & 148822 - 149182 \\
 \begin{center}
 \caption[High Level Trigger paths used to select $\mu + \tau_h$ events]{\captiontext
 Muon and muon + tau--jet ``cross--channel'' trigger paths utilized to trigger
-events in the muon + tau--jet channel in different data--taking periods.}
+events in different data--taking periods.}
 \label{tab:AHtoMuTauTriggers}
 \end{center}
 \end{table}
@@ -141,6 +141,7 @@ removal strategies are outlined in Table~\ref{tab:FakeBackgrounds}.
 \begin{tabular}{|l|c|}
 \hline
 Background & Cross Section (\pb) \\
+\hline
 QCD Heavy Flavor &  84679\footnote{The QCD cross section given here is after a
 requirement that at least one muon with $\pt > 15~\GeVc$ is produced in the
 event.} \\
@@ -157,7 +158,7 @@ taus.} \label{tab:FakeBackgrounds}
 \end{center}
 \end{table}
 
-Events in the muon plus tau--jet channel are selected by requiring a muon of
+Events are selected by requiring a muon of
 $\pt^{\mu} > 15$~\GeVc within $ \left| \eta_{\mu} \right| < 2.1$ and a tau-jet
 candidate of $\pt^{\tau\mbox{--jet}} > 20$~\GeVc within $ \left|
 \eta_{\tau\mbox{--jet}} \right| < 2.3$.  The $\eta$ requirement on the muon
@@ -178,14 +179,50 @@ background is suppressed by rejecting events which have a track of $\pt >
 15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
 $0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter (ECAL) and
 $25$~\centi\meter (HCAL), respectively.  
-
-The $\ttbar$ and \WpJets backgrounds
-are suppressed by cuts on the transverse mass of the $\mu--\MET$ system and the
-\Pzeta variable.  
-
 Contamination from $Z \to \TT$ events in which the
 reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$ decay is
 reduced by applying a dedicated tau ID discriminator against electrons.
+
+The $\ttbar$ and \WpJets backgrounds
+are suppressed by cuts on the transverse mass of the $\mu--\MET$ system and the
+\Pzeta variable.  The transverse mass ($M_T$) cut is defined as the quantity
+\begin{equation}
+  M_T = \pt^\mu \MET \sqrt{1 - \cos \Delta\phi},
+\end{equation}
+where $\Delta\phi$ is the angle between the muon and the reconstructed
+$\vec{\MET}$ in the transverse plane.  The $M_T$ quantity is much higher in
+events $W \to \mu \nu$ decays than in signal Higgs events.  In $W \to \mu \nu$
+decays, the neutrino expected to be produced in the opposite to the muon in
+azimuth.  In signal events, there are three neutrinos produced, with the
+majority (two) of the neutrinos being associated to the $\tau \to \mu \nu \nu$
+decay.  Accordingly, we expect that the \MET is on average collinear with the
+muon in signal events.
+
+The \Pzeta variable is another quantity with discriminant power against \WpJets
+and \ttbar backgrounds.  The observable has been introduced in the search for
+$H\to\TT$ events performed by the CDF collaboration~\cite{CDFrefPzeta}.  The
+observable is motivated by the fact that in $\TT$ signal events all neutrinos
+are produced in direction very close of the visible decay products of one of the
+two tau leptons. It is therefore expected that the direction of the missing
+transverse energy vector in these events point in a direction somewhere between
+the visible $\tau$--lepton decay products. This event topology is not preferred
+in $W$ + jets, $t\bar{t}$ and QCD background events.  The observable is computed
+as difference of the projections:
+\begin{eqnarray}
+P_{\zeta} &= \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} + \MET \nonumber \\
+P_{\zeta}^{vis} &= \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} 
+\label{eq:PZetaEq}
+\end{eqnarray}
+on the axis $\zeta$ bisecting the directions $\vec{P}_{T}^{vis_{1}}$ and
+$\vec{P}_{T}^{vis_{2}}$ of the visible $\tau$ lepton decay products in the
+transverse plane (see Figure~\ref{fig:PzetaDefinition} for illustration).
+\begin{figure}[t]
+\begin{center}
+\includegraphics*[height=42mm]{selection_chapter/figures/evtReco_PzetaDefinition.pdf}
+\caption[Reconstruction of \Pzeta variable]{Reconstruction of the quantity $P_{\zeta} - 1.5 \cdot
+P_{\zeta}^{vis}$ Image credit:~\cite{CDFrefPzeta}} \label{fig:PzetaDefinition}
+\end{center}
+\end{figure} 
 The complete set of event selection criteria applied are summarized in
 Table~\ref{tab:AHtoMuTauEventSelection}.
 
@@ -224,7 +261,8 @@ Table~\ref{tab:AHtoMuTauEventSelection}.
 \end{tabular}
 \end{center}
 \begin{center}
-\caption{\captiontext Event selection criteria applied in the muon + tau--jet channel.}
+\caption[Event selection summary]{\captiontext Event selection criteria applied to select
+$H\to\TT\to\mu\tau_{had}$ events.}
 \label{tab:AHtoMuTauEventSelection}
 \end{center}
 \end{table}
