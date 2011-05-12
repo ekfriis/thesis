@@ -140,7 +140,8 @@ Conservatively, we assume an uncertainty of $100\%$ on both types of $Z \to \MM$
 background contributions.
 
 \section{Shape uncertainties}
-
+\label{sec:ShapeUncertainties}
+%
 Shape uncertainties on the distributions of visible and ``full'' invariant mass
 reconstructed by the SVfit algorithm are estimated by varying the electron
 energy and muon momentum scale, the energy scale of tau--jets and other jets in
@@ -175,11 +176,11 @@ $tan\beta$ and $m_A$.  The PDFs describe how the energy of the protons is shared
 between the quarks and gluons.  Since the longitudinal boost of the hard
 collisions depends on the PDFs, the signal acceptance is sensitive to errors in
 the PDFs.  The uncertainties on the signal acceptance due to PDF uncertainties
-are estimated using tools developed by the EWK
+are estimated using tools developed by the CMS Electroweak working
 group~\cite{CMS_EWK_pdfUncertaintyTools}.  The acceptance is computed with
 respect to MSSM Higgs $\to \TT$ decays that have muons of $\pt^{\mu} > 15$~\GeVc
 and $\left| \eta_{\mu} \right| < 2.1$, jets produced in hadronic tau decays with
-visible $P_{T}^{vis} > 20$~\GeV and $\left| \eta_{vis} \right| < 2.3$ on
+visible $\pt^{vis} > 20$~\GeVc and $\left| \eta_{vis} \right| < 2.3$ on
 generator level.  Acceptance values are computed for the central value and $44$
 eigenvectors of the CTEQ66 PDF set~\cite{CTEQpdfSet}.  The systematic
 uncertainty on the signal acceptance is computed following the PDF4LHC
@@ -234,136 +235,212 @@ A/H$ and $b\bar{b} \to A/H$ signal efficiency times acceptance.}
 \section{Limit Extraction Method}
 \label{sec:statmethod}
 %
-Given the observed distribution of $m_{\tau\tau}$ we wish to test for
-the presence of a Higgs boson signal, taking into account all
-background predictions and systematic uncertainties.  To do this we
-use a binned Poisson likelihood, in which we represent all sources of
-systematic uncertainty by nuisance parameters.  The core of the
-likelihood is simply the product of the Poisson probabilities of
-observing $n_i$ events in bin $i$:
+The search for a new signal is performed by examining the observed distribution
+of the reconstructed di--tau mass $m_{\tau\tau}$ as reconstructed by the SVfit
+algorithm.  An ``bump'' in this spectrum would indicate the presence of a new
+particle.  To make a statement about the presence of a bump with confidence, the
+shape under a potential bump must be well described.  The background shape is
+decomposed into the combination of shapes from the difference background
+sources, which we refer to here as ``templates.'' The data and the templates for
+each background distribution is binned in the observable $m_{\tau\tau}$
+variable.  The normalization of each template represents the total yield
+expected for that source.
+
+We can then define a likelihood for any configuration of our templates given the
+observed data.  The likelihood is a ``binned Poisson likelihood,'' which is
+defined as the product of the Poisson probability in each bin.  The Poisson
+probability $P(n|\mu)$ is the probability to observe $n$ events given an
+expectation of (on average) $\mu$ events.  The Poisson probability is given by
+the expression 
+\begin{equation}
+  P(k|\mu) = \frac{\mu^k e^{-k}}{k!}.
+  \label{eq:PoissonProb}
+\end{equation}
+The total likelihood for observed data given some configuration of templates is
+then simply a product of the Poisson probabilities (Equation~\ref{eq:PoissonProb}) 
+in each of the $N_{bin}$ bins: 
 \begin{eqnarray}
-  {\cal L} = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!}
+  {\cal L} = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!},
+  \label{eq:CoreLikelihood}
 \end{eqnarray}
-where the expected number of events in the bin is the sum of the number
+where the expected number of events $\mu_i$ in the bin $i$ is the sum of the number
 of events from all sources
 \begin{eqnarray}
-  \mu_i = \sum_{j=1}^{N_{source}} \mu_{ji}.
+  \mu_i = \sum_{j=1}^{N_{source}} \mu_{ji}. \nonumber
 \end{eqnarray}
-number of expected events in a source, in turn, can be written
+The number of expected events in a source, in turn, can be written
 \begin{eqnarray}
   \mu_{ji} = L \sigma_j \epsilon_{ji}
+  \label{eq:ShapeParameterization}
 \end{eqnarray}
 where $L$ is the integrated luminosity, $\sigma_j$ is the cross section
 for source $j$, and$\epsilon_{ji}$ is the efficiency for source $j$ in bin
 $i$.  
 
-To test for the presence of the signal, we examine the likelihood is a
-function of our signal cross-section.  If there is a significant
-signal, one can simply maximize the likelihood as a function of the
-cross-section and use the usual methods to determine confidence
-intervals. If there is not a significant signal, we can set upper
-bounds on the signal cross-section using one of several methods, as
-discussed below.
-
-There are two types of systematic errors considered in this analysis,
-and represented in the likelihood by Gaussian constrained nuisance
-parameters.  In the first case, we modify our description of the
-number of events in a given bin from a given source to include a
-multiplicative parameter which represents the uncertainty in the
-cross-section for that source.  Nominally, such parameter is unity,
-but is allowed to float in the likelihood, constrained to within its
-uncertainty.  This method allows one to naturally take into account
-correlations between different sources, or the different channels
-combined together in the analysis. Thus one might have
+We incorporate the systematic uncertainties of the analysis  by introducing a
+set of ``nuisance parameters'' $\vec \beta$ into the likelihood function.  As
+the name suggests, we are not interested in the actual value of the nuisance
+parameters.  Each nuisance parameter parameterizes some phenomenon in the
+analysis.  The shape templates (which can be defined purely in terms of
+$\sigma_j$ and $\epsilon_{ji}$ in Equation~\ref{eq:ShapeParameterization}) are
+now interpreted as functions of the set of nuisance parameters $\vec \beta$.
+Existing knowledge about the value of the nuisance parameter is introduced by
+extending the likelihood function with a constraint ${\cal G}(\vec \beta)$ 
+that expresses the uncertainty on the nuisance parameters. 
+The templates $\mu_{ji}$ can depend on the nuisance parameters in two ways.
+Normalization uncertainties introduce multiplicative nuisance factors on the
+yield of some (sub)set of the sources defined by
+Equation~\ref{eq:ShapeParameterization}.  As an example, consider a simplified
+situation where there are only two sources: \ZTT and \WpJets events.  Both are
+sources are sensitive to the efficiency of the muon trigger.  Only the \ZTT
+sample is sensitive to the efficiency of the hadronic tau identification
+algorithm, as the fake--rate in \WpJets is measured in data.  We would then
+introduce two multiplicative nuisance parameters, $\beta_\mu$ and $\beta_\tau$,
+which respectively correspond to the two uncertainties.  The expected number of
+events in the \mbox{$i$th} bin is then given by a modified form of
+Equation~\ref{eq:ShapeParameterization}
 \begin{eqnarray}
-  \mu_i = \beta_1 L \sigma_1 \epsilon_{1i} + \beta_1 \beta_2 L \sigma_1 \epsilon_{2i}
+  \mu_i = L \beta_\mu \sigma^W \epsilon^W_{i} 
+  + L \beta_\mu \beta_\tau  \sigma^Z \epsilon^Z_i.
+  \label{eq:ShapeParameterizationWithNuisance}
 \end{eqnarray}
-where we have introduced two nuisance parameters, $\beta_1$ and
-$\beta_2$, where $\beta_1$ affects both sources but $\beta_2$ only
-affects the second source.
+From Equation~\ref{eq:ShapeParameterizationWithNuisance}, we can see that
+$\beta_\mu$ affects both sources but $\beta_\tau$ only
+affects the \ZTT source.
 
-The second type of nuisance parameter is used to represent systematic
-errors which affect the shape (and possibly also the normalization) of
-the mass distribution.  We refer to these as ``morphing parameters''
-and we use that technique known as ``vertical morphing'' in which we
-create templates (histograms of the efficiencies) after having shifted
-the value of some parameters such as an energy scale by an amount
-corresponding to a believe is one standard deviation of uncertainty in
-that scale.  This technique allows one to calculate the new shape of
-the mass distribution as a continuous function of the morphing
-parameter, which is Gaussian constrained to zero within its
-uncertainty.  We generate templates corresponding to a -1 standard
-deviation shift, the nominal template, and a +1 standard deviation
-shift. To get the number of predicted events in a bin, we interpolate
-quadratically between these three points, and extrapolate linearly
-beyond them.
+The shape uncertainties discussed in Section~\ref{sec:ShapeUncertainties} are
+incorporated using a technique called ``vertical template morphing.''  For each
+source, different templates are created for three different values of the
+morphing parameter, corresponding to -1, 0, and +1 standard deviation shifts in
+the nuisance parameter. To determine the number of expected events in the $i$th
+bin as a function of the morphing parameter, we interpret quadratically between
+the $i$th bin values of the three templates, and extrapolate linearly beyond
+them.
+The overall likelihood then, including nuisance parameters, can be written as
+\begin{equation}
+  {\cal L} = \prod_{i=1}^{N_{bin}} 
+  \frac{[\mu_i(\vec \beta)]^{n_i} e^{-\mu_i(\vec \beta)}}{n_i!} 
+  \times \prod_{m=1}^{N_\beta}{\cal G}(\beta_m).
+  \label{eq:LikelihoodNuisance}
+\end{equation}
+In Equation~\ref{eq:LikelihoodNuisance}, we have introduced the assumption that
+the nuisance parameters are uncorrelated.  
 
-The overall likelihood then, including nuisance parameters, can be written
-\begin{eqnarray}
-  {\cal L}(\sigma_{Higgs}) = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!} \times \prod_{m=1}^{N_\beta}{\cal G}(\beta_m).
-\end{eqnarray}
-where here we have made it explicit that the likelihood is a function
-of the signal cross-section.  To eliminate the nuisance parameters, we
-use MINUIT to maximize this likelihood with respect to them.  This is
-known as a profile likelihood technique.
+We wish to determine if the data is compatible with a new signal.  To test for
+the presence of a bump, we examine the likelihood as a function of the signal
+cross-section.  If the presence of a signal is unambiguous, one can simply
+determine the likelihood as a function of the cross-section.  If the signal is
+known to be non--zero, confidence intervals about the maximum likelihood can be
+constructed by examining the change in the logarithm $2\Delta \ln {\cal L}$ of
+the likelihood.  The Frequentist \fixme{Did I mix this up?} interpretation of a
+confidence level $1-\alpha$ is that if the experimented were repeated $N$ times,
+the interval corresponding to $1-\alpha$ would fail ``cover'' the \emph{true}
+value of the observable in $\alpha \times N$ of the experiments.  The
+correspondence between confidence levels and intervals in $2\Delta \ln {\cal L}$
+is given in Table~\ref{tab:ConfidenceIntervals}.
+\begin{table}
+  \begin{center}
+    \begin{tabular}{c|ccc} 
+      $(1-\alpha)\%$ & $m = 1$ & $m = 2$ & $m = 3$ \\
+      \hline
+      68.27 & 1.00 & 2.30 & 3.53 \\
+      90.00 & 2.71 & 4.61 & 6.25 \\
+      95.00 & 3.84 & 5.99 & 7.82 \\
+      99.00 & 6.63 & 9.21 & 11.34 \\
+    \end{tabular}
+    \caption[Correspondence of confidence levels and $2\Delta \ln {\cal L}$
+    intervals]{Correspondence between a confidence level defined by
+    $(1-\alpha)\%$ and the corresponding interval in $2\Delta \ln {\cal L}$.
+    The $2\Delta \ln {\cal L}$ interval is different depending the number $m$ of
+    parameters which are being simultaneously estimated.}
+    \label{tab:ConfidenceIntervals}
+  \end{center}
+\end{table}
+Since the mass of a potential Higgs boson is
+unknown, we repeat this process for different signal masses.  If there is not a
+significant signal, we can set upper bounds on the signal cross-section using
+one of several methods, which will be discussed below.
 
-In the absence of the signal, for even in the presence of one, we can
+At this point, the likelihood still depends on the nuisance parameters.  There
+are two methods of removing the dependence on the nuisance parameters,
+``marginalization'' and ``profiling.'' Marginalization is the process of
+integrating the likelihood of Equation~\ref{eq:LikelihoodNuisance} over the
+entire range of all nuisance parameters.  This effectively averages the effect
+of the different uncertainties into the marginalized likelihood function.  The
+profiling method \emph{maximizes} the likelihood in terms of the nuisance
+parameters.  In the profiling method, the ``profile likelihood'' is created by
+maximizing the likelihood with respect to all of the nuisance parameters.  One
+way to interpret the profiling method is that the values of nuisance parameters
+are being measured \emph{in situ}, constrained by the observed data.  While not
+a strictly Bayesian treatment, the profile likelihood method has been shown to
+give almost identical results to marginalization.
+
+An interesting situation relating to the profiling of the nuisance parameters
+arises in this analysis in the context of the hadronic tau identification
+uncertainty.  As discussed in Chapter~\ref{ch:corrections}, the
+Higgs--insensitive measurement of the tau identification efficiency has a high
+uncertainty of 30\%.  If the bump at the \ZTT resonance can be considered to
+Higgs free, the tau identification efficiency can be measured to a much greater
+precision, approximately 7\%~\cite{CMS-PAS-EWK-10-013, CMS-PAS-TAU-11-001}.
+When profiling the likelihood (as a function of cross section) for a Higgs with
+a mass $\ma > m_Z$, the likelihood contains the information that no Higgs
+contribution to the $Z$ resonance is possible.  This fact enables the profiling
+process to constrain the systematic uncertainty on the tau identification
+efficiency to the 7\% level using the size of the $Z$ resonance.  Conversely,
+when the likelihood is evaluating the likelihood of the presence of a Higgs
+signal with $\ma = m_Z$, the likelihood cannot distinguish between a potential
+presence of Higgs events in the $Z$ bump or a systematic undershoot of the tau
+identification efficiency in the simulation.  In this case the profiling
+processing has no power to constrain the systematic to a value lower than the
+initial 30\% value.
+
+In the absence of the signal, or even in the presence of one, we can
 determine a upper $95\%$ CL bound on the cross-section of the signal using
 the profile likelihood.  In one method we simply use Bayes' Theorem to
 convert the likelihood to a posterior density in the signal
 cross-section, and integrate to find the point below which 95\% of the
-probability lies.  Though this is not strictly Bayesian, we have shown
-that in complicated fits like this one the results of the profile
-likelihood are identical to marginalizing the nuisance parameters.
+probability lies.  The Bayesian posterior PDF is computed as
+\begin{equation}
+  {\cal P}\left( \sigma_H \vert \overline x, \, m_H \right) = 
+  \frac
+  {{\cal L}\left( \overline x \vert \sigma_{H} \, m_H \right) {\cal P}\left( \sigma_H \right)}
+  {\int {\cal L}\left( \overline x \vert \sigma'_H \, m_H\right) {\cal P}\left(
+  \sigma'_H \right) d\sigma'_H }.
+  \label{eq:BayesianPosterior}
+\end{equation}
+The left hand side of Equation~\ref{eq:BayesianPosterior} represents the
+probability density for a given signal cross section, given the observed data
+$\overline x$ and the assumed value $m_H$ for the Higgs mass.  We refer to this
+method as the ``Bayesian'' method of setting limits.
 
-In the other method, we find that point where the logarithm of the
-profile likelihood is 1.92 units below the value of the likelihood at
-zero signal cross-section. This gives similar limits to the previous
-method, which tend to be more stringent when there is a negative
-fluctuation or no fluctuation in the apparent signal, but less
-stringent than the Bayesian limits when there is an upward fluctuation
-giving an apparent signal.  The complete examination of the coverage
-properties of these two methods is beyond the scope of this note. We
-report the results of both prescriptions below.
+In the other method, which is referred to as the ``Delta Log Likelihood'' (DLL)
+method, we compute two likelihoods.  The first likelihood is computed for the
+``null hypothesis'' case.  The likelihood is profiled (maximized) assuming that
+no signal is present.  We then construct the profile likelihood for increasing
+values of the signal yield.  The upper limit is achieved when the logarithm of
+the profile likelihood is 1.92 units less than the value of the null hypothesis
+profile likelihood.  
 
-In order to combine the $ggA$ and $qqA$ production modes, what we call our
-signal cross-section is the sum of the cross-section times branching ratio for
-both modes, assuming \mbox{$\tan\beta = 30$}.  Additionally, as discussed in
-Section~\ref{sec:MSSMAndTaus}, the MSSM Higgs sector consists of two Higgs
-doublets, yielding five physical Higgs bosons.  This search is sensitive to
-the three neutral Higgs particles the $h^0, H^0$, and $A^0$.  The relative
-contributions of the three Higgs types depends on the mass $\ma$ of the CP--odd 
-Higgs.  For $\ma \leq
-130~\GeVcc$, the $A^0$ and $h^0$ are approximately degenerate in mass and width.
-In this region the $H^0$ has a very small relative cross section and a constant
-mass of $m_{H^0} \approx 130~\GeVcc$.
-For $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
-130~\GeVcc$, and the $H^0$ and $A^0$ become mass degenerate.   
-
-\begin{table}
-  \centering
-  \begin{tabular}{|l|c|c|c|} 
-    \hline
-                & \multicolumn{3}{|c|}{Included when} \\
-    Higgs State & $\ma < 130~\GeVcc$ & $\ma = 130~\GeVcc$ & $\ma > 130~\GeVcc$ \\
-    \hline
-    $A^0$       & yes & yes & yes \\
-    $H^0$       & yes & yes & no \\
-    $h^0$       & no & yes & yes \\
-    \hline
-  \end{tabular}
-  \caption[Contributions of different MSSM Higgs boson types at different
-  $\ma$.]{Logic for determining the MSSM Higgs cross section for a given mass of
-  the CP--odd $A^0$ Higgs.  In some regions of parameter space, the
-  contributions of one of the
-  CP--event Higgs particles is ignored.}
-  \label{tab:HiggsXSectionCombination}
-\end{table}
-
-
+In general the limits computed by the Bayesian and DLL methods are similar.
+However, the effect of upward or downward statistical fluctuations in the
+observed data affect the two methods in different ways.  When the data
+fluctuates low, the DLL method will produce a more stringent limit than the
+DLL method.  When the data fluctuates high, creating an apparent signal, the
+Bayesian method will (correctly) set a more stringent limit.  In this thesis we
+report the results of both methods.
+%
+%we find that point where the logarithm of the
+%profile likelihood is 1.92 units below the value of the likelihood at
+%zero signal cross-section. This gives similar limits to the previous
+%method, which tend to be more stringent when there is a negative
+%fluctuation or no fluctuation in the apparent signal, but less
+%stringent than the Bayesian limits when there is an upward fluctuation
+%giving an apparent signal.  The complete examination of the coverage
+%properties of these two methods is beyond the scope of this note. We
+%report the results of both prescriptions below.
 
 In the results presented below we use nuisance parameters corresponding
-to the systematic errors summarized in table~\ref{tab-sys}.
+to the systematic errors summarized in Table~\ref{tab-sys}.
 
 \begin{table}
   \begin{center}

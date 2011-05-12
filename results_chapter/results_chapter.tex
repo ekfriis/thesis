@@ -2,6 +2,39 @@
 \chapter{Results}
 \label{ch:results}
 
+In the 36~\pbinv of 7~\TeV data collected by CMS in 2010, the analysis selection
+criteria described in Chapter~\ref{ch:selections} selects a total of 413 events.
+Fifteen of these events pass the additional requirement of a central jet passing
+the $b$--jet discriminator.  The expected yields from each of the background
+sources, computed by the Template method (Section~\ref{sec:template}) and
+verified by the Fake--rate method (Section~\ref{sec:fakerate}) are shown in
+Table~\ref{tab:ExpResultsLooseAHtoMuTau}.  The total expectation from the
+Standard Model backgrounds is 437, of which 11.3 are expected to pass the
+$b$--tag criteria.  The overall yield seen in the data approximately 5\% lower
+than expected at the nominal values of all systematic uncertainties.  This
+difference is well within the statistical variance of the observed data (20.3
+events), as well as the uncertainty on the integrated luminosity\footnote{The
+uncertainty on the CMS luminosity measurement was 11\% at the time this analysis
+was performed. The measurement was later improved, and at the time of this
+writing the uncertainty on CMS 2010 integrated luminosity is 4\%. The improved
+luminosity measurement is not expected to change the results of this analysis
+significantly.} \fixme{need cite} and the tau identification uncertainty.
+
+The distributions of the visible mass and SVfit mass in the final selected
+events are shown in Figure~\ref{fig:AHtoMuTauPlotsLoose}.  Excellent
+agreement is seen between the shapes of the distributions.   Control plots
+showing the transverse
+momenta of the muon and visible hadronic tau in the final analysis selection are
+shown in \fixme{GET PLOTS!} Figure~XXXXX.
+
+The expected yields from an MSSM Higgs boson signal for \mbox{$\tan\beta = 30$}
+are summarized in \label{tab:SignalExpResultsLooseAHtoMuTau}.  The contributions
+from the gluon fusion production mode and the associated $b$--quark production
+modes are given separately.  The yields are divided into the exclusive
+categories of events containing a $b$--tagged jet and those without.  For a
+Higgs mass of $\ma = 160~\GeVcc$, a total of 17 events are expected at
+$\tan\beta = 30$.
+
 \begin{table}[t]
 \begin{center}
 \tablesize
@@ -85,4 +118,73 @@ in linear (logarithmic) scale on the left (right).}
 \label{fig:AHtoMuTauPlotsLoose}
 \end{center}
 \end{figure} 
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{6}{|c|}{Bayesian Limit} \\
+    \hline
+   mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
+     90 &  338.451 &  426.345  &  603.758 &  864.279 &  995.085 \\
+    100 &  139.186 &  201.021  &  284.872 &  392.952 &  526.509 \\
+    130 &   23.652 &   33.018  &   45.208 &   67.276 &   99.547 \\
+    160 &   12.596 &   16.516  &   23.052 &   33.980 &   49.437 \\
+    200 &    7.731 &   10.091  &   14.179 &   20.334 &   28.955 \\
+    250 &    5.194 &    6.753  &    9.568 &   13.277 &   18.317 \\
+    350 &    3.586 &    4.548  &    6.020 &    8.192 &   11.552 \\  \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{6}{|c|}{Delta Log Likelihood Limit} \\
+    \hline
+   mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
+     90 &  207.584 &  287.853  &  483.422 &  817.838 &  995.397 \\
+    100 &   91.429 &  140.344  &  231.893 &  384.402 &  622.317 \\
+    130 &   16.239 &   25.512  &   41.171 &   74.202 &  141.748 \\
+    160 &    9.157 &   13.164  &   21.658 &   38.859 &   68.062 \\
+    200 &    5.320 &    7.757  &   13.443 &   23.028 &   40.261 \\
+    250 &    3.499 &    4.899  &    8.410 &   14.182 &   24.621 \\
+    350 &    2.298 &    3.065  &    4.733 &    7.920 &   15.243 \\  \hline
+    \end{tabular}
+    \caption[Expected 95\% CL $\sigma \times \text{BR}$ upper limits] {Expected
+    95\% CL upper limit bands using the Bayesian prescription (top), and Delta
+    Log Likelihood (bottom)}
+    \label{tab-exp-limit-TaNC}
+  \end{center}
+\end{table}
+
+In order to combine the $ggA$ and $qqA$ production modes, what we call our
+signal cross-section is the sum of the cross-section times branching ratio for
+both modes, assuming \mbox{$\tan\beta = 30$}.  Additionally, as discussed in
+Section~\ref{sec:MSSMAndTaus}, the MSSM Higgs sector consists of two Higgs
+doublets, yielding five physical Higgs bosons.  This search is sensitive to
+the three neutral Higgs particles the $h^0, H^0$, and $A^0$.  The relative
+contributions of the three Higgs types depends on the mass $\ma$ of the CP--odd 
+Higgs.  For $\ma \leq
+130~\GeVcc$, the $A^0$ and $h^0$ are approximately degenerate in mass and width.
+In this region the $H^0$ has a very small relative cross section and a constant
+mass of $m_{H^0} \approx 130~\GeVcc$.
+For $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
+130~\GeVcc$, and the $H^0$ and $A^0$ become mass degenerate.   
+
+\begin{table}
+  \centering
+  \begin{tabular}{l|ccc} 
+                & \multicolumn{3}{|c}{Included when} \\
+    Higgs State & $\ma < 130~\GeVcc$ & $\ma = 130~\GeVcc$ & $\ma > 130~\GeVcc$ \\
+    \hline
+    $A^0$       & yes & yes & yes \\
+    $H^0$       & yes & yes & no \\
+    $h^0$       & no & yes & yes \\
+  \end{tabular}
+  \caption[Contributions of different MSSM Higgs boson types at different
+  $\ma$.]{Logic for determining the MSSM Higgs cross section for a given mass of
+  the CP--odd $A^0$ Higgs.  In some regions of parameter space, the
+  contributions of one of the
+  CP--event Higgs particles is ignored.}
+  \label{tab:HiggsXSectionCombination}
+\end{table}
+
+
 \ifx\master\undefined\input{settings/autocompile}\fi
