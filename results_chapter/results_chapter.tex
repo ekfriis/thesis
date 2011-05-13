@@ -1,7 +1,7 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
 \chapter{Results}
 \label{ch:results}
-
+\section{Selected Events}
 In the 36~\pbinv of 7~\TeV data collected by CMS in 2010, the analysis selection
 criteria described in Chapter~\ref{ch:selections} selects a total of 413 events.
 Fifteen of these events pass the additional requirement of a central jet passing
@@ -21,7 +21,6 @@ luminosity measurement is not expected to change the results of this analysis
 significantly.} \fixme{need cite} and the tau identification uncertainty.
 \begin{table}[t]
 \begin{center}
-\tablesize
 \begin{tabular}{|l|c|c|}
 \hline
 Process & Events without $b$--tag & Events with $b$--tag \\
@@ -66,7 +65,9 @@ in linear (logarithmic) scale on the left (right).}
 \end{center}
 \end{figure} 
 
-The expected yields from an MSSM Higgs boson signal for \mbox{$\tan\beta = 30$}
+The expected yields from an MSSM Higgs boson signal for \mbox{$\tan\beta =
+30$}\footnote{Details of the relationship between the MSSM Higgs cross section
+and \tb are discussed in detail in Section~\ref{sec:MSSMInterp}.}
 are summarized in \label{tab:SignalExpResultsLooseAHtoMuTau}.  The contributions
 from the gluon fusion production mode and the associated $b$--quark production
 modes are given separately.  The yields are divided into the exclusive
@@ -76,7 +77,6 @@ $\tan\beta = 30$.
 %
 \begin{table}[t]
 \begin{center}
-\tablesize
 \begin{tabular}{|l|c|c|}
 \hline
 Process & Events without $b$--tag & Events with $b$--tag \\
@@ -118,8 +118,18 @@ Higgs Cross Section working group.} \label{tab:SignalExpResultsLooseAHtoMuTau}
 \end{table}
 \fixme{Get cite}
 
-We compute upper limits on the cross section times the branching ratio using the 
-Bayesian and DLL methods described in Section~\label{sec:statmethod}.  The 
+\section{Limits on Higgs Production}
+We compute upper limits on the cross section times the branching ratio using the
+Bayesian and DLL methods described in Section~\label{sec:statmethod}.  The
+expected nominal upper limit, and the $\pm1$, and $\pm2$ confidence limits are
+shown in Table~\ref{tab-exp-limit-TaNC}.  The expected limit is computed by
+generating ``toy'' experiments.  A large number of pseudo--data sets are
+generated using the null hypothesis templates \fixme{at what value of the
+nuisance?} using Monte Carlo techniques.  The pseudo--sets are expected to have
+the same statistical sensitivity as the observed dataset.  The upper limits are
+then computed using the pseudo--dataset.   The process is repeated many times,
+and the spread of the obtained upper limits determines the expected upper limit
+band.
 \begin{table}
   \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -155,20 +165,56 @@ Bayesian and DLL methods described in Section~\label{sec:statmethod}.  The
   \end{center}
 \end{table}
 
-In order to combine the $ggA$ and $qqA$ production modes, what we call our
-signal cross-section is the sum of the cross-section times branching ratio for
-both modes, assuming \mbox{$\tan\beta = 30$}.  Additionally, as discussed in
-Section~\ref{sec:MSSMAndTaus}, the MSSM Higgs sector consists of two Higgs
-doublets, yielding five physical Higgs bosons.  This search is sensitive to
-the three neutral Higgs particles the $h^0, H^0$, and $A^0$.  The relative
-contributions of the three Higgs types depends on the mass $\ma$ of the CP--odd 
-Higgs.  For $\ma \leq
-130~\GeVcc$, the $A^0$ and $h^0$ are approximately degenerate in mass and width.
-In this region the $H^0$ has a very small relative cross section and a constant
-mass of $m_{H^0} \approx 130~\GeVcc$.
-For $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
-130~\GeVcc$, and the $H^0$ and $A^0$ become mass degenerate.   
+The limit trend has
+some interesting features.   When the Higgs mass is close to the mass of the $Z$
+resonance, the analysis have little power to set a limit on the presence of the
+Higgs.  This is due to the large uncertainty on the tau identification
+efficiency.  Essentially, when \mbox{$\ma = m_Z$}, the Higgs yield in the $Z$
+bump would have be larger than 30\% of the \ZTT yield for the profile likelihood
+to be able to recognize an excess of events. Below this value, the profile
+likelihood can simple shift the tau identification efficiency scale factor up by
+30\% and ``eat'' any potential excess of signal.
 
+The observed limit on the MSSM computed from the 413 events selected in this
+analysis is given in Table~XXXXx.  The observed limit is compatible with the
+expected limit, within XXXXX sigma.  The trend of the expected and observed
+limits versus the Higgs mass are shown in Figure~XXXXx.  
+
+\section{Interpretation in the MSSM}
+\label{sec:MSSMInterp}
+%
+The limits on the cross section times branching ratio are roughly model
+independent,\footnote{This assumption is only valid if the shape of the sum of
+all new physics contributions are also model independent, on the scale of the
+experimental resolution.  For the values of \tb this analysis is sensitive to,
+this is a valid approximation in the MSSM\@.  In a model where the width of the
+Higgs boson was larger than the resolution of the SVfit method, the limits of
+Table~\ref{tab-exp-limit-TaNC} would not be valid.} and could be applied to set
+limits on the parameter space of a number of models.  In this thesis, we
+interpret the results in the context of the MSSM\@.  Specifically, we exclude a
+region in the $\tb - \ma$ parameters space of the MSSM\@.  To find the upper
+limit band on \tb, we find the minimum value of $\tan\beta$ which provides the
+cross section and branching ratio product found in the corresponding row in
+Table~\ref{tab-exp-limit-TaNC}. 
+
+The mapping between \ma and \tb and the Higgs cross section is provided by the
+LHC Higgs Cross Section working group \fixme{get ref}.  The cross sections and
+branching ratios have been computed for the $h^0$, $H^0$, and $A^0$ MSSM Higgs
+states in both the $ggA$ and $qqA$ production modes, for a grid of points in
+$\tb-\ma$ space.  In order to combine the $ggA$ and $qqA$ production modes, what
+we call our signal cross-section is the sum of the cross-section times branching
+ratio for both modes, assuming \mbox{$\tan\beta = 30$}.  Additionally, as
+discussed in Section~\ref{sec:MSSMAndTaus}, the MSSM Higgs sector consists of
+two Higgs doublets, yielding five physical Higgs bosons.  This search is
+sensitive to the three neutral Higgs particles the $h^0, H^0$, and $A^0$.  The
+relative contributions of the three Higgs types depends on the mass $\ma$ of the
+CP--odd Higgs.  An observed signal will have contributions from at least two
+Higgs states.   For $\ma \leq 130~\GeVcc$, the $A^0$ and $h^0$ are approximately
+degenerate in mass and width.  In this region the $H^0$ has a very small
+relative cross section and a constant mass of $m_{H^0} \approx 130~\GeVcc$.  For
+$\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
+130~\GeVcc$, and the $H^0$ and $A^0$ become mass degenerate.   
+%
 \begin{table}
   \centering
   \begin{tabular}{l|ccc} 
@@ -187,5 +233,14 @@ For $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
   \label{tab:HiggsXSectionCombination}
 \end{table}
 
+The region in $\tb-\ma$ MSSM parameter space excluded by this analysis at 95\% CL 
+is shown in Figure~XXXXXx.  The limit is compared to the combined result from
+\mbox{Run II} of the Tevatron (this result is discussed in detail in 
+Section~\ref{sec:lepAndTevatron}).  The result of this analysis sets a stronger
+limit \fixme{check this!} than the Tevatron for large values of \ma.  In the
+low \ma region, the analysis suffers due to the large tau identification
+efficiency uncertainty.  This effect can be mitigated by using the $e-\mu$
+channel.  The combined CMS result uses this approach, and will be discussed
+briefly in the conclusion.
 
 \ifx\master\undefined\input{settings/autocompile}\fi

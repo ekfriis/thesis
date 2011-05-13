@@ -28,6 +28,10 @@ output/svfit_chapter.pdf: svfit_chapter/svfit_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
 
+output/results_chapter.pdf: results_chapter/results_chapter.tex
+	pdflatex ${OPTS} --output-directory=./output/ $<
+	pdflatex ${OPTS} --output-directory=./output/ $<
+
 
 #output/%.1: output/%.mp
 	#cd output/ && mpost $*
