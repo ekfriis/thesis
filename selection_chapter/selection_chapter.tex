@@ -84,9 +84,10 @@ cross--section measurement~\cite{CMS-PAS-EWK-10-002}:
 In order to reduce background contributions from muons originating from heavy
 quark decays in QCD multi--jet events, muons are required to be isolated.
 Isolation is computed as the \pt sum of charged and neutral hadrons plus photons
-reconstructed by the CMS particle--flow algorithm~\cite{CMS-PAS-PFT-09-001} within a
-cone of size $\Delta R_{iso} = 0.4$ around the muon direction.  The innermost
-region of size $\Delta R_{veto} = 0.08$ ($0.05$) is excluded from the
+reconstructed by the CMS particle--flow algorithm~\cite{CMS-PAS-PFT-09-001}
+within a cone of size $\Delta R_{iso} = 0.4$ around the muon direction divided
+by the muon \pt.  The
+innermost region of size $\Delta R_{veto} = 0.08$ ($0.05$) is excluded from the
 computation of the isolation \pt sum with respect to neutral hadrons (photons),
 in order to avoid energy deposits in the electromagnetic and hadronic
 calorimeters which are due to the muon to enter the sum.  In order to reduce
@@ -96,12 +97,13 @@ required to originate from the same vertex as the muon.  The muons are required
 to be isolated with respect to charged hadrons of $\pt > 1.0~\GeVc$ and photons
 of $\pt > 1.5~\GeVc$ as reconstructed by the particle--flow
 algorithm~\cite{CMS-PAS-PFT-09-001} in a cone of size $\Delta R = 0.4$ around
-the direction of the muon.
+the direction of the muon.  The distribution of the muon isolation discriminant
+is shown in Figure~\ref{fig:MuonIsoControlPlot}.
 
 \subsection{Hadronic Taus}
 
 Hadronic decays of taus are identified by the \hpsTanc hybrid algorithm
-described in Section~\ref{sec:TauId}.  The ``medium'' working point is used,
+described in Section~\ref{sec:TauId}.  The ``loose'' working point is used,
 corresponding to an expected QCD fake--rate of about 1\%. $Z \to \MM$ background
 contributions are largely due to muons which failed to get reconstructed as
 global muons (thus failing the muon identification requirement) and are
@@ -170,7 +172,8 @@ backgrounds in the very forward region.
 The muon and tau--jet candidate are required to be of opposite charge, as the
 Higgs is neutral and charge is conserved.  The muon is required to be pass the
 identification criteria described in Section~\ref{sec:MuonId}.   The tau-jet
-candidate is required to pass the ``loose'' TaNC tau identification discriminator. 
+candidate is required to pass the ``loose'' TaNC tau identification
+discriminator. 
 
 Additional event selection criteria are applied to reduce contributions of
 specific background processes. In order to reject this background, a dedicated
@@ -231,12 +234,23 @@ P_{\zeta}^{vis} &= \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}}
 \end{eqnarray}
 on the axis $\zeta$ bisecting the directions $\vec{P}_{T}^{vis_{1}}$ and
 $\vec{P}_{T}^{vis_{2}}$ of the visible $\tau$ lepton decay products in the
-transverse plane (see Figure~\ref{fig:PzetaDefinition} for illustration).
+transverse plane (see Figure~\ref{fig:PzetaDefinition} for an illustration).
+The distribution of \Pzeta after the $M_T$ selection has been applied is shown
+in Figure~\ref{fig:PzetaCut}.
+
 \begin{figure}[t]
 \begin{center}
-\includegraphics*[height=42mm]{selection_chapter/figures/evtReco_PzetaDefinition.pdf}
-\caption[Reconstruction of \Pzeta variable]{Reconstruction of the quantity $P_{\zeta} - 1.5 \cdot
-P_{\zeta}^{vis}$ Image credit:~\cite{CDFrefPzeta}} \label{fig:PzetaDefinition}
+  \subfigure[]{\includegraphics*[width=0.48\textwidth]{selection_chapter/figures/pzeta_graphic.pdf}
+  \label{fig:PzetaDefinition} }
+  \subfigure[]{\includegraphics*[height=0.48\textwidth,angle=90]{results_chapter/figures/replotted_results/plotZtoMuTauOS_inclusive_cutFlowControlPlots_PzetaDiff_afterMt1MET.pdf}
+  \label{fig:PzetaCut} } \caption[Reconstruction and distribution of \Pzeta
+  discriminant]{The vector quantities used in construction of the quantity
+  $P_{\zeta} - 1.5 \cdot P_{\zeta}^{vis}$ are illustrated in
+  Figure~\subref{fig:PzetaDefinition}.  Image credit:~\cite{CDFrefPzeta}
+  The distribution of the \Pzeta variable in the different background sources
+  and 2010 data after the $M_T$ cut has been applied is shown in
+  Figure~\ref{fig:PzetaCut}.}
+  \label{fig:PzetaPlots}
 \end{center}
 \end{figure} 
 The complete set of event selection criteria applied are summarized in
