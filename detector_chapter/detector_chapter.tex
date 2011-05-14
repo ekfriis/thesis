@@ -2,7 +2,7 @@
 \chapter{The Compact Muon Solenoid Experiment}
 \label{ch:detector}
 %
-
+%
 The Compact Muon Solenoid (CMS) Experiment is a ``general purpose'' particle
 detector designed to measure collision events at the Large Hadron Collider
 (LHC), a proton--proton synchrotron located at the CERN laboratory in Geneva,
@@ -32,17 +32,17 @@ Each of the sub--detector components consists of ``barrel'' and ``endcap''
 components.  As its name suggests, the detector is centered around a four Tesla
 superconducting solenoid magnet.  The individual sub--detectors of CMS are
 arranged in a manner that permits identification of different species of
-particles.  The central (closest to interaction point) sub--detector are the
+particles.  The central (closest to interaction point) sub--detectors are the
 charged particle tracking systems (the ``tracker'').  The tracker is designed to
-be a \emph{non--destructive} instrument, which means that ideally that the
+be a non--destructive instrument, which means that ideally that the
 momentum of particles are unchanged after passing through it.  Outside of the
 tracker is the electromagnetic and hadronic calorimeters, which are abbreviated
-ECAL and HCAL, respectively.  The calorimeter is a \emph{destructive} detector,
-and is designed such that visible incident particles are completely absorbed.
+ECAL and HCAL, respectively.  The calorimeters are destructive detector,
+and are designed such that visible incident particles are completely absorbed.
 The outer layers of CMS are designed to measure muons, the
 one\footnote{Neutrinos of course fulfill this requirement as well, but are so
 weakly interacting that they are effectively invisible.} species of particle
-that is immune to the effects of the calorimeter.  The arrangement of
+that is nearly immune to the stopping power of the calorimeter.  The arrangement of
 destructive and non--destructive sub--detectors facilitates the identification
 of different types of particles.  This concept is illustrated in
 Figure~\ref{fig:SubdetectorID}.
@@ -50,19 +50,15 @@ Figure~\ref{fig:SubdetectorID}.
   \centering
   %\subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/cms_complete_labelled.pdf}
   \subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/cms_complete_labelled.png}
-  \label{fig:CMSDetector}
-  }
+  \label{fig:CMSDetector} }
   \subfigure[]{\includegraphics[width=0.97\textwidth]{detector_chapter/figures/CMS_Slice.png}
-  \label{fig:SubdetectorID}
-  }
-  \caption[Schematic drawings of the CMS
-  detector]{Figure~\subref{fig:CMSDetector}, top, shows a schematic drawing of the CMS
-  detector.  The individual sub--detectors are labeled.  Two humans are shown in
-  the foreground for scale. Figure~\subref{fig:SubdetectorID} shows a radial
-  cross section of the detector and demonstrates how
-  the (non--)destructiveness of different sub--detectors facilitates particle
-  identification.} 
-  \label{fig:AllCMSCutaways}
+  \label{fig:SubdetectorID} } \caption[Schematic drawings of the CMS
+  detector]{Figure~\subref{fig:CMSDetector}, top, shows a schematic drawing of
+  the CMS detector.  The individual sub--detectors are labeled.  Two humans are
+  shown in the foreground for scale. Figure~\subref{fig:SubdetectorID} shows a
+  radial cross section of the detector and demonstrates how the
+  \mbox{(non--)destructiveness} of different sub--detectors facilitates particle
+  identification.} \label{fig:AllCMSCutaways}
 \end{figure}
 In this chapter we give an brief overview of the LHC machine, and then describe
 the individual sub--detector systems of CMS. 
@@ -85,26 +81,26 @@ $1/2$~Tesla.  As the energy of each beam energy is increased to its (design)
 maximum of 7~\TeV, the dipole fields are ramped to a maximum field of over 8
 Tesla.
 \section{Solenoid Magnet}
-\label{sec:Magnet}
-The four Tesla field of the CMS solenoid magnet is a critical factor in ability
-of CMS to precisely measure collisions at the LHC\@. The momentum of charged
-particles is measured in the detector by examining the curvature of the
-particles path as it travels through the magnetic field.  The radius of
-curvature $r$ of a charged particle in a magnetic field is given by
+\label{sec:Magnet} The four Tesla field of the CMS solenoid magnet is a critical
+factor in ability of CMS to precisely measure the particles produced in
+collisions at the LHC\@. The momentum of charged particles is measured in the
+tracking detector by examining the curvature of the particles path as it travels
+through the magnetic field.  The radius of curvature $r$ of a charged particle
+in a magnetic field is given by
 \begin{equation}
   r = \frac{p_\perp}{|q| B},
   \label{eq:LarmorRadius}
 \end{equation}
-where $q$ is the charge of the particle, $B$ is the magnetic field, and
-$p_\perp$ is the component of the particle's relativistic momentum perpendicular
-to the direction of the magnetic field.  From Equation~\ref{eq:LarmorRadius}, it
-is evident that the ability to measure high momentum charged particles (a
-critical goal of CMS) requires a high magnetic field.  Even at very high
-particle energies where the resolution becomes poor, the strength of the
-magnetic field is still very important for identifying the bending direction of
-the particle; the direction corresponds to the particle's electric charge.
-Furthermore, the homogeneity of the magnetic field is important to minimize
-systematic errors in the measurement of tracks.
+where $q$ is the charge of the particle, $B$ is strength of the magnetic field,
+and $p_\perp$ is the component of the particle's relativistic momentum
+perpendicular to the direction of the magnetic field.  From
+Equation~\ref{eq:LarmorRadius}, it is evident that the ability to measure high
+momentum charged particles (a critical goal of CMS) requires a high magnetic
+field.  Even at very high particle energies where the resolution becomes poor,
+the strength of the magnetic field is still very important for identifying the
+bending direction of the particle; the direction corresponds to the particle's
+electric charge.  Furthermore, the homogeneity of the magnetic field is
+important to minimize systematic errors in the measurement of tracks.
 
 The CMS solenoid is extremely large.  The radial bore of the magnet is
 6.3~meters; the magnet is 12.5~meters in length and weighs 220~tons.  The large
@@ -113,15 +109,15 @@ inside the solenoid.  The internal windings of solenoid is arranged in four
 layers to increase the total field strength and are cooled by liquid helium to
 a temperature of 4.5 Kelvin.  The windings are magnetically
 coupled to the support superstructure.  This coupling allows the magnetic to
-heat uniformly during a ``quench\footnote{A quench event occurs when some part
+heat uniformly during a ``quench'' event\footnote{A quench event occurs when some part
 of the magnet is suddenly no longer in a superconducting state.  The coil
 becomes resistive and the large current in the magnet creates large amounts of
-heat.}'' event, reducing localized stresses.  The
+heat.}, reducing localized stresses.  The
 nominal current at full field of the solenoid is 19.14~kA.  The solenoid itself
 is surrounded by an iron return yoke with a total mass of 10,000~tons.  The
 return yoke surrounding the solenoid minimizes the fringing field.  The muon
 detector system is interspersed inside the yoke, and takes advantage of the
-field in the yoke to measure the momentum and charge of muons.
+return field in the yoke to measure the momentum and charge of muons.
 %
 \section{Charged Particle Tracking Systems}
 \label{sec:Tracker}
@@ -164,9 +160,9 @@ a charged particle passes through the detector, the diode--junction breaks down
 and the readout system registers the hit.
 
 The tracking system has been specifically designed for the high radiation
-environment around the interaction point.  The detector is cooled to -27\celsius
-during operation to minimize damage. Radiation exposure produced in LHC
-collisions can change behavior of the tracking detector in three ways.  Over
+environment around the interaction point.  The detector is cooled to
+-27\celsius~during operation to minimize damage. Radiation exposure produced in
+LHC collisions can change behavior of the tracking detector in three ways.  Over
 time, radiation can induce positive holes in oxide layers fond in the read--out
 electrons which increase the signal--to--noise ratio.  In the sensor mass
 itself, radiation damage changes the doping from $n$ to $p$ over time.  The
@@ -188,27 +184,28 @@ and is illustrated in Figure~\ref{fig:TrackerMaterialBudget}.
   \centering
   \includegraphics[]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
   \caption[Material budget of the CMS tracker]{Material budget of the CMS
-  tracker in units of radiation lengths $X_0$.  The material budget is broken down
-  into the contributions from the different components of the tracker.  The
-  amount of material is largest in the ``transition region'' between the barrel
-  and endcap.  } \label{fig:TrackerMaterialBudget}
+  tracker in units of radiation lengths $X_0$ versus pseudorapidity.  The
+  material budget is broken down into the contributions from the different
+  components of the tracker.  The amount of material is largest in the
+  ``transition region'' between the barrel and endcap.  }
+  \label{fig:TrackerMaterialBudget}
 \end{figure}
 The relatively large material budget of the CMS tracker has two effects: charged
-particles can ``multiple scattering,'' interacting with material in the
+particles can undergo ``multiple scattering,'' interacting with material in the
 tracker.  This can cause ``kinks'' in the reconstructed track.   Hadronic
-particles (charged and neutral) can undergo ``nuclear interactions,'' which are
-a hard collisions between the incident particle and the tracker material. This
-typically produces a spray of hadrons from the point of interaction.  Finally,
-the material budget can cause ``photon conversions.''  A photon conversion
-occurs when a photon (which typically does not interact with the tracker)
-converts into an electron--positron pair while passing through matter in the
-tracker.  
+particles (charged and neutral) can undergo nuclear interactions, which are a
+hard collisions between the incident particle and a nucleus in tracker material.
+This typically produces a spray of hadrons from the point of interaction.
+Finally, the material budget can cause ``photon conversions.''  A photon
+conversion occurs when a photon (which typically does not interact with the
+tracker) converts into an electron--positron pair while passing through material
+in the tracker.  
 
 The expected (from simulation) impact parameter and transverse momentum
 resolution of the tracker is shown in Figure~\ref{fig:ExpectedTrackerRes}.  The
 momentum scale of the tracker has been measured~\cite{CMS-PAS-TRK-10-004} in
-7~\TeV 2010 CMS data using $\JPsi \to \MM$ decays and is found to agree within
-5\% with the prediction from simulation.  The impact parameter and vertex
+7~\TeV 2010 CMS data using $\JPsi \to \MM$ decays and is found to agree with the
+prediction from simulation within 5\%. The impact parameter and vertex
 resolutions have also been measured~\cite{CMS-PAS-TRK-10-005} in data and found
 to be in excellent agreement with the simulation.
 \begin{figure}
@@ -226,7 +223,7 @@ to be in excellent agreement with the simulation.
 The electromagnetic calorimeter (ECAL) of CMS is designed to measure the energy
 of particles which interact electromagnetically with high
 precision.\footnote{One of the design goals of the CMS experiment is to be able
-to conduct a search for Standard Higgs bosons decaying to pairs of photons The
+to conduct a search for Standard Higgs bosons decaying to pairs of photons. The
 branching fraction to photons is illustrated in Figure~\ref{fig:SMHiggsBR}.}.
 The ECAL is a \emph{scintillation} detector, and functions by counting the
 number of photons produced in an electromagnetic shower inside a crystal.  Upon
@@ -266,15 +263,15 @@ The transparency of the CMS ECAL crystals change as they are exposed to
 radiation.  However, at the working temperature of the ECAL (18\celsius), the
 crystal transparency will naturally return to its nominal value.  The
 transparency of the crystals thus decreases during the course of a run of
-collisions, then increases during the following period collision--less period.
+collisions, then increases during the following collision--less period.
 The changing transparency conditions need to be continuously monitored and
 corrected for to ensure a stable detector response.  The transparency of the
 crystals are measured continuously using two lasers. One laser has wavelength
 $\lambda = 400~\nano\meter$ which corresponds to the color of light produced in
 the scintillations and is sensitive to changes in transparency.  The other laser
 is in the near--infrared and is used to monitor the overall stability of the
-crystal.  The lasers synchronized to pulse between LHC bunch trains so the
-transparency can be continuously monitored while collisions are occuring.
+crystal.  The lasers are synchronized to pulse between LHC bunch trains so the
+transparency can be continuously monitored while collisions are occurring.
 
 The energy resolution of the ECAL is given by
 \begin{equation}
@@ -341,25 +338,26 @@ the detector.
 \section{Muon System}
 The ability to detect and measure muons is one of the most valuable tools an
 experimentalist has at at hadron collider experiment.  Muons have particular
-properties that cause them to leave extremely signatures in the detectors.
+properties that cause them to leave extremely unique signatures in the detectors.
 \begin{itemize}
   \item Muons are stable particles, for the typical energies and distances
     considered at a collider.
   \item Muons have non--zero charge, so their trajectories can be measured.
   \item Muons are heavy enough that they are ``minimum ionizing particles,'' in
-    that they lose much less energy as they pass through material.
+    that they lose very little energy as they pass through material.
 \end{itemize}
-The approach to detecting muons is to build the detector to a thickness that
-typical particles (electrons, photons, hadrons) will not penetrate the outermost
-calorimeter.  Any charged particle that is detected outside of this region can
-be identified as a muon.  At CMS, the muon detection systems are built into the
-magnet return yoke outside of the CMS calorimeters and magnet, giving them
-excellent protection (illustrated in Figure~\ref{fig:PunchThroughProtectin}) 
+The approach to detecting muons is to build the detector to a thickness such
+that other particles (electrons, photons, hadrons) will not penetrate the
+outermost calorimeter.  Any charged particle that is detected outside of this
+region can then be identified as a muon.  At CMS, the muon detection systems are
+built into the magnet return yoke outside of the CMS calorimeters and magnet,
+giving them excellent protection (illustrated in
+Figure~\ref{fig:PunchThroughProtectin}) 
 \begin{figure}
   \centering
-  \subfigure[]{\includegraphics[width=0.45\textwidth]{detector_chapter/figures/interaction_lengths_before_muon.pdf}
+  \subfigure[]{\includegraphics[width=0.54\textwidth]{detector_chapter/figures/interaction_lengths_before_muon.pdf}
   \label{fig:PunchThroughProtectin} }
-  \subfigure[]{\includegraphics[width=0.45\textwidth]{detector_chapter/figures/global_muon_reco_eff.pdf}
+  \subfigure[]{\includegraphics[width=0.4\textwidth]{detector_chapter/figures/global_muon_reco_eff.pdf}
   \label{fig:GlobalMuonRecoEffJINST} } \label{fig:DetectorChapterMuonShit}
   \caption[Muon system material budget and identification efficiency]{The left
   figure, \subref{fig:PunchThroughProtectin}, illustrates the number of
@@ -381,7 +379,7 @@ running through the middle of the tube.  When a charged particle passes through
 the tube, it ionizes some gas.  The free electrons are then drawn to the
 positively charged wire inside the tube, creating a signal when reach it. The
 speed of the detector is limited by the ``drift time,'' the maximum amount of
-time it may take for an electron to reach sensor wire.   The precision of the
+time it may take for an electron to reach a sensor wire.   The precision of the
 spatial measurement can be increased by recording the time at which each wire
 records a signal and correlating the measurements across multiple tubes. The
 time resolution of the CMS DTs is on the order of a few nanoseconds, allowing
@@ -405,7 +403,7 @@ internal wires held at a high voltage.   A number of cathode strips are
 installed perpendicular\footnote{The wires are actually placed at an angle to
 the perpendicular to compensate for a shifting effect caused by the magnetic
 field Lorentz force.} induced to the wires on the walls of the chamber.  When a
-muon passes through the CSC, it creates ionizes some of the gas.  The high
+muon passes through the CSC, it ionizes some of the gas.  The high
 voltage on a nearby wire causes this ionized gas to break down, forming a
 conductive passage in the gas and an ``avalanche'' current between the wire and
 a number of the cathode strips.  The spatial position of the hit in two
@@ -415,9 +413,9 @@ from the signal average of the cathode strips.
 The CSCs in the CMS endcap are positioned such that a muon in the pseudorapidity
 range $1.2 < |\eta| < 2.4$ will cross three for four CSC detectors.  The
 geometry of the CSC strips and wires is designed to provided a spatial $r-\phi$
-resolution of 2~\milli\meter at the L1~trigger level and a final offline
-reconstruction resolution of 75~\micro\meter for the first layer and
-150~\micro\meter for outer layers.  The RMS of the response time for a CSC layer
+resolution of 2~\milli\meter~at the L1~trigger level and a final offline
+reconstruction resolution of 75~\micro\meter~for the first layer and
+150~\micro\meter~for outer layers.  The RMS of the response time for a CSC layer
 is about 11~\nano\second, which is too long to correctly associate a signal in
 the CSCs to an LHC bunch crossing (25~\nano\second) with high efficiency.  By
 grouping the layers into chambers, and taking the shortest response, the correct
@@ -433,8 +431,8 @@ transverse momentum of the muons.
 \label{sec:Trigger}
 
 At the LHC, proton bunches crossings (collisions) occur every 25~\nano\second.
-This corresponds to an interaction of 40~\mega\hertz.  At this high rate, and
-with the huge number of channels in the CMS detector, the front--end bandwith
+This corresponds to an interaction rate of 40~\mega\hertz.  At this high rate, and
+with the huge number of channels in the CMS detector, the front--end bandwidth
 readout from the detector is over 1~\peta b\per\second.  Due to bandwidth and
 storage requirements, the rate at which events are permanently recorded must be
 reduced by more than a factor of a million. This reduction is achieved by CMS
@@ -448,7 +446,7 @@ deposit, or a large deposit of energy in the event.
 
 The CMS trigger consists of two stages: a fast Level--1 (L1) trigger and a
 High--Level Trigger (HLT).  The L1 trigger system is built on custom, typically
-re--programmable electronics and interfaces directly to the detector subsystems.
+reprogrammable electronics and interfaces directly to the detector subsystems.
 The L1 trigger has access to information from the muon and calorimeter systems.
 The L1 does not have access to the full granularity of the muon system and
 calorimeters but must make the decision based on coarse segments.  The design
@@ -456,16 +454,15 @@ acceptance rate of the L1 trigger is 100~\kilo\hertz.  The trigger typically
 operates at a nominal rate of 30~\kilo\hertz.  The maximum latency of the L1 is
 3.2~\micro\second, requiring that the output from detector electronics be passed
 through memory pipelines to ensure that no bunch crossings go unanalyzed.  The
-High--Level trigger runs on a farm of about 1000 commercial compute nodes and
-processes events that pass that are accepted by the L1 trigger.  A High--Level
-trigger decision (``path'') has the ability to reconstruct tracks and do a full
-regional unpacking of the recorded hits in a regions of the calorimeter.  Each
-HLT path has a strict rate budget, as the total rate of the HLT is required to
-be less than 100~\hertz.  The triggers used at CMS change as the conditions
-change.  To limit the total rate to 100~\hertz as the luminosity increases,
-trigger paths must either increase their thresholds, or apply a ``prescale.''
-When a prescale is applied, a fraction of events passing the trigger are thrown
-away randomly.
+High--Level Trigger (HLT) runs on a farm of about 1000 commercial compute nodes
+and processes events that are accepted by the L1 trigger.  An HLT decision
+(``path'') has the ability to reconstruct tracks and do a full regional
+unpacking of the recorded hits in a regions of the calorimeter.  Each HLT path
+has a strict rate budget, as the total rate of the HLT is required to be less
+than 100~\hertz.  The triggers used at CMS change as the conditions change.  To
+limit the total rate to 100~\hertz~as the luminosity increases, trigger paths
+must either increase their thresholds, or apply a ``prescale.'' When a prescale
+is applied, a fraction of events passing the trigger are thrown away randomly.
 
 The CMS trigger is a deep subject and a complete description is beyond the scope
 of this thesis.  A detailed description can be found in~\cite{CMS-PTDRI}. The
@@ -481,16 +478,16 @@ hadronic tau decay in the event.  The triggers used in this analysis in the
 different 2010 run periods are enumerated in Table~\ref{tab:AHtoMuTauTriggers}.
 
 The muon component of all the triggers used in this analysis is based on the
-``L1 seed trigger'' BLAH\fixme{what is it?}.  The L1 muon trigger decision is
-determined by the Global Muon Trigger (GMT), which combines information from the DT,
-CSC, and RPC sub--detectors, and is able to trigger muons up to a pseudorapidity
-of $|\eta| < 2.1$.  Each sub--detector has a ``local trigger,'' which can
-reconstruct tracks in the muon  system.  For the drift tubes, the Bunch Track
-Identifiers (BTI), a custom integrated circuit, searches for aligned hits in the
-associated DT chamber.  The CSCs and RPCs employ similar strategies to detect
-local muon tracks.  The sub--detectors send the GMT the charge, \pt,
-$\eta$, $\phi$, and a quality code of up to four local muons.  The 
-measurements from the sub--detectors are combined and a final decision is made
-by the GMT.
-
+``L1 seed trigger'' L1_SingleMu7, which nominally selects event which have a
+muon with $\pt > 7~\GeVc$.  The L1 muon trigger decision is determined by the
+Global Muon Trigger (GMT), which combines information from the DT, CSC, and RPC
+sub--detectors, and is able to trigger muons up to a pseudorapidity of $|\eta| <
+2.1$.  Each sub--detector has a ``local trigger,'' which can reconstruct tracks
+in the muon  system.  For the drift tubes, the Bunch Track Identifiers (BTI), a
+custom integrated circuit, searches for aligned hits in the associated DT
+chamber.  The CSCs and RPCs employ similar strategies to detect local muon
+tracks.  The sub--detectors send the GMT the charge, \pt, $\eta$, $\phi$, and a
+quality code of up to four local muons.  The measurements from the
+sub--detectors are combined and a final decision is made by the GMT.
+%
 \ifx\master\undefined\input{settings/autocompile}\fi
