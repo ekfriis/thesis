@@ -35,7 +35,7 @@ Goldstone bosons.
 In the 1960s, Glashow~\cite{Glashow:1961tr}, Weinberg~\cite{Weinberg:1967tq}, 
 and Salam~\cite{Salam:1968rm} developed the above ideas into the
 electroweak model, which unified QED with the weak force using intermediate weak
-bosons in a gauge theory whose symmetry was spontaneously broken using the Higgs
+bosons in a gauge theory with symmetry that is spontaneously broken using the Higgs
 mechanism.  This unified theory has been incredibly experimentally successful
 and is the foundation of modern particle theory.
 
@@ -106,15 +106,16 @@ under the global gauge transformation
 \end{equation}
 The Lagrangian is invariant under \emph{local} gauge translations if $\theta$
 can be defined differently at each point in space, \ie if $\theta = \theta(x)$
-in equation~\ref{eq:U1GaugeTransform}.  However, as the derivative operator
-$\partial_\mu$ in equation~\ref{eq:FreeQEDLagrangian} does not commute with
+in Equation~\ref{eq:U1GaugeTransform}.  However, as the derivative operator
+$\partial_\mu$ in Equation~\ref{eq:FreeQEDLagrangian} does not commute with
 $\theta(x)$, the Lagrangian must be modified to satisfy local gauge invariance.
 This modification is accomplished with the use of a ``gauge covariant
 derivative.''  By making the replacement 
 \begin{equation} 
   \partial_\mu \to D_\mu = \partial_\mu - \frac{ie}{\hbar}A^\mu      
+  \nonumber
 \end{equation}
-in equation~\ref{eq:FreeQEDLagrangian}, where 
+in Equation~\ref{eq:FreeQEDLagrangian}, where 
 $A^\mu = \partial^\mu \theta(x)$ and $e$ is the electric charge, the Lagrangian
 becomes locally gauge invariant:
 \begin{equation}
@@ -123,9 +124,10 @@ becomes locally gauge invariant:
 \end{equation}
 The difference between
 the locally (\ref{eq:LocalQEDLagrangian}) and the globally 
-(\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangians is then
+(\ref{eq:FreeQEDLagrangian}) gauge invariant Lagrangian is then
 \begin{equation}
   \mathcal{L}_{int} = \frac{e}{\hbar}\overline\psi\gamma^\mu\psi A_\mu.
+  \nonumber
 \end{equation}
 This term can be interpreted as the coupling between the particle and the gauge
 boson (force carrier) fields.  The coupling is proportional to the constant $e$,
@@ -140,6 +142,7 @@ term of the gauge (photon) field yields the QED Lagrangian:
 \begin{equation}
   \mathcal{L}_{QED} = \overline \psi (i\hbar c\gamma^\mu D_\mu - mc^2) \psi -
   \frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}.
+  \nonumber
 \end{equation}
 
 The gauge symmetry group of QED is $U(1)$, the unitary group of degree 1.  This
@@ -153,7 +156,7 @@ interactions of the theory.
 \label{sec:WeakInteractions}
 The theory of Weak Interactions was created to describe the physics of
 radioactive decay.  The first formulation of the theory was done by
-Fermi~\cite{ref:FermiWeakInteration} to explain the phenomenon of the $\beta$
+Fermi~\cite{Fermi:1934hr} to explain the phenomenon of the $\beta$
 decay of neutrons. The initial theory was a four-fermion ``contact'' theory.  In
 a contact theory, all four fermions come involved in the $\beta$--decay are
 connected at a single vertex.  The Fermi theory Hamiltonian for the
@@ -271,7 +274,7 @@ contact interaction original formulated by Fermi effectively described
 low--energy weak phenomenon.  When the momentum transfer $q$ in the interaction
 is small compared to $M_W$, the effect of the propagator is an effective
 constant.  In the low energy limit, the full propagator in
-equation~\ref{eq:WeakPropagator} is equivalent to the Fermi contact
+Equation~\ref{eq:WeakPropagator} is equivalent to the Fermi contact
 interaction in~\ref{eq:ContactAmplitudeMuonDecay} as
 \begin{equation}
   \lim_{q/M_W \to 0}\frac{g^2}{8(q^2-M^2_W)} = \frac{G_F}{\sqrt{2}}.
@@ -300,12 +303,12 @@ differences between various scales (electromagnetic, weak, etc.) at lower
 energies are due to the unified symmetry being spontaneously broken.
 
 A symmetry of a Lagrangian is spontaneously broken when the ground state, or
-vacuum, is at a value which about which the Lagrangian is not symmetric.  In
+vacuum, is at a value about which the Lagrangian is not symmetric.  In
 quantum field theories, a particle is interpreted as quantized fluctuations of
 its corresponding field about some constant (vacuum) ground state.  The
 ``effective'' Lagrangian that we observe in the (low energy) laboratory would be
 the expansion of the Lagrangian about this stable point.  The effective
-Lagrangian no longer obeys the original symmetry, which has been ``broken''.  We
+Lagrangian no longer obeys the original symmetry, which has been ``broken.''  We
 give a brief example of the phenomenological effects of a spontaneously broken
 symmetry in a toy model, following the treatment in~\cite{Morii:SMandBSM}.
 \begin{equation}
@@ -342,7 +345,7 @@ field potential $V(\phi_1, \phi_2)$ about its minimum, $(\phi^{min}_1,
   \label{eq:ExpandedPotential}
 \end{eqnarray}
 Since at the minimum the partial derivative of $V$ is zero with respect to all
-fields, the second term in equation~\ref{eq:ExpandedPotential} is zero.  The
+fields, the second term in Equation~\ref{eq:ExpandedPotential} is zero.  The
 third term determines the masses of the particles in the theory.  Since a mass
 term for a particle corresponding to a field $\phi_n$ in the Lagrangian appears
 as $\frac{1}{2}m^2\phi_n\phi_n$, we can identify 
@@ -395,7 +398,7 @@ Equation~\ref{eq:NambuGoldstonePoint} as the VEV\@.  However, after the mass
 matrix is diagonalized, there will always be one physical field with a VEV$ =
 \nu$ and one with a VEV$ = 0$.  Therefore the physical content of the theory
 does not depend on the choice of VEV\@.} is chosen, evaluating
-Equation~\ref{eq:MassMatrixTerms} yields the mass matrix \fixme{check matrix}
+Equation~\ref{eq:MassMatrixTerms} yields the mass matrix 
 \begin{equation}
   \left(\frac {\partial^2
   V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}} = 
@@ -416,17 +419,17 @@ generator in the symmetry group that is broken.
 \subsection{The Higgs Mechanism}
 \label{sec:HiggsMech}
 
-As in section~\ref{sec:QEDandGaugeInvariance}, extending the gauge symmetry
+As in Section~\ref{sec:QEDandGaugeInvariance}, extending the gauge symmetry
 requirement to be \emph{locally} invariant creates interesting consequences for
 models that have spontaneously broken symmetry.  This gives rise to the ``Higgs
 Mechanism,'' which we overview here.  For simplicity we will again consider a
 model with $U(1)$ symmetry.  The model is identical to the one presented in
-section~\ref{sec:SSB}, with two exceptions. First, we express the two real
+Section~\ref{sec:SSB}, with two exceptions. First, we express the two real
 fields $\phi_1$ and $\phi_2$ as a single complex--valued field $\phi$.  Second,
 the model is required to be locally $U(1)$ invariant, and so uses the
 gauge--covariant derivatives, minimal coupling to the gauge field, and contains
 the kinetic term for the gauge field, as discussed in
-section~\ref{sec:QEDandGaugeInvariance}.  The unbroken Lagrangian is
+Section~\ref{sec:QEDandGaugeInvariance}.  The unbroken Lagrangian is
 \begin{eqnarray}
   \mathcal{L} &=& -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} 
   + (D_\mu \phi^*)(D^\mu \phi) - V(\phi^*\phi) \label{eq:LocalInvariantU1} \\
@@ -439,6 +442,7 @@ gauge transformation
 \begin{eqnarray}
   \phi \to \phi' &=& e^{-i \alpha(x)} \phi \nonumber \\
   A_\mu \to A_\mu' &=& A_\mu - \frac{1}{2} \partial_\mu \alpha(x).
+  \nonumber
 \end{eqnarray}
 The potential is minimized when $\phi^*\phi = \frac{\mu^2}{2\lambda}$.  To
 simplify the algebra, we can
@@ -463,7 +467,7 @@ Equation~\ref{eq:AfterUnitaryGaugeTransformation} are substituted into the
 Lagrangian~(\ref{eq:LocalInvariantU1}) the effective Lagrangian at the minimum
 of $V$ is
 \begin{eqnarray}
-  \mathcal{L} =& & \frac{1}{2} \partial_\mu \eta \partial^\mu \eta -
+  \mathcal{L} &=& \frac{1}{2} \partial_\mu \eta \partial^\mu \eta -
   \mu^2 \eta^2  \nonumber \\
   &-& \frac{1}{4} F_{\mu\nu} F^{\mu\nu} + \frac{1}{2} (e\nu)^2 B_\mu B^\mu
   \nonumber \\
@@ -503,7 +507,7 @@ observed~\cite{UA1WDiscovery,UA2WDiscovery,UA1ZDiscovery,UA2ZDiscovery} with the
 predicted masses at the UA1 and UA2 experiments. 
 
 To provide a simple introduction to the mechanisms of the model, we will start
-with a model that includes only one family of leptons, the electron $e$ and it's
+with a model that includes only one family of leptons, the electron $e$ and its
 associated neutrino $\nu_e$. Following once again the treatment
 of~\cite{Morii:SMandBSM}, we describe the representation of the $e$ and $\nu_e$
 in the chosen symmetry group of the model.  We then construct a locally gauge
@@ -533,7 +537,7 @@ are \begin{eqnarray}
 \end{eqnarray}
 where the $\tau^i$ are the Pauli matrices. The weak currents $J_\mu^\pm$ can be
 written by combining
-equations~\ref{eq:EWDoubletForm}--\ref{eq:Su2GeneratorMinus}
+Equations~\ref{eq:EWDoubletForm}--\ref{eq:Su2GeneratorMinus}
 \begin{equation}
   J_\mu^\pm = \overline L \gamma_\mu \tau^\pm L.
   \label{eq:WeakCurrentInSu2Doublets}
@@ -573,7 +577,8 @@ The $SU(2)_L\times U(1)_Y$ gauge invariant Lagrangian is written
   {A_\mu} + \frac{i}{2}g'B_\mu)L \nonumber \\
   &+& \overline R i \gamma^\mu (\partial_\mu + \frac{i}{2}g'B_\mu)R \nonumber \\
   &-& \frac{1}{4}F^i_{\mu\nu} F^{i\mu\nu} -\frac{1}{4}B_{\mu\nu} B^{\mu\nu}.  
-  \label{eq:FermionAndGaugeLagrangianGWS}
+  \nonumber
+  %\label{eq:FermionAndGaugeLagrangianGWS}
 \end{eqnarray}
 As $R$ is a singlet in $SU(2)$, it does not couple to the $SU(2)$ gauge bosons
 $A^i_\mu$.  For this Lagrangian to correspond to empirical observations at low
@@ -585,8 +590,8 @@ To accomplish the symmetry breaking, we introduce a new $SU(2)$ doublet of
 complex Higgs fields $\phi$ that have hypercharge $Y = 1$, and contribute
 $\mathcal{L}_S$ to the Lagrangian:
 \begin{eqnarray}
-  \phi &=& \left(\begin{array}{c}\phi^+ \\ \phi^0\end{array}\right) \\
-  \mathcal{L}_S &=& (D_\mu \phi)^\dag(D^\mu \phi) - V(\phi^\dag\phi),
+  \phi &=& \left(\begin{array}{c}\phi^+ \\ \phi^0\end{array}\right) \nonumber \\
+  \mathcal{L}_S &=& (D_\mu \phi)^\dag(D^\mu \phi) - V(\phi^\dag\phi)\nonumber ,
 \end{eqnarray}
 where $D_\mu$ is the gauge covariant derivative containing couplings to both the
 $SU(2)_L$ and $U(1)_Y$ gauge fields, and $V$ has a form analogous to $V$ in
@@ -605,13 +610,14 @@ At the minimum of $V$, the Higgs field satisfies $\phi^\dag\phi =
 \frac{\nu^2}{2}$ and the Higgs fields has a VEV of
 \begin{equation}
   \phi_{min} = \left(\begin{array}{c} 0 \\ v/\sqrt{2} \end{array}\right).
+    \nonumber
 \end{equation}
 The new symmetry of the model can be confirmed by looking at the action of the
 different symmetry generators on the VEV\@.  If the generator acting on the
 vacuum state has a non--zero value, then the corresponding symmetry is broken.
 It can then be seen that the original symmetry generators $T^+$, $T^-$, $T^3$,
 and $Y$ are all broken.  The vacuum \emph{is} invariant under $Q$, the generator
-of $U(1)_{em}$
+of $U(1)_{em}$:
 \begin{equation}
   Q\phi_{min} = (T^3 + \frac{Y}{2})\left(\begin{array}{c} 0 \\ v/\sqrt{2}
   \end{array}\right) = 0 \nonumber,
@@ -627,7 +633,8 @@ chosen so Higgs field is real.  The Higgs scalar doublet is then
   \phi' =  \left(\begin{array}{c} 0 \\ \frac{1}{\sqrt 2}(\nu +
     H(x))\end{array}\right) = 
     \frac{1}{\sqrt 2}(\nu + H(x))\chi.
-    \label{eq:HiggsFieldParameterization}
+    %\label{eq:HiggsFieldParameterization}
+    \nonumber
 \end{equation}
 The mass spectrum of the gauge bosons of the electroweak interaction (the
 photon, $W^\pm$, and $Z$) is determined by the interaction of the gauge field
@@ -651,6 +658,7 @@ terms in Equation~\ref{eq:GaugeBosonMassTerms} are equivalent to the mass term
 of a charged boson
 \begin{equation}
   W^\pm_\mu = \frac{A'^{1}_\mu \mp iA'^2_\mu}{2}.
+  \nonumber
 \end{equation}
 This is the familiar $W^\pm$ boson of $\beta$ and muon decay, and has mass $M_W
 = \frac{1}{2}g\nu$.  The third term in Equation~\ref{eq:GaugeBosonMassTerms} can
@@ -668,7 +676,7 @@ be written in matrix form and then diagonalized into mass eigenstates
     A'^{3\mu} \\
     B'^\mu
   \end{array}
-  \right) \\
+  \right) \nonumber \\
   \to & 
   \frac{\nu^2}{8}(Z_\mu~A_\mu) 
   \left(
@@ -693,6 +701,7 @@ and the massless photon $A_\mu$ of QED\@.  The mass of the $Z$ is related to the
 mass of the $W^\pm$ by 
 \begin{equation}
   M_Z \equiv \frac{M_W}{\cos \theta_W},
+  \nonumber
 \end{equation}
 where $\theta_W$ is the ``Weinberg angle,'' which must be determined from
 experiment.  As the Fermi contact interaction of
@@ -701,9 +710,9 @@ the value of $G_F$ obtained from $\beta$ and muon decay experiments give clues
 to the masses of the $W$ and $Z$.  
 \begin{eqnarray}
   M_W = \frac{1}{2}(\frac{e^2}{\sqrt 2 G_F})^{(1/2)}\frac{1}{\sin\theta_W} \approx
-  \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \\ 
+  \frac{38 \GeV}{\sin\theta_W} > 37 \GeV \nonumber \\ 
   M_Z \approx \frac{76 \GeV}{\sin
-  2\theta_W} > 76\GeV.
+  2\theta_W} > 76\GeV\nonumber.
 \end{eqnarray}
 The discovery of the $W$~\cite{UA1WDiscovery,UA2WDiscovery} and
 $Z$~\cite{UA1ZDiscovery, UA2ZDiscovery} at the CERN SPS was a huge triumph for
@@ -734,16 +743,16 @@ symmetry is unbroken.
 There are three marked differences between the photon of QED and the gluon of
 QCD\@.  First, the gluon carries a color charge, while the photon is
 electrically neutral.  This has the consequence that a gluon can couple to other
-gluons.  Secondly, it is found that no colored object exists in nature.  The
-corollary of this is that it is believed to be impossible for a single quark or
-gluon to be observed.  The mechanism that gives rise to this effect is called
-``color confinement.''  The strength of the strong force between two interacting
-colored objects increases with distance.  If two colored objects in a hadron are
-pulled apart, the energy required to separate them will eventually be large
-enough to produce new colored objects, resulting in two (or more) colorless
-hadrons.  Finally, at low energy, QCD is non--perturbative.  What this means in
-practice is that when computing an amplitude from a QCD Feynman diagram,
-additional gluon interactions contribute a value greater than one.  The
+gluons.  Secondly, it is found that no colored object exists in nature. The
+corollary of this is that it is believed to be impossible for a single ``bare''
+quark or gluon to be observed.  The mechanism that gives rise to this effect is
+called ``color confinement.''  The strength of the strong force between two
+interacting colored objects increases with distance.  If two colored objects in
+a hadron are pulled apart, the energy required to separate them will eventually
+be large enough to produce new (anti--)colored objects, resulting in two (or more)
+colorless hadrons.  Finally, at low energy, QCD is non--perturbative.  What this
+means in practice is that when computing an amplitude from a QCD Feynman
+diagram, additional gluon interactions contribute a value greater than one.  The
 dominance of multi--loop diagrams is illustrated in
 Figure~\ref{fig:QCDFeynmanDiagrams}.
 \begin{figure}
@@ -791,14 +800,15 @@ Figure~\ref{fig:QCDFeynmanDiagrams}.
   $g_s > 1$, multi--loop diagrams have a larger contribution than simpler
   diagrams.}
 \end{figure}
-Thus higher order diagrams with many internal loops cannot be ignored in
-QCD\@.  In practice what is done is to ``factorize'' QCD interaction
-amplitudes into a perturbative (high--energy) part and a non--perturbative
-part.  The perturbative portion is calculable using the Feynman calculus; the
-non--perturbative must be estimated from parameterization functions that are
-experimentally measured.
+Thus higher order diagrams with many internal loops cannot be ignored in QCD\@
+as is possible in the QED or Electroweak models.  In practice what is done is to
+``factorize'' QCD interaction amplitudes into a perturbative (high--energy) part
+and a non--perturbative part.  The perturbative portion is calculable using the
+Feynman calculus; the non--perturbative must be estimated from parameterization
+functions that are experimentally measured.
 
-The practical consequence of color confinement to a physicist at a high--energy
+The practical consequence of color confinement to a physicist studying
+electroweak phenomenon at a high--energy
 particle physics experiment is the production of quark and gluon ``jets,'' which
 are high multiplicity sprays of particles observed in the detector.  In a
 proton--proton collision, quarks and gluons can be knocked off the incident
@@ -838,7 +848,7 @@ theory is unified with gravity.
 
 There are many compelling reasons that indicate
 that the Standard Model is incomplete.  One is the fact that the model does not
-include gravity, which has still not be successfully reformulated into a quantum
+include gravity, which has still not been successfully reformulated into a quantum
 mechanical theory.  Another is that cosmological observations indicate the
 presences of massive amounts of ``dark matter'' in the universe.  Dark matter is
 expected to be composed of a stable massive neutral particle which interacts
@@ -896,15 +906,15 @@ illustrated in Figure~\ref{fig:HiggsMassLoopCorrections}.
   \subref{fig:ScalarLoopCorrection} loop corrections to Higgs mass.}
   \label{fig:HiggsMassLoopCorrections}
 \end{figure}
-The contribution of the loop correction in
-Figure~\ref{fig:FermionLoopCorrection} is~\cite{Martin:1997um} 
+The contribution~\cite{Martin:1997um}  of the loop correction in
+Figure~\ref{fig:FermionLoopCorrection} to the Higgs mass is
 \begin{equation}
-  m^2_H = -\frac{|\lambda_f|^2}{8 \pi^2} \Lambda^2 + \cdots,
+  m^2_H = -\frac{|\lambda_f|^2}{8 \pi^2} \Lambda^2 + \cdots.
   \label{eq:HiggsMassCorrection}
 \end{equation}
-scales with $\Lambda^2$, which is many orders of magnitude larger than the
-electroweak ($M_W$) scale.  The physical mass of the Higgs is expected to have
-the same scale as $M_W$, $O(100)~\GeVcc$.  The fact that each fermion
+The correction scales with $\Lambda^2$, which is many orders of magnitude larger
+than the electroweak ($M_W$) scale.  The physical mass of the Higgs is expected
+to have the same scale as $M_W$, $\bigO{100~\GeVcc}$.  The fact that each fermion
 contributes a loop correction (Equation~\ref{eq:HiggsMassCorrection}) requires
 that the ``bare mass'' of the Higgs to be tuned to the precision of
 $(M_W/\Lambda)^2 \approx 10^{-26}$ for the renormalized mass to be correct!
@@ -932,7 +942,7 @@ superpartner loop corrections to the Higgs mass exactly cancel out the
 problematic Standard Model corrections.  It is clear that if Supersymmetry
 exists, it must be broken.  We have not observed a scalar charged particle with
 the same mass as the electron, for example.  An excellent overview of possible
-mechanism that create spontaneous symmetry breaking in supersymmetric models is
+mechanisms that create spontaneous symmetry breaking in Supersymmetric models is
 given in Chapter~6 of~\cite{Martin:1997um}.
 
 \subsection{The Minimal Supersymmetric Model}
@@ -940,7 +950,7 @@ given in Chapter~6 of~\cite{Martin:1997um}.
 Standard Model is the Minimal Supersymmetric Model (MSSM).  The model groups
 superpartner pairs into chiral (a left or right--handed fermion field plus a
 complex scalar field) and gauge (a spin--1 vector boson and a left or
-right--handed \emph{gaugino} fermion)``supermultiplets.''  As the weak
+right--handed \emph{gaugino} fermion) ``supermultiplets.''  As the weak
 interactions of the Standard Model fermions are chiral, they (and their
 superpartners) must belong in a chiral supermultiplet.  It is interesting to
 note that there is a different superpartner for the left and right--handed
@@ -1030,14 +1040,15 @@ then~\cite{Martin:1997um}
   \sbar d {\bf y_d} Q H_d -
   \sbar e {\bf y_e} L H_d +
   \mu H_u H_d \>,
+  \nonumber
 \end{equation}
-where $H_u$, $H_d$, $Q$, $L$, $\sbar u$, $\sbar d$, $\sbar e$ are the
+where $H_u$, $H_d$, $Q$, $L$, $\sbar u$, $\sbar d$, and $\sbar e$ are the
 superfields defined in Table~\ref{tab:chiral}.  The ${\bf y}$ terms are Yukawa
 $3 \times 3$ matrices which act on the different families.  It is important to
 note that the up--type quarks couple to the up--type Higgs $H_u$, while the
 down--type quarks and leptons couple to the down--type Higgs.  This feature has
 large phenomenological consequences, which are discussed
-in~\ref{sec:MSSMHiggsPhenom}.  The scalar portion of the $W_{\rm MSSM}$
+in Section~\ref{sec:MSSMHiggsPhenom}.  The scalar portion of the $W_{\rm MSSM}$
 potential defines the spontaneous symmetry breaking.  Similar to the scalar
 potential $V$ symmetry breaking of Section~\ref{sec:SSB}, the potential of $V$
 at the minimum is found\footnote{A clever choice of the $SU(2)_L$ gauge has
@@ -1077,12 +1088,13 @@ eigenstates are related to each other and \tanb at tree level by
   \label{eq:MSSMLittleHiggsMassRelationshipTreeLevel} \\
   \mHZero^2 = \frac{1}{2}(\ma^2 + \mz^2 + \sqrt{
   (\ma^2 - \mz^2)^2 + 4\mz^2\ma^2\sin^2(2\beta)}. 
-  \label{eq:MSSMHiggs0MassRelationshipTreeLevel}
+  \nonumber
+  %\label{eq:MSSMHiggs0MassRelationshipTreeLevel}
 \end{eqnarray}
 It can be seen that the tree level mass \mhZero of
 Equation~\ref{eq:MSSMLittleHiggsMassRelationshipTreeLevel} is bounded from above
-by $\mhZero < \mz|\cos(2\beta)| < 90~\GeVcc$.  If this is true the
-model would have been excluded by LEP (see next section).  However, there are
+by $\mhZero < \mz|\cos(2\beta)| < 90~\GeVcc$.  If this is true the model would
+have been excluded by the LEP experiment(see next section).  However, there are
 important quantum corrections to \mhZero from the top--quark and top--squark
 loop diagrams which increase \mhZero.  The Yukawa couplings in the MSSM depend
 on \tanb.  The relationships for the most massive members of each family are
@@ -1094,7 +1106,8 @@ on \tanb.  The relationships for the most massive members of each family are
   ,
   \qquad\quad
   m_\tau = y_\tau v \cos\beta.\phantom{xxx}
-  \label{eq:YukawaTanBeta}
+  \nonumber
+  %\label{eq:YukawaTanBeta}
 \end{equation}
 The Yukawa couplings are free parameters determined by experimentally observed
 masses.  This means that when \tanb is large ($\beta \to \pi$), the Yukawa terms
@@ -1103,13 +1116,13 @@ observed masses.  The effect of \tanb on the Higgs mass spectrum and couplings
 in the MSSM will be discussed further in Section~\ref{sec:MSSMHiggsPhenom}.
 %
 \section{Searches for the Higgs boson}
-\label{sec:PreviousSearches}
-The potential discovery of the Higgs boson is one of the biggest prizes in
-science today.  Dozens of experiments, thousands of scientists and billions of
-dollars (a human hierarchy problem\ldots) have been spent in efforts to
-discovery the Higgs.  In this section we discuss how the Higgs and MSSM) could
-appear in modern colliders (with an emphasis on the LHC) and current the limits
-placed on the Higgs by the LEP and Tevatron experiments.  
+\label{sec:PreviousSearches} The discovery of the Higgs boson is one of the
+biggest prizes in science today.  Dozens of experiments, thousands of scientists
+and billions of dollars (a human hierarchy problem) have been spent in efforts
+to discovery the Higgs.  In this section we discuss how the Higgs and the MSSM
+could appear in modern colliders (with an emphasis on the LHC) and the current
+limits placed on the Higgs by the Large Electron--Positron Collider (LEP) and
+Tevatron experiments.  
 %
 \subsection{Standard Model Higgs boson phenomenology}
 \label{sec:SMHiggsPhenom}
@@ -1123,14 +1136,14 @@ electron as an example, after symmetry breaking, the Yukawa term is found to be
   H(x) \overline e e.
   \label{eq:ElectronYukawa}
 \end{equation}
-The value of $G_e$ is a free parameter of the theoryand is thus determined by
+The value of $G_e$ is a free parameter of the theory and is thus determined by
 the measurement of the electron mass and $\nu$, the VEV of the Higgs field
 \begin{equation}
   \frac{G_e \nu}{\sqrt 2} = \frac{m_e}{\nu}.
   \label{eq:HiggsVEVtoCoupling}
 \end{equation}
 The left--hand side of Equation~\ref{eq:HiggsVEVtoCoupling} is the same as the
-constant in the electron--Higgs $H(x)\overline e e$ coupling term in
+constant in the electron Higgs coupling term ($H(x)\overline e e$) in
 Equation~\ref{eq:ElectronYukawa}.  Therefore the coupling between the fermions
 and Higgs boson is proportional to their mass!  This remarkable fact shapes the
 possible production modes and the branching fractions of Higgs decays.
@@ -1184,7 +1197,7 @@ possible production modes and the branching fractions of Higgs decays.
   \end{fmffile}
   \label{fig:GluonFusion} \caption[Gluon fusion Higgs production diagram]{Gluon
   fusion Higgs production mechanism in a proton--proton collision.  The Higgs
-  mass coupling favors heavy quarks in the central loop.  Image
+  mass coupling favors the heavy top quark in the central loop.  Image
   credit:~\cite{FeynmanDiagrams}}
 \end{figure}
 %
@@ -1218,17 +1231,17 @@ possible production modes and the branching fractions of Higgs decays.
   diagram]{Vector boson fusion (VBF) Higgs production mechanism in
   proton--proton collisions.  The VBF
   mechanism is notable for the lack of color--flow between the two incident
-  protons.}
+  protons, producing events with low jet activity in the central region.}
 \end{figure}
   
 The dominant modes of Higgs boson production depend on the type of experiment.
 In general, Higgs production is favored through high--mass intermediate states,
-due to the mass--proportional coupling.  At the Tevatron and LEP experiments,
+due to the mass$^2$ proportional coupling.  At the Tevatron and LEP experiments,
 which will be introduced in the next section, the dominant SM Higgs production
 mode is ``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is
 produced and then radiates a Higgs boson.  Higgstrahlung is illustrated in
 Figure~\ref{fig:HiggsStrahlung}.  At the Large Hadron Collider, higher gluon
-luminosities (See Figure~\ref{fig:GluonLumiRatio}) result in the favored cross
+luminosities (see Figure~\ref{fig:GluonLumiRatio}) result in the favored cross
 section being ``gluon fusion,'' (illustrated in Figure~\ref{fig:GluonFusion})
 where two gluons from the incident protons combine in a quark (dominated by the
 massive top quark) loop which then radiates a Higgs boson.  Another important
@@ -1238,13 +1251,14 @@ radiated from the incoming quarks and fuse to produce a Higgs.  This is a
 notable channel due to the lack of ``color--flow'' (gluons) between the two
 protons, producing an event with low central jet activity and two ``tag--jets''
 in the forward and backward regions.  The theoretical cross sections for the SM
-Higgs at the LHC are shown in Figure~\ref{fig:LHCSMHiggsXsec}.
+Higgs at the LHC are shown for the various production mechanisms in
+Figure~\ref{fig:LHCSMHiggsXsec}.
 \begin{figure}
   \centering
   \includegraphics[width=90mm,angle=0]{theory_chapter/figures/parton_lumis_10TeV_vs_2TeV.pdf}
   \caption[Parton luminosity comparison of the LHC and Tevatron]{Ratio of the
   parton luminosity (the amount of luminosity contributed by the different
-  species that compose the proton) of the LHC (at $\sqrt s = 10~\TeV$) and the
+  species that compose the proton) of the LHC (at \mbox{$\sqrt s = 10~\TeV$}) and the
   Tevatron.  The large increase in gluon--gluon luminosity affects the favored
   production mechanisms of the Higgs boson.  } \label{fig:GluonLumiRatio}
 \end{figure}
@@ -1263,7 +1277,7 @@ depend strongly on the mass of the Higgs boson.  In general, the Higgs prefers
 (due to the Yukawa couplings) to decay pairs of the particles with the highest
 mass possible.  Below the threshold to decay to pairs of weak bosons ($M_H <
 160 \GeVcc$), the Higgs decays predominantly to either $b$--quarks (\bbbar,
-90\%) or a pair of $\tau$ leptons (\TT, $\approx 10$).  Above the $W^\pm W^\mp$
+90\%) or a pair of $\tau$ leptons (\TT, $\approx 10\%$).  Above the $W^\pm W^\mp$
 threshold, decays to vector bosons ($H \to W^\pm W^\mp$ and $H \to ZZ$)
 dominate.  The dependence of branching fraction on $M_H$ and the other rare
 decay modes are illustrated in Figure~\ref{fig:SMHiggsBR}.  
@@ -1276,7 +1290,7 @@ decay modes are illustrated in Figure~\ref{fig:SMHiggsBR}.
 \end{figure}
 For low mass Higgs,
 the \TT decay mode plays a particularly important role.  The dominant decay mode
-$H \to \bbbar$, suffers from enormous backgrounds from QCD jet production.
+$H \to \bbbar$ suffers from enormous backgrounds from QCD jet production.
 It is important to understand the magnitude of difference between expected Higgs
 boson production and the rates of various backgrounds.
 \begin{figure}
@@ -1285,8 +1299,8 @@ boson production and the rates of various backgrounds.
   \caption[Cross sections of interest at hadron colliders]{Cross sections of
   various processes at hadron colliders.  The horizontal axis represents the
   center of mass energy of the collision.  Of note is the vast difference in
-  scales between Higgs production (maroon lines, $\bigO{10^{-2}}$~nb) and the QCD
-  cross section to produce \bbbar pairs (red line, $\bigO{10^4}$~nb).
+  scales between Higgs production (maroon lines, $\bigO{10^{-2}~\text{nb}}$) and the QCD
+  cross section to produce \bbbar pairs (red line, $\bigO{10^4~\text{nb}}$).
   Source:~\cite{MSTWXSectionPlots}.} 
   \label{fig:HadronColliderCrossSections}
 \end{figure}
@@ -1343,15 +1357,14 @@ Figure~\ref{fig:AssociatedBProduction}, becomes an important production mode.
 At tree--level, the MSSM can be defined by the mass of the CP--odd Higgs \ma and
 \tanb.  For a reasonably high \tanb, there is always one CP--even Higgs ($h^0$
 or $H^0$) which is mass--degenerate with the $A^0$.  When \tanb and \ma are both
-large, associated $b$ production dominates the total cross
-section~\cite{LHCHiggsXSecGroup}. The cross sections of the different MSSM
+large, associated $b$ production dominates the total cross section~\cite{LHCHiggsXSecGroup}. The cross sections of the different MSSM
 neutral Higgs bosons are shown in Figure~\ref{fig:MSSMXSectionsTanBeta}.
 \begin{figure}
   \centering
-  \subfigure[]{\includegraphics[width=90mm,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6a.pdf}
+  \subfigure[]{\includegraphics*[width=0.47\textwidth,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6a.pdf}
   \label{fig:MSSMXSectionsTanBeta5}
   }
-  \subfigure[]{\includegraphics[width=90mm,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6b.pdf}
+  \subfigure[]{\includegraphics*[width=0.47\textwidth,angle=00]{theory_chapter/figures/YRHXS_MSSM_neutral_fig6b.pdf}
   \label{fig:MSSMXSectionsTanBeta30}
   }
   \caption[MSSM Higgs cross sections at the LHC]{Cross sections for the
@@ -1363,7 +1376,7 @@ neutral Higgs bosons are shown in Figure~\ref{fig:MSSMXSectionsTanBeta}.
   \label{fig:MSSMXSectionsTanBeta}
 \end{figure}
 The \tanb enhancement of the MSSM Higgs coupling to the $b$ quarks and $\tau$
-leptons cause the branching fraction of all neutral MSSM Higgs to be
+leptons causes the branching fraction of all neutral MSSM Higgs states to be
 $H\to\bbbar$~(90\%) and $H\to\TT$~(10\%) across the entire range of \ma.  The
 enhanced production rate and the high branching fraction to $\tau$ leptons make
 the MSSM Higgs decaying to $\tau$ leptons an exciting and promising channel to
@@ -1372,11 +1385,11 @@ search for Higgses and Supersymmetric physics at colliders.
 \subsection{Results from LEP and Tevatron}
 \label{sec:lepAndTevatron}
 The LEP and Tevatron experiments have both set limits on the existence of the
-Standard Model and MSSM Higgs.  Additionally, precision electroweak measurements
+Standard Model and MSSM Higgs boson.  Additionally, precision electroweak measurements
 give additional hints on the prospects for both models.
 
 LEP was an $e^+e^-$ collider at CERN and has effectively excluded the presence
-of a low (less than $114~GeVcc$) mass Higgs boson.  The dominant SM Higgs
+of a low (less than $114~\GeVcc$) mass Higgs boson.  The dominant SM Higgs
 production mode at LEP is Higgstrahlung, where the Higgs is produced in
 association with a $Z$ boson (see Figure~\ref{fig:HiggsStrahlung}).  The search
 at LEP utilized a number of different decay channels~\cite{PDG}.  The decay
@@ -1404,7 +1417,7 @@ The results using all channels from the four LEP experiments\footnote{ALEPH,
 DELPHI, L3, and OPAL} have been combined into a single limit, shown in
 Figure~\ref{fig:LEPHiggsLimit}.  The analysis sets a limit on the ratio $\xi^2 =
 (g_\text{HZZ}/g_\text{HZZ})^2$, the upper limit on the HZZ coupling divided by
-the prediction of the Standard Model.  For Higgs masses below $114~\GeVcc$, the
+the predicted value of the Standard Model.  For Higgs masses below $114~\GeVcc$, the
 ratio is below unity at the 95\% confidence level, ruling out a Standard Model
 Higgs below that mass.
 \begin{figure}
@@ -1422,7 +1435,7 @@ Higgs below that mass.
 \end{figure}
 
 The Tevatron is a proton--antiproton collider with a center--of--mass energy of
-$\sqrt s = 1.96~\TeV$.  There are two general purpose detectors at the Tevatron,
+\mbox{$\sqrt s = 1.96~\TeV$}.  There are two general purpose detectors at the Tevatron,
 CDF and \DZERO\@. The dominant Higgs production modes at the Tevatron are
 Higgstrahlung and gluon fusion (see Figure~\ref{fig:GluonFusion}).  For low mass
 \mbox{($m_H < 135~\GeVcc$)} Higgs bosons the dominant channel at the Tevatron is
@@ -1445,7 +1458,7 @@ expectation.
 \end{figure}
 
 When \mbox{($m_H < 135~\GeVcc$)} the $H\to W^{+} W^{-}$ decay mode becomes
-significant.  Low di--boson backgrounds allow this decay mode to probe both
+significant.  Low di--boson backgrounds allow this decay mode to probe both the
 Higgstrahlung and gluon fusion production modes. The combined results of the CDF
 and \DZERO searches using the $W^+W^-$ have decay mode recently excluded (See
 Figure~\ref{fig:TevatronHighMassHiggsLimit}) a Standard Model Higgs with a mass
@@ -1465,12 +1478,12 @@ Analyses at LEP and Tevatron have also addressed excluded regions of the MSSM\@.
 At LEP, the dominant production modes of the MSSM Higgs bosons are Higgstrahlung
 and pair production, where $e^+e^- \to h^0 A^0$ or $H^0 A^0$.  For the
 Higgstrahlung production mode, the Standard Model search can be reinterpreted in
-terms of the MSSM\@.  To address the pair production mode, searches were performed
-in the $e^+e^- \to h^0 A^0 \to \bbbar \bbbar$ and $\TT \qqbar$ decay modes.
-Finally, LEP is also sensitive to at low $\ma$ and high $\tan\beta$ to
-associated production, $\EE \to \mathcal{f}\overline{\mathcal{f}} \phi$, where
-the associated fermions $\mathcal{f}$ are \mbox{$b$--quarks} or tau leptons.
-The combined limits from LEP in the $\ma--\tan\beta$ plane are shown in
+terms of the MSSM\@.  To address the pair production mode, searches were
+performed in the $e^+e^- \to h^0 A^0 \to \bbbar \bbbar$ and $\TT \qqbar$ decay
+modes.  Finally, LEP is also sensitive to associated MSSM Higgs production at
+low $\ma$ and high $\tan\beta$ to $\EE \to {\cal f}\overline{\cal f} \phi$,
+where the associated fermions ${\cal f}$ are \mbox{$b$--quarks} or tau leptons.
+The combined limits from LEP in the \mbox{$\ma--\tan\beta$} plane are shown in
 Figure~\ref{fig:LEPMSSMLimits}.
 \begin{figure}
   \centering
@@ -1501,7 +1514,7 @@ scenarios are shown in Figure~\ref{fig:TevMSSMLimits}.
 \end{figure}
 
 \section{The Physics of the Tau Lepton}
-As discussed in sections~\ref{sec:SMHiggsPhenom} and~\ref{sec:MSSMAndTaus}, the
+As discussed in Sections~\ref{sec:SMHiggsPhenom} and~\ref{sec:MSSMAndTaus}, the
 $\tau$ lepton is an important probe of Higgs physics.  The \taul has some
 unusual properties which make it particularly challenging at hadron colliders.
 With a mass of 1.78~\GeVcc, the \taul is heaviest of the leptons.  The nominal
@@ -1511,10 +1524,10 @@ Tau decays can be effectively classified into two types. ``Leptonic'' decays
 consist of a $\tau$ decaying to a light lepton ($\ell = e, \mu$) and two
 neutrinos $\tau^+ \to \ell^+ \nu_\tau \overline{ \nu_{\ell}}$.  ``Hadronic''
 decays consist of a low--multiplicity collimated group of hadrons, typically
-\Pgppm and \Pgpz mesons.  The hadronic decays of the \taul compose approximately
+\Pgppm~and \Pgpz~mesons.  The hadronic decays of the \taul compose approximately
 $65\%$ of the \taul branching fraction, with the remainder shared approximately
 equally by the leptonic decays.  The branching fractions for the leptonic and
-most common hadronic decays are shown in table~\ref{tab:decay_modes}.
+most common hadronic decays are shown in Table~\ref{tab:decay_modes}.
 \begin{table}
    \centering
    \begin{tabular}{lccc}
@@ -1554,8 +1567,7 @@ unknown, longitudinal momentum is not conserved.} energy in the event.  This
 thesis will describe a novel way to reconstruct the neutrinos associated to tau
 decays in Chapter~\ref{ch:svfit}.  
 
-The lifetime of the tau is $c\tau = 87~\micro\meter$.  In practice, this means
-that a tau with produced with energy $E$ travels on average 
+A tau with produced with energy $E$ travels on average 
 \begin{equation}
   \gamma c \tau = \frac{E}{1.78~\GeV} 87~\micro\meter \nonumber
 \end{equation}
@@ -1564,6 +1576,6 @@ of the CMS tracker, therefore it is possible to reconstruct a vertex
 corresponding to a tau decay that is displaced with respect to the primary
 vertex.  This can be used as an additional discriminant against QCD, which is
 expected to decay promptly.  Furthermore, in Chapter~\ref{ch:svfit} we will see
-it may be possible to use it to reconstruct the associated neutrinos.
+it may be possible to use it when reconstructing the associated neutrinos.
 
 \ifx\master\undefined\input{settings/autocompile}\fi
