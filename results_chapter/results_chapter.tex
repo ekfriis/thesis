@@ -3,67 +3,101 @@
 \label{ch:results}
 \section{Selected Events}
 In the 36~\pbinv of 7~\TeV data collected by CMS in 2010, the analysis selection
-criteria described in Chapter~\ref{ch:selections} selects a total of 413 events.
-Fifteen of these events pass the additional requirement of a central jet passing
-the $b$--jet discriminator.  The expected yields from each of the background
-sources, computed by the Template method (Section~\ref{sec:template}) and
-verified by the Fake--rate method (Section~\ref{sec:fakerate}) are shown in
+criteria described in Chapter~\ref{ch:selections} selects a total of 573 events.
+The expected yields from each of the background sources, computed by the
+Template method (Section~\ref{sec:template}) and verified by the Fake--rate
+method (Section~\ref{sec:fakerate}) are shown in
 Table~\ref{tab:ExpResultsLooseAHtoMuTau}.  The total expectation from the
-Standard Model backgrounds is 437, of which 11.3 are expected to pass the
-$b$--tag criteria.  The overall yield seen in the data approximately 5\% lower
-than expected at the nominal values of all systematic uncertainties.  This
-difference is well within the statistical variance of the observed data (20.3
-events), as well as the uncertainty on the integrated luminosity\footnote{The
-uncertainty on the CMS luminosity measurement was 11\% at the time this analysis
-was performed. The measurement was later improved, and at the time of this
-writing the uncertainty on CMS 2010 integrated luminosity is 4\%. The improved
-luminosity measurement is not expected to change the results of this analysis
-significantly.} \fixme{need cite} and the tau identification uncertainty.
+Standard Model background is 577. The data agrees extremely well with the SM
+background expectation considering the expected statistical variance of the
+observed data (24 events), as well as the uncertainty on the integrated
+luminosity\footnote{The uncertainty on the CMS luminosity measurement was 11\%
+at the time this analysis was performed. The measurement was later improved, and
+at the time of this writing the uncertainty on CMS 2010 integrated luminosity is
+4\%~\cite{LUMI}. The improved luminosity measurement is not expected to change the results
+of this analysis significantly.} and the tau identification
+uncertainty.
 \begin{table}[t]
 \begin{center}
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|c|}
 \hline
-Process & Events without $b$--tag & Events with $b$--tag \\
+Process & Events in 36~\pbinv\\
 \hline
-\ttbarpJets & 0.6 & 2.26 \\
-\WpJets & 62.9 & 0.51 \\
-\ZMM & 3.8 & 0.04 \\
-QCD & 124.0 & 5.07 \\
-$(qq)Z\rightarrow\TT$ & 234.2 & 3.46 \\
+\ttbarpJets & 6.6 \\
+\WpJets & 25.6 \\
+\ZMM & 10.6 \\
+QCD & 166.2 \\
+$Z\rightarrow\TT$ & 368.1 \\
 \hline
-Standard Model sum & 425.5 & 11.34 \\
+Standard Model sum & 577.1 \\
 \hline
 \hline
-Data & 398 & 15 \\
+Data & 573 \\
 \hline
 \end{tabular}
-\caption[Final analysis yields and background expectations]{Number of Higgs $\to
+\caption[Final analysis yield and background expectations]{Number of Higgs $\to
 \TT \to \mu + \tau_{had}$ candidate events passing the selection criteria
 described in Chapter~\ref{ch:selections}.} \label{tab:ExpResultsLooseAHtoMuTau}
 \end{center}
 \end{table}
 
 The distributions of the visible mass and SVfit mass in the final selected
-events are shown in Figure~\ref{fig:AHtoMuTauPlotsLoose}.  Excellent
-agreement is seen between the shapes of the distributions.   Control plots
-showing the transverse
-momenta of the muon and visible hadronic tau in the final analysis selection are
-shown in \fixme{GET PLOTS!} Figure~XXXXX.
-%
-\begin{figure}[t]
+events are shown in Figure~\ref{fig:AHtoMuTauPlotsLoose}.  Excellent agreement
+is seen between the shapes of the distributions.   The \pt spectrum of
+the transverse momentum are sensitive to mis--modeling of the kinematics and
+composition of the various background sources. Control plots showing the
+transverse momenta of the muon and visible hadronic tau in the final analysis
+selection are shown in Figure~\ref{fig:FinalControlPlots}.  The $\eta$ and $\phi$
+distributions of the muon and tau objects are sensitive to detector effects, and
+the presence of cosmic muons.  For example, muons from cosmic events will
+preferentially be produced in the \mbox{$\phi=0$} direction.  Spurious candidates
+resulting from poorly model noise in one of the CMS subdetectors will in general
+be localized in $\eta-\phi$.  The $\eta$ and $\phi$ distributions of the muon
+and tau candidates are shown in Figure~\ref{fig:FinalControlPlotsEtaPhi} and
+show excellent agreement.
+\begin{sidewaysfigure}[t]
 \begin{center}
-\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mVisible_linear.pdf}
-\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mVisible_log.pdf}
-\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mSVmethod_linear.pdf}
-\includegraphics*[width=75mm]{results_chapter/figures/results_loose/plotAHtoMuTauOS_woBtag_finalSamplePlots_mSVmethod_log.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_muon_Pt_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_muon_Pt.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_tau_Pt_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_tau_Pt.pdf}
+\caption[Transverse momentum distributions of muon and tau in the final selected
+events]{Distribution of the transverse momentum of the muon (top) and hadronic
+tau in \mbox{Higgs $\to \TT \to \mu + \tau_{had}$} candidate events passing the
+selection criteria described in Chapter~\ref{ch:selections}.  The distributions
+are shown in linear (logarithmic) scale on the left (right).}
+\label{fig:FinalControlPlots}
+\end{center}
+\end{sidewaysfigure} 
+%
+\begin{sidewaysfigure}[t]
+\begin{center}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_muon_Eta_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_muon_Phi_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_tau_Eta_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_tau_Phi_linear.pdf}
+\caption[Distributions of the $\eta$ and $\phi$ of the muon and tau candidates in the final selected
+events]{Distribution of the $\eta$ (left) and $\phi$ (right) of the muon (top) and hadronic
+tau (bottom) in \mbox{Higgs $\to \TT \to \mu + \tau_{had}$} candidate events passing the
+selection criteria described in Chapter~\ref{ch:selections}.}
+\label{fig:FinalControlPlotsEtaPhi}
+\end{center}
+\end{sidewaysfigure} 
+%
+\begin{sidewaysfigure}[t]
+\begin{center}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_mVisible_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_mVisible.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_mSVmethod_linear.pdf}
+\includegraphics*[height=0.49\textwidth,angle=90]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_mSVmethod.pdf}
 \caption[Distributions of final selected events]{Distribution of visible (top)
 and ``full'' \TT invariant mass reconstructed by the SVfit algorithm (bottom) in
-Higgs $\to \TT \to \mu + \tau_{had}$ candidate events passing the selection
+\mbox{Higgs $\to \TT \to \mu + \tau_{had}$} candidate events passing the selection
 criteria described in Chapter~\ref{ch:selections}.  The distributions are shown
 in linear (logarithmic) scale on the left (right).}
 \label{fig:AHtoMuTauPlotsLoose}
 \end{center}
-\end{figure} 
+\end{sidewaysfigure} 
 
 The expected yields from an MSSM Higgs boson signal for \mbox{$\tan\beta =
 30$}\footnote{Details of the relationship between the MSSM Higgs cross section
@@ -71,7 +105,7 @@ and \tb are discussed in detail in Section~\ref{sec:MSSMInterp}.}
 are summarized in \label{tab:SignalExpResultsLooseAHtoMuTau}.  The contributions
 from the gluon fusion production mode and the associated $b$--quark production
 modes are given separately.  The yields are divided into the exclusive
-categories of events containing a $b$--tagged jet and those without.  For a
+categories of events containing a \mbox{$b$--tagged} jet and those without.  For a
 Higgs mass of $\ma = 160~\GeVcc$, a total of 17 events are expected at
 $\tan\beta = 30$.
 %
@@ -120,65 +154,130 @@ Higgs Cross Section working group.} \label{tab:SignalExpResultsLooseAHtoMuTau}
 
 \section{Limits on Higgs Production}
 We compute upper limits on the cross section times the branching ratio using the
-Bayesian and DLL methods described in Section~\label{sec:statmethod}.  The
-expected nominal upper limit, and the $\pm1$, and $\pm2$ confidence limits are
-shown in Table~\ref{tab-exp-limit-TaNC}.  The expected limit is computed by
-generating ``toy'' experiments.  A large number of pseudo--data sets are
+Bayesian method described in Section~\label{sec:statmethod}. We compute an
+expected limit in the same manner as an observed limit, but with simulated data
+generated in ``toy'' experiments.  A large number of pseudo--data sets are
 generated using the null hypothesis templates \fixme{at what value of the
-nuisance?} using Monte Carlo techniques.  The pseudo--sets are expected to have
-the same statistical sensitivity as the observed dataset.  The upper limits are
-then computed using the pseudo--dataset.   The process is repeated many times,
+nuisance?} using Monte Carlo techniques.  The pseudo--data sets are expected to
+have the same statistical sensitivity as the observed dataset.  The upper limits
+are then computed using the pseudo--data.   The process is repeated many times,
 and the spread of the obtained upper limits determines the expected upper limit
-band.
+band.  The expected nominal upper limit, and the $\pm1$, and $\pm2$ confidence
+limits are shown in Table~\ref{tab-exp-limit-TaNC}.  The observed limit on the
+MSSM computed from the 413 events selected in this analysis is given in the
+right column of Table~\ref{tab-exp-limit-TaNC}.  The observed limit is
+compatible with the expected limit, within 1.5 standard deviations.  The trend
+of the expected and observed limits versus the Higgs mass using both observables
+are shown in Figure~\ref{fig:SVXSecLimits}.  
+%
+% Vim command to add column delimters between a
+% 'a,'bs/\(\S\)\s\s*\(\S\)/\1 \& \2/g Round floating point numbers
+% Round
+% s/\d\+\.\d\+/\=printf('%.2f',str2float(submatch(0)))/g
+%
+%\npdecimalsign{.} \nprounddigits{1}
 \begin{table}
   \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    %\begin{tabular}{|c|n{3}{1}|c|c|c|c|c|}
+    %\begin{tabular}{|c|n{3}{1}|n{3}{1}|n{3}{1}|n{3}{1}|n{3}{1}|n{3}{1}|}
     \hline
-    \multicolumn{6}{|c|}{Bayesian Limit} \\
     \hline
-   mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
-     90 &  338.451 &  426.345  &  603.758 &  864.279 &  995.085 \\
-    100 &  139.186 &  201.021  &  284.872 &  392.952 &  526.509 \\
-    130 &   23.652 &   33.018  &   45.208 &   67.276 &   99.547 \\
-    160 &   12.596 &   16.516  &   23.052 &   33.980 &   49.437 \\
-    200 &    7.731 &   10.091  &   14.179 &   20.334 &   28.955 \\
-    250 &    5.194 &    6.753  &    9.568 &   13.277 &   18.317 \\
-    350 &    3.586 &    4.548  &    6.020 &    8.192 &   11.552 \\  \hline
+    \multicolumn{7}{|c|}{Secondary Vertex Fit Limit} \\
+    \hline
+    {Mass} & ${-2\sigma}$ & ${-1\sigma}$ & {Median} & ${+1\sigma}$ & ${+2\sigma}$ &
+    {Observed} \\
+    \hline
+    90 & 329.2 & 429.2 & 621.9 & 862.9 & 999.1 & 394.7\\
+    120 & 30.1 & 41.6 & 59.8 & 82.0 & 116.6 & 86.5\\
+    130 & 20.7 & 27.6 & 40.5 & 55.6 & 79.4 & 59.9\\
+    160 & 10.3 & 13.2 & 19.0 & 26.2 & 35.8 & 28.3\\
+    200 & 6.3 & 8.3 & 11.2 & 15.8 & 20.2 & 16.4\\
+    250 & 4.0 & 5.6 & 7.6 & 10.6 & 14.5 & 12.9\\
+    300 & 2.9 & 4.0 & 5.7 & 7.8 & 11.1 & 9.4\\
+    \hline
+    \hline
+    \multicolumn{7}{|c|}{Visible Mass Limit} \\
+    \hline
+    90 & 376.2 & 523.3 & 688.2 & 980.9 & 998.8 & 573.8\\
+    120 & 37.0 & 52.1 & 75.4 & 109.2 & 164.1 & 82.6\\
+    130 & 26.2 & 35.9 & 52.2 & 74.6 & 117.5 & 64.2\\
+    160 & 14.3 & 18.3 & 25.1 & 35.2 & 55.1 & 41.2\\
+    200 & 8.9 & 11.9 & 16.6 & 22.4 & 32.8 & 31.1\\
+    250 & 5.9 & 8.1 & 11.5 & 15.9 & 22.3 & 18.1\\
+    300 & 4.2 & 5.8 & 8.4 & 11.7 & 15.9 & 10.8\\
+    \hline 
+    \hline
     \end{tabular}
-    \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    \multicolumn{6}{|c|}{Delta Log Likelihood Limit} \\
-    \hline
-   mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
-     90 &  207.584 &  287.853  &  483.422 &  817.838 &  995.397 \\
-    100 &   91.429 &  140.344  &  231.893 &  384.402 &  622.317 \\
-    130 &   16.239 &   25.512  &   41.171 &   74.202 &  141.748 \\
-    160 &    9.157 &   13.164  &   21.658 &   38.859 &   68.062 \\
-    200 &    5.320 &    7.757  &   13.443 &   23.028 &   40.261 \\
-    250 &    3.499 &    4.899  &    8.410 &   14.182 &   24.621 \\
-    350 &    2.298 &    3.065  &    4.733 &    7.920 &   15.243 \\  \hline
-    \end{tabular}
-    \caption[Expected 95\% CL $\sigma \times \text{BR}$ upper limits] {Expected
-    95\% CL upper limit bands using the Bayesian prescription (top), and Delta
-    Log Likelihood (bottom)}
-    \label{tab-exp-limit-TaNC}
+    \caption[Expected and observed 95\% CL $\sigma \times \text{BR}$ upper
+    limits] {Expected 95\% CL upper limit bands and the observed limit using the
+    Bayesian prescription.  The limit is computed using both the SVfit mass
+    (top) as well as the visible mass (bottom) as the search observable.  Use of
+    the SVfit mass significantly improves the strength of the limit
+    considerably.  } \label{tab-exp-limit-TaNC}
   \end{center}
 \end{table}
+%
+\begin{figure}[t]
+\begin{center}
+  \includegraphics*[width=0.97\textwidth]{results_chapter/figures/expected_vs_obs_SVfit.pdf}
+  \includegraphics*[width=0.97\textwidth]{results_chapter/figures/expected_vs_obs_VisibleMass.pdf}
+  \caption[Observed and expected limits on Higgs $\sigma \times \text{BR}$]
+  {Observed and expected limits on the cross section times branching ratio of a
+  Higgs boson versus Higgs mass.  The top plot gives the limit computed using
+  the SVfit mass as the observable, the bottom plot gives the limit computed
+  using the visible mass.  The dashed line gives the nominal expected limit.
+  The green and yellow bands give the $+1$ and $+2$ standard deviations on the
+  expected limit.  } \label{fig:SVXSecLimits}
+\end{center}
+\end{figure} 
+%
+The use of the SVfit reconstructed mass as the observable increases the power of
+the limit significantly. The limit trend has some interesting features.   When
+the Higgs mass is close to the mass of the $Z$ resonance, the analysis have
+little power to set a limit on the presence of the Higgs.  This is due to the
+large uncertainty on the tau identification efficiency.  Essentially, when
+\mbox{$\ma = m_Z$}, the Higgs yield in the $Z$ bump would have be larger than
+30\% of the \ZTT yield for the profile likelihood to be able to recognize an
+excess of events. Below this value, the profile likelihood can simple shift the
+tau identification efficiency scale factor up by 30\% and ``eat'' any potential
+excess of signal.
 
-The limit trend has
-some interesting features.   When the Higgs mass is close to the mass of the $Z$
-resonance, the analysis have little power to set a limit on the presence of the
-Higgs.  This is due to the large uncertainty on the tau identification
-efficiency.  Essentially, when \mbox{$\ma = m_Z$}, the Higgs yield in the $Z$
-bump would have be larger than 30\% of the \ZTT yield for the profile likelihood
-to be able to recognize an excess of events. Below this value, the profile
-likelihood can simple shift the tau identification efficiency scale factor up by
-30\% and ``eat'' any potential excess of signal.
-
-The observed limit on the MSSM computed from the 413 events selected in this
-analysis is given in Table~XXXXx.  The observed limit is compatible with the
-expected limit, within XXXXX sigma.  The trend of the expected and observed
-limits versus the Higgs mass are shown in Figure~XXXXx.  
+% Limits from december analysis note
+%\begin{table}
+  %\begin{center}
+    %\begin{tabular}{|c|c|c|c|c|c|}
+    %\hline
+    %\multicolumn{6}{|c|}{Bayesian Limit} \\
+    %\hline
+   %mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
+     %90 &  338.451 &  426.345  &  603.758 &  864.279 &  995.085 \\
+    %100 &  139.186 &  201.021  &  284.872 &  392.952 &  526.509 \\
+    %130 &   23.652 &   33.018  &   45.208 &   67.276 &   99.547 \\
+    %160 &   12.596 &   16.516  &   23.052 &   33.980 &   49.437 \\
+    %200 &    7.731 &   10.091  &   14.179 &   20.334 &   28.955 \\
+    %250 &    5.194 &    6.753  &    9.568 &   13.277 &   18.317 \\
+    %350 &    3.586 &    4.548  &    6.020 &    8.192 &   11.552 \\  \hline
+    %\end{tabular}
+    %\begin{tabular}{|c|c|c|c|c|c|}
+    %\hline
+    %\multicolumn{6}{|c|}{Delta Log Likelihood Limit} \\
+    %\hline
+   %mass &-2$\sigma$&-1$\sigma$&   median &+1$\sigma$&+2$\sigma$\\  \hline
+     %90 &  207.584 &  287.853  &  483.422 &  817.838 &  995.397 \\
+    %100 &   91.429 &  140.344  &  231.893 &  384.402 &  622.317 \\
+    %130 &   16.239 &   25.512  &   41.171 &   74.202 &  141.748 \\
+    %160 &    9.157 &   13.164  &   21.658 &   38.859 &   68.062 \\
+    %200 &    5.320 &    7.757  &   13.443 &   23.028 &   40.261 \\
+    %250 &    3.499 &    4.899  &    8.410 &   14.182 &   24.621 \\
+    %350 &    2.298 &    3.065  &    4.733 &    7.920 &   15.243 \\  \hline
+    %\end{tabular}
+    %\caption[Expected 95\% CL $\sigma \times \text{BR}$ upper limits] {Expected
+    %95\% CL upper limit bands using the Bayesian prescription (top), and Delta
+    %Log Likelihood (bottom)}
+    %\label{tab-exp-limit-TaNC}
+  %\end{center}
+%\end{table}
 
 \section{Interpretation in the MSSM}
 \label{sec:MSSMInterp}
@@ -188,13 +287,13 @@ independent,\footnote{This assumption is only valid if the shape of the sum of
 all new physics contributions are also model independent, on the scale of the
 experimental resolution.  For the values of \tb this analysis is sensitive to,
 this is a valid approximation in the MSSM\@.  In a model where the width of the
-Higgs boson was larger than the resolution of the SVfit method, the limits of
-Table~\ref{tab-exp-limit-TaNC} would not be valid.} and could be applied to set
-limits on the parameter space of a number of models.  In this thesis, we
-interpret the results in the context of the MSSM\@.  Specifically, we exclude a
-region in the $\tb - \ma$ parameters space of the MSSM\@.  To find the upper
-limit band on \tb, we find the minimum value of $\tan\beta$ which provides the
-cross section and branching ratio product found in the corresponding row in
+Higgs boson resonance was larger than the resolution of the SVfit method, the
+limits of Table~\ref{tab-exp-limit-TaNC} would not be valid.} and could be
+applied to set limits on the parameter space of a number of models.  In this
+thesis, we interpret the results in the context of the MSSM\@.  Specifically, we
+exclude a region in the $\tb - \ma$ parameters space of the MSSM\@.  To find the
+upper limit band on \tb, we find the minimum value of $\tan\beta$ which provides
+the cross section and branching ratio product found in the corresponding row in
 Table~\ref{tab-exp-limit-TaNC}. 
 
 The mapping between \ma and \tb and the Higgs cross section is provided by the
@@ -218,7 +317,7 @@ $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
 \begin{table}
   \centering
   \begin{tabular}{l|ccc} 
-                & \multicolumn{3}{|c}{Included when} \\
+                & \multicolumn{3}{c}{Included when} \\
     Higgs State & $\ma < 130~\GeVcc$ & $\ma = 130~\GeVcc$ & $\ma > 130~\GeVcc$ \\
     \hline
     $A^0$       & yes & yes & yes \\
@@ -233,14 +332,24 @@ $\ma \geq 130~\GeVcc$, the $h_0$ reaches a limiting mass of $\approx
   \label{tab:HiggsXSectionCombination}
 \end{table}
 
-The region in $\tb-\ma$ MSSM parameter space excluded by this analysis at 95\% CL 
-is shown in Figure~XXXXXx.  The limit is compared to the combined result from
-\mbox{Run II} of the Tevatron (this result is discussed in detail in 
-Section~\ref{sec:lepAndTevatron}).  The result of this analysis sets a stronger
-limit \fixme{check this!} than the Tevatron for large values of \ma.  In the
-low \ma region, the analysis suffers due to the large tau identification
+The region in $\tb-\ma$ MSSM parameter space excluded by this analysis at 95\%
+CL is shown in Figure~\ref{fig:TanBetaLimit}.  The limit is compared to the
+combined result from \mbox{Run II} of the Tevatron (this result is discussed in
+detail in Section~\ref{sec:lepAndTevatron}).  The result of this analysis sets a
+stronger limit \fixme{check this!} than the Tevatron for large values of \ma.
+In the low \ma region, the analysis suffers due to the large tau identification
 efficiency uncertainty.  This effect can be mitigated by using the $e-\mu$
 channel.  The combined CMS result uses this approach, and will be discussed
 briefly in the conclusion.
+\begin{figure}[htb]
+  \centering
+  %   \center{\includegraphics[width=\textwidth]
+  %       {figures/biotensor.png}}
+  \vspace{3in}
+  \label{fig:TanBetaLimit} 
+  \caption[Excluded regions of MSSM $\tb-\ma$ parameter space]{Region of MSSM
+  $\tb-\ma$ parameter space excluded by this analysis.}
+\end{figure}
+
 
 \ifx\master\undefined\input{settings/autocompile}\fi
