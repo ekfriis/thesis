@@ -1,5 +1,5 @@
 \ifx\master\undefined\input{settings/autocompile}\fi
-
+%
 \chapter{Systematics and Limit Extraction} \label{ch:systematics} 
 %
 In this chapter we discuss the systematic uncertainties affecting the search for
@@ -15,7 +15,7 @@ the conclusion, we will interpret the \xbr limit result in the context of the
 MSSM theory.
 
 Proper determination of systematic uncertainties is one of the most challenging
-and important components in performing the measurement correctly.  A systematic
+and important components in performing a measurement correctly.  A systematic
 uncertainty is the effect of the uncertainty of some ancillary measurement (or
 assumption) that is used in the computation of the final result.  An instructive
 example of how a systematic uncertainty can affect the final result is a
@@ -68,7 +68,7 @@ simulation, according to the procedures of Chapter~\ref{ch:corrections}, and
 calculating a correction factor.  The uncertainty associated with the
 measurement of the correction factor is the systematic uncertainty.  The
 normalization uncertainties are assumed to be uncorrelated with the
-\emph{shapes} of visible and SVfit mass distributions which are
+shapes of visible and SVfit mass distributions which are
 used to extract the MSSM Higgs $\to \TT$ signal contribution in the analyzed
 dataset.  Uncertainties on the shapes of the distributions are described by
 ``morphing'' systematics.  These are are due to uncertainties on the
@@ -84,60 +84,60 @@ dominated control regions.
 \section{Signal normalization uncertainties}
 
 The signal normalization uncertainties are due to imperfect knowledge of how
-improperly modeled effects in the detector affect our ``acceptance'' model, or
+improperly modeled effects in the simulation could affect the acceptance model,
 the probability that a given signal event will pass one of the selections
 (detailed in Chapter~\ref{ch:selections}).  The general procedure to quantify
 these uncertainties is to measure the effect in some control region in both the
 data and Monte Carlo.  The ratio of data to Monte Carlo then gives a correction
 factor which is applied to the simulation.  An uncertainty on the measurement of
-the effect in control region (in data, simulation, or both) is then taken as the
+the effect in control region (in the data, simulation, or both) is then taken as the
 systematic uncertainties.  The signal normalization uncertainties affecting this
 analysis on muon trigger, reconstruction, identification and isolation
 efficiencies are taken from the tag and probe analysis of $Z \to \MM$ events
 presented in Section~\ref{sec:ZmumuTagAndProbe}.  A very conservative estimate
-of $30\%$ is taken for the uncertainty on the tau
-reconstruction and identification efficiency.  The tau
-identification uncertainty measurement is discussed briefly
-in~\ref{sec:HadTauIdEff}.  The dependency of the Higgs signal extraction on the
-tau identification efficiency has been studied, the result being that
-uncertainties on the tau identification efficiency affect the limit on
-cross--section times branching ratio for MSSM Higgs $\to \TT$ production by a
+of $30\%$ is taken for the uncertainty on the tau reconstruction and
+identification efficiency.  The tau identification uncertainty measurement is
+discussed briefly in~\ref{sec:HadTauIdEff}.  The dependency of the Higgs signal
+extraction on the tau identification efficiency has been studied, the result
+being that uncertainties on the tau identification efficiency affect the limit
+on cross--section times branching ratio for MSSM Higgs $\to \TT$ production by a
 few percent only.  An uncertainty of $11\%$ is attributed to the luminosity
-measurement.
+measurement~\cite{LUMI}.
 
 \section{Background normalization uncertainties}
 
 Uncertainties on the normalization of background processes are obtained from the
 study of background enriched control regions presented in
 Chapter~\ref{ch:backgrounds}.  The main fake tau backgrounds in this analysis
-are QCD multi--jet and $W$ + jets events.  For a detailed discussion of the
-measurements, see Chapter~\ref{ch:backgrounds}.  These backgrounds are produced
-copiously enough for the backgrounds to be studied in control regions dominated
-by a single background process with a purity exceeding $90\%$ and an event
-statistics exceeding the expected contribution of that background to the
-analysis by more than one order of magnitude.  Both backgrounds are found to be
-well modeled by the Monte Carlo simulation.  An uncertainty of $10\%$ is
-attributed to the contribution of QCD and $W$ + jet backgrounds to the analysis.
-The cross--section for $\ttbar + jets$ production makes it difficult to select a
-high purity sample of $\ttbar + jet$ events of high event statistics.  From the
-study of the $19$ events selected in the $\ttbar + jets$ background enriched
-control sample we assume an uncertainty on the $\ttbar + jets$ background
-contribution in the analysis of $30\%$.  The $Z \to \MM$ background has been
-studied with large statistical precision in two separate control regions,
-dominated by events in which the reconstructed tau--jet candidate is either due
-to a misidentified quark or gluon jet or due to a misidentified muon.  Good
-agreement between data and Monte Carlo simulation is found in both cases.
-Sizeable uncertainties on the $Z \to \MM$ background contribution arise due to
-the extrapolation from the background enriched control regions to the data
-sample considered in the analysis, however: the contribution of $Z \to \MM$
-background events to the analysis is due to events in which one of the two muons
-produced in the $Z$ decay either escapes detection or fakes the signature of a
-hadronic tau decay.  Both cases may be difficult to model precisely in the Monte
-Carlo simulation.  The non--observation of a $Z$ mass peak in the mu + tau
-visible mass distribution studied with the fake--rate method on the other hand
-sets a limit on possible contributions from $Z \to \MM$ background events.
-Conservatively, we assume an uncertainty of $100\%$ on both types of $Z \to \MM$
-background contributions.
+are QCD multi--jet and \WpJets events.  These backgrounds are produced copiously
+enough for the backgrounds to be studied in control regions dominated by a
+single background process with a purity exceeding $90\%$ and an event statistics
+exceeding the expected contribution of that background to the analysis by more
+than one order of magnitude.  Both backgrounds are found to be well modeled by
+the Monte Carlo simulation. The overall background yields used in the final fit
+are measured in the background enriched control regions, and cross--checked
+using the Fake--rate and Template methods. For a detailed discussion of the
+measurements, see Chapter~\ref{ch:backgrounds}.  An uncertainty of $10\%$ is
+attributed to the contribution of QCD and \WpJets backgrounds to the analysis.
+The cross--section for \ttbarpJets production makes it difficult to select a
+high purity sample of \ttbarpJets events of high event statistics.  From the
+study of the $19$ events selected in the \ttbarpJets background enriched control
+sample we assume an uncertainty on the \ttbarpJets background contribution in
+the analysis of $30\%$.  The \ZMM background has been studied with large
+statistical precision in two separate control regions, and is dominated by
+events in which the reconstructed tau--jet candidate is either due to a
+misidentified quark or gluon jet or due to a misidentified muon.  Good agreement
+between data and Monte Carlo simulation is found in both cases.  Sizeable
+uncertainties on the \ZMM background contribution arise due to the extrapolation
+from the background enriched control regions to the data sample considered in
+the analysis, however: the contribution of \ZMM background events to the
+analysis is due to events in which one of the two muons produced in the $Z$
+decay either escapes detection or fakes the signature of a hadronic tau decay.
+Both cases may be difficult to model precisely in the Monte Carlo simulation.
+The non--observation of a $Z$ mass peak in the mu + tau visible mass
+distribution studied with the fake--rate method on the other hand sets a limit
+on possible contributions from \ZMM background events.  Conservatively, we
+assume an uncertainty of $100\%$ on both types of \ZMM background contributions.
 
 \section{Shape uncertainties}
 \label{sec:ShapeUncertainties}
@@ -155,16 +155,20 @@ momentum scale or of the missing transverse energy applied is then taken as
 shape uncertainty.
 
 The systematic uncertainties on the muon and tau energy scales have been
-provided by the muon and tau Physics Object Groups and are described in
+provided by the muon and tau CMS Physics Object Groups and are described in
 Section~\ref{sec:MuonTauMomentumScale}.  The modelling of missing transverse
 energy in different types of background events has been studied in the
 background enriched control regions described in Chapter~\ref{ch:backgrounds}.
 No significant deviations between data and Monte Carlo simulation have been
-found.  Uncertainties due to missing transverse energy are estimated by varying
-parameters of the $Z$--recoil corrections within the uncertainties obtained when
-fitting (see Section~\ref{sec:ZRecoilCorr}) the $Z$--recoil correction factor
-parameters in simulated $Z \to \MM$ events versus $Z \to \MM$ events selected in
-data.
+found.  
+Uncertainties due to missing transverse energy are estimated by varying
+the ``clustered'' and ``unclustered'' energy scales, described in
+Section~\ref{sec:ZRecoilCorr} and recomputing the total \MET.
+%Uncertainties due to missing transverse energy are estimated by varying
+%parameters of the $Z$--recoil corrections within the uncertainties obtained when
+%fitting (see Section~\ref{sec:ZRecoilCorr}) the $Z$--recoil correction factor
+%parameters in simulated $Z \to \MM$ events versus $Z \to \MM$ events selected in
+%data.
 
 \section{Theory uncertainties}
 
@@ -172,7 +176,7 @@ The signal and background normalization as well as the shape uncertainties are
 all experimental uncertainties in nature.  Additional theoretical uncertainties
 arise from imprecise knowledge of parton--distribution functions (PDFs) and of
 the exact dependency of signal cross--sections and branching ratios on
-$tan\beta$ and $m_A$.  The PDFs describe how the energy of the protons is shared
+$\tan\beta$ and \ma.  The PDFs describe how the energy of the protons is shared
 between the quarks and gluons.  Since the longitudinal boost of the hard
 collisions depends on the PDFs, the signal acceptance is sensitive to errors in
 the PDFs.  The uncertainties on the signal acceptance due to PDF uncertainties
@@ -250,14 +254,14 @@ We can then define a likelihood for any configuration of our templates given the
 observed data.  The likelihood is a ``binned Poisson likelihood,'' which is
 defined as the product of the Poisson probability in each bin.  The Poisson
 probability $P(n|\mu)$ is the probability to observe $n$ events given an
-expectation of (on average) $\mu$ events.  The Poisson probability is given by
+expectation of $\mu$ events.  The Poisson probability is given by
 the expression 
 \begin{equation}
   P(k|\mu) = \frac{\mu^k e^{-k}}{k!}.
   \label{eq:PoissonProb}
 \end{equation}
 The total likelihood for observed data given some configuration of templates is
-then simply a product of the Poisson probabilities (Equation~\ref{eq:PoissonProb}) 
+then simply the product of the Poisson probabilities (Equation~\ref{eq:PoissonProb}) 
 in each of the $N_{bin}$ bins: 
 \begin{eqnarray}
   {\cal L} = \prod_{i=1}^{N_{bin}} \frac{\mu_i^{n_i} e^{-\mu_i}}{n_i!},
@@ -274,7 +278,7 @@ The number of expected events in a source, in turn, can be written
   \label{eq:ShapeParameterization}
 \end{eqnarray}
 where $L$ is the integrated luminosity, $\sigma_j$ is the cross section
-for source $j$, and$\epsilon_{ji}$ is the efficiency for source $j$ in bin
+for source $j$, and $\epsilon_{ji}$ is the efficiency for source $j$ in bin
 $i$.  
 
 We incorporate the systematic uncertainties of the analysis  by introducing a
@@ -286,12 +290,12 @@ $\sigma_j$ and $\epsilon_{ji}$ in Equation~\ref{eq:ShapeParameterization}) are
 now interpreted as functions of the set of nuisance parameters $\vec \beta$.
 Existing knowledge about the value of the nuisance parameter is introduced by
 extending the likelihood function with a constraint ${\cal G}(\vec \beta)$ 
-that expresses the uncertainty on the nuisance parameters. 
+that expresses the knowledge about the nuisance parameters. 
 The templates $\mu_{ji}$ can depend on the nuisance parameters in two ways.
 Normalization uncertainties introduce multiplicative nuisance factors on the
 yield of some (sub)set of the sources defined by
 Equation~\ref{eq:ShapeParameterization}.  As an example, consider a simplified
-situation where there are only two sources: \ZTT and \WpJets events.  Both are
+situation where there are only two sources: \ZTT and \WpJets events.  Both 
 sources are sensitive to the efficiency of the muon trigger.  Only the \ZTT
 sample is sensitive to the efficiency of the hadronic tau identification
 algorithm, as the fake--rate in \WpJets is measured in data.  We would then
@@ -332,12 +336,12 @@ cross-section.  If the presence of a signal is unambiguous, one can simply
 determine the likelihood as a function of the cross-section.  If the signal is
 known to be non--zero, confidence intervals about the maximum likelihood can be
 constructed by examining the change in the logarithm $2\Delta \ln {\cal L}$ of
-the likelihood.  The Frequentist \fixme{Did I mix this up?} interpretation of a
-confidence level $1-\alpha$ is that if the experimented were repeated $N$ times,
-the interval corresponding to $1-\alpha$ would fail ``cover'' the \emph{true}
-value of the observable in $\alpha \times N$ of the experiments.  The
-correspondence between confidence levels and intervals in $2\Delta \ln {\cal L}$
-is given in Table~\ref{tab:ConfidenceIntervals}.
+the likelihood.  The Frequentist \fixme{Did I mix this up?}interpretation of the
+confidence level $(1-\alpha)$ is that if the experimented were repeated $N$
+times, the interval corresponding to $(1-\alpha)$ would fail ``cover'' the
+\emph{true} value of the observable in $\alpha \times N$ of the experiments.
+The correspondence between confidence levels and intervals in $2\Delta \ln {\cal
+L}$ is given in Table~\ref{tab:ConfidenceIntervals}.
 \begin{table}
   \begin{center}
     \begin{tabular}{c|ccc} 
@@ -367,7 +371,7 @@ are two methods of removing the dependence on the nuisance parameters,
 integrating the likelihood of Equation~\ref{eq:LikelihoodNuisance} over the
 entire range of all nuisance parameters.  This effectively averages the effect
 of the different uncertainties into the marginalized likelihood function.  The
-profiling method \emph{maximizes} the likelihood in terms of the nuisance
+profiling method maximizes the likelihood in terms of the nuisance
 parameters.  In the profiling method, the ``profile likelihood'' is created by
 maximizing the likelihood with respect to all of the nuisance parameters.  One
 way to interpret the profiling method is that the values of nuisance parameters
@@ -383,8 +387,8 @@ uncertainty of 30\%.  If the bump at the \ZTT resonance can be considered to
 Higgs free, the tau identification efficiency can be measured to a much greater
 precision, approximately 7\%~\cite{CMS-PAS-EWK-10-013, CMS-PAS-TAU-11-001}.
 When profiling the likelihood (as a function of cross section) for a Higgs with
-a mass $\ma > m_Z$, the likelihood contains the information that no Higgs
-contribution to the $Z$ resonance is possible.  This fact enables the profiling
+a mass $\ma > m_Z$, the likelihood contains the information that there is no Higgs
+contribution to the $Z$ resonance.  This fact enables the profiling
 process to constrain the systematic uncertainty on the tau identification
 efficiency to the 7\% level using the size of the $Z$ resonance.  Conversely,
 when the likelihood is evaluating the likelihood of the presence of a Higgs
@@ -426,8 +430,8 @@ However, the effect of upward or downward statistical fluctuations in the
 observed data affect the two methods in different ways.  When the data
 fluctuates low, the DLL method will produce a more stringent limit than the
 DLL method.  When the data fluctuates high, creating an apparent signal, the
-Bayesian method will (correctly) set a more stringent limit.  In this thesis we
-report the results of both methods.
+Bayesian method will (correctly) set a more stringent limit.  
+%In this thesis we report the results of both methods.
 %
 %we find that point where the logarithm of the
 %profile likelihood is 1.92 units below the value of the likelihood at
@@ -441,7 +445,7 @@ report the results of both methods.
 
 In the results presented below we use nuisance parameters corresponding
 to the systematic errors summarized in Table~\ref{tab-sys}.
-\fixme{Get MET scale}
+\fixme{Get MET scale, how to split between type 1 and type2?}
 \begin{table}
   \begin{center}
     \begin{tabular}{|l|c|c|} \hline
@@ -452,16 +456,16 @@ Jet to $\tau$ fake rate  &  Multiplicative   &    20\%      \\
 $\mu\to\tau$ fake rate   &  Multiplicative   &   100\%      \\
 $W+$jets cross section   &  Multiplicative   &    10\%      \\
 $t\bar{t}$ cross section &  Multiplicative   &    40\%      \\
-integrated luminosity    &  Multiplicative   &    10\%      \\
-Tau energy scale         &  Morphing         &     2\%      \\
-Missing $E_T$ scale      &  Morphing         &     XX\%      \\
+integrated luminosity    &  Multiplicative   &    11\%      \\
+Tau energy scale         &  Morphing         &     3\%      \\
+Missing $E_T$ scale      &  Morphing         &     3\%      \\
 Muon $p_T$ scale         &  Morphing         &   neg.       \\
 EM energy scale          &  Morphing         &   neg.       \\ \hline
     \end{tabular}
    \end{center}
-  \caption{Summary of systematic uncertainties represented by nuisance 
-           parameters in the likelihood, their representation method 
-           and magnitudes.\label{tab-sys}}
+  \caption[Summary of systematic uncertainties]{Summary of systematic
+  uncertainties represented by nuisance parameters in the likelihood, their
+  representation method and magnitudes.  \label{tab-sys}}
 \end{table}
 
 

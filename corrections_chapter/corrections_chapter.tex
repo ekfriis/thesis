@@ -40,7 +40,7 @@ selections~\cite{CMS-PAS-EWK-10-002}.  In the selected events, we define the
 pass the VBTF muon selection.  The tag muons are further required to pass the
 ``combined relative isolation'' described in the VBTF paper.  We finally require
 that the tag muon be matched to an HLT object corresponding to the
-run--dependent requirements listed in table~\ref{tab:AHtoMuTauTriggers}.  The
+run--dependent requirements listed in Table~\ref{tab:AHtoMuTauTriggers}.  The
 trigger match requirement ensures that the event would be recorded independently
 of the probe muon.  After the tag and probe muon pairs have been collected, we
 compare the muon identification performance in the probe collection in events
@@ -70,9 +70,9 @@ a Crystal Ball function for the signal ($\ZMM$) events and an
 exponential for the background.  The fit is done for two cases; where the probe
 fails the selection and the where it passes.  The method is illustrated in
 Figure~\ref{fig:TagAndProbeFits}.  The signal yield $N$ is extracted from each
-fit and the efficiency is computed as $N_{pass}/(N_{pass} + N_{fail}$.  Each
+fit and the efficiency is computed as $N_{pass}/(N_{pass} + N_{fail})$.  Each
 efficiency is measured in both the data and the simulation. The results of the
-measurements are shown in table~\ref{tab:muonTagAndProbeResults}. In the final
+measurements are shown in Table~\ref{tab:muonTagAndProbeResults}. In the final
 analysis, the simulated events are weighted by the fractional difference to the
 measured values; the statistical uncertainty on the weight is taken as the sum
 in quadrature of the statistical uncertainties for the data and simulation
@@ -86,7 +86,7 @@ systematic uncertainty in the final measurement.
 \includegraphics*[height=52mm]{corrections_chapter/tag_probe_data/plot_1.pdf}
 \caption[Tag--probe muon isolation method]{The tag--probe dimuon invariant mass
 spectrum in events in which the probe muon passed (left) and failed (right) the
-muon isolation requirement.  The solid gives the result of the simultaneous fit
+muon isolation requirement.  The solid line gives the result of a simultaneous fit
 of the signal (real $Z\to\MM$ events) and background.  The fitted background
 contribution is shown as the dotted line.  The muon isolation efficiency is then
 extracted from the number of signal events in the passing and failing bins.}
@@ -96,7 +96,7 @@ extracted from the number of signal events in the passing and failing bins.}
 
 The correction for the trigger efficiency needs to take into account the
 differences in the HLT selections applied during different operating periods
-(see table~\ref{tab:AHtoMuTauTriggers}).  To determine the overall correction
+(see Table~\ref{tab:AHtoMuTauTriggers}).  To determine the overall correction
 factor, we measure the trigger efficiency in data for each of the operating
 periods and compare it to the simulated efficiency of the HLT\_Mu9 selection.
 The overall efficiency in data is taken as the average of the three periods,
@@ -176,12 +176,12 @@ applied\footnote{Actually, a slightly more complicated method is used. The
 analysis uses three decay channels, and the \ZTT cross section and tau
 identification correction factors are fitted simultaneously. The central value
 of the \ZTT cross section is driven by the $\ZTT \to e \mu$ channel, which is
-independent of the hadronic tau identification.} in CMS \ZTT cross section
+independent of the hadronic tau identification.} in the CMS \ZTT cross section
 analysis~\ref{CMS-PAS-EWK-10-013}, and measured a tau identification simulation
 to data correction factor of \mbox{$0.960 \pm 0.067$}.
 
 Unfortunately, this method cannot be used in this analysis.  The measurement
-using the $Z$ resonance operates on the assumption there is no New Physics
+using the $Z$ resonance operates on the assumption there is no new physics
 contribution to the events in the $Z$ bump.  In the case that there was a Higgs
 signal at $\ma = 90~\GeVcc$, it would be indistinguishable from the $Z$ and
 would appear as an increase of $N_{H}$ in the observed yield.  The analysis
@@ -195,9 +195,9 @@ the efficiency to be overestimated by a factor
 
 The solution to this problem is to use a ``tag and probe'' approach analogous to
 the muon efficiency measurement of Section~\ref{sec:ZmumuTagAndProbe}.  The tag
-and probe method is only sensitive to the shapes of the distributions, and will
-be independent of a Higgs contribution to the $Z$ peak.  This measurement has
-been performed by the CMS Tau Physics Object Group~\cite{CMS-PAS-TAU-11-001}.  A
+and probe method is only sensitive to the shapes of the distributions, and is
+independent of a Higgs contribution to the $Z$ peak.  This measurement has been
+performed by the CMS Tau Physics Object Group~\cite{CMS-PAS-TAU-11-001}.  A
 loose hadronic tau preselection is applied to events which pass the selections
 (excluding the hadronic tau identification) of the CMS EWK \ZTT cross section
 measurement~\cite{CMS-PAS-EWK-10-013}.  The preselected sample is then split
@@ -239,13 +239,13 @@ analysis compared to the $\tau$ and \MET scale uncertainties.
 
 The uncertainty on the jet energy scale is determined from an analysis of the
 \pt balance between photons and jets in $\gamma$ + jets
-events~\cite{CMS-PAS-JME-10-010}.  The jet energy scale uncertainties determined
-by the JetMET group are applied to tau--jets as well as other jets in the event.
-The tau energy scale correction factor is currently taken to be 1.0 with an
-uncertainty of 3\%.  The QCD jet energy scale has been measured to within 3\%
-uncertainty.  In the future, the energy scale of the tau is expected to be
-determined to a much better precision, as the neutral hadronic activity of a
-hadronic tau decay is expected to be zero. The jet energy scale of 3\% can be
+events~\cite{CMS-PAS-JME-10-010}.  The jet energy scale uncertainties are
+determined by the JetMET group are applied to tau--jets as well as other jets in
+the event.  The tau energy scale correction factor is taken to be 1.0
+with an uncertainty of 3\%.  The QCD jet energy scale has been measured to
+within 3\% uncertainty.  In the future, the energy scale of the tau is expected
+to be determined to a much better precision, as the neutral hadronic activity of
+a hadronic tau decay is expected to be zero. The jet energy scale of 3\% can be
 confidently considered~\cite{CMS-PAS-TAU-11-001} an upper limit\footnote{The tau
 energy scale was roughly measured using the invariant mass of the hadronic decay
 products and shown to be compatible with 1.0, within 3\%.}, and is used in this
@@ -284,24 +284,33 @@ corrections are obtained by an unbinned maximum likelihood fit (in data and
 simulation) of the transverse recoil vector $\vec{u}_{T} = -\left( \vec{q}_{T} +
 \MET \right)$ as function of the transverse momentum $\vec{q}_{T}$ of the
 $Z$--boson in directions parallel and perpendicular to the $Z$--boson transverse
-momentum vector.  The effect of the $Z$--recoil correction is illustrated in
-Figure~\ref{fig:ZrecoilCorrection}.  The uncertainty on the $Z$--recoil
-correction factor from the maximum likelihood fit is treated as a systematic
-uncertainty in the final result.
-\begin{figure}[t]
-\setlength{\unitlength}{1mm}
-\begin{center}
-\begin{picture}(150,52)(0,0)
-\put(0.5, 2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt.pdf}}}
-\put(78.0, 2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt_corrected.pdf}}}
-\end{picture}
-\caption[$Z$--recoil \MET resolution correction]{Missing transverse energy
-reconstructed in $Z \to \mu^{+} \mu^{-}$ events selected in data compared to $Z
-\to \mu^{+} \mu^{-}$ events in Monte Carlo simulation before (left) and after
-(right) the $Z$--recoil corrections to the $\MET$ resolution are applied.}
-\label{fig:ZrecoilCorrection}
-\end{center}
-\end{figure}
+momentum vector.  
+%The effect of the $Z$--recoil correction is illustrated in
+%Figure~\ref{fig:ZrecoilCorrection}.  
+%The uncertainty on the $Z$--recoil
+%correction factor from the maximum likelihood fit is treated as a systematic
+%uncertainty in the final result.
+
+Two additionally types of corrections are applied to the simulated \MET,
+``clustered'' and ``unclustered.''  The overall correction factor from these two
+effects is taken to be unity.  However, the uncertainty on these two correction
+factors is used as a systematic uncertainty when setting the final limit. The
+clustered \MET correction varies the scale of all jets with \mbox{$\pt >
+10~\GeVc$} in the event and recomputes the shifted \MET.  The unclustered \MET
+correction varies the energy scale of all jets/particles in the event with
+\mbox{$\pt < 10~\GeVc$}.  The scale uncertainty is 3\% for the clustered
+correction and 10\% for the unclustered correction.
+%\begin{figure}[t] \setlength{\unitlength}{1mm} \begin{center}
+%\begin{picture}(150,52)(0,0) \put(0.5,
+%2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt.pdf}}}
+%\put(78.0,
+%2){\mbox{\includegraphics*[height=52mm]{corrections_chapter/figures/plotMEtPt_corrected.pdf}}}
+%\end{picture} \caption[$Z$--recoil \MET resolution correction]{Missing
+%transverse energy reconstructed in $Z \to \mu^{+} \mu^{-}$ events selected in
+%data compared to $Z \to \mu^{+} \mu^{-}$ events in Monte Carlo simulation
+%before (left) and after (right) the $Z$--recoil corrections to the $\MET$
+%resolution are applied.} \label{fig:ZrecoilCorrection} \end{center}
+%\end{figure}
 
 \section{Pile--up Event Weighting}
 \label{sec:PUweighting}
@@ -326,7 +335,7 @@ multiplicity distribution measured in data is compared to Monte Carlo simulation
 with ``BX156'' pile--up conditions in Figure~\ref{fig:pileUpReweighting}.  Both
 distributions are similar, resulting in Monte Carlo reweighting factors close to
 unity.
-
+%
 \begin{figure}[t]
   \setlength{\unitlength}{1mm}
   \begin{center}
@@ -343,7 +352,5 @@ unity.
     factors (right).} \label{fig:pileUpReweighting}
   \end{center}
 \end{figure} 
-
-
-
+%
 \ifx\master\undefined\input{settings/autocompile}\fi
