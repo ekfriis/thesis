@@ -5,15 +5,15 @@ decay mode determined from the Monte Carlo generator level information.
 Figure~\ref{fig:dmResolution} compares the decay mode reconstruction performance
 of a naive approach where the decay mode is determined by simply counting the
 number of photons to the performance of the photon merging and filtering
-approach described in section~\ref{sec:decay_mode_reco}.  The correlation for
+approach described in Section~\ref{sec:decay_mode_reco}.  The correlation for
 the merging and filtering algorithm is much more diagonal, indicating higher
 performance.  The performance is additonally presented for comparison in tabular form in
-table~\ref{tab:dmResolutionStandard} (merging and filtering approach) and
-table~\ref{tab:dmResolutionNoNothing} (naive approach).
+Table~\ref{tab:dmResolutionStandard} (merging and filtering approach) and
+Table~\ref{tab:dmResolutionNoNothing} (naive approach).
 
 The performance of the decay mode reconstruction is dependent on the transverse
 momentum and $\eta$ of the tau--candidate and is shown in
-figure~\ref{fig:dmKinematics}.  The \pt dependence is largely due to
+Figure~\ref{fig:dmKinematics}.  The \pt dependence is largely due to
 threshold effects; high multiplicity decay modes are suppressed at low
 transverse momentum as the constituents are below the minimum \pt quality
 requirements.  In the forward region, nuclear interactions and conversions from
@@ -23,18 +23,14 @@ the increased material budget enhances modes containing $\pi^0$ mesons.
 \input{tanc_chapter/note/dm_correlation_tables/dm_corr_table_dmResolutionStandard.tex}
 
 \begin{figure}[thbp]
-   \setlength{\unitlength}{1mm}
-   \begin{center}
-      \begin{picture}(150, 75)(0,0)
-         \put(0.5, 0) {\mbox{\includegraphics*[height=73mm]{tanc_chapter/figures/decayModeMergerAndFilter/dmResolutionStandard.pdf}}}
-         % place holder
-         \put(75.0, 0) {\mbox{\includegraphics*[height=73mm]{tanc_chapter/figures/decayModeMergerAndFilter/dmResolutionNoNothing.pdf}}}
-      \end{picture}
+  \centering
+   \includegraphics*[width=0.49\textwidth]{tanc_chapter/figures/decayModeMergerAndFilter/dmResolutionStandard.pdf}
+   \includegraphics*[width=0.49\textwidth]{tanc_chapter/figures/decayModeMergerAndFilter/dmResolutionNoNothing.pdf}
    \caption[Tau decay mode reconstruction performance]{Correlations between
    reconstructed tau decay mode and true tau decay mode for hadronic tau decays
    in $Z \rightarrow \tau^{+}\tau^{-}$ events.  The correlation when no photon
    merging or filtering is applied is shown on the right, and the correlation
-   for the algorithm described in section~\ref{sec:decay_mode_reco} is on the
+   for the algorithm described in Section~\ref{sec:decay_mode_reco} is on the
    right.  The horizontal and vertical axis are the decay mode indices of the
    true and reconstructed decay mode, respectively.  The decay mode index
    $N_{DM}$ is defined as $N_{DM} = (N_{\pi^{\pm}} - 1)\cdot5 + N_{\pi^0}$.  The
@@ -49,19 +45,16 @@ the increased material budget enhances modes containing $\pi^0$ mesons.
    %The vertical slice corresponding to each true tau decay mode is normalized;
    %the cells in each column sum to one.
    } \label{fig:dmResolution}
-   \end{center}
 \end{figure}
 
 \begin{figure}[thbp]
    \setlength{\unitlength}{1mm}
    \begin{center}
-      \begin{picture}(150, 140)(0,0)
-         \put(0.5, 0) {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/dmVsPt.pdf}}}
-         \put(0.5, 70) {\mbox{\includegraphics*[height=70mm]{tanc_chapter/figures/dmVsEta.pdf}}}
-      \end{picture}
+     \includegraphics*[width=0.99\textwidth]{tanc_chapter/figures/dmVsPt.pdf}
+     \includegraphics*[width=0.99\textwidth]{tanc_chapter/figures/dmVsEta.pdf}
    \caption[Kinematic dependence of decay mode reconstruction]{Kinematic
-   dependence of reconstructed decay mode for tau--candidates from
-   $Z\rightarrow\tau^{+}\tau^{-}$ (left) and QCD di--jets (right) versus
+   dependence of reconstructed decay mode for tau--candidates in 
+   $Z\to\tau^{+}\tau^{-}$ (left) and QCD di--jets (right) events versus
    transverse momentum (top) and pseudo--rapidity (bottom).  Each curve is the
    probability for a tau--candidate to be reconstructed with the associated
    decay mode after the leading pion and decay mode preselection has been

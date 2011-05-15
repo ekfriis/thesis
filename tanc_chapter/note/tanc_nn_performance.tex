@@ -7,7 +7,7 @@ there is no isolation activity, the neural net has no handle with which it can
 separate the signal from the background.  The neural net output for
 tau--candidates in the testing sample (independent of the training
 and validation samples) for each of the five decay mode classifications is shown
-in figure~\ref{fig:NNoutputDisributions}.
+in Figure~\ref{fig:NNoutputDisributions}.
 
 \begin{figure}[thbp]
    \setlength{\unitlength}{1mm}
@@ -31,7 +31,7 @@ When a single neural network is used for classification, choosing an operating
 point is relatively straightforward:  the requirement on neural
 network output is tuned such that the desired purity is attained.  However, in the case
 of the TaNC, multiple neural networks are used.  Each network has a unique
-separation power (see figure~\ref{fig:nnPerfCurves}) and each neural network is
+separation power (see Figure~\ref{fig:nnPerfCurves}) and each neural network is
 associated to a reconstructed decay mode that composes different relative
 fractions of the signal and background tau--candidates.  Therefore, a set of five
 numbers is required to define an ``operating point'' (the signal efficiency and
@@ -75,7 +75,7 @@ removed.  After the performance curve has been determined, the set of cuts are
 evaluated on an independent validation sample to ensure that the measured
 performance curve is not influenced by favorable statistical fluctuations being
 selected by the Monte Carlo sampling.  The performance curves for two different
-transverse momentum ranges are shown in figure~\ref{fig:mcPerfCurves}.
+transverse momentum ranges are shown in Figure~\ref{fig:mcPerfCurves}.
 
 \begin{figure}[thbp]
    \setlength{\unitlength}{1mm}
@@ -90,7 +90,7 @@ transverse momentum ranges are shown in figure~\ref{fig:mcPerfCurves}.
       \end{picture}
    \caption[Tau Neural Classifier performance curves for different \pt
    ranges]{Tau Neural Classifier performance curves for tau--candidates with
-   $\pt < 20 \GeVc$ (left) and $20 \GeVc <\pt< 50 \GeVc$ (right).  The vertical
+   \mbox{$\pt < 20 \GeVc$} (left) and \mbox{$20 <\pt< 50 \GeVc$} (right).  The vertical
    axis represents the expected fake--rate of QCD jets and the horizontal axis
    the expected signal efficiency for hadronic tau decays.  The performance
    curve for the low transverse momentum range is worse due to leading pion
@@ -105,11 +105,12 @@ The 5D performance curve can also be parameterized by using the probability for
 a tau--candidate to be identified for a given decay mode.  
 An artificial neural network maps a point in the space of input observables to
 some value of neural network output $x$.  The neural network training error is
-given by equation~\ref{eq:NNerrorFunc}.  A given point in the vector space
+given by Equation~\ref{eq:NNerrorFunc}.  A given point in the vector space
 spanned by the neural network input observables (denoted as ``feature space'')
 contributes to the neural network training error $E$ by 
 \begin{equation}
    E' = (1 - x)^2\cdot\rho^\tau + x^2\cdot\rho^{QCD}
+   \nonumber
 \end{equation}
 where $\rho^\tau (\rho^{QCD})$ denotes the training sample density of the
 $\tau$ signal and QCD--jet background at that point in feature space.
@@ -133,7 +134,7 @@ the ``prior probabilities'' $p_j^\tau (p_j^{QCD})$ for true $\tau$ lepton
 hadronic decays (quark and gluon jets) to pass the preselection criteria and
 be reconstructed with decay mode $j$.
 By substituting $\rho^s \rightarrow \rho^s p_j^s$ for $s \in \{\tau, QCD\}$ in
-equation~\ref{eq:probFracToX}, the output $x_j$ can be related to $p_j^\tau
+Equation~\ref{eq:probFracToX}, the output $x_j$ can be related to $p_j^\tau
 (p_j^{QCD})$ by 
 \begin{equation}
    x_j' = \frac{\rho^\tau \cdot p_j^\tau} 
@@ -142,8 +143,8 @@ equation~\ref{eq:probFracToX}, the output $x_j$ can be related to $p_j^\tau
    {p_j^\tau + \frac{\rho^{QCD}}{\rho^\tau} \cdot p_j^{QCD} }
    \label{eq:probFracToXWithPriors}
 \end{equation}
-Substituting equation~\ref{eq:rawTransformX} into
- equation~\ref{eq:probFracToXWithPriors} yields the transformation of the output
+Substituting Equation~\ref{eq:rawTransformX} into
+Equation~\ref{eq:probFracToXWithPriors} yields the transformation of the output
 $x_j$ of the neural neural network corresponding to any selected decay mode $j$
 to a single discriminator output $x_j'$ which for a given point on the optimal
 performance curve should be independent of $j$.
@@ -156,7 +157,7 @@ In this manner a single number (the ``transform cut'') given by
 Equation~\ref{eq:TransformCut} can be used to specify any point on the
 performance curve.  The training sample neural network output after the
 transformation has been applied is shown in
-figure~\ref{fig:transformedNNOutput}.  The performance curve for the cut on the
+Figure~\ref{fig:transformedNNOutput}.  The performance curve for the cut on the
 transformed output is nearly identical to the optimal performance curve
 determined by the Monte Carlo sampling technique. 
 
@@ -165,7 +166,7 @@ enabling analysis specific optimization of the selection to maximize
 sensitivity.  For the convenience of the user, four operating point benchmark
 selections are provided in addition to the continuous output. The four operating
 points are chosen such that for tau--candidates with transverse momentum between
-20 and 50 \GeVc, the expected QCD di--jet fake rate will be 0.1\%, 0.25\%,
+20 and 50~\GeVc, the expected QCD di--jet fake rate will be 0.1\%, 0.25\%,
 0.50\% and 1.0\%, respectively.  
 
 \begin{figure}[thbp]
@@ -180,11 +181,11 @@ points are chosen such that for tau--candidates with transverse momentum between
          \put(90, 60) {20 GeV/c $<\pt<$ 50 GeV/c}
       \end{picture}
    \caption[Tau Neural Classifier transformation performance]{Tau Neural
-   Classifier performance curves for tau--candidates with $20 \GeVc < \pt < 50
-   \GeVc$.  The figure on the left compares the optimal performance curve
+   Classifier performance curves for tau--candidates with \mbox{$20 < \pt
+   < 50 \GeVc$}.  The figure on the left compares the optimal performance curve
    determined by the Monte Carlo sampling method (red) to the performance curve
    obtained by scanning the ``transform cut'' (blue) defined in
-   equation~\ref{eq:TransformCut} from zero to one.  The figure on the right is
+   Equation~\ref{eq:TransformCut} from zero to one.  The figure on the right is
    the same set of cuts (and cut transformation values) applied on an
    independent sample to remove any biases introduced by the Monte Carlo
    sampling.  The four dashed lines indicate the performance for the four
@@ -199,10 +200,10 @@ points are chosen such that for tau--candidates with transverse momentum between
          \put(0.5, 0.5) {\mbox{\includegraphics*[height=75mm]{tanc_chapter/figures/NNOutput_transform_5_200_preselection.pdf}}}
       \end{picture}
    \caption[Transformed neural network output]{Transformed TaNC neural network
-   output for tau--candidates with transverse momentum between 20 and 50 \GeVc
+   output for tau--candidates with transverse momentum between 20 and 50~\GeVc
    that pass the pre--selection criteria.  The neural network output for each
    tau--candidate has been transformation according to
-   equation~\ref{eq:TransformCut}.  The decay mode probabilities
+   Equation~\ref{eq:TransformCut}.  The decay mode probabilities
    $\rho^{bkg}_i$, $\rho^{signal}_i$ are computed using the entire transverse
    momentum range of the sample.  } \label{fig:transformedNNOutput}
    \end{center}

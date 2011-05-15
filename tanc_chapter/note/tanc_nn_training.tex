@@ -1,28 +1,28 @@
 The samples used to train the TaNC neural networks are typical of the signals
 and backgrounds found in common physics analyses using taus.  The signal--type
-training sample is composed of reconstructed tau--candidates that are matched
-to generator level hadronic tau decays coming from simulated $Z \rightarrow
-\tau^{+}\tau^{-}$ events.  The background training sample consists of
-reconstructed tau--candidates in simulated QCD $2\rightarrow2$ hard scattering
-events.  The QCD $\pt$ spectrum is steeply falling, and to obtain sufficient
-statistics across a broad range of $\pt$ the sample is split into different
-$\hat \pt$ bins.  Each binned QCD sample imposes a generator level cut on the
-transverse momentum of the hard interaction.  During the evaluation of discrimination
-performance the QCD samples are weighted according to their respective
-integrated luminosities to remove any effect of the binning.
+training sample is composed of reconstructed tau--candidates that are matched to
+generator level hadronic tau decays coming from simulated \ZTT events.  The
+background training sample consists of reconstructed tau--candidates in
+simulated QCD $2\rightarrow2$ hard scattering events.  The QCD $\pt$ spectrum is
+steeply falling, and to obtain sufficient statistics across a broad range of
+$\pt$ the sample is split into different $\hat \pt$ bins.  Each binned QCD
+sample imposes a generator level cut on the transverse momentum of the hard
+interaction.  During the evaluation of discrimination performance the QCD
+samples are weighted according to their respective integrated luminosities to
+remove any effect of the binning.
 
 The signal and background samples are split into five subsamples corresponding
 to each reconstructed decay mode.  An additional selection is applied to each
 subsample by requiring a ``leading pion'': either a charged hadron or gamma
-candidate with transverse momentum greater than 5 GeV$/c$.  A large number of
-QCD training events is required as both the leading pion selection and the
+candidate with transverse momentum greater than 5~\GeVc.  A large number of QCD
+training events is required as both the leading pion selection and the
 requirement that the decay mode match one of the dominant modes given in
-table~\ref{tab:decay_modes} are effective discriminants.  For each subsample,
+Table~\ref{tab:decay_modes} are effective discriminants.  For each subsample,
 80\% of the signal and background tau--candidates are used for training the
-neural networks by the TMVA software, with half (40\%) used as a validation
-sample used to ensure the neural network is not over--trained. The number of
-signal and background entries used for training and validation in each decay
-mode subsample is given in table~\ref{tab:trainingEvents}.
+neural networks, with half (40\%) used as a
+validation sample used to ensure the neural network is not over--trained. The
+number of signal and background entries used for training and validation in each
+decay mode subsample is given in Table~\ref{tab:trainingEvents}.
 
 %Chained 100 signal files.
 %Chained 208 background files.
@@ -66,9 +66,10 @@ mode subsample is given in table~\ref{tab:trainingEvents}.
 
 The remaining 20\% of the signal and background samples are
 reserved as a statistically independent sample to evaluate the performance of
-the neural nets after the training is completed.  The TaNC uses the ``MLP''
+the neural nets after the training is completed.  The TaNC uses the Multi--layer
+Perceptron (MLP)
 neural network implementation provided by the TMVA software package, described
-in~\cite{TMVA}.  The ``MLP'' classifier is a feed-forward artificial neural
+in~\cite{TMVA}.  The MLP classifier is a feed-forward artificial neural
 network. There are two layers of hidden nodes and a single node in the output
 layer.  The hyperbolic tangent function is used for the neuron activation
 function.  
@@ -84,14 +85,14 @@ space of dimension $d$ spanned by $x$ can be represented by
    \label{eq:Kolmogorov}
 \end{equation}
 for suitably chosen functions for $\Phi_j$ and $\phi_j$.  As the form of
-equation~\ref{eq:Kolmogorov} is similar to the topology of a two hidden--layer
+Equation~\ref{eq:Kolmogorov} is similar to the topology of a two hidden--layer
 neural network, Kolmogorov's theorem suggests that \emph{any} classification
 problem can be solved with a neural network with two hidden layers containing
 the appropriate number of nodes.
 
 The neural network is trained for 500 epochs. At ten epoch intervals, the
 neural network error is computed using the validation sample to check for
-over--training (see figure~\ref{fig:overTrainCheck}). The neural network error
+over--training (see Figure~\ref{fig:overTrainCheck}). The neural network error
 $E$ is defined~\cite{TMVA} as
 \begin{equation}
    E = \frac{1}{2} \sum_{i=1}^N (y_{ANN,i} - \hat y_i)^2
@@ -159,7 +160,7 @@ sample is exclusively signal or background.  The weights are computed according 
    w_{sig}(\pt, \eta) &=  W(\pt, \eta)/p_{sig}(\pt, \eta) \\
    w_{bkg}(\pt, \eta) &=  W(\pt, \eta)/p_{bkg}(\pt, \eta) 
 \end{align*}
-where $p_{sig}(\pt,\eta)$ and $p_{bkg}(\pt,\eta)$ are the probability densities of
+where \mbox{$p_{sig}(\pt,\eta)$} and \mbox{$p_{bkg}(\pt,\eta)$} are the probability densities of
 the signal and background samples after the ``leading pion'' and dominant decay mode
 selections. Figure~\ref{fig:nnTrainingWeights} shows the signal and background
 training $\pt$ distributions before and after the weighting is applied.
@@ -168,19 +169,17 @@ training $\pt$ distributions before and after the weighting is applied.
 \begin{figure}[thbp]
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(150,60)(0,0)
-\put(10.5, 2){\mbox{\includegraphics*[height=58mm]{tanc_chapter/figures/training_weights_unweighted.pdf}}}
-\put(86.0, 2){\mbox{\includegraphics*[height=58mm]{tanc_chapter/figures/training_weights_weighted.pdf}}}
+\includegraphics*[width=0.49\textwidth]{tanc_chapter/figures/training_weights_unweighted.pdf}
+\includegraphics*[width=0.49\textwidth]{tanc_chapter/figures/training_weights_weighted.pdf}
 %\put(-5.5, 112.5){\small (a)}
 %\put(72.0, 112.5){\small (b)}
 %\put(-5.5, 54.5){\small (c)}
 %\put(72.0, 54.5){\small (d)}
-\end{picture}
 \caption[Kinematic weighting of training sample]{Transverse momentum spectrum of
 signal and background tau--candidates used in neural net training before (left)
-and after (right) the application of $\pt-\eta$ dependent weight function.
+and after (right) the application of \mbox{$\pt-\eta$} dependent weight function.
 Application of the weights lowers the training significance of tau--candidates
-in regions of $\pt-\eta$ phase space where either the signal or background
+in regions of \mbox{$\pt-\eta$} phase space where either the signal or background
 samples has an excess of events. } \label{fig:nnTrainingWeights}
 \end{center}
 \end{figure} 
