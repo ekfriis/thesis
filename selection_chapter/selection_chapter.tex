@@ -8,7 +8,7 @@ analysis presented in this thesis is an inclusive analysis, meaning that no
 preference is given to any single Higgs production mechanism.  The analysis
 looks specifically at the channel in which one tau decays to a muon and the
 other decays to hadrons.  Therefore the first step in the analysis selection is
-to find High Level Trigger selection that is highly efficiency for our signal
+to find High Level Trigger selection that is highly efficient for the signal
 and is not highly prescaled\footnote{If a trigger has high background rates, it
 may exceed its rate budget with increasing luminosity.  When this happens, it is
 generally ``prescaled,'' and some fraction of the events that pass this
@@ -22,10 +22,10 @@ the are applied to the event to reduce \WpJets and QCD backgrounds.
 \section{High Level Trigger}
 As only data which passes the HLT is recorded, it is thus critical that an
 appropriate trigger path is found. The events in this analysis are
-triggered by a combination of muon and muon + tau--jet ``cross--channel''
-triggers. For the muon triggers, paths with lowest \pt thresholds are used as
+triggered by a combination of muon and \mbox{muon + tau-jet} ``cross--channel''
+triggers. For the muon triggers, the HLT paths with lowest \pt thresholds are used as
 long as the path remained unprescaled (see Table~\ref{tab:AHtoMuTauTriggers}).
-The muon + tau--jet ``cross--channel'' trigger paths increase the trigger
+The \mbox{muon + tau-jet} ``cross--channel'' trigger paths increase the trigger
 efficiency for events containing muons of transverse momenta close to the
 $\pt^{\mu} > 15$~\GeVc cut threshold.  The trigger efficiency is measured in
 data via the tag--and--probe technique. Details of the muon trigger efficiency
@@ -127,17 +127,17 @@ procedure is described in Section~\ref{sec:ZRecoilCorr}.
 % End particle ID section
 \section{Event Selections}
 The selections applied to the analysis are designed to reject large fractions of
-the background while maintaining a high efficiency for identifying signal
-(Higgs) events.  The backgrounds can be divided into two classifications:
-``fake'' backgrounds, in which there is at least one misidentified hadronic tau
-decay, and the irreducible $Z\to\TT$ background, which cannot\footnote{Due to
-the differences in spin between the $Z$ (spin~1) and the Higgs (spin~0), it
-maybe be possible to separate the two using spin correlations of the two tau
-decays.} be distinguished from the potential presence of a Higgs boson of the
-same mass.  Strategies for dealing with the irreducible $Z$ background will be
-discussed in the Chapter~\ref{ch:results}.
-The different fake backgrounds, their cross section, and the basic 
-removal strategies are outlined in Table~\ref{tab:FakeBackgrounds}.
+the background while maintaining a high efficiency for identifying signal Higgs
+events.  The backgrounds can be divided into two classifications: ``fake''
+backgrounds, in which there is at least one misidentified hadronic tau decay,
+and the irreducible $Z\to\TT$ background, which cannot\footnote{Due to the
+differences in spin between the $Z$ (spin~1) and the Higgs (spin~0), in the
+future it may be possible to separate the two using spin correlations of the two
+tau decays.} be distinguished from the potential presence of a Higgs boson of
+the same mass.  Strategies for dealing with the irreducible $Z$ background will
+be discussed in the Chapter~\ref{ch:results}.  The different fake backgrounds,
+their cross section, and the basic removal strategies are outlined in
+Table~\ref{tab:FakeBackgrounds}.
 \begin{table}[t]
 \begin{center}
 \begin{tabular}{|l|c|}
@@ -160,14 +160,13 @@ taus.} \label{tab:FakeBackgrounds}
 \end{center}
 \end{table}
 
-Events are selected by requiring a muon of
-$\pt^{\mu} > 15$~\GeVc within $ \left| \eta_{\mu} \right| < 2.1$ and a tau-jet
-candidate of $\pt^{\tau\mbox{--jet}} > 20$~\GeVc within $ \left|
-\eta_{\tau\mbox{--jet}} \right| < 2.3$.  The $\eta$ requirement on the muon
-ensures that it is within the fiducial region of the muon trigger system.  The
-$\eta$ requirement on the hadronic tau ensures it is well within the fiducial
-region of the tracker ($|\eta| < 2.5$) and minimizes exposure to large QCD
-backgrounds in the very forward region.
+Events are selected by requiring a muon of $\pt^{\mu} > 15$~\GeVc within $
+\left| \eta_{\mu} \right| < 2.1$ and a tau-jet candidate of
+$\pt^{\tau\mbox{--jet}} > 20$~\GeVc within $|\eta_{\tau\mbox{--jet}}| < 2.3$.
+The $\eta$ requirement on the muon ensures that it is within the fiducial region
+of the muon trigger system.  The $\eta$ requirement on the hadronic tau ensures
+it is well within the fiducial region of the tracker ($|\eta| < 2.5$) and
+minimizes exposure to large QCD backgrounds in the very forward region.
 
 The muon and tau--jet candidate are required to be of opposite charge, as the
 Higgs is neutral and charge is conserved.  The muon is required to be pass the
@@ -176,21 +175,21 @@ candidate is required to pass the ``loose'' TaNC tau identification
 discriminator. 
 
 Additional event selection criteria are applied to reduce contributions of
-specific background processes. In order to reject this background, a dedicated
-discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. Remaining muon
-background is suppressed by rejecting events which have a track of $\pt >
-15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
-$0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter (ECAL) and
-$25$~\centi\meter (HCAL), respectively.  
-Contamination from $Z \to \TT$ events in which the
-reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$ decay is
-reduced by applying a dedicated tau ID discriminator against electrons.
+specific background processes. In order to reject \ZMM background, a dedicated
+discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. Remaining
+di--muon background is suppressed by rejecting events which have a track of $\pt
+> 15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
+$0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter~(ECAL) and
+$25$~\centi\meter~(HCAL), respectively.  Contamination from $Z \to \TT$ events
+in which the reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$
+decay is reduced by applying a dedicated tau ID discriminator against electrons.
 
 The $\ttbar$ and \WpJets backgrounds
-are suppressed by cuts on the transverse mass of the $\mu--\MET$ system and the
+are suppressed by cuts on the transverse mass of the $\mu-\MET$ system and the
 \Pzeta variable.  The transverse mass ($M_T$) cut is defined as the quantity
 \begin{equation}
   M_T = \pt^\mu \MET \sqrt{1 - \cos \Delta\phi},
+  \nonumber
 \end{equation}
 where $\Delta\phi$ is the angle between the muon and the reconstructed
 $\vec{\MET}$ in the transverse plane.  The $M_T$ quantity is much higher in
@@ -199,7 +198,7 @@ decays, the neutrino expected to be produced in the opposite to the muon in
 azimuth.  In signal events, there are three neutrinos produced, with the
 majority (two) of the neutrinos being associated to the $\tau \to \mu \nu \nu$
 decay.  Accordingly, we expect that the \MET is on average collinear with the
-muon in signal events.  The $M_T$ distribution before the $M_T$ cut is applied
+muon in signal events.  The $M_T$ distribution immediately before the $M_T$ cut is applied
 is illustrated in Figure~\ref{fig:MTCutControlPlot} for the different background
 sources and 2010 data.
 \begin{figure}
@@ -228,8 +227,8 @@ the visible $\tau$--lepton decay products. This event topology is not preferred
 in $W$ + jets, $t\bar{t}$ and QCD background events.  The observable is computed
 as difference of the projections:
 \begin{eqnarray}
-P_{\zeta} &= \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} + \MET \nonumber \\
-P_{\zeta}^{vis} &= \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} 
+P_{\zeta} &=& \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} + \MET \nonumber \\
+P_{\zeta}^{vis} &=& \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} \nonumber
 \label{eq:PZetaEq}
 \end{eqnarray}
 on the axis $\zeta$ bisecting the directions $\vec{P}_{T}^{vis_{1}}$ and
@@ -237,26 +236,24 @@ $\vec{P}_{T}^{vis_{2}}$ of the visible $\tau$ lepton decay products in the
 transverse plane (see Figure~\ref{fig:PzetaDefinition} for an illustration).
 The distribution of \Pzeta after the $M_T$ selection has been applied is shown
 in Figure~\ref{fig:PzetaCut}.
-
 \begin{figure}[t]
 \begin{center}
-  \subfigure[]{\includegraphics*[width=0.48\textwidth]{selection_chapter/figures/pzeta_graphic.pdf}
+  \subfigure[]{\includegraphics*[width=0.45\textwidth]{selection_chapter/figures/pzeta_graphic.pdf}
   \label{fig:PzetaDefinition} }
-  \subfigure[]{\includegraphics*[height=0.48\textwidth,angle=90]{results_chapter/figures/replotted_results/plotZtoMuTauOS_inclusive_cutFlowControlPlots_PzetaDiff_afterMt1MET.pdf}
+  \subfigure[]{\includegraphics*[height=0.45\textwidth,angle=90]{results_chapter/figures/replotted_results/plotZtoMuTauOS_inclusive_cutFlowControlPlots_PzetaDiff_afterMt1MET.pdf}
   \label{fig:PzetaCut} } \caption[Reconstruction and distribution of \Pzeta
   discriminant]{The vector quantities used in construction of the quantity
   $P_{\zeta} - 1.5 \cdot P_{\zeta}^{vis}$ are illustrated in
-  Figure~\subref{fig:PzetaDefinition}.  Image credit:~\cite{CDFrefPzeta}
-  The distribution of the \Pzeta variable in the different background sources
-  and 2010 data after the $M_T$ cut has been applied is shown in
-  Figure~\ref{fig:PzetaCut}.}
-  \label{fig:PzetaPlots}
+  Figure~\subref{fig:PzetaDefinition}.  Image credit:~\cite{CDFrefPzeta} The
+  distribution of the \Pzeta variable in the different background sources and
+  2010 data after the $M_T$ cut has been applied is shown at right
+  in~\subref{fig:PzetaCut}.} \label{fig:PzetaPlots}
 \end{center}
 \end{figure} 
 The complete set of event selection criteria applied are summarized in
 Table~\ref{tab:AHtoMuTauEventSelection}.
 
-\begin{table}[t]
+\begin{sidewaystable}[t]
 \begin{center}
 
 \begin{tabular}{|l|c|}
@@ -295,6 +292,6 @@ Table~\ref{tab:AHtoMuTauEventSelection}.
 $H\to\TT\to\mu\tau_{had}$ events.}
 \label{tab:AHtoMuTauEventSelection}
 \end{center}
-\end{table}
+\end{sidewaystable}
 
 \ifx\master\undefined\input{settings/autocompile}\fi
