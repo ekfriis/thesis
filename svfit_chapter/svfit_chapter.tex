@@ -7,9 +7,9 @@
 \chapter{Mass Reconstruction: The Secondary Vertex Fit}
 \label{ch:svfit}
 %
-The dominant background in the search for a Higgs decaying to a $\TT$ pair are 
+The dominant background in the search for a Higgs boson decaying to a $\TT$ pair are 
 standard model $\ZTT$ events.  The most ``natural'' observable to discriminate
-between a Higgs signal and the $Z$ background is the invariant mass of the
+between a Higgs boson signal and the $Z$ background is the invariant mass of the
 di--tau system, utilizing the fact that the $Z$ resonance is well known ($m_{Z}
 = 91.1876 \pm 0.0021$~\GeVcc) and has a narrow width ($\Gamma_{Z} = 2.4952 \pm
 0.0023$~\GeV)~\cite{PDG}.  The experimental complication in this approach is due
@@ -103,7 +103,7 @@ missing energy in the event.
 A novel algorithm is presented in the following, which succeeds in finding a
 physical solution for every event.  As an additional benefit, the new algorithm
 is found to improve the di--tau invariant mass resolution, making it easier to
-separate the Higgs signal from the $\ZTT$ background.
+separate the Higgs boson signal from the $\ZTT$ background.
 
 The novel Secondary Vertex fit (SVfit) algorithm for di--tau invariant mass
 reconstruction that we present in the following utilizes a likelihood
@@ -222,7 +222,7 @@ In the present implementation of the SVfit algorithm, the matrix element is
 assumed to be constant, so that the likelihood depends on the phase--space
 volume of the decay only~\footnote{The full matrix elements for tau decays may
 be added in the future, including terms for the polarization of the tau lepton
-pair, which is different in Higgs and $Z$ decays~\cite{tauDecayPolarization}.
+pair, which is different in Higgs boson and $Z$ decays~\cite{tauDecayPolarization}.
 }.
 
 
@@ -263,8 +263,8 @@ The tau lepton transverse momentum balance likelihood term represents the
 probability density $p \left( \pt^{\tau} | M_{\tau\tau} \right)$ of the tau transverse
 momentum, given the condition that the tau is produced in the decay of a resonance of
 mass $M_{\tau\tau}$.  The likelihood is constructed by parametrizing the shape
-of the tau lepton $\pt$ distribution in simulated Higgs $\to \tau^{+}
-\tau^{-}$ events as a function of the Higgs mass.  The functional form of the
+of the tau lepton $\pt$ distribution in simulated $H \to \tau^{+}
+\tau^{-}$ events as a function of the Higgs boson mass.  The functional form of the
 parametrization is taken to be the sum of two terms.  The first term, denoted by
 $p^{*} \left( \pt | M \right)$, is derived by assuming an isotropic two--body
 decay, that is
@@ -292,12 +292,12 @@ p \left( \pt | M \right) \propto \int_0^{\frac{M}{2}} \! p^* \left( \pt' | M \ri
 \end{equation}
 Numerical values of the parameters s, $\theta$ and k are determined by fitting
 the PDF in Equation~\ref{eq:ptBalanceLikelihood} to the tau lepton $\pt$
-distribution in simulated Higgs $\to\TT$ events.  The relative weight a of the
+distribution in simulated $H \to\TT$ events.  The relative weight a of the
 two terms is also determined in the fit.  Replacing the integrand in
 Equation~\ref{eq:ptBalanceLikelihood} by its Taylor expansion so that the
 integration can be carried out analytically, keeping polynomial terms up to
 fifth order, and assuming the fit parameters to depend at most linearly on the
-Higgs mass, we obtain the following numerical values for the parameters:
+Higgs boson mass, we obtain the following numerical values for the parameters:
 \begin{align}
 s &= 1.8 + 0.018 \cdot M_{\tau\tau} \nonumber \\
 k &= 2.2 + 0.0364 \cdot M_{\tau\tau} \nonumber \\
@@ -329,7 +329,7 @@ in the region of high masses is seen.
 \begin{center}
 \includegraphics*[height=0.75\textwidth, angle=90]{svfit_chapter/figures/pt_balance_effect.pdf} \caption[Effect of
 \pt--balance term on SVfit performance]{\captiontext Distribution of di--tau
-invariant mass reconstructed by the SVfit algorithm in simulated Higgs events
+invariant mass reconstructed by the SVfit algorithm in simulated Higgs boson events
 with \mbox{$\ma = 130~\GeVcc$}.  The SVfit algorithm is run in two
 configurations, with~(blue) and without~(red) the $\pt$--balance likelihood term
 included in the fit. 
@@ -346,7 +346,7 @@ included in the fit.
 \caption[Effect of the visible \pt requirements on muon and hadronic $\tau$
 decays]{\captiontext Normalized distributions of the fraction of total tau decay
 energy carried by the muon (left) and hadronic constituents (right) in simulated
-Higgs events with \mbox{$\ma = 130~\GeVcc$}.  The distribution is shown before
+Higgs boson events with \mbox{$\ma = 130~\GeVcc$}.  The distribution is shown before
 (blue) and after (red) the requirement on the $\pt$ of the visible decay
 products described in Chapter~\ref{ch:selections}.  }
 \label{fig:ptBalancePtVisCuts}
@@ -358,8 +358,8 @@ products described in Chapter~\ref{ch:selections}.  }
 \includegraphics*[width=0.49\textwidth]{svfit_chapter/figures/scuplting_Ztautau_powheg_muon.pdf}
 \includegraphics*[width=0.49\textwidth]{svfit_chapter/figures/scuplting_A200_muon.pdf}
 \caption[Effect of the visible \pt requirements for $Z$ and Higgs
-events]{\captiontext Normalized distributions of the fraction of total tau decay
-energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs events with
+boson events]{\captiontext Normalized distributions of the fraction of total tau decay
+energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs boson events with
 \mbox{$\ma = 200~\GeVcc$}~(right).   The distribution is shown before (blue) and
 after (red) the requirement that the $\pt$ of the muon be greater than
 15~\GeVc.} \label{fig:ptBalancePtVisCutsCompareMasses}
@@ -399,7 +399,7 @@ tracker (mis--)alignment which are not yet fully understood.
 \section{Performance}
 
 The tau pair mass reconstructed by the Secondary Vertex fit (``SVfit mass'')
-provides the observable with the largest separation between signal Higgs events
+provides the observable with the largest separation between signal Higgs boson events
 and the dominant \ZTT background.  The mean of the SVfit mass is located at the
 true mass of the di--tau pair.  The SVfit algorithm has a higher acceptance and
 better resolution than the Collinear Approximation algorithm.  The SVfit always
@@ -451,7 +451,7 @@ solutions in the application of the collinear approximation.}
 \caption[Comparison of SVfit with the visible mass observable]{Comparison of the
 invariant mass of the muon and \tjet (the ``visible mass'') with the full \TT
 mass reconstructed by the SVfit. The spectrum is shown for two simulated MSSM
-Higgs samples, with $\ma = 120\GeVcc$~(left), and $\ma = 200\GeVcc$~(right).  To
+Higgs boson samples, with $\ma = 120\GeVcc$~(left), and $\ma = 200\GeVcc$~(right).  To
 illustrate that relative resolution of the SVfit is superior to that of the
 visible mass, the visible mass is also shown scaled up such that the mean of the
 two distributions are identical.} \label{fig:SVversusVis}
