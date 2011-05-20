@@ -138,7 +138,7 @@ Leptons at \mbox{$\sqrt s=7~\text{Te\hspace{-.08em}V}$}}
 % [ LINE SPACING ]
 
 \usepackage[doublespacing]{setspace}
-\renewcommand{\displayskipstretch}{0.0}
+%\renewcommand{\displayskipstretch}{0.0}
 
 \setlength{\parskip   }{0em}
 \setlength{\parindent }{2em}
@@ -157,8 +157,10 @@ Leptons at \mbox{$\sqrt s=7~\text{Te\hspace{-.08em}V}$}}
 
 \titleformat{\chapter}[display]{\bfseries\huge\singlespacing}{\filleft\textsc{\LARGE \chaptertitlename\ \thechapter}}{-0.2ex}{\titlerule[3pt]\vspace{0.2ex}}[]
 
-\titleformat{\section}{\LARGE}{\S\thesection\hspace{0.5em}}{0ex}{}
-\titleformat{\subsection}{\Large}{\S\thesubsection\hspace{0.5em}}{0ex}{}
+%\titleformat{\section}{\LARGE}{\S\thesection\hspace{0.5em}}{0ex}{}
+%\titleformat{\subsection}{\Large}{\S\thesubsection\hspace{0.5em}}{0ex}{}
+\titleformat{\section}{\LARGE}{\thesection\hspace{0.5em}}{0ex}{}
+\titleformat{\subsection}{\Large}{\thesubsection\hspace{0.5em}}{0ex}{}
 \titleformat{\subsubsection}{\large}{\thesubsubsection\hspace{0.5em}}{0ex}{}
 
 \titlespacing*{\chapter}{0em}{6ex}{4ex plus 2ex minus 0ex}
@@ -197,20 +199,20 @@ Leptons at \mbox{$\sqrt s=7~\text{Te\hspace{-.08em}V}$}}
 \usepackage{SIunits}
 
 % [some math stuff - maybe stick in sep file]
-\usepackage{amsthm}
-\usepackage{amscd}
-\theoremstyle{plain}    \newtheorem{Lem}{Lemma}
-\theoremstyle{plain}    \newtheorem*{ProLem}{Proof}
-\theoremstyle{plain} 	\newtheorem{Cor}{Corollary}
-\theoremstyle{plain} 	\newtheorem*{ProCor}{Proof}
-\theoremstyle{plain} 	\newtheorem{The}{Theorem}
-\theoremstyle{plain} 	\newtheorem*{ProThe}{Proof}
-\theoremstyle{plain} 	\newtheorem{Prop}{Proposition}
-\theoremstyle{plain} 	\newtheorem*{ProProp}{Proof}
-\theoremstyle{plain} 	\newtheorem*{Conj}{Conjecture}
-\theoremstyle{plain}	\newtheorem*{Rem}{Remark}
-\theoremstyle{plain}	\newtheorem*{Def}{Definition} 
-\theoremstyle{plain}	\newtheorem*{Not}{Notation}
+%\usepackage{amsthm}
+%\usepackage{amscd}
+%\theoremstyle{plain}    \newtheorem{Lem}{Lemma}
+%\theoremstyle{plain}    \newtheorem*{ProLem}{Proof}
+%\theoremstyle{plain} 	\newtheorem{Cor}{Corollary}
+%\theoremstyle{plain} 	\newtheorem*{ProCor}{Proof}
+%\theoremstyle{plain} 	\newtheorem{The}{Theorem}
+%\theoremstyle{plain} 	\newtheorem*{ProThe}{Proof}
+%\theoremstyle{plain} 	\newtheorem{Prop}{Proposition}
+%\theoremstyle{plain} 	\newtheorem*{ProProp}{Proof}
+%\theoremstyle{plain} 	\newtheorem*{Conj}{Conjecture}
+%\theoremstyle{plain}	\newtheorem*{Rem}{Remark}
+%\theoremstyle{plain}	\newtheorem*{Def}{Definition} 
+%\theoremstyle{plain}	\newtheorem*{Not}{Notation}
 
 % [uniform figure scaling - maybe this is not a good idea]
 \def\figscale{.7}
