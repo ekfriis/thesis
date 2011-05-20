@@ -3,8 +3,8 @@
 \chapter{Tau Identification: The Tau Neural Classifier}
 \label{ch:tanc}
 %
-High tau identification performance is important for the discovery potential of
-many possible new physics signals at the Compact Muon Solenoid (CMS).  The
+Excellent tau identification performance is important for the discovery potential of
+many possible new physics signals at CMS\@. The
 standard model background rates from true tau leptons are typically the same
 order of magnitude as the expected signal rate in many searches for new
 physics.  The challenge of doing physics with taus is driven by the rate at
@@ -17,7 +17,7 @@ is thus essential to maximize the significance of searches for new physics at
 CMS.
 
 Tau leptons are unique in that they are the only type of leptons which are heavy
-enough to decay to hadrons.  The hadronic decays compose approximately 65\% of
+enough to decay to hadrons.  The hadronic decays comprise approximately 65\% of
 all tau decays, the remainder being split nearly evenly between $\tau^{-} \to
 \mu^{-} \overline \nu_\mu \nu_\tau$ and $\tau^{-} \to e^{-} \overline \nu_e \nu_\tau$.
 The hadronic decays are typically composed of one or three charged pions and
@@ -44,7 +44,7 @@ hadronic calorimeter.  The other method (PFTau) uses objects reconstructed by
 the CMS particle flow algorithm, which is described
 in~\cite{CMS-PAS-PFT-09-001}.  The particle flow algorithm provides a global and
 unique description of every particle (charged hadron, photon, electron, etc.) in
-the event; measurements from sub--detectors are combined according to their
+the event; measurements from subdetectors are combined according to their
 measured resolutions to improve energy and angular resolution and reduce double
 counting.  All of the tau identification strategies described in this thesis use
 the particle flow objects.
@@ -95,34 +95,34 @@ resonance and reject quark and gluon jets with the same final state topology.
 \label{sec:Tanc}
 %
 The Tau Neural Classifier (TaNC) algorithm reconstructs the decay mode of the
-tau--candidate and then feeds the tau--candidate to a discriminator associated
+tau candidate and then feeds the tau candidate to a discriminator associated
 to that decay mode to make the classification decision.  Each discriminator
 therefore maps to a reconstructed decay mode in a one-to-one fashion.  To
 optimize the discrimination for each of the different decay modes, the TaNC uses
 an ensemble of neural nets.  Each neural net corresponds to one of the dominant
 hadronic decay modes of the tau lepton.  These selected hadronic decays
-constitute 95\% of all hadronic tau decays.  Tau--candidates with reconstructed
+constitute 95\% of all hadronic tau decays.  Tau candidates with reconstructed
 decay modes not in the set of dominant hadronic modes are immediately tagged as
 background.  
 
 \subsection{Decay Mode Reconstruction}
 \label{sec:decay_mode_reco}
 \input{tanc_chapter/note/tanc_dm_reco_intro.tex}
-\subsubsection{Photon Merging}
+\subsection{Photon Merging}
 \input{tanc_chapter/note/tanc_dm_photon_merging.tex}
-\subsubsection{Quality Requirements}
+\subsection{Quality Requirements}
 \input{tanc_chapter/note/tanc_dm_photon_filtering.tex}
-\subsubsection{Performance}
+\subsection{Performance}
 \input{tanc_chapter/note/tanc_dm_reco_results.tex}
 
 \subsection{Neural Network Classification}
 \label{sec:tanc_nn_training}
-\subsubsection{Neural Network Training}
+\subsection{Neural Network Training}
 \input{tanc_chapter/note/tanc_nn_training.tex}
-\subsubsection{Discriminants}
+\subsection{Discriminants}
 \label{sec:tanc_nn_discriminants}
 \input{tanc_chapter/note/tanc_nn_discriminants.tex}
-\subsubsection{Neural Network Performance}
+\subsection{Neural Network Performance}
 \label{sec:NeuralNetworkPerformance}
 \input{tanc_chapter/note/tanc_nn_performance.tex}
 \section{Summary}
@@ -255,7 +255,7 @@ prevent electrons and muons from being identified as hadronic tau decays.  This
 is especially important for removing $Z\to e^+e^-$ and \ZMM contributions when
 selecting events with two taus and requiring one of them to decay leptonically
 and the other hadronically.  The electron and muon discrimination algorithms and
-performance are described in detail in~\cite{CMS-PAS-PFT-08-001}.  A cursory
+performance are described in detail elsewhere~\cite{CMS-PAS-PFT-08-001}.  A cursory
 overview of the techniques used are given here.  Muon removal is achieved with
 high purity by requiring that no track in the signal collection of the tau
 candidate is matched to a segment\footnote{A track reconstructed in the DT or

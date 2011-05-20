@@ -1,11 +1,11 @@
 The classification power of the neural networks is unique for each of the decay
 modes.  The performance is determined by the relative separation of the signal
 and background distributions in the parameter space of the observables used as
-neural network inputs.  A pathological example is the case of tau--candidates
+neural network inputs.  A pathological example is the case of tau candidates
 with the reconstructed decay mode of $\tau^{-} \to \pi^{-}\nu_\tau$.  If
 there is no isolation activity, the neural net has no handle with which it can
 separate the signal from the background.  The neural net output for
-tau--candidates in the testing sample (independent of the training
+tau candidates in the testing sample (independent of the training
 and validation samples) for each of the five decay mode classifications is shown
 in Figure~\ref{fig:NNoutputDisributions}.
 
@@ -20,7 +20,7 @@ in Figure~\ref{fig:NNoutputDisributions}.
          \put(33, 0) {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/NNOutput_dm_11_pt_20.pdf}}}
       \end{picture}
    \caption[Neural network output in each decay mode]{Neural network output distributions for the
-   five reconstructed tau--candidate decay modes used in the TaNC for
+   five reconstructed tau candidate decay modes used in the TaNC for
    $Z\rightarrow\tau^{+}\tau^{-}$ events (red) and QCD di--jet events (blue).  }
    \label{fig:NNoutputDisributions}
    \end{center}
@@ -28,12 +28,12 @@ in Figure~\ref{fig:NNoutputDisributions}.
 
 
 When a single neural network is used for classification, choosing an operating
-point is relatively straightforward:  the requirement on neural
+point is relatively straightforward: the requirement on neural
 network output is tuned such that the desired purity is attained.  However, in the case
 of the TaNC, multiple neural networks are used.  Each network has a unique
 separation power (see Figure~\ref{fig:nnPerfCurves}) and each neural network is
 associated to a reconstructed decay mode that composes different relative
-fractions of the signal and background tau--candidates.  Therefore, a set of five
+fractions of the signal and background tau candidates.  Therefore, a set of five
 numbers is required to define an ``operating point'' (the signal efficiency and
 background misidentification rate) in the TaNC output.  All points in this five
 dimensional cut--space map to an absolute background fake--rate and signal
@@ -50,12 +50,12 @@ technique.
       \end{picture}
    \caption[Performance curves for the neural networks used in the
    TaNC]{Performance curves for the five neural networks used by the TaNC for
-   tau--candidates with transverse momentum greater than 20 \GeVc.  Each curve
+   tau candidates with transverse momentum greater than 20~\GeVc.  Each curve
    represents the signal efficiency (on the horizontal axis) and background
    misidentification rate (vertical axis) for a scan of the neural network
    selection requirement for a single neural network.  The efficiency (or
    misidentification rate) for each neural network performance curve is defined
-   with respect to the preselected tau--candidates that have the reconstructed
+   with respect to the preselected tau candidates that have the reconstructed
    decay mode associated with that neural network.  Each neural network has a
    different ability so separate signal and background as each classifier uses
    different observables as inputs.  } \label{fig:nnPerfCurves}
@@ -89,20 +89,20 @@ transverse momentum ranges are shown in Figure~\ref{fig:mcPerfCurves}.
          \put(90, 60) {$20 \GeVc <\pt< 50 \GeVc$}
       \end{picture}
    \caption[Tau Neural Classifier performance curves for different \pt
-   ranges]{Tau Neural Classifier performance curves for tau--candidates with
+   ranges]{Tau Neural Classifier performance curves for tau candidates with
    \mbox{$\pt < 20 \GeVc$} (left) and \mbox{$20 <\pt< 50 \GeVc$} (right).  The vertical
    axis represents the expected fake--rate of QCD jets and the horizontal axis
    the expected signal efficiency for hadronic tau decays.  The performance
    curve for the low transverse momentum range is worse due to leading pion
    selection.  While both true taus and QCD are removed by this cut, the
-   selection preferentially keeps the QCD tau--candidates with low
-   multiplicities, which increases the number of QCD tau--candidates passing the
+   selection preferentially keeps the QCD tau candidates with low
+   multiplicities, which increases the number of QCD tau candidates passing the
    decay mode selection.  } \label{fig:mcPerfCurves}
    \end{center}
 \end{figure}
 
 The 5D performance curve can also be parameterized by using the probability for
-a tau--candidate to be identified for a given decay mode.  
+a tau candidate to be identified for a given decay mode.  
 An artificial neural network maps a point in the space of input observables to
 some value of neural network output $x$.  The neural network training error is
 given by Equation~\ref{eq:NNerrorFunc}.  A given point in the vector space
@@ -165,7 +165,7 @@ The discriminator output of the TaNC algorithm is a continuous quantity,
 enabling analysis specific optimization of the selection to maximize
 sensitivity.  For the convenience of the user, four operating point benchmark
 selections are provided in addition to the continuous output. The four operating
-points are chosen such that for tau--candidates with transverse momentum between
+points are chosen such that for tau candidates with transverse momentum between
 20 and 50~\GeVc, the expected QCD di--jet fake rate will be 0.1\%, 0.25\%,
 0.50\% and 1.0\%, respectively.  
 
@@ -181,7 +181,7 @@ points are chosen such that for tau--candidates with transverse momentum between
          \put(90, 60) {20 GeV/c $<\pt<$ 50 GeV/c}
       \end{picture}
    \caption[Tau Neural Classifier transformation performance]{Tau Neural
-   Classifier performance curves for tau--candidates with \mbox{$20 < \pt
+   Classifier performance curves for tau candidates with \mbox{$20 < \pt
    < 50 \GeVc$}.  The figure on the left compares the optimal performance curve
    determined by the Monte Carlo sampling method (red) to the performance curve
    obtained by scanning the ``transform cut'' (blue) defined in
@@ -200,9 +200,9 @@ points are chosen such that for tau--candidates with transverse momentum between
          \put(0.5, 0.5) {\mbox{\includegraphics*[height=75mm]{tanc_chapter/figures/NNOutput_transform_5_200_preselection.pdf}}}
       \end{picture}
    \caption[Transformed neural network output]{Transformed TaNC neural network
-   output for tau--candidates with transverse momentum between 20 and 50~\GeVc
+   output for tau candidates with transverse momentum between 20 and 50~\GeVc
    that pass the pre--selection criteria.  The neural network output for each
-   tau--candidate has been transformation according to
+   tau candidate has been transformation according to
    Equation~\ref{eq:TransformCut}.  The decay mode probabilities
    $\rho^{bkg}_i$, $\rho^{signal}_i$ are computed using the entire transverse
    momentum range of the sample.  } \label{fig:transformedNNOutput}

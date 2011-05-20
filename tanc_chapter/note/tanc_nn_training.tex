@@ -1,8 +1,8 @@
 The samples used to train the TaNC neural networks are typical of the signals
 and backgrounds found in common physics analyses using taus.  The signal--type
-training sample is composed of reconstructed tau--candidates that are matched to
+training sample is composed of reconstructed tau candidates that are matched to
 generator level hadronic tau decays coming from simulated $\ZTT$ events.  The
-background training sample consists of reconstructed tau--candidates in
+background training sample consists of reconstructed tau candidates in
 simulated QCD $2\rightarrow2$ hard scattering events.  The QCD $\pt$ spectrum is
 steeply falling, and to obtain sufficient statistics across a broad range of
 $\pt$ the sample is split into different $\hat \pt$ bins.  Each binned QCD
@@ -18,7 +18,7 @@ candidate with transverse momentum greater than 5~\GeVc.  A large number of QCD
 training events is required as both the leading pion selection and the
 requirement that the decay mode match one of the dominant modes given in
 Table~\ref{tab:decay_modes} are effective discriminants.  For each subsample,
-80\% of the signal and background tau--candidates are used for training the
+80\% of the signal and background tau candidates are used for training the
 neural networks, with half (40\%) used as a
 validation sample used to ensure the neural network is not over--trained. The
 number of signal and background entries used for training and validation in each
@@ -47,9 +47,9 @@ decay mode subsample is given in Table~\ref{tab:trainingEvents}.
       %\multirow{2}{*}{}                         & \multicolumn{2}{c}{Events}    \\
                                                 & Signal        & Background    \\
       \hline
-      Total number of tau--candidates           & 874266        & 9526176       \\
-      Tau--candidates passing preselection      & 584895        & 644315        \\
-      Tau--candidates with $W(\pt,\eta)>0$      & 538792        & 488917        \\
+      Total number of tau candidates           & 874266        & 9526176       \\
+      Tau candidates passing preselection      & 584895        & 644315        \\
+      Tau candidates with $W(\pt,\eta)>0$      & 538792        & 488917        \\
       \hline
       Decay Mode                        & \multicolumn{2}{c}{Training Events}   \\
       \hline
@@ -136,18 +136,22 @@ the $i$th event. No evidence  of over--training is observed.
 
 
 The neural networks use as input observables the transverse momentum and $\eta$
-of the tau--candidates.  These observables are included as their correlations
+of the tau candidates.  These observables are included as their correlations
 with other observables can increase the separation power of the ensemble of
 observables.  For example, the opening angle in $\Delta R$ for signal
-tau--candidates is inversely related to the transverse momentum, while for
-background events the correlation is very small~\cite{DavisTau}. In the
-training signal and background samples, there is significant discrimination
-power in the $\pt$ spectrum.   However, it is desirable to eliminate any
-systematic dependence of the neural network output on $\pt$ and $\eta$, as in
-practice the TaNC will be presented with tau--candidates whose $\pt-\eta$
-spectrum will be analysis dependent. The dependence on $\pt$ and $\eta$ is
-removed by applying a $\pt$ and $\eta$ dependent weight to the tau--candidates
-when training the neural nets.  
+tau candidates is inversely related to the transverse momentum, while for
+background events the correlation is very small~\cite{DavisTau}. In the training
+signal and background samples, there is significant discrimination power in the
+$\pt$ spectrum.   However, for a general--purpose tau identification algorithm,
+it is desirable to eliminate any systematic dependence of the neural network
+output on $\pt$ and $\eta$, as in practice the TaNC will be presented with
+tau candidates whose $\pt-\eta$ spectrum will be analysis dependent. The
+optimal situation would be to train the neural networks using the signal and
+backgrounds that are present in the analysis where the algorithm is applied.  In
+practice, it is difficult to collect enough training samples for each analysis
+situation.  The dependence on $\pt$ and $\eta$ is removed by applying a $\pt$
+and $\eta$ dependent weight to the tau candidates when training the neural
+nets.  
 
 The weights are defined such that in any region in the vector space spanned by
 $\pt$ and $\eta$ where the signal sample and background sample probability
@@ -176,9 +180,9 @@ training $\pt$ distributions before and after the weighting is applied.
 %\put(-5.5, 54.5){\small (c)}
 %\put(72.0, 54.5){\small (d)}
 \caption[Kinematic weighting of training sample]{Transverse momentum spectrum of
-signal and background tau--candidates used in neural net training before (left)
+signal and background tau candidates used in neural net training before (left)
 and after (right) the application of \mbox{$\pt-\eta$} dependent weight function.
-Application of the weights lowers the training significance of tau--candidates
+Application of the weights lowers the training significance of tau candidates
 in regions of \mbox{$\pt-\eta$} phase space where either the signal or background
 samples has an excess of events. } \label{fig:nnTrainingWeights}
 \end{center}

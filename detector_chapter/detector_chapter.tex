@@ -3,11 +3,12 @@
 \label{ch:detector}
 %
 %
-The Compact Muon Solenoid (CMS) Experiment is a ``general purpose'' particle
+The Compact Muon Solenoid (CMS) Experiment is a general--purpose particle
 detector designed to measure collision events at the Large Hadron Collider
 (LHC), a proton--proton synchrotron located at the CERN laboratory in Geneva,
 Switzerland.  The design goals of the CMS experiment are~\cite{CMSExperiment},
 in order of priority:
+\fixme{rewrite this}
 \begin{itemize}
   \item Good muon identification and momentum resolution over a wide range of
     momenta and angles, good dimuon mass resolution ($\approx 1\%$ at 100~\GeVcc),
@@ -37,8 +38,7 @@ charged particle tracking systems (the ``tracker'').  The tracker is designed to
 be a non--destructive instrument, which means that ideally that the
 momentum of particles are unchanged after passing through it.  Outside of the
 tracker is the electromagnetic and hadronic calorimeters, which are abbreviated
-ECAL and HCAL, respectively.  The calorimeters are destructive detector,
-and are designed such that visible incident particles are completely absorbed.
+ECAL and HCAL, respectively.  
 The outer layers of CMS are designed to measure muons, the
 one\footnote{Neutrinos of course fulfill this requirement as well, but are so
 weakly interacting that they are effectively invisible.} species of particle
@@ -81,7 +81,7 @@ $1/2$~Tesla.  As the energy of each beam energy is increased to its (design)
 maximum of 7~\TeV, the dipole fields are ramped to a maximum field of over 8
 Tesla.
 \section{Solenoid Magnet}
-\label{sec:Magnet} The four Tesla field of the CMS solenoid magnet is a critical
+\label{sec:Magnet} The four--Tesla field of the CMS solenoid magnet is a critical
 factor in ability of CMS to precisely measure the particles produced in
 collisions at the LHC\@. The momentum of charged particles is measured in the
 tracking detector by examining the curvature of the particles path as it travels
@@ -108,7 +108,7 @@ bore of the magnet allows the tracker and calorimeter systems to be located
 inside the solenoid.  The internal windings of solenoid is arranged in four
 layers to increase the total field strength and are cooled by liquid helium to
 a temperature of 4.5 Kelvin.  The windings are magnetically
-coupled to the support superstructure.  This coupling allows the magnetic to
+coupled to the support superstructure.  This coupling allows the magnet to
 heat uniformly during a ``quench'' event\footnote{A quench event occurs when some part
 of the magnet is suddenly no longer in a superconducting state.  The coil
 becomes resistive and the large current in the magnet creates large amounts of
@@ -129,7 +129,7 @@ corresponds to the global position of the trajectory on a given surface.  The
 trajectory can then be reconstructed by a helix to the points.  The tracker is
 designed to have a resolution that permits the reconstruction of ``secondary
 vertices'' in $b$--quark and $\tau$ lepton decays.  To accomplish this, there
-are two types of tracking detectors in CMS\@.  The ``pixel detector''composes
+are two types of tracking detectors in CMS\@.  The ``pixel detector'' comprises
 the inner layers (three in the barrel, two in the endcaps).  The pixel detector
 is  situated as close as possible (4.4~\cm) to the interaction point and has a
 very high resolution. Outside of the pixel detector is the silicon strip
@@ -139,8 +139,8 @@ non--negligible distance in the detector, but decaying before the first layer of
 the tracking system.  The pixel and strip tracking detectors have a fiducial
 region which extends to a pseudorapidity of approximately $|\eta| \approx 2.5$.
 
-Both the pixel and strip trackers are silicon based.  The principle of operation
-is similar to that of a charged--coupled discharge (CCD) \fixme{right acronym}
+Both the pixel and strip trackers are silicon--based.  The principle of operation
+is similar to that of a charged--coupled device (CCD) 
 in a modern digital camera.  The sensitive portion of the detector is a silicon
 chip that is arranged with diode junctions formed by a $p$--doped layer and an
 $n$--doped layer\footnote{The pixel detector actually uses a more complicated
@@ -153,10 +153,10 @@ large, which would cause overlaps and spoil the ability to reconstruct tracks.
 The expected occupancy depends on the distance $r^2$ from the interaction.  The
 expected occupancy in the pixel detector for LHC collisions is $10^{-4}$.} the
 spatial resolution of the sensor.  In the pixel detector, each sensor region
-``pixel'' is $100 \times 150 \micron^2$.  In the strip tracker, The rear side of
-the chip is mounted to read--out electronics.  During operation, a high--voltage
+``pixel'' is $100 \micron \times 150 \micron$.  In the strip tracker, The rear side of
+the chip is mounted to readout electronics.  During operation, a high--voltage
 reverse bias is applied to each $p-n$ junction to achieve full depletion.  When
-a charged particle passes through the detector, the diode--junction breaks down
+a charged particle passes through the detector, the diode junction breaks down
 and the readout system registers the hit.
 
 The tracking system has been specifically designed for the high radiation
@@ -182,7 +182,7 @@ material budget of the CMS tracker depends heavily on the pseudorapidity $\eta$
 and is illustrated in Figure~\ref{fig:TrackerMaterialBudget}.
 \begin{figure}
   \centering
-  \includegraphics[]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
+  \includegraphics[width=0.75\textwidth]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
   \caption[Material budget of the CMS tracker]{Material budget of the CMS
   tracker in units of radiation lengths $X_0$ versus pseudorapidity.  The
   material budget is broken down into the contributions from the different
@@ -343,8 +343,8 @@ properties that cause them to leave extremely unique signatures in the detectors
   \item Muons are stable particles, for the typical energies and distances
     considered at a collider.
   \item Muons have non--zero charge, so their trajectories can be measured.
-  \item Muons are heavy enough that they are ``minimum ionizing particles,'' in
-    that they lose very little energy as they pass through material.
+  \item Muons are heavy enough and only interact electromagnetically so 
+    they lose very little energy as they pass through the calorimeters.
 \end{itemize}
 The approach to detecting muons is to build the detector to a thickness such
 that other particles (electrons, photons, hadrons) will not penetrate the
@@ -369,7 +369,7 @@ Figure~\ref{fig:PunchThroughProtectin})
 against hadronic ``punch--through.''  The purity of particles that reach the
 muon system make it especially effective as a ``trigger'' of interesting
 physics. The CMS muon system has the feature that it additionally can trigger on
-the transverse momenta of muons. The CMS muon system is composed of three types
+muons above a certain transverse momentum threshold. The CMS muon system is composed of three types
 of detectors: drift tubes (DT), resistive plate chambers (RPC), and cathode
 strip chambers (CSC).  
 
@@ -394,7 +394,7 @@ is oriented orthogonally to the beam and measures the longitudinal position of
 incident muons.  There are four muon ``stations'' in the barrel which contain DT
 chambers.  The stations correspond to available areas in the magnetic return
 yoke.  In the barrel, the muon momentum resolution of the DTs is better than
-95\%.
+95\%. \fixme{what does this mean?}
 
 Cathode strip chambers (CSCs) are used in the endcap muon system, providing
 coverage in the pseudorapidity range $0.9 < |\eta| < 2.4$.  A cathode strip
@@ -402,7 +402,7 @@ chamber consists of a chamber filled with inert gas that with a number of
 internal wires held at a high voltage.   A number of cathode strips are
 installed perpendicular\footnote{The wires are actually placed at an angle to
 the perpendicular to compensate for a shifting effect caused by the magnetic
-field Lorentz force.} induced to the wires on the walls of the chamber.  When a
+field Lorentz force.} to the wires on the walls of the chamber.  When a
 muon passes through the CSC, it ionizes some of the gas.  The high
 voltage on a nearby wire causes this ionized gas to break down, forming a
 conductive passage in the gas and an ``avalanche'' current between the wire and
@@ -411,7 +411,7 @@ dimensions is found taking one coordinate from the wire and the other coordinate
 from the signal average of the cathode strips.
 
 The CSCs in the CMS endcap are positioned such that a muon in the pseudorapidity
-range $1.2 < |\eta| < 2.4$ will cross three for four CSC detectors.  The
+range $1.2 < |\eta| < 2.4$ will cross three or four CSC detectors.  The
 geometry of the CSC strips and wires is designed to provided a spatial $r-\phi$
 resolution of 2~\milli\meter~at the L1~trigger level and a final offline
 reconstruction resolution of 75~\micro\meter~for the first layer and
@@ -422,7 +422,7 @@ grouping the layers into chambers, and taking the shortest response, the correct
 bunch crossing can be identified with \mbox{98--99\%} efficiency.
 
 The Resistive Plate Chamber (RPC) muon detectors ensure that the muon system can
-be used as a fast, first level trigger.  The RPC detector consists of two gaps
+be used as a fast, first--level trigger.  The RPC detector consists of two gaps
 filled with gas (up and down) with a common set of strips between the two gaps.
 The strips are oriented parallel to the beam line to permit measurement of the
 transverse momentum of the muons.
