@@ -55,7 +55,7 @@ HLT\_Mu11\_PFTau15   & 148822 - 149182 \\
 \end{center}
 \begin{center}
 \caption[High Level Trigger paths used to select $\mu + \tau_h$ events]{\captiontext
-Muon and muon + tau--jet ``cross--channel'' trigger paths utilized to trigger
+Muon and muon + tau ``cross--channel'' trigger paths utilized to trigger
 events in different data--taking periods.}
 \label{tab:AHtoMuTauTriggers}
 \end{center}
@@ -109,7 +109,7 @@ was evaluated using each of the hadronic tau identification work points.  The
 1\%, was found to have the highest performance and is used in this analysis.  $Z
 \to \MM$ background contributions are largely due to muons which failed to get
 reconstructed as global muons (thus failing the muon identification requirement)
-and are misidentified as tau--jet candidates.  These muons are typically
+and are misidentified as tau candidates.  These muons are typically
 isolated and have a large chance to pass the hadronic tau ID discriminators.  To
 reject these events, hadronic taus are additionally required to pass an
 anti--muon veto described in Section~\ref{sec:LightLeptonRejection}. 
@@ -170,7 +170,7 @@ of the muon trigger system.  The $\eta$ requirement on the hadronic tau ensures
 it is well within the fiducial region of the tracker ($|\eta| < 2.5$) and
 minimizes exposure to large QCD backgrounds in the very forward region.
 
-The muon and tau--jet candidate are required to be of opposite charge, as the
+The muon and tau candidate are required to be of opposite charge, as the
 Higgs boson is neutral and charge is conserved.  The muon is required to be pass the
 identification criteria described in Section~\ref{sec:MuonId}.   The tau-jet
 candidate is required to pass the ``loose'' TaNC tau identification
@@ -183,7 +183,7 @@ dimuon background is suppressed by rejecting events which have a track of $\pt
 > 15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
 $0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter~(ECAL) and
 $25$~\centi\meter~(HCAL), respectively.  Contamination from $Z \to \TT$ events
-in which the reconstructed tau--jet candidate is due to a $\tau \to e \nu \nu$
+in which the reconstructed tau candidate is due to a $\tau \to e \nu \nu$
 decay is reduced by applying a dedicated tau ID discriminator against electrons.
 
 The $\ttbar$ and \WpJets backgrounds
@@ -221,13 +221,15 @@ sources and 2010 data.
 The \Pzeta variable is another quantity with discriminant power against \WpJets
 and \ttbar backgrounds.  The observable has been introduced in the search for
 $H\to\TT$ events performed by the CDF collaboration~\cite{CDFrefPzeta}.  The
-observable is motivated by the fact that in $\TT$ signal events all neutrinos
-are produced in direction very close of the visible decay products of one of the
-two tau leptons. It is therefore expected that the direction of the missing
-transverse energy vector in these events point in a direction somewhere between
-the visible $\tau$--lepton decay products. This event topology is not preferred
-in $W$ + jets, $t\bar{t}$ and QCD background events.  The observable is computed
-as difference of the projections:
+observable is motivated by the fact that in $\TT$ signal events the neutrinos
+are produced nearly collinear with their associated visible decay products. It
+is therefore expected that the direction of the missing transverse energy vector
+in these events points in a direction between\footnote{In other words, the
+projection of \VMET is positive along the bisector of the muon and hadronic tau
+momenta.} the visible
+$\tau$ decay products. This event topology is not preferred in \WpJets, 
+\ttbar and QCD background events.  The observable is computed as the
+difference of the projections:
 \begin{eqnarray}
 P_{\zeta} &=& \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} + \MET \nonumber \\
 P_{\zeta}^{vis} &=& \vec{P}_{T}^{vis_{1}} + \vec{P}_{T}^{vis_{2}} \nonumber
@@ -276,13 +278,13 @@ Table~\ref{tab:AHtoMuTauEventSelection}.
                             & of $\pt > 1.0$~\GeVc and neutral electromagnetic
                             objects of $\et > 1.5$~\GeV \\ 
 \hline
-\multirow{4}{23mm}{Tau--jet Candidate} & reconstructed by HPS + TaNC combined Tau ID algorithm \\
+\multirow{4}{23mm}{Tau Candidate} & reconstructed by HPS + TaNC combined Tau ID algorithm \\
                             & TaNC ``medium'' Tau ID discriminator \\
                             & and discriminators against electrons and muons passed, \\
                             & calorimeter muon rejection passed \\
 \hline
-\multirow{2}{23mm}{Muon + Tau--jet} & charge(Muon) + charge(Tau--jet) = 0, \\
-                            & $\Delta R$(Muon, Tau--jet)$ > 0.5$ \\
+\multirow{2}{23mm}{Muon + Tau} & charge(Muon) + charge(Tau) = 0, \\
+                            & $\Delta R$(Muon, Tau)$ > 0.5$ \\
 \hline
 \multirow{2}{20mm}{Kinematics} & $M_{T}$(Muon-MET)$ < 40$~\GeV \\
                             & $P_{\zeta} - 1.5 \cdot P_{\zeta}^{vis} > -20$~\GeV \\
