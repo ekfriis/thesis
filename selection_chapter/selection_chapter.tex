@@ -16,13 +16,13 @@ are randomly thrown it away to reduce the rate.  In general, it is better to use
 an unprescaled trigger with lower efficiency than a prescaled trigger.}.  After
 the trigger selection, events are required to contain at least a good muon and a
 good tau.  Vetoes on extra leptons are applied to reduce backgrounds from
-dimuon events.  Finally, kinematic and charge selections on the are applied to
+dimuon events.  Finally, kinematic and charge selections are applied to
 the event to reduce \WpJets and QCD backgrounds.
 
 \section{High Level Trigger}
-As only data which passes the HLT is recorded, it is thus critical that an
+Because only data which passes the HLT is recorded, it is critical that an
 appropriate trigger path is found. The events in this analysis are
-triggered by a combination of muon and \mbox{muon + tau-jet} ``cross--channel''
+triggered by a combination of muon and muon + hadronic tau ``cross--channel''
 triggers. For the muon triggers, the HLT paths with lowest \pt thresholds are used as
 long as the path remained unprescaled (see Table~\ref{tab:AHtoMuTauTriggers}).
 The \mbox{muon + tau-jet} ``cross--channel'' trigger paths increase the trigger
@@ -70,15 +70,15 @@ meaning that a full track is reconstructed in the muon system and is well
 matched to a track in the silicon strip and pixel trackers.
 Additionally, they are required to pass the ``Vector Boson Task Force'' (VBTF)
 muon identification criteria developed for the $Z \to \mu^{+} \mu^{-}$
-cross--section measurement~\cite{CMS-PAS-EWK-10-002}:
+cross--section measurement~\cite{CMS-PAS-EWK-10-002}, which consist of:
 \begin{itemize}
-\item $\geq 1$ Pixel hits
-\item $\geq 10$ hits in silicon Pixel $+$ Strip detectors
-\item $\geq 1$ hit(s) in muon system
-\item $\geq 2$ matched segments
-\item $\chi^{2}/DoF < 10$ for global track fit
-\item transverse impact parameter of ``inner'' track $d_\text{IP} < 2~\milli\meter$
-  with respect to beam--spot
+\item $\geq 1$ pixel hits,
+\item $\geq 10$ hits in silicon pixel and strip detectors,
+\item $\geq 1$ hit(s) in muon system,
+\item $\geq 2$ matched segments,
+\item $\chi^{2}/DoF < 10$ for global track fit,
+\item and an inner track transverse impact parameter $d_\text{IP} < 2~\milli\meter$
+  with respect to the beamspot.
 \end{itemize}
 
 In order to reduce background contributions from muons originating from heavy
@@ -103,14 +103,16 @@ is shown in Figure~\ref{fig:MuonIsoControlPlot}.
 \subsection{Hadronic Taus}
 
 Hadronic decays of taus are identified by the \hpsTanc hybrid algorithm
-described in Section~\ref{sec:TauId}.  The ``loose'' working point is used,
-corresponding to an expected QCD fake--rate of about 1\%. $Z \to \MM$ background
-contributions are largely due to muons which failed to get reconstructed as
-global muons (thus failing the muon identification requirement) and are
-misidentified as tau--jet candidates.  These muons are typically isolated and
-have a large chance to pass the hadronic tau ID discriminators.  To reject these
-events, hadronic taus are additionally required to pass an anti--muon veto
-described in Section~\ref{sec:LightLeptonRejection}. 
+described in Section~\ref{sec:TauId}.  The expected sensitivity of the search
+was evaluated using each of the hadronic tau identification work points.  The
+``loose'' working point, corresponding to an expected QCD fake--rate of about
+1\%, was found to have the highest performance and is used in this analysis.  $Z
+\to \MM$ background contributions are largely due to muons which failed to get
+reconstructed as global muons (thus failing the muon identification requirement)
+and are misidentified as tau--jet candidates.  These muons are typically
+isolated and have a large chance to pass the hadronic tau ID discriminators.  To
+reject these events, hadronic taus are additionally required to pass an
+anti--muon veto described in Section~\ref{sec:LightLeptonRejection}. 
 
 \subsection{Missing Transverse Energy}
 
@@ -176,7 +178,7 @@ discriminator.
 
 Additional event selection criteria are applied to reduce contributions of
 specific background processes. In order to reject \ZMM background, a dedicated
-discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. Remaining
+discriminator against muons is applied~\cite{CMS-PAS-PFT-08-001}. The remaining
 dimuon background is suppressed by rejecting events which have a track of $\pt
 > 15~\GeVc$ and for which the sum of energy deposits in ECAL plus HCAL is below
 $0.25 \cdot P$ within a cylinder of of radius $15$~\centi\meter~(ECAL) and
@@ -192,12 +194,12 @@ are suppressed by cuts on the transverse mass of the $\mu-\MET$ system and the
   \nonumber
 \end{equation}
 where $\Delta\phi$ is the angle between the muon and the reconstructed
-$\vec{\MET}$ in the transverse plane.  The $M_T$ quantity is much higher in
+\VMET in the transverse plane.  The $M_T$ quantity is much higher in
 events $W \to \mu \nu$ decays than in signal Higgs boson events.  In $W \to \mu \nu$
 decays, the neutrino expected to be produced in the opposite to the muon in
 azimuth.  In signal events, there are three neutrinos produced, with the
 majority (two) of the neutrinos being associated to the $\tau \to \mu \nu \nu$
-decay.  Accordingly, we expect that the \MET is on average collinear with the
+decay.  Accordingly, we expect that the \VMET is on average collinear with the
 muon in signal events.  The $M_T$ distribution immediately before the $M_T$ cut is applied
 is illustrated in Figure~\ref{fig:MTCutControlPlot} for the different background
 sources and 2010 data.
