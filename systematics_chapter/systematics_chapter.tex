@@ -23,7 +23,7 @@ counting experiment measuring the cross section of some signal particle in the
 presence of background.  The formula for the cross section times the branching
 fraction is
 \begin{equation}
-  \sigma \times BR = \frac{N_{sig}}{\mathcal{L} \cdot \mathcal {A} \cdot
+  \xbr = \frac{N_{sig}}{\mathcal{L} \cdot \mathcal {A} \cdot
   \epsilon} = \frac{N_{obs}-N_{bkg}}{\mathcal{L} \cdot \mathcal {A} \cdot
   \epsilon}, \label{eq:CrossSectionEquation}
 \end{equation}
@@ -38,8 +38,7 @@ determined by fitting some sideband spectrum, and the fitted result has some
 error $\delta N_{bkg}$.  The total relative effect of this error can
 be obtained by error propagation
 \begin{equation}
-  \frac{\delta (\sigma \times BR)}{\sigma \times BR} = \frac{\partial(\sigma
-  \times BR)}{\partial N_{bkg}}  \frac{1}{\sigma \times BR} \delta N_{bkg} =
+  \frac{\delta (\xbr)}{\xbr} = \frac{\xbr}{\partial N_{bkg}}  \frac{1}{\xbr} \delta N_{bkg} =
   \frac{-\delta N_{bkg}} {N_{obs}-N_{bkg}}.
   \label{eq:CrossSectionEquationBkgSystematicError}
 \end{equation}
@@ -91,7 +90,7 @@ these uncertainties is to measure the effect in some control region in both the
 data and Monte Carlo.  The ratio of data to Monte Carlo then gives a correction
 factor which is applied to the simulation.  An uncertainty on the measurement of
 the effect in control region (in the data, simulation, or both) is then taken as the
-systematic uncertainties.  The signal normalization uncertainties affecting this
+systematic uncertainty.  The signal normalization uncertainties affecting this
 analysis on muon trigger, reconstruction, identification and isolation
 efficiencies are taken from the tag and probe analysis of $Z \to \MM$ events
 presented in Section~\ref{sec:ZmumuTagAndProbe}.  A very conservative estimate
@@ -107,7 +106,7 @@ measurement~\cite{LUMI}.
 \section{Background Normalization Uncertainties}
 
 Uncertainties on the normalization of background processes are obtained from the
-study of background enriched control regions presented in
+study of background--enriched control regions presented in
 Chapter~\ref{ch:backgrounds}.  The main fake tau backgrounds in this analysis
 are QCD multi--jet and \WpJets events.  These backgrounds are produced copiously
 enough for the backgrounds to be studied in control regions dominated by a
@@ -115,13 +114,13 @@ single background process with a purity exceeding $90\%$ and an event statistics
 exceeding the expected contribution of that background to the analysis by more
 than one order of magnitude.  Both backgrounds are found to be well modeled by
 the Monte Carlo simulation. The overall background yields used in the final fit
-are measured in the background enriched control regions, and cross--checked
+are measured in the background--enriched control regions, and cross--checked
 using the Fake--rate and Template methods. For a detailed discussion of the
 measurements, see Chapter~\ref{ch:backgrounds}.  An uncertainty of $10\%$ is
 attributed to the contribution of QCD and \WpJets backgrounds to the analysis.
 The cross--section for \ttbarpJets production makes it difficult to select a
 high purity sample of \ttbarpJets events of high event statistics.  From the
-study of the $19$ events selected in the \ttbarpJets background enriched control
+study of the $19$ events selected in the \ttbarpJets background--enriched control
 sample we assume an uncertainty on the \ttbarpJets background contribution in
 the analysis of $30\%$.  The \ZMM background has been studied with large
 statistical precision in two separate control regions, and is dominated by
@@ -129,7 +128,7 @@ events in which the reconstructed tau candidate is either due to a
 misidentified quark or gluon jet or due to a misidentified muon.  Good agreement
 between data and Monte Carlo simulation is found in both cases.  Sizeable
 uncertainties on the \ZMM background contribution arise due to the extrapolation
-from the background enriched control regions to the data sample considered in
+from the background--enriched control regions to the data sample considered in
 the analysis, however: the contribution of \ZMM background events to the
 analysis is due to events in which one of the two muons produced in the $Z$
 decay either escapes detection or fakes the signature of a hadronic tau decay.
@@ -158,7 +157,7 @@ The systematic uncertainties on the muon and tau energy scales have been
 provided by the muon and tau CMS Physics Object Groups and are described in
 Section~\ref{sec:MuonTauMomentumScale}.  The modelling of missing transverse
 energy in different types of background events has been studied in the
-background enriched control regions described in Chapter~\ref{ch:backgrounds}.
+background--enriched control regions described in Chapter~\ref{ch:backgrounds}.
 No significant deviations between data and Monte Carlo simulation have been
 found.  
 Uncertainties due to missing transverse energy are estimated by varying
@@ -171,7 +170,7 @@ Section~\ref{sec:ZRecoilCorr} and recomputing the total \MET.
 %data.
 
 \section{Theory Uncertainties}
-
+%
 The signal and background normalization as well as the shape uncertainties are
 all experimental uncertainties in nature.  Additional theoretical uncertainties
 arise from imprecise knowledge of parton--distribution functions (PDFs) and of
@@ -240,15 +239,15 @@ A/H$ and $b\bar{b} \to A/H$ signal efficiency times acceptance.}
 \label{sec:statmethod}
 %
 The search for a new signal is performed by examining the observed distribution
-of the reconstructed ditau invariant mass $m_{\tau\tau}$ as reconstructed by the SVfit
-algorithm.  An ``bump'' in this spectrum would indicate the presence of a new
-particle.  To make a statement about the presence of a bump with confidence, the
-shape under a potential bump must be well described.  The background shape is
-decomposed into the combination of shapes from the difference background
-sources, which we refer to here as ``templates.'' The data and the templates for
-each background distribution is binned in the observable $m_{\tau\tau}$
-variable.  The normalization of each template represents the total yield
-expected for that source.
+of the reconstructed ditau invariant mass $m_{\tau\tau}$ as reconstructed by the
+SVfit algorithm.  A localized excess in this spectrum would indicate the
+presence of a new particle.  To make a statement about the presence of an excess
+with confidence, the shape of the spectrum under the potential signal must be well
+described.  The background shape is decomposed into the combination of shapes
+from the difference background sources, which we refer to here as ``templates.''
+The data and the templates for each background distribution is binned in the
+observable $m_{\tau\tau}$ variable.  The normalization of each template
+represents the total yield expected for that source.
 
 We can then define a likelihood for any configuration of our templates given the
 observed data.  The likelihood is a ``binned Poisson likelihood,'' which is
@@ -336,7 +335,7 @@ cross-section.  If the presence of a signal is unambiguous, one can simply
 determine the likelihood as a function of the cross-section.  If the signal is
 known to be non--zero, confidence intervals about the maximum likelihood can be
 constructed by examining the change in the logarithm $2\Delta \ln {\cal L}$ of
-the likelihood.  The Frequentist \fixme{Did I mix this up?}interpretation of the
+the likelihood.  The Frequentist interpretation of the
 confidence level $(1-\alpha)$ is that if the experimented were repeated $N$
 times, the interval corresponding to $(1-\alpha)$ would fail ``cover'' the
 \emph{true} value of the observable in $\alpha \times N$ of the experiments.
@@ -418,21 +417,21 @@ The left hand side of Equation~\ref{eq:BayesianPosterior} represents the
 probability density for a given signal cross section, given the observed data
 $\overline x$ and the assumed value $m_H$ for the Higgs boson mass.  We refer to this
 method as the ``Bayesian'' method of setting limits.
+%
+%In the other method, which is referred to as the ``Delta Log Likelihood'' (DLL)
+%method, we compute two likelihoods.  The first likelihood is computed for the
+%``null hypothesis'' case.  The likelihood is profiled (maximized) assuming that
+%no signal is present.  We then construct the profile likelihood for increasing
+%values of the signal yield.  The upper limit is achieved when the logarithm of
+%the profile likelihood is 1.92 units less than the value of the null hypothesis
+%profile likelihood.  
 
-In the other method, which is referred to as the ``Delta Log Likelihood'' (DLL)
-method, we compute two likelihoods.  The first likelihood is computed for the
-``null hypothesis'' case.  The likelihood is profiled (maximized) assuming that
-no signal is present.  We then construct the profile likelihood for increasing
-values of the signal yield.  The upper limit is achieved when the logarithm of
-the profile likelihood is 1.92 units less than the value of the null hypothesis
-profile likelihood.  
-
-In general the limits computed by the Bayesian and DLL methods are similar.
-However, the effect of upward or downward statistical fluctuations in the
-observed data affect the two methods in different ways.  When the data
-fluctuates low, the DLL method will produce a more stringent limit than the
-DLL method.  When the data fluctuates high, creating an apparent signal, the
-Bayesian method will (correctly) set a more stringent limit.  
+%In general the limits computed by the Bayesian and DLL methods are similar.
+%However, the effect of upward or downward statistical fluctuations in the
+%observed data affect the two methods in different ways.  When the data
+%fluctuates low, the DLL method will produce a more stringent limit than the
+%DLL method.  When the data fluctuates high, creating an apparent signal, the
+%Bayesian method will (correctly) set a more stringent limit.  
 %In this thesis we report the results of both methods.
 %
 %we find that point where the logarithm of the

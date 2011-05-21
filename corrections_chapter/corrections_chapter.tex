@@ -50,18 +50,18 @@ with the notable exception that the only HLT requirement applied in MC is that
 the tag muon is matched to an HLT\_Mu9 object.  Any difference in efficiency
 between the HLT\_Mu9 path and the paths used to select the data (in the
 tag--probe measurement and in the analysis) will be considered implicitly in the
-correction faction. 
+correction fraction. 
 
 The efficiencies for the muon selections applied in this analysis are measured
 using the ``probe'' objects.  We measure the following marginal efficiencies,
 each relative to the previous requirement:
 \begin{itemize}
-\item Efficiency of global probe muons to satisfy VBTF muon identification
-selections.
-\item Efficiency of global probe muons passing the VBTF muon identification
+\item the efficiency of global probe muons to satisfy VBTF muon identification
+selections,
+\item the efficiency of global probe muons passing the VBTF muon identification
 selection to satisfy the isolation criteria described in
-Section~\ref{sec:MuonId}.
-\item Efficiency of probe muons passing the offline analysis selection defined
+Section~\ref{sec:MuonId},
+\item and the efficiency of probe muons passing the offline analysis selection defined
   in Chapter~\ref{ch:selections} to pass the HLT selection.
 \end{itemize}
 
@@ -102,13 +102,13 @@ periods and compare it to the simulated efficiency of the HLT\_Mu9 selection.
 The overall efficiency in data is taken as the average of the three periods,
 weighted by integrated luminosity.
 
-The efficiency of the ``cross--triggers'' used in the run--range period 
+The efficiency of the ``cross--triggers'' used in the run range 
 $148822-149182$ (period~C) cannot be measured in $\ZMM$ events as they
 require a reconstructed PFTau object at the trigger level.  A single muon trigger
 (HLT\_Mu15) is also used in period C.  The contribution of the cross--triggers
 is taken as a correction to the single muon trigger period C efficiency. The
 ``muon leg'' of the cross--triggers have the same requirements as the single
-muon triggers used in the run--range $147196-148058$ (period~B).  The
+muon triggers used in the run range $147196-148058$ (period~B).  The
 ``cross--trigger'' contribution is estimated as the difference between the
 efficiency in period B and the single--muon period C efficiency multiplied by a
 correction factor of $0.9 \pm 10\%$ to account for the $\tau$ leg efficiency.
@@ -177,10 +177,14 @@ according to the cross section equation,
 The only suitable resonance for this method is $Z\to\TT$.  This method has been
 applied\footnote{Actually, a slightly more complicated method is used. The
 analysis uses three decay channels, and the \ZTT cross section and tau
-identification correction factors are fitted simultaneously. The central value
+identification correction factors are fitted simultaneously. When measuring only
+the tau identification efficiency, the expected number
+of \ZTT events is determined by measuring the \ZMM rate in data, and inferring the
+expected number of \ZTT events using Monte Carlo simulation. 
+The central value
 of the \ZTT cross section is driven by the $\ZTT \to e \mu$ channel, which is
 independent of the hadronic tau identification.} in the CMS \ZTT cross section
-analysis~\ref{CMS-PAS-EWK-10-013}, and measured a tau identification simulation
+analysis~\cite{CMS-PAS-EWK-10-013}, and measured a tau identification simulation
 to data correction factor of \mbox{$0.960 \pm 0.067$}.
 
 Unfortunately, this method cannot be used in this analysis.  The measurement
@@ -279,22 +283,21 @@ reconstructed \MET in the simulated $\ZTT, \ZMM,$ and \WpJets samples is
 ``smeared'' by a random amount in each event such that the final resolution
 matches the observed resolution in the data.
 
-$Z$--recoil corrections are determined as described in~\cite{CMS_AN_2010-332}
-and applied to simulated $Z \to \TT$, $Z \rightarrow \mu^+\mu^-$ and $W$ + jets
-events, in order to correct for residual differences in $\MET$ response and
-resolution between data and Monte Carlo simulation~\cite{CMS_AN_2010-460}. The
-corrections are obtained by an unbinned maximum likelihood fit (in data and
-simulation) of the transverse recoil vector $\vec{u}_{T} = -\left( \vec{q}_{T} +
-\MET \right)$ as function of the transverse momentum $\vec{q}_{T}$ of the
-$Z$--boson in directions parallel and perpendicular to the $Z$--boson transverse
-momentum vector.  
+Corrections related to the $Z$--recoil are determined as described
+in~\cite{CMS_AN_2010-332} and applied to simulated $Z \to \TT$, $Z \rightarrow
+\mu^+\mu^-$ and $W$ + jets events, in order to correct for residual differences
+in $\MET$ response and resolution between data and Monte Carlo
+simulation~\cite{CMS_AN_2010-460}. The corrections are obtained by an unbinned
+maximum likelihood fit (in data and simulation) of the transverse recoil vector
+$\vec{u}_{T} = -\left( \vec{q}_{T} + \MET \right)$ as function of the transverse
+momentum $\vec{q}_{T}$ of the $Z$--boson in directions parallel and
+perpendicular to the $Z$--boson transverse momentum vector.  
 %The effect of the $Z$--recoil correction is illustrated in
-%Figure~\ref{fig:ZrecoilCorrection}.  
-%The uncertainty on the $Z$--recoil
+%Figure~\ref{fig:ZrecoilCorrection}.  The uncertainty on the $Z$--recoil
 %correction factor from the maximum likelihood fit is treated as a systematic
 %uncertainty in the final result.
 
-Two additionally types of corrections are applied to the simulated \MET,
+Two additional types of corrections are applied to the simulated \MET,
 ``clustered'' and ``unclustered.''  The overall correction factor from these two
 effects is taken to be unity.  However, the uncertainty on these two correction
 factors is used as a systematic uncertainty when setting the final limit. The
@@ -322,7 +325,7 @@ aspects of the analysis.  In general, increasing pile--up lowers particle
 identification efficiencies and lowers \MET resolution.  It is therefore
 important that the distribution of pile--up events in the simulation matches the
 distribution found in the data.  Differences in the number of pile--up
-interactions between the data (averaged over the analyzed run--range) and
+interactions between the data (averaged over the analyzed run range) and
 pile-up Monte Carlo samples produced for ``BX156\footnote{The BX156 name comes
 from the fact that the pile--up scenario used in this simulation corresponds to
 an LHC configuration with 156 bunches.}'' pile--up conditions are corrected for
