@@ -20,8 +20,7 @@ Section~\ref{sec:template}.  The results of template method presented in this
 chapter cannot be used directly in the final result of this analysis, as the
 final likelihood fit (see Chapter~\ref{ch:systematics}) implicitly performs a
 template fit of the background shapes.  Nonetheless, we present the results here
-as an additional cross--check of the simulation performance, and to give an
-overview of the method.
+as an additional cross--check of the simulation performance.
 
 The fake--rate method is based on applying probabilities for quark and gluon
 jets to be misidentified as hadronic tau decays to events passing all event
@@ -144,7 +143,7 @@ has $E_{T} > 60$~\GeV and at least one with ``TrackCountingHighEff'' $b$--jet di
 \label{tab:EventSelectionMuTauBgControlRegions}
 \end{center}
 \end{sidewaystable}
-\addtocounter{footnote}{3}
+%\addtocounter{footnote}{3}
 %
 \begin{sidewaystable}[t]
 \begin{center}
@@ -381,7 +380,7 @@ calculation in bins of the parameterization variables.  In Section~\ref{sec:KNN}
 we describe a more robust multivariate method to compute the fake--rates.} of
 $\pt^{jet}$, $\eta_{jet}$ and $R_{jet}$:
 \begin{equation}
-P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := 
+P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) = 
   \frac{N_{jets} \left( \pt^{jet}, \eta_{jet}, R_{jet} \vert \mbox{tau ID passed} \right)}
        {N_{jets} \left( \pt^{jet}, \eta_{jet}, R_{jet} \vert \mbox{preselection passed} \right)}
 \label{eqBgEstFakeRate_fr}
@@ -453,7 +452,7 @@ In the ``simple'' method, all tau candidates within the background dominated
 event sample are weighted by the probabilities of quark and gluon jets to fake
 the signature of a hadronic tau decay
 \begin{equation}
-w_{jet}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := P_{fr} \left(
+w_{jet}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) = P_{fr} \left(
 \pt^{jet}, \eta_{jet}, R_{jet} \right).
 \label{eqBgEstFakeRate_frSimpleJetWeight}
 \end{equation}
@@ -473,7 +472,7 @@ by summing up the per--jet weights defined by
 Equation~\ref{eqBgEstFakeRate_frSimpleJetWeight} over all tau candidates in
 the event which pass the preselection:
 \begin{equation}
-W_{event}^{simple} := \Sigma w_{jet}^{simple}
+W_{event}^{simple} = \Sigma w_{jet}^{simple}
 \label{eqBgEstFakeRate_frSimpleEventWeight}
 \end{equation}
 
@@ -485,7 +484,7 @@ muon + tau pairs in case of the $Z \rightarrow \tau^{+} \tau^{-}
 computed for such ``composite particles'', depending on $\pt^{jet}$,
 $\eta_{jet}$, $R_{jet}$ of its tau candidate constituent, according to:
 \begin{equation}
-w_{comp-part}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) := 
+w_{comp-part}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) = 
   w_{jet}^{simple} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)
 \label{eqBgEstFakeRate_frSimpleCompositeParticleWeight}
 \end{equation}
@@ -600,7 +599,7 @@ To be specific, the ``CDF--type'' weights assigned to tau candidates are
 computed as:
 \begin{equation}
 w_{jet}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) 
-:= 
+= 
 \begin{cases} 
    \frac{P_{fr} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) \cdot 
          \varepsilon \left( \pt^{jet}, \eta_{jet}, R_{jet} \right)}
@@ -668,8 +667,8 @@ Event weights and the weights assigned to ``composite particles''
 are computed in the same way as for the ``simple'' weights,
 based on the weights assigned to the tau candidates:
 \begin{eqnarray}
-W_{event}^{CDF} & := & \Sigma w_{jet}^{CDF} \nonumber \\
-w_{comp-part}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) & := & 
+W_{event}^{CDF} & = & \Sigma w_{jet}^{CDF} \nonumber \\
+w_{comp-part}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right) & = & 
   w_{jet}^{CDF} \left( \pt^{jet}, \eta_{jet}, R_{jet} \right),
 \label{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}
 \end{eqnarray}
@@ -683,7 +682,7 @@ genuine hadronic tau decays is shown in
 Table~\ref{tabBgEstFakeRate_frCDFtypeResults} and illustrated in
 Figure~\ref{figBgEstFakeRate_frCDFtypeResults_mVisibleSignal}.  As expected,
 positive and negative weights do indeed cancel in the statistical average.
-\begin{table}[t]
+\begin{sidewaystable}[t]
 \begin{center}
 \tablesize
 \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -717,7 +716,7 @@ weights defined by
 Equation~\ref{eqBgEstFakeRate_frCDFtypeEvent_and_CompositeParticleWeight}.}
 \label{tabBgEstFakeRate_frCDFtypeResults}
 \end{center}
-\end{table}
+\end{sidewaystable}
 %
 \begin{figure}[t]
 \setlength{\unitlength}{1mm}
@@ -1003,13 +1002,13 @@ Table~\ref{tab:MuTauFakeRateResultsSS}.  The number of events expected in the
 like--sign control sample from Monte Carlo simulation is indicated in the
 caption.  All numbers are in good agreement.
 
-The fake--rate method does not only allow estimation of the total number of
-background events, but models the distributions of background processes
-as well.  The capability to model distributions is illustrated in
-Figure~\ref{fig:MuTauFakeRateResultsSS}, which shows good agreement between the
-distributions observed in the like-sign data sample and the predictions obtained
-by the fake--rate method for the distributions of muon plus tau visible
-mass and of the ``full'' invariant mass reconstructed by the SVfit algorithm.
+%The fake--rate method does not only allow estimation of the total number of
+%background events, but models the distributions of background processes
+%as well.  The capability to model distributions is illustrated in
+%Figure~\ref{fig:MuTauFakeRateResultsSS}, which shows good agreement between the
+%distributions observed in the like-sign data sample and the predictions obtained
+%by the fake--rate method for the distributions of muon plus tau visible
+%mass and of the ``full'' invariant mass reconstructed by the SVfit algorithm.
 %
 \begin{table}[t]
 \begin{center}
@@ -1036,21 +1035,21 @@ obtained by fake--rate method.  } \label{tab:MuTauFakeRateResultsSS}
 \end{center}
 \end{table}
 %
-\begin{figure}[t]
-\setlength{\unitlength}{1mm}
-\begin{center}
-\begin{picture}(150,52)(0,0)
-\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{backgrounds_chapter/figures/VisMass_SS_linear_bin_normed.pdf}}}
-\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{backgrounds_chapter/figures/SVfit_SS_linear_bin_normed.pdf}}}
-\end{picture}
-\caption[Comparison of visible mass and SVfit mass]{Distribution of visible mass
-(left) and ``full'' invariant mass reconstructed by the SVfit algorithm (right)
-observed in the like--sign charge control region compared to the background
-estimate obtained by the fake--rate method.
-} \label{fig:MuTauFakeRateResultsSS}
-\end{center}
-\end{figure} 
-\fixme{THIS IS FROM THE HPS NOTE!}
+%\begin{figure}[t]
+%\setlength{\unitlength}{1mm}
+%\begin{center}
+%\begin{picture}(150,52)(0,0)
+%\put(0.5, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{backgrounds_chapter/figures/VisMass_SS_linear_bin_normed.pdf}}}
+%\put(78.0, 2){\mbox{\includegraphics*[height=52mm, viewport=19 0 524 396]{backgrounds_chapter/figures/SVfit_SS_linear_bin_normed.pdf}}}
+%\end{picture}
+%\caption[Comparison of visible mass and SVfit mass]{Distribution of visible mass
+%(left) and ``full'' invariant mass reconstructed by the SVfit algorithm (right)
+%observed in the like--sign charge control region compared to the background
+%estimate obtained by the fake--rate method.
+%} \label{fig:MuTauFakeRateResultsSS}
+%\end{center}
+%\end{figure} 
+%\fixme{THIS IS FROM THE HPS NOTE!}
 
 \section{Template Method}
 \label{sec:template}
@@ -1072,34 +1071,62 @@ in~\cite{CMS_AN_2010-088} and~\cite{CMS_AN_2011-021}.
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(150,170)(0,0)
-\put(0.5, 118){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuMuonMisIdEnriched_visMass.pdf}}}
-\put(78.0, 118){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuJetMisIdEnriched_visMass.pdf}}}
-\put(0.5, 60){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass.pdf}}}
-\put(78.0, 60){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass_corrected.pdf}}}
-\put(0.5, 2){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_TTplusJetsEnriched_visMass.pdf}}}
-\put(78.0, 2){\mbox{\includegraphics*[width=52mm, angle=90]
-  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_QCDenriched_visMass.pdf}}}
-\put(-5.5, 170.5){\small (a)}
-\put(72.0, 170.5){\small (b)}
-\put(-5.5, 112.5){\small (c)}
-\put(72.0, 112.5){\small (d)}
-\put(-5.5, 54.5){\small (e)}
-\put(72.0, 54.5){\small (f)}
-\end{picture}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuMuonMisIdEnriched_visMass.pdf}
+\label{fig:visMassTemplZmumuMuon}
+}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuJetMisIdEnriched_visMass.pdf}
+\label{fig:visMassTemplZmumuJet}
+}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass.pdf}
+\label{fig:visMassTemplWpJ}
+}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass_corrected.pdf}
+\label{fig:visMassTemplWpJCorr}
+}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_TTplusJetsEnriched_visMass.pdf}
+\label{fig:visMassTemplTTpJets}
+}
+\subfigure[]{\includegraphics*[height=0.45\textwidth, angle=90]
+  {backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_QCDenriched_visMass.pdf}
+\label{fig:visMassTemplQCD}
+}
+%\begin{picture}(150,170)(0,0)
+%\put(0.5, 118){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuMuonMisIdEnriched_visMass.pdf}}}
+%\put(78.0, 118){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_ZmumuJetMisIdEnriched_visMass.pdf}}}
+%\put(0.5, 60){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass.pdf}}}
+%\put(78.0, 60){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_WplusJetsEnriched_visMass_corrected.pdf}}}
+%\put(0.5, 2){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_TTplusJetsEnriched_visMass.pdf}}}
+%\put(78.0, 2){\mbox{\includegraphics*[width=52mm, angle=90]
+  %{backgrounds_chapter/figures/plotBgEstTemplateData_vs_AnalysisZtoMuTau_QCDenriched_visMass.pdf}}}
+%\put(-5.5, 170.5){\small (a)}
+%\put(72.0, 170.5){\small (b)}
+%\put(-5.5, 112.5){\small (c)}
+%\put(72.0, 112.5){\small (d)}
+%\put(-5.5, 54.5){\small (e)}
+%\put(72.0, 54.5){\small (f)}
+%\end{picture}
 \caption[Comparison of background shapes in the signal and control
-regions]{\captiontext $\mu + \tau_{had}$ shape templates obtained from $Z \to
-\mu^{+} \mu^{-}$ (a) and (b), $W$ + jets before (c) and after (d) the bias
-correction explained in Section~\ref{sec:template}, \ttbarpJets (e) and
-QCD multi--jet (f) backgrounds enriched control regions compared to the expected
+regions]{\captiontext Visible mass shape templates obtained from $Z \to
+\mu^{+} \mu^{-}$ \subref{fig:visMassTemplZmumuMuon} and
+\subref{fig:visMassTemplZmumuJet}, \WpJets before \subref{fig:visMassTemplWpJ}
+and after \subref{fig:visMassTemplWpJCorr} the bias
+correction explained in Section~\ref{sec:template}, \ttbarpJets
+\subref{fig:visMassTemplTTpJets} and
+QCD multi--jet \subref{fig:visMassTemplQCD} backgrounds enriched control regions compared to the expected
 distribution of the of the enriched background process to the signal region,
-predicted by Monte Carlo simulations.  In (a) reconstructed tau candidates
-are expected to be dominantly due to misidentified muons, while in (b) they are
+predicted by Monte Carlo simulations.  In \subref{fig:visMassTemplZmumuMuon} reconstructed tau candidates
+are expected to be dominantly due to misidentified muons, while in
+\subref{fig:visMassTemplZmumuJet} they are
 expected to be mostly due to misidentified quark or gluon jets.}
 \label{fig:VisMassTemplates}
 \end{center}

@@ -32,8 +32,12 @@ output/results_chapter.pdf: results_chapter/results_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ $<
 	pdflatex ${OPTS} --output-directory=./output/ $<
 
+output/detector_chapter.pdf: detector_chapter/detector_chapter.tex
+	pdflatex ${OPTS} --output-directory=./output/ $<
+	pdflatex ${OPTS} --output-directory=./output/ $<
 
-#output/%.1: output/%.mp
-	#cd output/ && mpost $*
+
+output/%.1: output/%.mp
+	cd output/ && mpost $*
 
 #output/nonperturbative_qcd_diagram.mp output/perturbative_qcd_diagram.mp output/muon_decay_propagator.mp output/muon_decay.mp: theory_chapter/theory_chapter.tex

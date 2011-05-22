@@ -4,18 +4,20 @@
 \section{Selected Events}
 In the 36~\pbinv of 7~\TeV data collected by CMS in 2010, the analysis selection
 criteria described in Chapter~\ref{ch:selections} selects a total of 573 events.
-The expected yields from each of the background sources, computed by the
-Template method (Section~\ref{sec:template}) and verified by the Fake--rate
+The expected yields from each of the background sources, taken from Monte Carlo
+and verified by the template method (Section~\ref{sec:template}) and fake--rate
 method (Section~\ref{sec:fakerate}) are shown in
-Table~\ref{tab:ExpResultsLooseAHtoMuTau}.  The total expectation from the
-standard model background is 577. The data agree extremely well with the SM
-background expectation considering the expected statistical variance of the
-observed data (24 events), as well as the uncertainty on the integrated
+Table~\ref{tab:ExpResultsLooseAHtoMuTau}. The expected fake tau background
+contribution of 209 agrees well with the fake--rate method prediction of
+$236.1^{+24.1}_{-65.9}$.  The total expectation from the standard model
+background is 577. The data agree extremely well with the SM background
+expectation considering the expected statistical variance of the observed data
+(24 events), as well as the uncertainty on the integrated
 luminosity\footnote{The uncertainty on the CMS luminosity measurement was 11\%
 at the time this analysis was performed. The measurement was later improved, and
 at the time of this writing the uncertainty on CMS 2010 integrated luminosity is
-4\%~\cite{LUMI}. The improved luminosity measurement is not expected to change the results
-of this analysis significantly.} and the tau identification
+4\%~\cite{LUMI}. The improved luminosity measurement is not expected to change
+the results of this analysis significantly.} and the tau identification
 uncertainty. \\
 \begin{table}[t]
 \begin{center}
@@ -51,7 +53,7 @@ selection are shown in Figure~\ref{fig:FinalControlPlots}.  The $\eta$ and $\phi
 distributions of the muon and tau objects are sensitive to detector effects, and
 the presence of cosmic muons.  For example, muons from cosmic events will
 preferentially be produced in the \mbox{$\phi=0$} direction.  Spurious candidates
-resulting from poorly model noise in one of the CMS subdetectors will in general
+resulting from poorly modelled noise in one of the CMS subdetectors will in general
 be localized in $\eta-\phi$.  The $\eta$ and $\phi$ distributions of the muon
 and tau candidates are shown in Figure~\ref{fig:FinalControlPlotsEtaPhi} and
 show excellent agreement.
@@ -92,9 +94,8 @@ selection criteria described in Chapter~\ref{ch:selections}.}
 \includegraphics*[height=0.38\textwidth,angle=90,viewport=0 35 400 550]{results_chapter/figures/replotted_results/plotAHtoMuTauOS_inclusive_finalSamplePlots_mSVmethod.pdf}
 \caption[Distributions of final selected events]{Distribution of visible (top)
 and ``full'' \TT invariant mass reconstructed by the SVfit algorithm (bottom) in
-\mbox{$H \to \TT \to \mu + \tau_{had}$} candidate events passing the selection
-criteria described in Chapter~\ref{ch:selections}.  The distributions are shown
-in linear (logarithmic) scale on the left (right).}
+\mbox{$H \to \TT \to \mu + \tau_{had}$} candidate events in linear (left) and
+log scale (right). }
 \label{fig:AHtoMuTauPlotsLoose}
 \end{center}
 \end{sidewaysfigure} 
@@ -335,12 +336,12 @@ CL is shown in Figure~\ref{fig:TanBetaLimit}.  The limit is compared to the
 combined result from \mbox{Run $\mathrm{II}$} of the
 Tevatron~\cite{Benjamin:2010xb} (this result is discussed in detail in
 Section~\ref{sec:lepAndTevatron}).  The result of this analysis sets a stronger
-limit than the Tevatron for large values of \ma, excluded new regions of the
-MSSM.  In the low
-\ma region, the analysis suffers due to the large tau identification efficiency
-uncertainty\@.  This effect can be mitigated by using the $e-\mu$ channel.  The
-combined CMS result uses this approach, and will be discussed briefly in the
-conclusion.
+limit than the Tevatron for large values of \ma, excluding new regions of the
+MSSM\@.  In the low \ma region, the limit set by this analysis is comparable to
+the limit set by the Tevatron.  At the $Z$ peak, the limit set by this analysis
+suffers due to the large tau identification efficiency uncertainty.  This effect
+can be mitigated by using the $e-\mu$ channel.  The combined CMS result uses
+this approach, and will be discussed briefly in the conclusion.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=\textwidth]{tools/tan_beta.pdf}
