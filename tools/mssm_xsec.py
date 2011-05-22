@@ -190,13 +190,14 @@ if __name__ == "__main__":
     #tanB = sys.argv[2]
     #result = query(130, 30)
     #pprint.pprint(result)
-    masses = [ 90., 120., 130., 160., 200., 250., 300.]
+    masses = [ 90, 90., 120., 130., 160., 200., 250., 300.]
     #limits = [
         #147.745, 112.300, 39.611, 25.398, 18.199,
         #11.370, 9.785, 8.708, 5.773, 4.360, 3.602, 2.855, 2.406, 2.101 ]
 
-    obs_limits = [ 394.7, 86.5, 59.9, 28.3, 16.4, 12.9, 9.4 ]
-    exp_limits = [ 621.9, 59.8, 40.5, 19.0, 11.2, 7.6, 5.7 ]
+    obs_limits = [ 1000, 394.7, 86.5, 59.9, 28.3, 16.4, 12.9, 9.4 ]
+    exp_limits = [ 1000, 621.9, 59.8, 40.5, 19.0, 11.2, 7.6, 5.7 ]
+
 
     five_flavor_graph = {
         'exp' : ROOT.TGraph(len(masses)),
@@ -213,88 +214,144 @@ if __name__ == "__main__":
         graph.SetLineWidth(2)
         if '1' in key:
             graph.SetLineStyle(2)
+
     for key, graph in four_flavor_graph.iteritems():
         graph.SetLineColor(ROOT.EColor.kRed)
         graph.SetLineWidth(2)
         if '1' in key:
             graph.SetLineStyle(2)
 
+    five_flavor_graph['exp'].SetLineStyle(2)
 
     for type, limit_collection in [('exp', exp_limits), ('obs', obs_limits)]:
-    for index, (mass, limit) in enumerate(zip(masses, limit_collection)):
+        for index, (mass, limit) in enumerate(zip(masses, limit_collection)):
 
-        def five_flavor_query(tanb):
-            return effective_cross_section(mass, tanb, False, 0)
-        def four_flavor_query(tanb):
-            return effective_cross_section(mass, tanb, True, 0)
-        def five_flavor_query_up(tanb):
-            return effective_cross_section(mass, tanb, False, -1)
-        def five_flavor_query_down(tanb):
-            return effective_cross_section(mass, tanb, False, +1)
-        def four_flavor_query_up(tanb):
-            return effective_cross_section(mass, tanb, True, -1)
-        def four_flavor_query_down(tanb):
-            return effective_cross_section(mass, tanb, True, +1)
-
-
-        five_flavor = get_tanb_for_xsec(limit, five_flavor_query)
-        #five_flavor_up = get_tanb_for_xsec(limit, five_flavor_query_up)
-        #five_flavor_down = get_tanb_for_xsec(limit, five_flavor_query_down)
-
-        five_flavor_graph[type].SetPoint(index, mass, five_flavor)
+            def five_flavor_query(tanb):
+                return effective_cross_section(mass, tanb, False, 0)
+            def four_flavor_query(tanb):
+                return effective_cross_section(mass, tanb, True, 0)
+            def five_flavor_query_up(tanb):
+                return effective_cross_section(mass, tanb, False, -1)
+            def five_flavor_query_down(tanb):
+                return effective_cross_section(mass, tanb, False, +1)
+            def four_flavor_query_up(tanb):
+                return effective_cross_section(mass, tanb, True, -1)
+            def four_flavor_query_down(tanb):
+                return effective_cross_section(mass, tanb, True, +1)
 
 
-        four_flavor = get_tanb_for_xsec(limit, four_flavor_query)
-        #four_flavor_up = get_tanb_for_xsec(limit, four_flavor_query_up)
-        #four_flavor_down = get_tanb_for_xsec(limit, four_flavor_query_down)
+            five_flavor = get_tanb_for_xsec(limit, five_flavor_query)
+            #five_flavor_up = get_tanb_for_xsec(limit, five_flavor_query_up)
+            #five_flavor_down = get_tanb_for_xsec(limit, five_flavor_query_down)
 
-        four_flavor_graph[type].SetPoint(index, mass, four_flavor)
+            five_flavor_graph[type].SetPoint(index, mass, five_flavor)
 
 
-        diff = (five_flavor - four_flavor)/five_flavor
+            four_flavor = get_tanb_for_xsec(limit, four_flavor_query)
+            #four_flavor_up = get_tanb_for_xsec(limit, four_flavor_query_up)
+            #four_flavor_down = get_tanb_for_xsec(limit, four_flavor_query_down)
 
-        #print "mass: %3.0f 5flavor: %3.2f 4flavor: %3.2f diff: %2.2f%%" % (
-            #mass,
-            #five_flavor,
-            #four_flavor,
-            #diff*100.0
-        #)
-        print "mass: %3.0f 5flavor: %3.2f (+%3.2f)(-%3.2f) "\
-                "4flavor: %3.2f (+%3.2f)(-%3.2f) diff 5-4: %2.2f%%" % (
-                    mass,
-                    five_flavor,
-                    five_flavor_up,
-                    five_flavor_down,
-                    four_flavor,
-                    four_flavor_up,
-                    four_flavor_down,
-                    diff*100.0
-                )
+            four_flavor_graph[type].SetPoint(index, mass, four_flavor)
+
+
+            diff = (five_flavor - four_flavor)/five_flavor
+
+            print "mass: %3.0f 5flavor: %3.2f 4flavor: %3.2f diff: %2.2f%%" % (
+                mass,
+                five_flavor,
+                four_flavor,
+                diff*100.0
+            )
+            #print "mass: %3.0f 5flavor: %3.2f (+%3.2f)(-%3.2f) "\
+                    #"4flavor: %3.2f (+%3.2f)(-%3.2f) diff 5-4: %2.2f%%" % (
+                        #mass,
+                        #five_flavor,
+                        #five_flavor_up,
+                        #five_flavor_down,
+                        #four_flavor,
+                        #four_flavor_up,
+                        #four_flavor_down,
+                        #diff*100.0
+                    #)
+
+    tev_masses = [ 90,  100,  110,  120,  130,  140,  150,  160,  170,  180,  190, 200, 201, 210 ]
+    tev_limits = [ 31,  46,   43,   34,   29,   30,   31,   33,   38,   42,   48,  55, 60., 65 ]
+
+    tev_graph = ROOT.TGraph(len(tev_limits))
+    for i, (mass, limit) in enumerate(zip(tev_masses, tev_limits)):
+        tev_graph.SetPoint(i, mass, limit)
+
     canvas = ROOT.TCanvas("blah", "blah", 800, 600)
-    legend = ROOT.TLegend(0.15, 0.7, 0.4, 0.88, "", "brNDC")
+    canvas.SetBottomMargin(0.13)
+    canvas.SetLeftMargin(0.1)
+    canvas.SetRightMargin(0.1)
+
+    legend = ROOT.TLegend(0.55, 0.15, 0.9, 0.42, "", "brNDC")
     legend.SetFillStyle(0)
+    legend.SetBorderSize(0)
 
-    legend.AddEntry(five_flavor_graph['central'], "Five Flavor", "l")
-    legend.AddEntry(five_flavor_graph['central'], "Five Flavor", "l")
+    # make exclusion zone look good
+    five_flavor_graph['obs'].SetPoint(0, 80, 43)
+    five_flavor_graph['exp'].SetPoint(0, 80, 55)
+
+    tev_graph.SetLineColor(ROOT.EColor.kAzure -1)
+    tev_graph.SetFillColor(ROOT.EColor.kAzure -1)
+    #tev_graph.SetLineWidth(9902)
+    tev_graph.SetFillStyle(1001)
+
+    five_flavor_graph['exp'].SetLineColor(ROOT.EColor.kRed)
+    five_flavor_graph['obs'].SetLineColor(ROOT.EColor.kAzure -4)
+
     #legend.AddEntry(four_flavor_graph['central'], "Four Flavor", "l")
-    five_flavor_graph['central']
-    five_flavor_graph['central'].Draw("alp")
+    five_flavor_graph['obs'].SetLineWidth(9902)
+    five_flavor_graph['obs'].SetFillStyle(1001)
+    five_flavor_graph['obs'].SetFillColor(
+        five_flavor_graph['obs'].GetLineColor())
+    five_flavor_graph['obs'].SetLineColor(1)
 
-    histo = five_flavor_graph['central'].GetHistogram()
+    five_flavor_graph['obs'].Draw("al")
+    five_flavor_graph['exp'].Draw("l,same")
+
+    five_flavor_graph['exp'].SetLineWidth(3)
+
+    #tev_graph.SetLineWidth(9904)
+    tev_graph.SetLineWidth(4)
+    tev_graph.SetFillStyle(3003)
+    tev_graph.SetFillColor(tev_graph.GetLineColor())
+    tev_graph.Draw("l,same")
+
+    legend.AddEntry(five_flavor_graph['obs'], "Excluded", "f")
+    legend.AddEntry(five_flavor_graph['exp'], "Expected limit", "l")
+    legend.AddEntry(tev_graph, "Tevatron excluded", "l")
+
+    label = ROOT.TPaveText(0.12, 0.17, 0.5, 0.28, "NDC")
+    label.SetBorderSize(0)
+    label.SetFillStyle(0)
+    label.AddText("MSSM m_{h}^{max} scenario")
+    label.AddText("95% C.L. excluded regions")
+    label.Draw()
+
+    histo = five_flavor_graph['obs'].GetHistogram()
     histo.GetXaxis().SetRangeUser(90, 300)
-    histo.GetXaxis().SetTitle("m_{A} [GeV/c^{2}]")
+    histo.SetMinimum(0)
+    histo.GetXaxis().SetTitle("m_{A} (GeV/c^{2})")
+    histo.GetXaxis().SetTitleSize(0.05)
+    histo.GetYaxis().SetTitleSize(0.05)
+    histo.GetYaxis().SetNdivisions(110)
+
     histo.GetYaxis().SetTitle("tan #beta")
     histo.SetTitle("")
     histo.SetMaximum(60)
-    for key, graph in five_flavor_graph.iteritems():
-        if 'central' in key:
-            graph.Draw('lp')
-    for key, graph in four_flavor_graph.iteritems():
-        if 'central' in key:
-            graph.Draw('lp')
+    histo.Draw("axissame")
+    #for key, graph in five_flavor_graph.iteritems():
+        #if 'central' in key:
+            #graph.Draw('lp')
+    #for key, graph in four_flavor_graph.iteritems():
+        #if 'central' in key:
+            #graph.Draw('lp')
     legend.Draw()
 
-    canvas.SaveAs('5f_vs_4f.pdf')
+    canvas.SaveAs('tan_beta.pdf')
 
     effective_cross_section(120, 30, verbose=True)
     effective_cross_section(120, 30, True, verbose=True)

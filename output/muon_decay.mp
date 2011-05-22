@@ -16,7 +16,6 @@ vlabel ("$\mu ^-$", __i1);
 vlabel ("$\nu _\mu $", __o1);
 vlabel ("$\overline \nu _e$", __o3);
 vlabel ("$e^-$", __o2);
-vlabel ("$G_F$", __v1);
 vfreeze;
 vdraw;
 endsubgraph;

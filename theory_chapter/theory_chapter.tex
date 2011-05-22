@@ -46,7 +46,7 @@ The theory of QED is a modern extension of Maxwell's theory of
 electromagnetism, describing the interaction of matter with light.  The
 development of QED is a result of efforts to develop a quantum mechanical
 formulation of electromagnetism compatible with the theory of special relativity.
-QED is a \emph{gauge} theory, which means that the physical observables are
+QED is a gauge theory, which means that the physical observables are
 invariant under local gauge transformations.  Requiring local gauge
 invariance gives rise to a ``gauge'' field, which can be interpreted as 
 particles that are exchanged during an interaction.  
@@ -83,7 +83,7 @@ where $\gamma^\mu$ is a set of four $4\times4$ matrices referred to as the Dirac
 matrices.  The equation of motion is obtained by choosing either term (they are
 equivalent) from the
 left hand side of Equation~\ref{eq:DiracEquationFactorized} and
-making the substitution in Equation~\ref{eq:QuantizeMomentumTransformation}.
+making the substitution in Equation~\ref{eq:QuantizeMomentumTransformation},
 \begin{equation}
   i \hbar \gamma^\mu \partial_\mu \psi - mc \psi = 0.
   \label{eq:DiracEquation}
@@ -104,7 +104,7 @@ under the global gauge transformation
   \psi' \to e^{i\theta}\psi.
   \label{eq:U1GaugeTransform}
 \end{equation}
-The Lagrangian is invariant under \emph{local} gauge translations if $\theta$
+The Lagrangian is invariant under local gauge translations if $\theta$
 can be defined differently at each point in space, \ie if $\theta = \theta(x)$
 in Equation~\ref{eq:U1GaugeTransform}.  However, as the derivative operator
 $\partial_\mu$ in Equation~\ref{eq:FreeQEDLagrangian} does not commute with
@@ -136,7 +136,7 @@ experimental observation that particles with zero electric charge do not
 interact electromagnetically with each other.  In this interpretation, the
 electromagnetic force between two charged particles is caused by the exchange of
 gauge bosons (photons).  The existence of this ``minimal coupling'' is
-\emph{required} if the Lagrangian is to satisfy local gauge invariance. The
+required if the Lagrangian is to satisfy local gauge invariance. The
 addition of a term with the gauge Field Strength Tensor to represent the kinetic
 term of the gauge (photon) field yields the QED Lagrangian:
 \begin{equation}
@@ -158,7 +158,7 @@ The theory of Weak Interactions was created to describe the physics of
 radioactive decay.  The first formulation of the theory was done by
 Fermi~\cite{Fermi:1934hr} to explain the phenomenon of the $\beta$
 decay of neutrons. The initial theory was a four-fermion ``contact'' theory.  In
-a contact theory, all four fermions come involved in the $\beta$--decay are
+a contact theory, all four fermions involved in the $\beta$--decay are
 connected at a single vertex.  The Fermi theory Hamiltonian for the
 $\beta$--decay of a proton is then~\cite{Morii:SMandBSM}
 \begin{equation}
@@ -187,7 +187,7 @@ anti--neutrinos) participate in the weak interaction.
 The Fermi interaction can describe both nuclear $\beta$ decay ($p \to n + e^+ +
 \overline{\nu}_e$) as well as the decay of a muon into an electron ($\mu \to
 \nu_\mu + e + \overline{\nu}_e$, Figure~\ref{fig:MuonDecayContact}).
-Furthermore, the coupling constant $G$ is found to be a \emph{universal}
+Furthermore, the coupling constant $G$ is found to be a universal
 constant in weak interactions, in that it is the same for interactions
 regardless of the particle species participating in the interaction.  That is,
 $G_\mu = G_e = G_F$.  Using an Hamiltonian analogous to
@@ -224,10 +224,10 @@ the Fermi interaction.
     \fmflabel{$\nu_\mu$}{o1}
     \fmflabel{$\overline \nu_e$}{o3}
     \fmflabel{$e^-$}{o2}
-    \fmflabel{$G_F$}{v1}
+    %\fmflabel{$G_F$}{v1}
     \end{fmfgraph*}
   \end{fmffile}
-  \caption[Fermi contact interaction diagram]{Feynamn diagram of muon decay
+  \caption[Fermi contact interaction diagram]{Feynman diagram of muon decay
   in Fermi contact interaction theory.}
   \label{fig:MuonDecayContact}
 \end{figure}
@@ -320,13 +320,13 @@ symmetry in a toy model, following the treatment in~\cite{Morii:SMandBSM}.
 The toy Lagrangian in Equation~\ref{eq:ToySSBLagrangian} has a global
 $U(1)$\footnote{Technically, the symmetric transformation is 
 \begin{equation}
-  \left(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\right)
+  \biggl(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\biggr)
     \to
-  \left(\begin{array}{c} \phi'_1 \\ \phi'_2 \end{array}\right)
+  \biggl(\begin{array}{c} \phi'_1 \\ \phi'_2 \end{array}\biggr)
     =
-  \left(\begin{array}{cc} \cos\theta & -\sin\theta \\ 
-    \sin\theta & \cos\theta \end{array}\right)
-  \left(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\right),
+  \biggl(\begin{array}{cc} \cos\theta & -\sin\theta \\ 
+    \sin\theta & \cos\theta \end{array}\biggr)
+  \biggl(\begin{array}{c} \phi_1 \\ \phi_2 \end{array}\biggr),
     \nonumber
   \end{equation} which is $\mathcal{O}(2)$.  However, this transformation is equivalent to 
 $U(1)$, as the two real fields $\phi_1$ and $\phi_2$ can be seen to correspond
@@ -337,10 +337,10 @@ field potential $V(\phi_1, \phi_2)$ about its minimum, $(\phi^{min}_1,
 \phi^{min}_2)$.  The first three terms in the series are found by
 \begin{eqnarray}
   V(\phi_1, \phi_2) &= &V(\phi^{min}_1, \phi^{min}_2) + 
-  \sum_{a=1,2} \left(\frac {\partial V}{\partial \phi_a}\right)_{0} (\phi_a -
+  \sum_{a=1,2} \biggl(\frac {\partial V}{\partial \phi_a}\biggr)_{0} (\phi_a -
   \phi^{min}_a) \nonumber \\
-  &+ &\frac{1}{2} \sum_{a,b=1,2} \left(\frac {\partial^2 V}{\partial \phi_a \partial
-  \phi_b}\right)_{0} (\phi_a - \phi^{min}_a)(\phi_b - \phi^{min}_b) + \ldots
+  &+ &\frac{1}{2} \sum_{a,b=1,2} \biggl(\frac {\partial^2 V}{\partial \phi_a \partial
+  \phi_b}\biggr)_{0} (\phi_a - \phi^{min}_a)(\phi_b - \phi^{min}_b) + \ldots
   \label{eq:ExpandedPotential}
 \end{eqnarray}
 Since at the minimum the partial derivative of $V$ is zero with respect to all
@@ -349,8 +349,8 @@ third term determines the masses of the particles in the theory.  Since a mass
 term for a particle corresponding to a field $\phi_n$ in the Lagrangian appears
 as $\frac{1}{2}m^2\phi_n\phi_n$, we can identify 
 \begin{equation}
-\left(\frac {\partial^2
-V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}}
+\biggl(\frac {\partial^2
+V}{\partial \phi_a \partial \phi_b}\biggr)_{\phi^{min}}
 \label{eq:MassMatrixTerms}
 \end{equation}
 as the $a$th row and $b$th column in the ``mass matrix''.  Off diagonal terms in
@@ -369,9 +369,9 @@ Equation~\ref{eq:ToySSBLagrangian} is
   \label{eq:SSBPotential}
 \end{equation}
 If the parameters $m^2$ and $\lambda$ are both positive, then the minimum of $V$
-is at the origin $(\phi_1 = \phi_2 = 0)$.  In this case, the mass matrix term in
-Equation~\ref{eq:ExpandedPotential} takes the form $\left(\frac {\partial^2
-V}{\partial \phi_a \partial \phi_b}\right)_{0} = \frac{m^2}{2}\delta_{ab}$,
+is at the origin \mbox{$(\phi_1 = \phi_2 = 0)$}.  In this case, the mass matrix term in
+Equation~\ref{eq:ExpandedPotential} takes the form \mbox{$\biggl(\frac {\partial^2
+V}{\partial \phi_a \partial \phi_b}\biggr)_{0} = \frac{m^2}{2}\delta_{ab}$},
 where $\delta_{ab}$ is the Kronecker delta function.  Therefore the mass matrix
 is already diagonalized, and the $\phi_1$ and $\phi_2$ both correspond to
 particles with mass $m$.  If the $m^2$ parameter in
@@ -399,14 +399,14 @@ matrix is diagonalized, there will always be one physical field with a VEV$ =
 does not depend on the choice of VEV\@.} is chosen, evaluating
 Equation~\ref{eq:MassMatrixTerms} yields the mass matrix 
 \begin{equation}
-  \left(\frac {\partial^2
-  V}{\partial \phi_a \partial \phi_b}\right)_{\phi^{min}} = 
-  \left(
+  \biggl(\frac {\partial^2
+  V}{\partial \phi_a \partial \phi_b}\biggr)_{\phi^{min}} = 
+  \biggl(
   \begin{array}{cc}
     v^2 & 0 \\
     0 & 0 \\
   \end{array}
-  \right).
+  \biggr).
   \nonumber
 \end{equation}
 Breaking the symmetry has changed the mass spectrum of the physical particles in
@@ -419,7 +419,7 @@ generator in the symmetry group that is broken.
 \label{sec:HiggsMech}
 
 As in Section~\ref{sec:QEDandGaugeInvariance}, extending the gauge symmetry
-requirement to be \emph{locally} invariant creates interesting consequences for
+requirement to be locally invariant creates interesting consequences for
 models that have spontaneously broken symmetry.  This gives rise to the ``Higgs
 mechanism,'' which we overview here.  For simplicity we will again consider a
 model with $U(1)$ symmetry.  The model is identical to the one presented in
@@ -479,7 +479,7 @@ consequences of the model.  In its unbroken form, the model described by
 Equation~\ref{eq:LocalInvariantU1} would produce two real massive particles and
 one massless gauge boson mandated by local gauge invariance.  After symmetry
 breaking, the effective Lagrangian in Equation~\ref{eq:HiggsMechanism} contains
-a massive scalar $\eta$ with $m = \sqrt{2\mu^2}$ and a \emph{massive} gauge
+a massive scalar $\eta$ with $m = \sqrt{2\mu^2}$ and a massive gauge
 boson $B_\mu$ with mass $m = \sqrt 2 e\nu$.  By acquiring a mass, the gauge
 boson $B_\mu$ has acquired the degree of freedom (as it can now be
 longitudinally polarized) previously associated to the second degree of freedom
@@ -521,17 +521,18 @@ and neutrino
 combined into a doublet $L$ of $SU(2)$.  
 \begin{equation}
   L = \frac{1 - \gamma_5}{2}
-  \left(\begin{array}{c} \nu_e \\ e^- \end{array}\right)
-    = \left(\begin{array}{c} \nu_e \\ e^- \end{array}\right)_L
+  \biggl(\begin{array}{c} \nu_e \\ e^- \end{array}\biggr)
+    = \biggl(\begin{array}{c} \nu_e \\ e^- \end{array}\biggr)_L
       \label{eq:EWDoubletForm}
 \end{equation}
 The operators that operate on ``weak isospin,'' the quantum of $SU(2)_L$,
 are \begin{eqnarray}
   \tau^+ &=& \frac{\tau^1 + i \tau^2}{2} = 
-  \left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right) 
-    \label{eq:Su2GeneratorPlus} \\
+  \biggl(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\biggr) 
+    %\label{eq:Su2GeneratorPlus} 
+    \nonumber \\
   \tau^- &=& \frac{\tau^1 - i \tau^2}{2} = 
-  \left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right),
+  \biggl(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\biggr),
     \label{eq:Su2GeneratorMinus}
 \end{eqnarray}
 where the $\tau^i$ are the Pauli matrices. The weak currents $J_\mu^\pm$ can be
@@ -548,7 +549,7 @@ so the charge of the current is zero and no mixing of the fields occur:
 \begin{eqnarray}
   J^3_\mu =& \overline L \gamma_\mu \frac{\tau^3}{2} L \nonumber \\
   =& \overline L \gamma_\mu  \frac{1}{2} 
-  \left(\begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) L \nonumber \\
+  \biggl(\begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\biggr) L \nonumber \\
     =&  \frac{1}{2} \overline \nu_e \gamma_\mu \nu_e - \frac{1}{2} \overline e_L
     \gamma_\mu e_L.
     \label{eq:EWNeutralCurrent}
@@ -589,7 +590,7 @@ To accomplish the symmetry breaking, we introduce a new $SU(2)$ doublet of
 complex Higgs fields $\phi$ that have hypercharge $Y = 1$, and contribute
 $\mathcal{L}_S$ to the Lagrangian:
 \begin{eqnarray}
-  \phi &=& \left(\begin{array}{c}\phi^+ \\ \phi^0\end{array}\right) \nonumber \\
+  \phi &=& \biggl(\begin{array}{c}\phi^+ \\ \phi^0\end{array}\biggr) \nonumber \\
   \mathcal{L}_S &=& (D_\mu \phi)^\dag(D^\mu \phi) - V(\phi^\dag\phi)\nonumber ,
 \end{eqnarray}
 where $D_\mu$ is the gauge covariant derivative containing couplings to both the
@@ -608,18 +609,18 @@ $\phi$ field acquires a non--zero VEV and the symmetry is spontaneously broken.
 At the minimum of $V$, the Higgs field satisfies $\phi^\dag\phi =
 \frac{\nu^2}{2}$ and the Higgs fields has a VEV of
 \begin{equation}
-  \phi_{min} = \left(\begin{array}{c} 0 \\ v/\sqrt{2} \end{array}\right).
+  \phi_{min} = \biggl(\begin{array}{c} 0 \\ v/\sqrt{2} \end{array}\biggr).
     \nonumber
 \end{equation}
 The new symmetry of the model can be confirmed by looking at the action of the
 different symmetry generators on the VEV\@.  If the generator acting on the
 vacuum state has a non--zero value, then the corresponding symmetry is broken.
 It can then be seen that the original symmetry generators $T^+$, $T^-$, $T^3$,
-and $Y$ are all broken.  The vacuum \emph{is} invariant under $Q$, the generator
+and $Y$ are all broken.  The vacuum is invariant under $Q$, the generator
 of $U(1)_{em}$:
 \begin{equation}
-  Q\phi_{min} = (T^3 + \frac{Y}{2})\left(\begin{array}{c} 0 \\ v/\sqrt{2}
-  \end{array}\right) = 0 \nonumber,
+  Q\phi_{min} = (T^3 + \frac{Y}{2})\biggl(\begin{array}{c} 0 \\ v/\sqrt{2}
+  \end{array}\biggr) = 0 \nonumber,
 \end{equation}
 so the broken Lagrangian contains the correct symmetry properties.
 
@@ -629,8 +630,8 @@ Equation~\ref{eq:HiggsMechanismFieldParameterization} and using the unitary
 gauge (see Section~\ref{sec:HiggsMech}), where the gauge transformation is
 chosen so Higgs field is real.  The Higgs scalar doublet is then 
 \begin{equation}
-  \phi' =  \left(\begin{array}{c} 0 \\ \frac{1}{\sqrt 2}(\nu +
-    H(x))\end{array}\right) = 
+  \phi' =  \biggl(\begin{array}{c} 0 \\ \frac{1}{\sqrt 2}(\nu +
+    H(x))\end{array}\biggr) = 
     \frac{1}{\sqrt 2}(\nu + H(x))\chi.
     %\label{eq:HiggsFieldParameterization}
     \nonumber
@@ -664,32 +665,32 @@ This is the familiar $W^\pm$ boson of $\beta$ and muon decay, and has mass $M_W
 be written in matrix form and then diagonalized into mass eigenstates
 \begin{eqnarray}
   &\frac{\nu^2}{8}(A'^3_\mu~B'_\mu) 
-  \left(
+  \biggl(
   \begin{array}{cc}
     g^2 & -gg' \\
     -gg' & g'^2 
   \end{array}
-  \right)
-  \left(
+  \biggr)
+  \biggl(
   \begin{array}{c}
     A'^{3\mu} \\
     B'^\mu
   \end{array}
-  \right) \nonumber \\
+  \biggr) \nonumber \\
   \to & 
   \frac{\nu^2}{8}(Z_\mu~A_\mu) 
-  \left(
+  \biggl(
   \begin{array}{cc}
     g^2 + g'^2  & 0\\
     0 & 0 
   \end{array}
-  \right)
-  \left(
+  \biggr)
+  \biggl(
   \begin{array}{c}
     Z^\mu \\
     A^\mu
   \end{array}
-  \right), \nonumber 
+  \biggr), \nonumber 
 \end{eqnarray}
 giving a massive $Z$ boson with 
 \begin{equation}
@@ -734,7 +735,7 @@ motivations and the phenomenology relevant to the analysis presented in this
 thesis is contained in this section.  The existence of quarks as composite
 particles of hadrons was first proposed by Gell--Man and Zweig to explain the
 spectroscopy of hadrons.  QCD is an $SU(3)$ non--Abelian gauge theory which is
-invariant under \emph{color} transformations.  Color is the charge of QCD and
+invariant under color transformations.  Color is the charge of QCD and
 comes in three types: red, green and blue.  The gauge boson that carries the
 force of QCD is called the gluon, which is massless as the $SU(3)_c$ color
 symmetry is unbroken.
@@ -854,8 +855,8 @@ expected to be composed of a stable massive neutral particle which interacts
 very weakly with other matter; no SM particle fits this description.
 Finally, there is the ``hierarchy,'' or fine--tuning problem.  This problem
 strongly affects the Higgs sector, and motivated the development of
-Supersymmetry, which are the targets of the search presented in this thesis.  An
-short overview of the hierarchy problem and Supersymmetry are presented in the
+supersymmetry, which are the targets of the search presented in this thesis.  An
+short overview of the hierarchy problem and supersymmetry are presented in the
 next sections.
 
 \subsection{The Hierarchy Problem}
@@ -928,7 +929,7 @@ hierarchy problem is the introduction of a new, ``super'' symmetry.
 \subsection{Supersymmetry}
 Supersymmetry extends the SM by positing that there exists a
 symmetry between the integer--spin bosons ($\gamma, W^\pm, Z, H$) and the half
-integer--spin fermions (quarks and leptons).  In Supersymmetry, every particle
+integer--spin fermions (quarks and leptons).  In supersymmetry, every particle
 in the SM has a ``superpartner'' with a spin differs by $1/2$.  All
 of the other quantum numbers (including mass) of the superpartners are the same.
 The introduction of this symmetry immediately solves the hierarchy problem.  For
@@ -936,9 +937,9 @@ every scalar loop correction (Figure~\ref{fig:ScalarLoopCorrection}) to the
 Higgs boson mass there is now a corresponding fermion loop correction
 (Figure~\ref{fig:FermionLoopCorrection}).  As the fermion and the scalar have
 the same quantum numbers (except for spin) it turns out that these two diagrams
-have the same value, but \emph{opposite} sign.  Thus the large $\Lambda^2$
+have the same value, but opposite sign.  Thus the large $\Lambda^2$
 superpartner loop corrections to the Higgs boson mass exactly cancel out the
-problematic SM corrections.  It is clear that if Supersymmetry
+problematic SM corrections.  It is clear that if supersymmetry
 exists, it must be broken.  We have not observed a scalar charged particle with
 the same mass as the electron, for example.  An excellent overview of possible
 mechanisms that create spontaneous symmetry breaking in supersymmetric models is
@@ -946,10 +947,10 @@ given in Chapter~6 of~\cite{Martin:1997um}.
 
 \subsection{The Minimal Supersymmetric Extension to the Standard Model}
 \label{sec:MSSMAndTaus} The simplest possible supersymmetric extension to the
-SM is MSSM\@.  The model groups
+SM is the MSSM\@.  The model groups
 superpartner pairs into chiral (a left or right--handed fermion field plus a
 complex scalar field) and gauge (a spin--1 vector boson and a left or
-right--handed \emph{gaugino} fermion) ``supermultiplets.''  As the weak
+right--handed gaugino fermion) ``supermultiplets.''  As the weak
 interactions of the SM fermions are chiral, they (and their
 superpartners) must belong in a chiral supermultiplet.  It is interesting to
 note that there is a different superpartner for the left and right--handed
@@ -957,7 +958,7 @@ components of the fermions, even though the superpartners are spin--0 and cannot
 have any handedness. It is found that there must be two Higgs supermultiplets
 for the MSSM to be viable.  As there are now fermionic particles in the Higgs
 sector (the Higgsinos), if only one supermultiplet is introduced the MSSM suffers
-from non--renormalizable gauge anomalies.\footnote{A gauge anomaly is a linear
+from non--renormalizable gauge anomalies.\fixme{footnote spans two pages}\footnote{A gauge anomaly is a linear
 divergence that occurs in diagrams containing a fermion loop with three gauge
 bosons (total) in the initial and final states.  In the Electroweak model, the
 sum of the fermion contributions cancel the anomaly.  Interestingly, the
@@ -1235,7 +1236,7 @@ possible production modes and the branching fractions of Higgs boson decays.
   
 The dominant modes of Higgs boson production depend on the type of experiment.
 In general, Higgs boson production is favored through high--mass intermediate states,
-due to the mass$^2$ proportional coupling.  At the Tevatron and LEP experiments,
+due to the (mass)$^2$ proportional coupling.  At the Tevatron and LEP experiments,
 which will be introduced in the next section, the dominant SM Higgs boson production
 mode is ``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is
 produced and then radiates a Higgs boson.  Higgstrahlung is illustrated in
@@ -1431,7 +1432,7 @@ Higgs boson below that mass.
 
 The Tevatron is a proton--antiproton collider with a center--of--mass energy of
 $\sqrt s = 1.96~\TeV$.  There are two general purpose detectors at the Tevatron,
-CDF and \DZERO\@. The dominant Higgs boson production modes at the Tevatron are
+CDF and D\O. The dominant Higgs boson production modes at the Tevatron are
 Higgstrahlung and gluon fusion (see Figure~\ref{fig:GluonFusion}).  For low mass
 \mbox{($m_H < 135~\GeVcc$)} Higgs bosons the dominant channel at the Tevatron is
 the Higgstrahlung production mode and \mbox{$H\to\bbbar$} decays.  Large
@@ -1455,7 +1456,7 @@ expectation.
 When \mbox{($m_H < 135~\GeVcc$)} the $H\to W^{+} W^{-}$ decay mode becomes
 significant.  Low diboson backgrounds allow this decay mode to probe both the
 Higgstrahlung and gluon fusion production modes. The combined results of the CDF
-and \DZERO searches using the $W^+W^-$ have decay mode recently excluded (See
+and \DZERO searches using the $W^+W^-$ have decay mode recently excluded (see
 Figure~\ref{fig:TevatronHighMassHiggsLimit}) a SM Higgs boson with a mass
 between 162 and 166~\GeVcc.  This is the first exclusion in SM Higgs boson
 mass parameter space since the LEP result.
@@ -1476,9 +1477,9 @@ Higgstrahlung production mode, the SM search can be reinterpreted in
 terms of the MSSM\@.  To address the pair production mode, searches were
 performed in the $e^+e^- \to h^0 A^0 \to \bbbar \bbbar$ and $\TT \qqbar$ decay
 modes.  Finally, LEP is also sensitive to associated MSSM Higgs boson production at
-low $\ma$ and high $\tan\beta$ to $\EE \to {\cal f}\overline{\cal f} \phi$,
-where the associated fermions ${\cal f}$ are \mbox{$b$--quarks} or tau leptons.
-The combined limits from LEP in the \mbox{$\ma--\tan\beta$} plane are shown in
+low $\ma$ and high $\tan\beta$ to $\EE \to f\overline f \phi$,
+where the associated fermions $f$ are \mbox{$b$--quarks} or tau leptons.
+The combined limits from LEP in the \mbox{$\ma-\tan\beta$} plane are shown in
 Figure~\ref{fig:LEPMSSMLimits}.
 \begin{figure}
   \centering
@@ -1495,7 +1496,7 @@ similar to the approaches used at the Tevatron.  Results from the Tevatron have
 excluded the MSSM for $\tan\beta$ greater than approximately 35 for MSSM Higgs
 boson mass $\ma < 200~\GeVcc$.   The full
 exclusion plot for the \mbox{$m_h$--max} and ``no mixing'' MSSM benchmark
-scenarios are shown in Figure~\ref{fig:TevMSSMLimits}.
+scenarios is shown in Figure~\ref{fig:TevMSSMLimits}.
 \begin{figure}
   \centering
   \includegraphics[width=0.99\textwidth]{theory_chapter/figures/tev_mssm_limits_mhmax_and_nomixing.pdf}
