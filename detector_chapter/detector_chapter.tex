@@ -11,14 +11,14 @@ in order of priority:
 \begin{itemize}
   \item  Excellent muon identification and momentum resolution over a large
     solid angle.  Particularly important is the ability to determine the muon
-    charge for any muon with $p <~\TeVc$.
+    charge for any muon with $p < 1~\TeVc$.
   \item Charged particle tracking with excellent momentum.
      Triggering on $b$--jets requires an excellent vertex resolution, and
-     requires pixel detectors close to the interaction region;
+     requires pixel detectors close to the interaction region.
   \item An electromagnetic calorimeter with an energy resolution precise enough
     to measure the mass of diphoton and dielectron events with a resolution of
     $\approx 1\%$ at 100~\GeVcc.  The calorimeter must have high granularity to
-    determine isolated photons and electrons during high luminosity running.;
+    determine isolated photons and electrons during high luminosity running.
   \item The design goal of excellent missing--transverse--energy and dijet--mass 
     resolution, requiring require hadron calorimeters large solid angle coverage
     and high granularity.
@@ -124,7 +124,7 @@ The charged particle tracking system measures the trajectories of charged
 particles emerging from the event.  The tracker measures the trajectory of a
 charged particle by measuring ``hits'' along the trajectory.  Each hit
 corresponds to the global position of the trajectory on a given surface.  The
-trajectory can then be reconstructed by a helix to the points.  The tracker is
+trajectory can then be reconstructed by fitting a helix to the points.  The tracker is
 designed to have a resolution that permits the reconstruction of ``secondary
 vertices'' in $b$--quark and $\tau$ lepton decays.  To accomplish this, there
 are two types of tracking detectors in CMS\@.  The ``pixel detector'' comprises
@@ -173,14 +173,14 @@ ionizing charged particle passes through the readout electronics and changes the
 state of the digital circuitry.  
 
 In the ideal case, the tracker would be a non--destructive instrument.  However,
-charged particles can interact with the mass of the tracker (and its support
+particles can interact with the mass of the tracker (and its support
 infrastructure).  These interactions limit the resolution of the tracker.  The
 amount of matter in the tracker is referred to as the ``material budget''.  The
 material budget of the CMS tracker depends heavily on the pseudorapidity $\eta$
 and is illustrated in Figure~\ref{fig:TrackerMaterialBudget}.
 \begin{figure}
   \centering
-  \includegraphics[width=0.75\textwidth]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
+  \includegraphics[width=0.75\textwidth,viewport=0 12 180 180]{detector_chapter/figures/tracker_material_budget_cleaned.pdf}
   \caption[Material budget of the CMS tracker]{Material budget of the CMS
   tracker in units of radiation lengths $X_0$ versus pseudorapidity.  The
   material budget is broken down into the contributions from the different
@@ -223,7 +223,7 @@ of particles which interact electromagnetically with high
 precision.\footnote{One of the design goals of the CMS experiment is to be able
 to conduct a search for Standard Higgs bosons decaying to pairs of photons. The
 branching fraction to photons is illustrated in Figure~\ref{fig:SMHiggsBR}.}.
-The ECAL is a \emph{scintillation} detector, and functions by counting the
+The ECAL is a scintillation detector, and functions by counting the
 number of photons produced in an electromagnetic shower inside a crystal.  Upon
 entering the crystal, a charged particle or photon will interact
 electromagnetically with the crystal, producing a shower of electrons and
@@ -299,7 +299,7 @@ located within the coil of the CMS solenoid magnet.  To ensure incident
 particles are completely contained within the calorimeter volume, in the barrel
 region the HCAL employs a ``tail--catcher'', an extra layer of calorimetry
 outside of the magnet. The hadronic calorimeter measures the energy of charged
-and neutral hadronic particles.  The HCAL is a \emph{sampling} calorimeter.
+and neutral hadronic particles.  The HCAL is a sampling calorimeter.
 Layers of plastic scintillating tiles are interspersed between brass absorber
 plates.  An incident hadron produces a hadronic shower as it passes through the
 absorber.  The particles in the shower produce light as they pass through the

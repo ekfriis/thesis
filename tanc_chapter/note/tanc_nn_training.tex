@@ -106,27 +106,28 @@ the $i$th event. No evidence  of over--training is observed.
 \begin{figure}[thbp]
    \setlength{\unitlength}{1mm}
    \begin{center}
-      \begin{picture}(150, 195)(0,0)
-         \put(0.5, 130)
-         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngNoPiZero.pdf}}}
-         \put(65,  130)
-         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngOnePiZero.pdf}}}
-         \put(0.5, 65) 
-         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngTwoPiZero.pdf}}}
-         \put(65, 65) 
-         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngNoPiZero.pdf}}}
-         \put(33, 0) 
-         {\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngOnePiZero.pdf}}}
-      \end{picture}
+     \includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngNoPiZero.pdf}
+     \includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngOnePiZero.pdf}
+     \includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngTwoPiZero.pdf}
+     \includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngNoPiZero.pdf}
+     \includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngOnePiZero.pdf}
+      %\begin{picture}(150, 195)(0,0)
+         %\put(0.5, 130)
+         %{\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngNoPiZero.pdf}}}
+         %\put(65,  130)
+         %{\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngOnePiZero.pdf}}}
+         %\put(0.5, 65) 
+         %{\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_OneProngTwoPiZero.pdf}}}
+         %\put(65, 65) 
+         %{\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngNoPiZero.pdf}}}
+         %\put(33, 0) 
+         %{\mbox{\includegraphics*[height=60mm]{tanc_chapter/figures/overtrainCheck_ThreeProngOnePiZero.pdf}}}
+      %\end{picture}
    \caption[Neural network over--training validation plots]{Neural network
    classification error for training (solid red) and testing (dashed blue)
    samples at ten epoch intervals over the 500 training epochs for each decay
    mode neural network.  The vertical axis represents the classification error,
-   defined by equation~\ref{eq:NNerrorFunc}.  N.B. that the choice of hyperbolic
-   tangent for neuron activation functions results in the desired outputs for
-   signal and background to be 1 and -1, respectively.  This results in the
-   computed neural network error being larger by a factor of four than the case
-   where the desired outputs are (0, 1).  Classifier over--training would be
+   defined by equation~\ref{eq:NNerrorFunc}.  Classifier over--training would be
    evidenced by divergence of the classification error of the training and
    testing samples, indicating that the neural net was optimizing about
    statistical fluctuations in the training sample.  }

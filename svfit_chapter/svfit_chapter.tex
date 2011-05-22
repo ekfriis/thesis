@@ -48,12 +48,15 @@ of the reconstructed missing transverse energy, which in the ideal case
 corresponds to the transverse component of the vector sum of the two neutrino's
 four momentum.  The characteristic equation of the collinear approximation is 
 \begin{equation}
-  \left( \begin{array}{c} \MEx \\ \MEy \end{array} \right) = 
-    \left( \begin{array}{cc} 
+  \begin{pmatrix}
+    \MEx \\
+    \MEy 
+  \end{pmatrix} = 
+  \begin{pmatrix}
       \cos\phi_1 & \cos\phi_2 \\
       \sin\phi_1 & \sin\phi_2 
-    \end{array} \right) 
-    \left(\begin{array}{c} E_1 \\ E_2 \end{array} \right)
+    \end{pmatrix} 
+    \begin{pmatrix} E_1 \\ E_2 \end{pmatrix} 
       \label{eq:CollinearApproxCharacteristicEquation}
 \end{equation}
 where $(\MEx, \MEy)$ are the two components of the reconstructed missing
@@ -63,13 +66,13 @@ neutrino of the first (second) tau decay.  $E_1$ and $E_2$ can be extracted by
 inverting the matrix on the right hand side of
 Equation~\ref{eq:CollinearApproxCharacteristicEquation}.
 \begin{equation}
-  \left(\begin{array}{c} E_1 \\ E_2 \end{array} \right) = 
+  \begin{pmatrix} E_1 \\ E_2 \end{pmatrix} = 
     \frac{1}{\sin(\phi_2 - \phi_1)} 
-    \left( \begin{array}{cc} 
+    \begin{pmatrix} 
       \sin\phi_2 & -\cos\phi_2 \\
       -\sin\phi_1 & \cos\phi_1 
-    \end{array} \right) 
-  \left( \begin{array}{c} \MEx \\ \MEy \end{array} \right) 
+    \end{pmatrix} 
+    \begin{pmatrix} \MEx \\ \MEy \end{pmatrix} 
     \label{eq:CollinearApproxInvertedEquation} 
 \end{equation}
 
@@ -212,7 +215,7 @@ neutrino system also:
 \frac{((\mtau^2 - (\mnus + \mvis)^2)(\mtau^2 - (\mnus - \mvis)^2))^{1/2}}
 {2 \mtau} 
 \mnus
-\mathrm{d}\mnus
+d\mnus
 \sin \theta d\theta 
 \label{eq:pdfKineLeptonic}
 \end{equation}
@@ -321,7 +324,7 @@ reconstructed with and without the $\pt$--balance likelihood term is shown in
 Figure~\ref{fig:ptBalanceImprovedMassResolution}.  A significant improvement in
 resolution and in particular a significant reduction of the non--Gaussian tail
 in the region of high masses is seen.
-
+%
 \begin{figure}[t]
 \begin{center}
 \includegraphics*[height=0.75\textwidth, angle=90]{svfit_chapter/figures/pt_balance_effect.pdf} \caption[Effect of
@@ -335,7 +338,7 @@ included in the fit.
 } \label{fig:ptBalanceImprovedMassResolution}
 \end{center}
 \end{figure} 
-
+%
 \begin{figure}[t]
 \begin{center}
 \includegraphics*[width=0.49\textwidth]{svfit_chapter/figures/scuplting_A130_muon.pdf}
@@ -349,14 +352,14 @@ products described in Chapter~\ref{ch:selections}.  }
 \label{fig:ptBalancePtVisCuts}
 \end{center}
 \end{figure} 
-
+%
 \begin{figure}[t]
 \begin{center}
 \includegraphics*[width=0.49\textwidth]{svfit_chapter/figures/scuplting_Ztautau_powheg_muon.pdf}
 \includegraphics*[width=0.49\textwidth]{svfit_chapter/figures/scuplting_A200_muon.pdf}
 \caption[Effect of the visible \pt requirements for $Z$ and Higgs
 boson events]{\captiontext Normalized distributions of the fraction of total tau decay
-energy carried by the muon in simulated $Z\to\TT$~(left) and Higgs boson events with
+energy carried by the muon in simulated \ZTT~(left) and Higgs boson events with
 \mbox{$\ma = 200~\GeVcc$}~(right).   The distribution is shown before (blue) and
 after (red) the requirement that the $\pt$ of the muon be greater than
 15~\GeVc.} \label{fig:ptBalancePtVisCutsCompareMasses}
@@ -364,7 +367,7 @@ after (red) the requirement that the $\pt$ of the muon be greater than
 \end{figure} 
 
 \subsection{Secondary Vertex Information} 
-
+%
 The parametrization of the tau decay kinematics described in
 section~\ref{sec:svParameterization} can be extended to describe the production
 and decay of the tau.  As the flight direction of the tau is already fully
@@ -448,7 +451,8 @@ solutions in the application of the collinear approximation.}
 \caption[Comparison of SVfit with the visible mass observable]{Comparison of the
 invariant mass of the muon and \tjet (the ``visible mass'') with the full \TT
 mass reconstructed by the SVfit. The spectrum is shown for two simulated MSSM
-Higgs boson samples, with $\ma = 120\GeVcc$~(left), and $\ma = 200\GeVcc$~(right).  To
+Higgs boson samples, with \mbox{$\ma = 120~\GeVcc$}~(left), and \mbox{$\ma =
+200~\GeVcc$}~(right).  To
 illustrate that relative resolution of the SVfit is superior to that of the
 visible mass, the visible mass is also shown scaled up such that the mean of the
 two distributions are identical.} \label{fig:SVversusVis}
