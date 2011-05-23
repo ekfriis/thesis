@@ -160,7 +160,7 @@ Fermi~\cite{Fermi:1934hr} to explain the phenomenon of the $\beta$
 decay of neutrons. The initial theory was a four-fermion ``contact'' theory.  In
 a contact theory, all four fermions involved in the $\beta$--decay are
 connected at a single vertex.  The Fermi theory Hamiltonian for the
-$\beta$--decay of a proton is then~\cite{Morii:SMandBSM}
+$\beta$--decay of a neutron is then~\cite{Morii:SMandBSM}
 \begin{equation}
   H = \frac{G_\beta}{\sqrt{2}}
   \left[\overline \psi_p \gamma_\mu (1 - g_A\gamma_5)\psi_n\right]
@@ -210,7 +210,7 @@ topic beyond the scope of this thesis.  Briefly, the process involves
 ``absorbing'' infinite divergences that occur in higher--order interactions into
 physical observables~\cite{Griffiths:IntroParticle}.} QED fail when applied to
 the Fermi interaction.
-\begin{figure}[b]
+\begin{figure}
   \centering
   \begin{fmffile}{muon_decay}
     \begin{fmfgraph*}(120,75)
@@ -231,7 +231,7 @@ the Fermi interaction.
   in Fermi contact interaction theory.}
   \label{fig:MuonDecayContact}
 \end{figure}
-\begin{figure}[b]
+\begin{figure}
   \centering
   \begin{fmffile}{muon_decay_propagator}
     \begin{fmfgraph*}(120,75)
@@ -752,12 +752,13 @@ a hadron are pulled apart, the energy required to separate them will eventually
 be large enough to produce new (anti--)colored objects, resulting in two (or more)
 colorless hadrons.  Finally, at low energy, QCD is non--perturbative.  What this
 means in practice is that when computing an amplitude from a QCD Feynman
-diagram, additional gluon interactions contribute a value greater than one.  The
+diagram, additional gluon interactions contribute a value greater than the
+previous order of calculation.  The
 dominance of multi--loop diagrams is illustrated in
 Figure~\ref{fig:QCDFeynmanDiagrams}.
-\begin{figure}[b]
+\begin{figure}
   \centering
-  \makebox[0.7\textwidth]{\rule[3pt]{0pt}{5mm}}
+  \makebox[0.7\textwidth]{\rule[3pt]{0pt}{6mm}}
   \subfigure[]{\begin{fmffile}{perturbative_qcd_diagram}
     \begin{fmfgraph*}(150,100)
       \fmfleft{i1,i2}
@@ -870,8 +871,9 @@ mass~\cite{Martin:1997um}.  The Yukawa term $-\lambda_f H \overline f f$
 coupling the fermion $f$ to the Higgs boson $H$ produces loop corrections to Higgs
 boson mass.  The two types of corrections due to fermion loops and scalar loops are
 illustrated in Figure~\ref{fig:HiggsMassLoopCorrections}.
-\begin{figure}[b]
+\begin{figure}
   \centering
+  \makebox[0.7\textwidth]{\rule[3pt]{0pt}{4mm}}
   \subfigure[]{\begin{fmffile}{higgs_correction}
     \begin{fmfgraph*}(150,100)
       \fmfleft{i}
@@ -951,7 +953,10 @@ given in Chapter~6 of~\cite{Martin:1997um}.
 SM is the MSSM\@.  The model groups
 superpartner pairs into chiral (a left or right--handed fermion field plus a
 complex scalar field) and gauge (a spin--1 vector boson and a left or
-right--handed gaugino fermion) ``supermultiplets.''  As the weak
+right--handed gaugino fermion) ``supermultiplets.''  The superpartner of each
+particle is responsible for cancelling the loop corrections divergences to the
+Higgs mass. 
+As the weak
 interactions of the SM fermions are chiral, they (and their
 superpartners) must belong in a chiral supermultiplet.  It is interesting to
 note that there is a different superpartner for the left and right--handed
@@ -1044,7 +1049,7 @@ then~\cite{Martin:1997um}
   \nonumber
 \end{equation}
 where $H_u$, $H_d$, $Q$, $L$, $\sbar u$, $\sbar d$, and $\sbar e$ are the
-superfields defined in Table~\ref{tab:chiral}.  The ${\bf y}$ terms are Yukawa
+supermultiplets defined in Table~\ref{tab:chiral}.  The ${\bf y}$ terms are Yukawa
 $3 \times 3$ matrices which act on the different families.  It is important to
 note that the up--type quarks couple to the up--type Higgs doublet $H_u$, while the
 down--type quarks and leptons couple to the down--type Higgs doublet.  This feature has
@@ -1118,7 +1123,7 @@ in the MSSM will be discussed further in Section~\ref{sec:MSSMHiggsPhenom}.
 %
 \section{Searches for the Higgs Boson}
 \label{sec:PreviousSearches} The discovery of the Higgs boson is one of the
-biggest prizes in science today.  Dozens of experiments, thousands of scientists
+biggest prizes in science today.  Many experiments, thousands of scientists
 and billions of dollars (a human hierarchy problem) have been spent in efforts
 to discover the Higgs boson.  In this section we discuss how the Higgs boson and the MSSM
 could appear in modern colliders (with an emphasis on the LHC) and the current
@@ -1140,17 +1145,20 @@ electron as an example, after symmetry breaking, the Yukawa term is found to be
 The value of $G_e$ is a free parameter of the theory and is thus determined by
 the measurement of the electron mass and $\nu$, the VEV of the Higgs field
 \begin{equation}
-  \frac{G_e \nu}{\sqrt 2} = \frac{m_e}{\nu}.
+  %\frac{G_e \nu}{\sqrt 2} = \frac{m_e}{\nu}.
+  \frac{G_e \nu}{\sqrt 2} = \frac{m_e}{2}.
   \label{eq:HiggsVEVtoCoupling}
 \end{equation}
+\fixme{Is this a 2 in~\ref{eq:HiggsVEVtoCoupling}?}
 The left--hand side of Equation~\ref{eq:HiggsVEVtoCoupling} is the same as the
 constant in the electron--Higgs boson coupling term ($H(x)\overline e e$) in
 Equation~\ref{eq:ElectronYukawa}.  Therefore the coupling between the fermions
 and Higgs boson is proportional to their mass!  This remarkable fact shapes the
 possible production modes and the branching fractions of Higgs boson decays.
 %
-\begin{figure}[b]
+\begin{figure}
   \centering
+  \makebox[0.7\textwidth]{\rule[3pt]{0pt}{6mm}}
   \begin{fmffile}{Higgstrahlung}
     \begin{fmfgraph*}(150,100)
       \fmfleft{i1,i2}
@@ -1170,7 +1178,7 @@ possible production modes and the branching fractions of Higgs boson decays.
   $e^+e^-$ colliders}
 \end{figure}
 %
-\begin{figure}[b]
+\begin{figure}
   \centering
   \begin{fmffile}{GluonFusion}
   \begin{fmfgraph*}(250,200)
@@ -1202,7 +1210,7 @@ possible production modes and the branching fractions of Higgs boson decays.
   credit:~\cite{FeynmanDiagrams}}
 \end{figure}
 %
-\begin{figure}[b]
+\begin{figure}
   \centering
   \begin{fmffile}{VBFProdDiagram}
   \begin{fmfgraph*}(250,200)
@@ -1237,9 +1245,9 @@ possible production modes and the branching fractions of Higgs boson decays.
   
 The dominant modes of Higgs boson production depend on the type of experiment.
 In general, Higgs boson production is favored through high--mass intermediate states,
-due to the (mass)$^2$ proportional coupling.  At the Tevatron and LEP experiments,
+due to the mass proportional coupling.  At the Tevatron and LEP experiments,
 which will be introduced in the next section, the dominant SM Higgs boson production
-mode is ``Higgstrahlung,'' where a virtual $W^\pm$ or $Z$ gauge boson is
+mode is ``Higgstrahlung,'' where an off--shell $W^\pm$ or $Z$ gauge boson is
 produced and then radiates a Higgs boson.  Higgstrahlung is illustrated in
 Figure~\ref{fig:HiggsStrahlung}.  At the Large Hadron Collider, higher gluon
 luminosities (see Figure~\ref{fig:GluonLumiRatio}) result in the favored cross
@@ -1254,7 +1262,7 @@ protons, producing an event with low central jet activity and two ``tag--jets''
 in the forward and backward regions.  The theoretical cross sections for the SM
 Higgs boson at the LHC are shown for the various production mechanisms in
 Figure~\ref{fig:LHCSMHiggsXsec}.
-\begin{figure}[b]
+\begin{figure}
   \centering
   \includegraphics[width=90mm,angle=0]{theory_chapter/figures/parton_lumis_10TeV_vs_2TeV.pdf}
   \caption[Parton luminosity comparison of the LHC and Tevatron]{Ratio of the
@@ -1323,6 +1331,7 @@ production with associated $b$--quarks, illustrated in
 Figure~\ref{fig:AssociatedBProduction}, becomes an important production mode. 
 \begin{figure}
   \centering
+  \makebox[0.7\textwidth]{\rule[3pt]{0pt}{6mm}}
   \begin{fmffile}{AssociatedBProduction}
   \begin{fmfgraph*}(250,200)
     \fmfbottom{P1,P2} \fmftop{P1',b1,H',b2,P2'}
@@ -1561,10 +1570,10 @@ there is an imbalance in the total transverse\footnote{At proton colliders, the
 constituent quarks/gluons of the proton share the total proton momentum.  As the
 total fraction of momentum carried by the parton involved in a hard collision is
 unknown, longitudinal momentum is not conserved.} energy in the event.  This
-thesis will describe a novel way to reconstruct the neutrinos associated to tau
+thesis will describe a novel way to reconstruct the neutrinos associated with tau
 decays in Chapter~\ref{ch:svfit}.  
 
-A tau with produced with energy $E$ travels on average 
+A tau produced with energy $E$ travels on average 
 \begin{equation}
   \gamma c \tau = \frac{E}{1.78~\GeV} 87~\micro\meter \nonumber
 \end{equation}

@@ -24,7 +24,7 @@ output/dissertation.tex: ${CHAPTERS}
 output/feynmp.1:
 	true
 
-output/umi_abstract.pdf: prelim/umi_abstract.tex
+output/umi_abstract.pdf: prelim/umi_abstract.tex abstract/abstract_raw.tex settings/phdsetup.tex
 	pdflatex ${OPTS} --output-directory=./output/ $<
 	pdflatex ${OPTS} --output-directory=./output/ $<
 
