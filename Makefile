@@ -31,6 +31,8 @@ output/umi_abstract.pdf: prelim/umi_abstract.tex abstract/abstract_raw.tex setti
 output/svfit_chapter.pdf: svfit_chapter/svfit_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
+	bibtex output/svfit_chapter
+	pdflatex ${OPTS} --output-directory=./output/ svfit_chapter/svfit_chapter.tex
 
 output/results_chapter.pdf: results_chapter/results_chapter.tex
 	pdflatex ${OPTS} --output-directory=./output/ $<
